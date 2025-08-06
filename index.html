@@ -18,17 +18,33 @@
         --box: #ffffff;
         --text: #1e293b;
       }
-
       * { box-sizing: border-box; margin:0; padding:0; }
       body { font-family: "Inter", sans-serif; background-color: var(--background); color: var(--text); line-height:1.6; }
       header { background: var(--box); position:sticky; top:0; z-index:10; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
       .nav { max-width:960px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
       .nav a { color: var(--primary); font-weight:600; text-decoration:none; margin-left:2rem; transition:color .2s; }
       .nav a:hover { color: var(--accent); }
-      .hero { background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%); text-align:center; padding:4rem 2rem; }
-      .hero h1 { font-size:3rem; color: var(--accent); margin-bottom:0.5rem; }
-      .hero p.tagline { font-size:1.25rem; font-weight:300; color:var(--mid-gray); margin-bottom:2rem; }
-      .btn { display:inline-block; background:var(--accent); color:#fff; padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:600; transition:background .2s; }
+      .hero {
+        position: relative;
+        text-align: center;
+        padding:6rem 2rem 4rem;
+        background: var(--light-gray);
+        overflow: hidden;
+      }
+      /* Hintergrund mit Herzschlag- und Datenlinien */
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%; transform: translateX(-50%);
+        width: 120%; height: 120%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><polyline fill="none" stroke="%230052a5" stroke-width="2" points="0,100 50,100 70,60 90,140 110,100 150,100 170,80 190,120 210,100 260,100 300,150 340,50 380,100 400,100"/></svg>') no-repeat center;
+        opacity: 0.1;
+        pointer-events: none;
+      }
+      .hero h1 { position: relative; font-size:3rem; color: var(--accent); margin-bottom:0.5rem; }
+      /* Tagline stärker sichtbar */
+      .hero p.tagline { position: relative; font-size:1.3rem; font-weight:500; color: var(--primary); margin-bottom:2rem; }
+      .btn { position: relative; display:inline-block; background:var(--accent); color:#fff; padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:600; transition:background .2s; }
       .btn:hover { background:#003a75; }
       .section { max-width:960px; margin:0 auto; padding:3rem 2rem; }
       .section h2 { font-size:1.75rem; color: var(--primary); margin-bottom:1rem; }
@@ -43,7 +59,10 @@
       .book-links { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem; }
       .book-links a { background:var(--accent); color:#fff; padding:0.6rem 1rem; border-radius:6px; font-weight:500; transition:background .2s; text-decoration:none; }
       .book-links a:hover { background:#003a75; }
-      footer { text-align:center; font-size:0.9rem; color:var(--mid-gray); padding:2rem 2rem 4rem; }
+      /* Call-to-Action Footer */
+      footer { text-align:center; padding:2rem 2rem 4rem; }
+      .cta { background:var(--accent); color:#fff; display:inline-block; padding:0.75rem 1.5rem; border-radius:8px; font-weight:600; text-decoration:none; transition:background .2s; }
+      .cta:hover { background:#003a75; }
       @media(min-width:768px) {
         .book-section { flex-direction:row; justify-content:center; align-items:flex-start; }
         .book-text { text-align:left; }
@@ -55,9 +74,9 @@
       <nav class="nav">
         <h1 style="font-size:1.5rem;color:var(--primary)">IMHIS</h1>
         <div>
-          <a href="#instrument">Instrument</a>
+          <a href="#instrument">Analyseinstrument</a>
           <a href="#buch">Buch</a>
-          <a href="#kontakt">Kontakt</a>
+          <a href="#kontakt">Analyse geplant?</a>
         </div>
       </nav>
     </header>
@@ -109,7 +128,7 @@
       <div class="book-text">
         <h2>Das Buch zur Methode</h2>
         <p>
-          Die detaillierte Methodik und alle Messinstrumente finden Sie im Buch:
+          Detaillierte Methodik und alle Messinstrumente findest du im Buch:
           <strong>Digitale Systeme – echte Wirkung</strong> (Springer Gabler, Sept. 2025).
         </p>
         <div class="book-links">
@@ -123,7 +142,7 @@
     </section>
 
     <footer id="kontakt">
-      Analyse geplant?: <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a>
+      <a href="mailto:florian.eisold@icloud.com" class="cta">Analyse geplant?</a>
     </footer>
   </body>
 </html>
