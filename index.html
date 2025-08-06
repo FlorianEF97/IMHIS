@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- Resolved merge conflicts -->
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -7,182 +6,124 @@
     <title>IMHIS – Damit Digitalisierung wirkt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --background: #f9fafc;
+        --background: #f8fafc;
         --primary: #0f172a;
         --accent: #0052a5;
         --link: #2563eb;
+        --light-gray: #e2e8f0;
+        --mid-gray: #94a3b8;
         --box: #ffffff;
         --text: #1e293b;
       }
 
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background: linear-gradient(180deg, var(--background) 0%, #e2e8f0 100%);
-        color: var(--text);
-        line-height: 1.7;
-        padding: 4vh 2rem;
-        display: flex;
-        justify-content: center;
-      }
-
-      .container {
-        background: var(--box);
-        padding: 4rem 3rem;
-        border-radius: 16px;
-        max-width: 840px;
-        width: 100%;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-      }
-
-      header.hero {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-        font-weight: 600;
-        color: var(--accent);
-        margin-bottom: 0.2rem;
-      }
-
-      .hero .tagline {
-        font-size: 1.2rem;
-        font-weight: 300;
-        color: #555;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-        margin-top: 3rem;
-        font-weight: 600;
-        color: var(--accent);
-        border-left: 4px solid var(--accent);
-        padding-left: 0.6rem;
-      }
-
-      a {
-        color: var(--link);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      a:hover {
-        color: var(--accent);
-        text-decoration: underline;
-      }
-
-      ul {
-        margin: 1rem 0;
-        padding-left: 1.2rem;
-      }
-
-      img.cover {
-        display: block;
-        margin: 2rem 0;
-        max-width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      }
-
-      .contact {
-        margin-top: 3rem;
-        font-size: 0.95rem;
-        color: #666;
-        text-align: center;
-      }
-
-      @media (max-width: 600px) {
-        .container {
-          padding: 2rem;
-        }
-        .hero h1 {
-          font-size: 2rem;
-        }
+      * { box-sizing: border-box; margin:0; padding:0; }
+      body { font-family: "Inter", sans-serif; background-color: var(--background); color: var(--text); line-height:1.6; }
+      header { background: var(--box); position:sticky; top:0; z-index:10; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+      .nav { max-width:960px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
+      .nav a { color: var(--primary); font-weight:600; text-decoration:none; margin-left:2rem; transition:color .2s; }
+      .nav a:hover { color: var(--accent); }
+      .hero { background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%); text-align:center; padding:4rem 2rem; }
+      .hero h1 { font-size:3rem; color: var(--accent); margin-bottom:0.5rem; }
+      .hero p.tagline { font-size:1.25rem; font-weight:300; color:var(--mid-gray); margin-bottom:2rem; }
+      .btn { display:inline-block; background:var(--accent); color:#fff; padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:600; transition:background .2s; }
+      .btn:hover { background:#003a75; }
+      .section { max-width:960px; margin:0 auto; padding:3rem 2rem; }
+      .section h2 { font-size:1.75rem; color: var(--primary); margin-bottom:1rem; }
+      .section p { font-size:1rem; margin-bottom:1.5rem; }
+      .feature-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2rem; margin-top:2rem; }
+      .feature { background:var(--box); padding:1.5rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+      .feature h3 { font-size:1.25rem; margin-bottom:0.5rem; color:var(--accent); }
+      .feature p { font-size:0.95rem; color:var(--primary); }
+      .book-section { display:flex; flex-direction:column-reverse; gap:2rem; align-items:center; margin-top:2rem; }
+      .book-section img { max-width:260px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+      .book-text { flex:1; max-width:600px; text-align:center; }
+      .book-links { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem; }
+      .book-links a { background:var(--accent); color:#fff; padding:0.6rem 1rem; border-radius:6px; font-weight:500; transition:background .2s; text-decoration:none; }
+      .book-links a:hover { background:#003a75; }
+      footer { text-align:center; font-size:0.9rem; color:var(--mid-gray); padding:2rem 2rem 4rem; }
+      @media(min-width:768px) {
+        .book-section { flex-direction:row; justify-content:center; align-items:flex-start; }
+        .book-text { text-align:left; }
       }
     </style>
   </head>
   <body>
-    <main class="container">
-      <header class="hero">
-        <h1>IMHIS</h1>
-        <p class="tagline">Damit Digitalisierung wirkt.</p>
-      </header>
+    <header>
+      <nav class="nav">
+        <h1 style="font-size:1.5rem;color:var(--primary)">IMHIS</h1>
+        <div>
+          <a href="#instrument">Instrument</a>
+          <a href="#buch">Buch</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </nav>
+    </header>
 
+    <section class="hero">
+      <h1>IMHIS</h1>
+      <p class="tagline">Ein Analyseinstrument – damit Digitalisierung wirkt</p>
+      <a href="#instrument" class="btn">Mehr erfahren</a>
+    </section>
+
+    <section class="section" id="instrument">
+      <h2>Ein Analyseinstrument mit Wirkung</h2>
       <p>
-        IMHIS ist ein wissenschaftlich fundiertes Analyseinstrument zur
-        nutzerzentrierten Bewertung von Gesundheitsinformationssystemen.
-        Entwickelt aus der Perspektive des medizinischen Personals, schafft es
-        Evidenz dort, wo Digitalisierung Wirkung entfalten soll: im
-        Klinikalltag.
+        IMHIS ist ein wissenschaftlich fundiertes Tool zur nutzerzentrierten Bewertung von
+        Gesundheitsinformationssystemen im Klinikalltag. Es liefert evidenzbasierte
+        Insights direkt von den Anwender:innen – für Entscheidungen, die wirklich zählen.
       </p>
 
-      <p>
-        Die zugrunde liegende Methodik, inklusive aller Bewertungsdimensionen
-        und Fragebögen, ist detailliert dargestellt in:
-        <a href="https://bit.ly/3IH9aRb" target="_blank"
-          >Digitale Systeme – echte Wirkung</a
-        ><br />
-        (Erscheinungstermin: September 2025, Springer Gabler)
-      </p>
-
-      <h2>Bezugsquellen</h2>
-      <ul>
-        <li>
-          <a
-            href="https://bit.ly/3IH9aRb"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Springer (demnächst)</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://amzn.to/4lHcZUS"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Amazon</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.thalia.de/shop/home/artikeldetails/A1076117813"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Thalia</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.hugendubel.de/de/taschenbuch/florian_eisold-digitale_systeme_echte_wirkung_was_klinikpersonal_wirklich_braucht-51233049-produkt-details.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Hugendubel</a
-          >
-        </li>
-      </ul>
-
-      <img
-        src="cover.jpg"
-        alt="Buchcover: Digitale Systeme – echte Wirkung"
-        class="cover"
-      />
-
-      <div class="contact">
-        Kontakt:
-        <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a>
+      <h3>Dimensionen</h3>
+      <div class="feature-list">
+        <div class="feature">
+          <h3>Arbeitsbelastung</h3>
+          <p>Messung der subjektiv empfundenen Belastung durch Informationsverarbeitung.</p>
+        </div>
+        <div class="feature">
+          <h3>Nutzerzufriedenheit</h3>
+          <p>Erhebung der Zufriedenheit mit dem System anhand validierter Fragebögen.</p>
+        </div>
+        <div class="feature">
+          <h3>Kommunikation & Kollaboration</h3>
+          <p>Analyse der Unterstützung von Teamwork und Informationsaustausch.</p>
+        </div>
+        <div class="feature">
+          <h3>Informationsqualität</h3>
+          <p>Bewertung der Genauigkeit, Relevanz und Verständlichkeit der bereitgestellten Informationen.</p>
+        </div>
+        <div class="feature">
+          <h3>Systemqualität</h3>
+          <p>Analyse der Zuverlässigkeit, Performance und Benutzerfreundlichkeit der Systeme.</p>
+        </div>
+        <div class="feature">
+          <h3>Arbeitsprozesse</h3>
+          <p>Untersuchung der Effizienz und Integration digitaler Systeme in klinische Abläufe.</p>
+        </div>
       </div>
-    </main>
+    </section>
+
+    <section class="section book-section" id="buch">
+      <div class="book-text">
+        <h2>Das Buch zur Methode</h2>
+        <p>
+          Die detaillierte Methodik und alle Messinstrumente finden Sie im Buch:
+          <strong>Digitale Systeme – echte Wirkung</strong> (Springer Gabler, Sept. 2025).
+        </p>
+        <div class="book-links">
+          <a href="https://bit.ly/3IH9aRb" target="_blank">Springer</a>
+          <a href="https://amzn.to/4lHcZUS" target="_blank">Amazon</a>
+          <a href="https://www.thalia.de/shop/home/artikeldetails/A1076117813" target="_blank">Thalia</a>
+          <a href="https://www.hugendubel.de/de/taschenbuch/florian_eisold-digitale_systeme_echte_wirkung_was_klinikpersonal_wirklich_braucht-51233049-produkt-details.html" target="_blank">Hugendubel</a>
+        </div>
+      </div>
+      <img src="cover.jpg" alt="Buchcover: Digitale Systeme – echte Wirkung" />
+    </section>
+
+    <footer id="kontakt">
+      Analyse geplant?: <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a>
+    </footer>
   </body>
 </html>
