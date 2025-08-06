@@ -3,63 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IMHIS. Damit Digitalisierung wirkt.</title>
+  <title>IMHIS – Damit Digitalisierung wirkt</title>
   <style>
+    :root {
+      --background: #f5f7fa;
+      --primary: #1a1a1a;
+      --accent: #003366;
+      --link: #0056b3;
+      --box: #ffffff;
+      --text: #2c2c2c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 3rem;
-      background-color: #f9f9f9;
-      color: #333;
-      max-width: 700px;
-      line-height: 1.6;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 4vh 2rem;
+      display: flex;
+      justify-content: center;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
+
+    .container {
+      background: var(--box);
+      padding: 4rem 3rem;
+      border-radius: 12px;
+      max-width: 820px;
+      width: 100%;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
     }
+
+    header.hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #444;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 3rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
     a {
-      color: #0070f3;
+      color: var(--link);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    .box {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      padding: 2rem;
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.2rem;
+    }
+
+    img.cover {
+      display: block;
+      margin: 2rem 0;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .contact {
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      color: #666;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>IMHIS.</h1>
-    <p><strong>Damit Digitalisierung wirkt.</strong></p>
+  <main class="container">
+    <header class="hero">
+      <h1>IMHIS</h1>
+      <p class="tagline">Damit Digitalisierung wirkt.</p>
+    </header>
 
     <p>
-      IMHIS ist ein Analyseinstrument zur nutzerzentrierten Bewertung von Gesundheitsinformationssystemen –
-      entwickelt aus der Perspektive von Klinikpersonal, das tagtäglich mit diesen Systemen arbeitet.
+      IMHIS ist ein wissenschaftlich fundiertes Analyseinstrument zur nutzerzentrierten Bewertung von
+      Gesundheitsinformationssystemen. Entwickelt aus der Perspektive des medizinischen Personals, schafft es
+      Evidenz dort, wo Digitalisierung Wirkung entfalten soll: im Klinikalltag.
     </p>
 
     <p>
-      <strong> Die ganze Methodik mit allen Messinstrumenten finden Sie im Buch: </strong> <br />
-      <strong><a href="https://bit.ly/3IH9aRb" target="_blank">
-      Digitale Systeme – echte Wirkung</a></strong><br />
-      (Erscheint im September 2025 bei Springer Gabler)
+      Die zugrunde liegende Methodik, inklusive aller Bewertungsdimensionen und Fragebögen, ist detailliert dargestellt in:
+      <a href="https://bit.ly/3IH9aRb" target="_blank">Digitale Systeme – echte Wirkung</a><br/>
+      (Erscheinungstermin: September 2025, Springer Gabler)
     </p>
-<hr />
-<h2>Buchveröffentlichung</h2>
-<p>👉 Jetzt vorbestellen bei:</p>
-<ul>
-  <li><a href="https://bit.ly/3IH9aRb" target="_blank">Springer (demnächst)</a></li>
-  <li><a href="https://amzn.to/4lHcZUS" target="_blank">Amazon</a></li>
-  <li><a href="https://www.thalia.de/shop/home/artikeldetails/A1076117813" target="_blank">Thalia</a></li>
-  <li><a href="https://www.hugendubel.de/de/taschenbuch/florian_eisold-digitale_systeme_echte_wirkung_was_klinikpersonal_wirklich_braucht-51233049-produkt-details.html" target="_blank">Hugendubel</a></li>
-</ul>
-<img src="cover.jpg" alt="Buchcover: Digitale Systeme – echte Wirkung" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1); margin-top:1rem;" />
-    <p>📬 Kontakt: <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a></p>
-  </div>
+
+    <h2>Bezugsquellen</h2>
+    <ul>
+      <li><a href="https://bit.ly/3IH9aRb" target="_blank" rel="noopener noreferrer">Springer (demnächst)</a></li>
+  <li><a href="https://amzn.to/4lHcZUS" target="_blank" rel="noopener noreferrer">Amazon</a></li>
+  <li><a href="https://www.thalia.de/shop/home/artikeldetails/A1076117813" target="_blank" rel="noopener noreferrer">Thalia</a></li>
+  <li><a href="https://www.hugendubel.de/de/taschenbuch/florian_eisold-digitale_systeme_echte_wirkung_was_klinikpersonal_wirklich_braucht-51233049-produkt-details.html" target="_blank" rel="noopener noreferrer">Hugendubel</a></li>
+    </ul>
+
+    <img src="cover.jpg" alt="Buchcover: Digitale Systeme – echte Wirkung" class="cover" />
+
+    <div class="contact">
+      Kontakt: <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a>
+    </div>
+  </main>
 </body>
 </html>
