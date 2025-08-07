@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IMHIS – Damit Digitalisierung wirkt</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,33 +16,33 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/main.css" />
 
-    <!-- Favicons & Web-App Manifest -->
+    <!-- Favicon & Touch Icons -->
     <link
       rel="icon"
-      type="image/svg+xml"
-      href="assets/icons/imhis-icon.svg"
+      type="image/png"
+      sizes="96x96"
+      href="assets/icons/favicon-96x96.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/icons/imhis-icon.svg"
+      href="assets/icons/apple-touch-icon.png"
     />
     <link rel="manifest" href="site.webmanifest" />
-    <!-- Optional Safari Pinned Tab -->
-    <!-- <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#012f5e" /> -->
-  </head>
 
+    <!-- (Optional) Safari Pinned Tab -->
+    <!--
+    <link
+      rel="mask-icon"
+      href="assets/icons/safari-pinned-tab.svg"
+      color="#012f5e"
+    />
+    -->
+  </head>
   <body>
-    <!-- HEADER -->
     <header>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="/" class="logo">
-          <img
-            src="assets/icons/imhis-logo.svg"
-            alt="IMHIS – Damit Digitalisierung wirkt"
-            width="200"
-          />
-        </a>
+      <nav class="nav">
+        <h1 class="logo">IMHIS</h1>
         <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
         <ul class="nav-links">
           <li><a href="#instrument">Analyseinstrument</a></li>
@@ -52,15 +52,7 @@
       </nav>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
-      <div class="hero-brand">
-        <img
-          src="assets/icons/imhis-logo.svg"
-          alt="IMHIS – Das Analyseinstrument für Krankenhäuser"
-          class="hero-logo"
-        />
-      </div>
       <h1>IMHIS</h1>
       <p class="tagline">
         Ein Analyseinstrument für Krankenhäuser – damit Digitalisierung wirkt
@@ -68,14 +60,13 @@
       <a href="#instrument" class="btn">Mehr erfahren</a>
     </section>
 
-    <!-- ANALYSEINSTRUMENT -->
     <section class="section" id="instrument">
       <h2>Ein Analyseinstrument mit Wirkung</h2>
       <p>
         IMHIS ist ein wissenschaftlich fundiertes Tool zur nutzerzentrierten
         Bewertung von Gesundheitsinformationssystemen im Klinikalltag. Es liefert
-        evidenzbasierte Insights direkt von den Anwender:innen – für
-        Entscheidungen, die wirklich zählen.
+        evidenzbasierte Insights direkt von den Anwender:innen – für Entscheidungen,
+        die wirklich zählen.
       </p>
 
       <h3>Dimensionen</h3>
@@ -86,135 +77,91 @@
           <p>Messung der subjektiv empfundenen Arbeitsbelastung.</p>
         </div>
         <div class="feature">
-          <img
-            src="assets/icons/satisfaction.svg"
-            alt="Icon Nutzerzufriedenheit"
-          />
+          <img src="assets/icons/satisfaction.svg" alt="Icon Nutzerzufriedenheit" />
           <h3>Nutzerzufriedenheit</h3>
           <p>Erhebung der Zufriedenheit mit dem Informationssystem.</p>
         </div>
         <div class="feature">
-          <img
-            src="assets/icons/communication.svg"
-            alt="Icon Kommunikation"
-          />
+          <img src="assets/icons/communication.svg" alt="Icon Kommunikation" />
           <h3>Kommunikation & Kollaboration</h3>
           <p>
-            Analyse der Informationsflüsse durch intra- und
-            interdisziplinäre Kommunikation und Kollaboration.
+            Analyse der Informationsflüsse durch intra- und interdisziplinäre
+            Kommunikation und Kollaboration.
           </p>
         </div>
         <div class="feature">
-          <img
-            src="assets/icons/info-quality.svg"
-            alt="Icon Informationsqualität"
-          />
+          <img src="assets/icons/info-quality.svg" alt="Icon Informationsqualität" />
           <h3>Informationsqualität</h3>
-          <p>
-            Bewertung der Genauigkeit, Relevanz und Verständlichkeit der
-            bereitgestellten Informationen.
-          </p>
+          <p>Bewertung der Genauigkeit, Relevanz und Verständlichkeit der bereitgestellten Informationen.</p>
         </div>
         <div class="feature">
-          <img
-            src="assets/icons/system-quality.svg"
-            alt="Icon Systemqualität"
-          />
+          <img src="assets/icons/system-quality.svg" alt="Icon Systemqualität" />
           <h3>Systemqualität</h3>
-          <p>
-            Analyse der Zuverlässigkeit, Performance und
-            Benutzerfreundlichkeit der Systeme.
-          </p>
+          <p>Analyse der Zuverlässigkeit, Performance und Benutzerfreundlichkeit der Systeme.</p>
         </div>
         <div class="feature">
           <img src="assets/icons/process.svg" alt="Icon Arbeitsprozesse" />
           <h3>Arbeitsprozesse</h3>
-          <p>
-            Untersuchung der Effizienz und Integration digitaler Systeme in
-            klinische Abläufe.
-          </p>
+          <p>Untersuchung der Effizienz und Integration digitaler Systeme in klinische Abläufe.</p>
         </div>
       </div>
     </section>
 
-    <!-- BUCH -->
     <section class="section book-section" id="buch">
       <div class="book-text">
         <h2>Das Buch zur Methode</h2>
         <p>
           Die detaillierte Methodik und alle Messinstrumente finden Sie im Buch:
-          <strong>Digitale Systeme – echte Wirkung</strong> (Springer
-          Gabler, Sept. 2025). Die E-Book-Version wird zeitgleich zur
-          Print-Ausgabe veröffentlicht.
+          <strong>Digitale Systeme – echte Wirkung</strong> (Springer Gabler, Sept. 2025).
+          Die E-Book-Version wird zeitgleich zur Print-Ausgabe veröffentlicht.
         </p>
         <div class="book-links">
-          <h3>Vordenken statt hinterherlaufen – jetzt vorbestellen:</h3>
-          <ul>
-            <li>
-              <a
-                href="https://link.springer.com/book/9783658491895"
-                target="_blank"
-                >Springer (demnächst)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.amazon.de/Digitale-Systeme-echte-Wirkung-Gesundheitsökonomik/dp/3658491892"
-                target="_blank"
-                >Amazon</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.thalia.de/shop/home/artikeldetails/A1076117813"
-                target="_blank"
-                >Thalia</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.hugendubel.de/.../digitale_systeme_echte_wirkung-51233049-produkt-details.html"
-                target="_blank"
-                >Hugendubel</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.beck-shop.de/.../39813366"
-                target="_blank"
-                >Beck</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.lehmanns.de/.../9783658491895-digitale-systeme-echte-wirkung"
-                target="_blank"
-                >Lehmanns</a
-              >
-            </li>
-          </ul>
+          <h2>Vordenken statt hinterherlaufen – jetzt vorbestellen:</h2>
+          <a
+            href="https://link.springer.com/book/9783658491895"
+            target="_blank"
+            >Springer (demnächst)</a
+          >
+          <a
+            href="https://www.amazon.de/Digitale-Systeme-echte-Wirkung-Gesundheitsökonomik/dp/3658491892"
+            target="_blank"
+            >Amazon</a
+          >
+          <a
+            href="https://www.thalia.de/shop/home/artikeldetails/A1076117813"
+            target="_blank"
+            >Thalia</a
+          >
+          <a
+            href="https://www.hugendubel.de/de/taschenbuch/florian_eisold-digitale_systeme_echte_wirkung_was_klinikpersonal_wirklich_braucht-51233049-produkt-details.html"
+            target="_blank"
+            >Hugendubel</a
+          >
+          <a
+            href="https://www.beck-shop.de/eisold-digitale-systeme-echte-wirkung-klinikpersonal-wirklich-braucht/product/39813366"
+            target="_blank"
+            >Beck</a
+          >
+          <a
+            href="https://www.lehmanns.de/shop/technik/80689094-9783658491895-digitale-systeme-echte-wirkung-was-klinikpersonal-wirklich-braucht"
+            target="_blank"
+            >Lehmanns</a
+          >
         </div>
       </div>
-      <img
-        src="cover.jpg"
-        alt="Buchcover: Digitale Systeme – echte Wirkung"
-      />
+      <img src="cover.jpg" alt="Buchcover: Digitale Systeme – echte Wirkung" />
     </section>
 
-    <!-- KONTAKT / CTA -->
-    <footer id="kontakt" class="section">
-      <a href="mailto:florian.eisold@icloud.com" class="cta"
-        >Analyse geplant?</a
-      >
+    <footer id="kontakt">
+      <a href="mailto:florian.eisold@icloud.com" class="cta">Analyse geplant?</a>
     </footer>
 
-    <!-- IMPRESSUM & DATENSCHUTZ -->
+    <!-- Rechtliches -->
     <footer class="section">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
     </footer>
 
-    <!-- Mobile Menü-Script -->
     <script src="scripts/nav.js"></script>
   </body>
 </html>
