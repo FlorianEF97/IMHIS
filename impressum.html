@@ -7,71 +7,22 @@
     <!-- Nicht in Suchmaschinen indexieren -->
     <meta name="robots" content="noindex,nofollow">
 
-    <!-- Schriftart -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
-    <style>
-      :root {
-        --font-family: "Inter", sans-serif;
-        --color-text: #1e293b;
-        --color-primary: #0052a5;
-        --color-heading: #0f172a;
-        --color-link: #2563eb;
-        --max-width: 800px;
-        --spacing: 1.5rem;
-      }
-
-      body {
-        font-family: var(--font-family);
-        color: var(--color-text);
-        line-height: 1.6;
-        max-width: var(--max-width);
-        margin: 2rem auto;
-        padding: 0 1rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-        color: var(--color-primary);
-        margin-bottom: var(--spacing);
-      }
-
-      h2 {
-        font-size: 1.25rem;
-        color: var(--color-heading);
-        margin: 2rem 0 0.5rem;
-      }
-
-      p, ul {
-        margin-bottom: var(--spacing);
-      }
-
-      a {
-        color: var(--color-link);
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .section {
-        margin-top: 2rem;
-      }
-
-      .back-home {
-        display: inline-block;
-        margin-top: var(--spacing);
-        font-size: 0.9rem;
-      }
-
-      .back-home:hover {
-        text-decoration: underline;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
-
   <body>
+    <header>
+      <nav class="nav">
+        <h1 class="logo"><a href="/index.html">IMHIS</a></h1>
+        <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+        <ul class="nav-links">
+          <li><a href="/index.html#instrument">Analyseinstrument</a></li>
+          <li><a href="/index.html#buch">Buch</a></li>
+          <li><a href="/index.html#kontakt">Analyse geplant?</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
     <h1>Impressum</h1>
 
     <section id="diensteanbieter" class="section">
@@ -191,5 +142,15 @@
     <p class="back-home">
       <a href="/index.html">← Zurück zur Startseite</a>
     </p>
+    </main>
+
+    <footer id="kontakt">
+      <a href="mailto:florian.eisold@icloud.com" class="cta">Analyse geplant?</a>
+    </footer>
+    <footer class="section">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </footer>
+    <script src="scripts/nav.js"></script>
   </body>
 </html>
