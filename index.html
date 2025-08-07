@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IMHIS – Impact Monitor for Health Information Systems</title>
+    <meta
+      name="description"
+      content="IMHIS ist ein Analyseinstrument für Krankenhäuser zur nutzerzentrierten Bewertung von Gesundheitsinformationssystemen."
+    />
 
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,8 +43,15 @@
     <header>
       <nav class="nav">
         <h1 class="logo">IMHIS</h1>
-        <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
-        <ul class="nav-links">
+        <button
+          class="nav-toggle"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          ☰
+        </button>
+        <ul class="nav-links" id="nav-links">
           <li><a href="#instrument">Analyseinstrument</a></li>
           <li><a href="#buch">Buch</a></li>
           <li><a href="#kontakt">Analyse geplant?</a></li>

@@ -9,6 +9,10 @@
   --text: #1e293b;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * { box-sizing: border-box; margin:0; padding:0; }
 body {
   font-family: "Inter", sans-serif;
@@ -20,7 +24,8 @@ body {
 header { background: var(--box); position:sticky; top:0; z-index:10; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
 .nav { max-width:960px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
 .logo { font-size:1.5rem; color:var(--primary); }
-.nav-toggle { display:none; background:none; border:none; font-size:1.5rem; }
+.nav-toggle { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; transition:color .2s; }
+.nav-toggle[aria-expanded="true"] { color: var(--accent); }
 .nav-links { list-style:none; display:flex; }
 .nav-links li { margin-left:2rem; }
 .nav-links a { color: var(--primary); font-weight:600; text-decoration:none; transition:color .2s; }
