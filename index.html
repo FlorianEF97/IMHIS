@@ -6,77 +6,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --background: #f8fafc;
-        --primary: #0f172a;
-        --accent: #0052a5;
-        --link: #2563eb;
-        --light-gray: #e2e8f0;
-        --mid-gray: #94a3b8;
-        --box: #ffffff;
-        --text: #1e293b;
-      }
-      * { box-sizing: border-box; margin:0; padding:0; }
-      body { font-family: "Inter", sans-serif; background-color: var(--background); color: var(--text); line-height:1.6; }
-      header { background: var(--box); position:sticky; top:0; z-index:10; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
-      .nav { max-width:960px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
-      .nav a { color: var(--primary); font-weight:600; text-decoration:none; margin-left:2rem; transition:color .2s; }
-      .nav a:hover { color: var(--accent); }
-      .hero {
-        position: relative;
-        text-align: center;
-        padding:6rem 2rem 4rem;
-        background: var(--light-gray);
-        overflow: hidden;
-      }
-      /* Hintergrund mit Herzschlag- und Datenlinien */
-      .hero::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 50%; transform: translateX(-50%);
-        width: 120%; height: 120%;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><polyline fill="none" stroke="%230052a5" stroke-width="2" points="0,100 50,100 70,60 90,140 110,100 150,100 170,80 190,120 210,100 260,100 300,150 340,50 380,100 400,100"/></svg>') no-repeat center;
-        opacity: 0.1;
-        pointer-events: none;
-      }
-      .hero h1 { position: relative; font-size:3rem; color: var(--accent); margin-bottom:0.5rem; }
-      /* Tagline stärker sichtbar */
-      .hero p.tagline { position: relative; font-size:1.3rem; font-weight:500; color: var(--primary); margin-bottom:2rem; }
-      .btn { position: relative; display:inline-block; background:var(--accent); color:#fff; padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:600; transition:background .2s; }
-      .btn:hover { background:#003a75; }
-      .section { max-width:960px; margin:0 auto; padding:3rem 2rem; }
-      .section h2 { font-size:1.75rem; color: var(--primary); margin-bottom:1rem; }
-      .section p { font-size:1rem; margin-bottom:1.5rem; }
-      .feature-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2rem; margin-top:2rem; }
-      .feature { background:var(--box); padding:1.5rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-      .feature h3 { font-size:1.25rem; margin-bottom:0.5rem; color:var(--accent); }
-      .feature p { font-size:0.95rem; color:var(--primary); }
-      .book-section { display:flex; flex-direction:column-reverse; gap:2rem; align-items:center; margin-top:2rem; }
-      .book-section img { max-width:260px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
-      .book-text { flex:1; max-width:600px; text-align:center; }
-      .book-links { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem; }
-      .book-links a { background:var(--accent); color:#fff; padding:0.6rem 1rem; border-radius:6px; font-weight:500; transition:background .2s; text-decoration:none; }
-      .book-links a:hover { background:#003a75; }
-      /* Call-to-Action Footer */
-      footer { text-align:center; padding:2rem 2rem 4rem; }
-      .cta { background:var(--accent); color:#fff; display:inline-block; padding:0.75rem 1.5rem; border-radius:8px; font-weight:600; text-decoration:none; transition:background .2s; }
-      .cta:hover { background:#003a75; }
-      @media(min-width:768px) {
-        .book-section { flex-direction:row; justify-content:center; align-items:flex-start; }
-        .book-text { text-align:left; }
-      }
-    </style>
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
     <header>
       <nav class="nav">
-        <h1 style="font-size:1.5rem;color:var(--primary)">IMHIS</h1>
-        <div>
-          <a href="#instrument">Analyseinstrument</a>
-          <a href="#buch">Buch</a>
-          <a href="#kontakt">Analyse geplant?</a>
-        </div>
+        <h1 class="logo">IMHIS</h1>
+        <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+        <ul class="nav-links">
+          <li><a href="#instrument">Analyseinstrument</a></li>
+          <li><a href="#buch">Buch</a></li>
+          <li><a href="#kontakt">Analyse geplant?</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -97,26 +38,32 @@
       <h3>Dimensionen</h3>
       <div class="feature-list">
         <div class="feature">
+          <img src="assets/icons/workload.svg" alt="Icon Arbeitsbelastung" />
           <h3>Arbeitsbelastung</h3>
           <p>Messung der subjektiv empfundenen Arbeitsbelastung.</p>
         </div>
         <div class="feature">
+          <img src="assets/icons/satisfaction.svg" alt="Icon Nutzerzufriedenheit" />
           <h3>Nutzerzufriedenheit</h3>
           <p>Erhebung der Zufriedenheit mit dem Informationssystem.</p>
         </div>
         <div class="feature">
+          <img src="assets/icons/communication.svg" alt="Icon Kommunikation" />
           <h3>Kommunikation & Kollaboration</h3>
           <p>Analyse der Informationsflüsse durch intra- und interdisziplinären Kommunikation und Kollaboration.</p>
         </div>
         <div class="feature">
+          <img src="assets/icons/info-quality.svg" alt="Icon Informationsqualität" />
           <h3>Informationsqualität</h3>
           <p>Bewertung der Genauigkeit, Relevanz und Verständlichkeit der bereitgestellten Informationen.</p>
         </div>
         <div class="feature">
+          <img src="assets/icons/system-quality.svg" alt="Icon Systemqualität" />
           <h3>Systemqualität</h3>
           <p>Analyse der Zuverlässigkeit, Performance und Benutzerfreundlichkeit der Systeme.</p>
         </div>
         <div class="feature">
+          <img src="assets/icons/process.svg" alt="Icon Arbeitsprozesse" />
           <h3>Arbeitsprozesse</h3>
           <p>Untersuchung der Effizienz und Integration digitaler Systeme in klinische Abläufe.</p>
         </div>
@@ -152,5 +99,6 @@
       <a href="/impressum.html">Impressum</a>
       <a href="/datenschutz.html">Datenschutz</a>
     </footer>
+    <script src="scripts/nav.js"></script>
   </body>
 </html>
