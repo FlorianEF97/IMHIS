@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 600 200"
+>
+  <!-- Auge + Linienchart Icon -->
+  <g transform="translate(0,50)">
+    <!-- Augen-Umriss -->
+    <path
+      d="M10,50
+         Q100,0 190,50
+         Q100,100 10,50
+         Z"
+      fill="none"
+      stroke="#012f5e"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Linienchart -->
+    <polyline
+      points="60,65 100,55 140,35"
+      fill="none"
+      stroke="#012f5e"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Datenpunkte -->
+    <circle cx="60" cy="65" r="8" fill="#012f5e" />
+    <circle cx="100" cy="55" r="8" fill="#012f5e" />
+    <circle cx="140" cy="35" r="8" fill="#012f5e" />
+  </g>
+
+  <!-- Wortmarke -->
+  <text
+    x="220"
+    y="150"
+    font-family="Inter, sans-serif"
+    font-weight="700"
+    font-size="96"
+    fill="#012f5e"
+  >IMHIS</text>
+</svg>
