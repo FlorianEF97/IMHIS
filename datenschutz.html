@@ -4,71 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Datenschutzerklärung – IMHIS</title>
-  <!-- Inter Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --font: "Inter", sans-serif;
-      --text: #1e293b;
-      --link: #2563eb;
-      --max: 800px;
-      --space: 1.5rem;
-    }
-    body {
-      font-family: var(--font);
-      color: var(--text);
-      line-height: 1.6;
-      max-width: var(--max);
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: var(--space);
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin: 2rem 0 var(--space);
-    }
-    h3 {
-      font-size: 1.25rem;
-      margin: var(--space) 0 0.5rem;
-    }
-    h4 {
-      font-size: 1.1rem;
-      margin: var(--space) 0 0.5rem;
-    }
-    p, ul {
-      margin-bottom: var(--space);
-    }
-    ul {
-      padding-left: 1.25rem;
-    }
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      margin-top: 2rem;
-    }
-    .sub {
-      margin-left: 1rem;
-    }
-    .back-home {
-      display: inline-block;
-      margin-top: var(--space);
-      font-size: 0.9rem;
-    }
-    .back-home:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
+  <header>
+    <nav class="nav">
+      <h1 class="logo"><a href="/index.html">IMHIS</a></h1>
+      <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+      <ul class="nav-links">
+        <li><a href="/index.html#instrument">Analyseinstrument</a></li>
+        <li><a href="/index.html#buch">Buch</a></li>
+        <li><a href="/index.html#kontakt">Analyse geplant?</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main class="content">
   <section id="datenschutzerklaerung" class="section">
     <h1>Datenschutz­erklärung</h1>
 
@@ -365,5 +316,15 @@
 
   </section>
 
+  </main>
+
+  <footer id="kontakt">
+    <a href="mailto:florian.eisold@icloud.com" class="cta">Analyse geplant?</a>
+  </footer>
+  <footer class="section">
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+  </footer>
+  <script src="scripts/nav.js"></script>
 </body>
 </html>
