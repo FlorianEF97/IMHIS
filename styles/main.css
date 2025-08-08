@@ -23,8 +23,8 @@ body {
 
 header { background: var(--box); position:sticky; top:0; z-index:10; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
 .nav { max-width:960px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
-.logo { font-size:1.5rem; color:var(--primary); display:flex; align-items:baseline; gap:0.5rem; }
-.logo img { height:2rem; }
+.logo { color: var(--primary); display: flex; align-items: center; gap: 0.5rem; line-height: 1; }
+.logo img { height: 0.9rem; }
 .logo .slogan { font-size:0.9rem; font-weight:400; color:var(--mid-gray); }
 .nav-toggle { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; transition:color .2s; }
 .nav-toggle[aria-expanded="true"] { color: var(--accent); }
