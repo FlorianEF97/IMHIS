@@ -1,12 +1,12 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-  <g stroke="#0052a5" stroke-opacity="0.15" stroke-width="2" fill="none">
-    <circle cx="200" cy="200" r="6" fill="#0052a5" fill-opacity="0.15" />
-    <circle cx="600" cy="150" r="6" fill="#0052a5" fill-opacity="0.15" />
-    <circle cx="1000" cy="300" r="6" fill="#0052a5" fill-opacity="0.15" />
-    <circle cx="1400" cy="250" r="6" fill="#0052a5" fill-opacity="0.15" />
-    <circle cx="400" cy="500" r="6" fill="#0052a5" fill-opacity="0.15" />
-    <circle cx="800" cy="550" r="6" fill="#0052a5" fill-opacity="0.15" />
-    <circle cx="1200" cy="600" r="6" fill="#0052a5" fill-opacity="0.15" />
+  <g stroke="#0052a5" stroke-opacity="0.3" stroke-width="2" fill="none">
+    <circle cx="200" cy="200" r="6" fill="#0052a5" fill-opacity="0.3" />
+    <circle cx="600" cy="150" r="6" fill="#0052a5" fill-opacity="0.3" />
+    <circle cx="1000" cy="300" r="6" fill="#0052a5" fill-opacity="0.3" />
+    <circle cx="1400" cy="250" r="6" fill="#0052a5" fill-opacity="0.3" />
+    <circle cx="400" cy="500" r="6" fill="#0052a5" fill-opacity="0.3" />
+    <circle cx="800" cy="550" r="6" fill="#0052a5" fill-opacity="0.3" />
+    <circle cx="1200" cy="600" r="6" fill="#0052a5" fill-opacity="0.3" />
     <line x1="200" y1="200" x2="600" y2="150" />
     <line x1="600" y1="150" x2="1000" y2="300" />
     <line x1="1000" y1="300" x2="1400" y2="250" />
