@@ -24,8 +24,8 @@ body {
 header { background: var(--box); position:sticky; top:0; z-index:10; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
 .nav { max-width:960px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
 .logo { color: var(--primary); display: flex; align-items: center; gap: 0.5rem; line-height: 1; font-size:1rem; text-decoration:none; }
-.logo img { height: 1.25rem; display:block; }
-.logo .slogan { font-size:0.9rem; font-weight:400; color:var(--mid-gray); }
+.logo img { height: 1.5rem; display:block; }
+.logo .slogan { font-size:0.9rem; font-weight:400; color:var(--mid-gray); text-decoration: none; }
 .nav-toggle { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; transition:color .2s; }
 .nav-toggle[aria-expanded="true"] { color: var(--accent); }
 .nav-links { list-style:none; display:flex; }
@@ -75,7 +75,8 @@ header { background: var(--box); position:sticky; top:0; z-index:10; box-shadow:
 .feature p { font-size:0.95rem; color:var(--primary); }
 
 .book-section { display:flex; flex-direction:column-reverse; gap:2rem; align-items:center; margin-top:2rem; }
-.book-section img { max-width:260px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+.book-section img { max-width:260px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08); transition:transform .2s, box-shadow .2s; }
+.book-section img:hover { transform:translateY(-4px) scale(1.02); box-shadow:0 12px 24px rgba(0,0,0,0.15); }
 .book-text { flex:1; max-width:600px; text-align:center; }
 .book-links { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem; }
 .book-links a { background:var(--accent); color:#fff; padding:0.6rem 1rem; border-radius:6px; font-weight:500; transition:background .2s, transform .2s, box-shadow .2s; text-decoration:none; }
