@@ -112,8 +112,19 @@ header {
 
 /* Hero */
 .hero {
+  position: relative;
   text-align: center;
   padding: 4rem 1rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/analysis-bg.svg") no-repeat center/cover;
+  opacity: 0.4;
+  z-index: -1;
 }
 
 .hero .subtitle {
@@ -141,6 +152,12 @@ header {
   padding: 4rem 1rem;
 }
 
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
 .feature-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -148,9 +165,24 @@ header {
   margin-top: 2rem;
 }
 
+.feature {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--box);
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .feature img {
-  height: 40px;
-  margin-bottom: 1rem;
+  display: block;
+  height: 60px;
+  margin: 0 auto 1rem;
 }
 
 .book-section {
@@ -256,5 +288,21 @@ footer.section {
 
   .book-section img {
     max-width: 200px;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .feature {
+    padding: 1rem;
+  }
+
+  .feature img {
+    height: 50px;
+  }
+
+  .content {
+    padding: 2rem 1rem;
   }
 }
