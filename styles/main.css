@@ -7,6 +7,7 @@
   --mid-gray: #94a3b8;
   --box: #ffffff;
   --text: #1e293b;
+  --claim: #1d2c67ff;
 }
 
 html {
@@ -36,19 +37,21 @@ header {
 }
 
 .nav {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   position: relative;
+  border-bottom: 1px solid var(--light-gray);
 }
 
 /* Logo & Claim */
 .logo {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   color: var(--primary);
   text-decoration: none;
 }
@@ -58,10 +61,10 @@ header {
 }
 
 .claim {
-  margin-left: 0.5rem;
   font-size: 0.8rem;
   line-height: 1;
   white-space: nowrap;
+  color: var(--claim);
 }
 
 /* Navigation links */
@@ -72,9 +75,31 @@ header {
 }
 
 .nav-links a {
+  position: relative;
   text-decoration: none;
-  color: var(--link);
+  color: var(--primary);
   font-weight: 500;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .nav-toggle {
@@ -146,8 +171,21 @@ header {
   margin-top: 1rem;
 }
 
-.book-links a {
-  color: var(--link);
+.book-links .buy-btn {
+  display: inline-block;
+  flex: 1 1 150px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.book-links .buy-btn:hover {
+  background: var(--link);
+  transform: translateY(-2px);
 }
 
 /* Footer */
@@ -160,6 +198,23 @@ footer.section {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+/* CTA email button */
+.cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.cta:hover {
+  background: var(--accent);
+  color: #fff;
 }
 
 /* Responsive */
