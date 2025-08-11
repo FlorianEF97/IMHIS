@@ -38,12 +38,12 @@ header {
 }
 
 .nav {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem;
   position: relative;
   border-bottom: 1px solid var(--light-gray);
 }
@@ -156,6 +156,12 @@ header {
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
   text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--link);
+  transform: translateY(-2px);
 }
 
 /* Sections */
@@ -163,6 +169,10 @@ header {
   max-width: 960px;
   margin: 0 auto;
   padding: 4rem 1rem;
+}
+
+#instrument p {
+  font-size: 1.125rem;
 }
 
 .content {
@@ -188,7 +198,7 @@ header {
   max-width: 700px;
   margin: 0 auto 2rem;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .feature-list {
