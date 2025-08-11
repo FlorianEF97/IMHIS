@@ -2,6 +2,7 @@
   --background: #f8fafc;
   --primary: #0f172a;
   --accent: #0052a5;
+  --accent-light: #e6eef7;
   --link: #2563eb;
   --light-gray: #e2e8f0;
   --mid-gray: #94a3b8;
@@ -114,7 +115,7 @@ header {
 .hero {
   position: relative;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 5rem 1rem;
   overflow: hidden;
 }
 
@@ -127,13 +128,24 @@ header {
   z-index: -1;
 }
 
-.hero .subtitle {
-  color: var(--mid-gray);
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
+.hero .subtitle {
+  color: var(--mid-gray);
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
 .hero .tagline {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .btn {
@@ -159,29 +171,38 @@ header {
 }
 
 .dimensionen-section {
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-light);
+  color: var(--primary);
 }
 
 .dimensionen-section h2 {
   text-align: center;
-  color: #fff;
+  color: var(--primary);
+}
+
+.dimensionen-intro {
+  max-width: 700px;
+  margin: 0.5rem auto 2rem;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 .feature-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .feature {
-  text-align: center;
+  text-align: left;
   padding: 1.5rem;
-  background: var(--box);
-  border: 1px solid var(--light-gray);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dbe6f5;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   color: var(--text);
 }
 
@@ -190,10 +211,20 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.feature h3 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
 .feature img {
   display: block;
   height: 60px;
   margin: 0 auto 1rem;
+}
+
+.feature p {
+  hyphens: auto;
+  text-align: left;
 }
 
 .book-section {
@@ -206,7 +237,9 @@ header {
   max-width: 260px;
   height: auto;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .book-cover-link:hover img {
@@ -231,7 +264,10 @@ header {
   border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  transition:
+    background 0.3s,
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .book-links .buy-btn:hover {
@@ -261,7 +297,9 @@ footer.section {
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 .cta:hover {
@@ -271,7 +309,9 @@ footer.section {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .claim { font-size: 0.7rem; }
+  .claim {
+    font-size: 0.7rem;
+  }
   .nav {
     padding: 0.5rem 1rem;
   }
