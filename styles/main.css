@@ -38,12 +38,33 @@ a {
 footer {
   text-align: center;
   padding: 2rem 1rem;
-  background: var(--accent-light);
   border-top: 1px solid var(--light-gray);
 }
 
 footer a {
   color: var(--accent);
+}
+
+.contact-footer {
+  background: var(--accent-light);
+}
+
+.legal-footer {
+  background: var(--background);
+  padding: 1rem 0;
+}
+
+.legal-footer .legal-links {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.legal-footer a {
+  color: var(--mid-gray);
+  font-size: 0.875rem;
 }
 
 /* Header */
@@ -354,29 +375,20 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-footer.section {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
 /* CTA email button */
 .cta {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  background: var(--accent);
+  color: #fff;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
-  transition:
-    background 0.3s,
-    color 0.3s;
+  transition: background 0.3s;
 }
 
 .cta:hover {
-  background: var(--accent);
-  color: #fff;
+  background: var(--primary);
 }
 
 /* Responsive */
