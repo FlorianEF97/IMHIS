@@ -1,2 +1,5 @@
 User-agent: *
+Allow: /
 Disallow: /impressum.html
+
+Sitemap: https://imhis.de/site-map.xml
