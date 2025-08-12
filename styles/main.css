@@ -98,7 +98,7 @@ footer a {
   width: 100%;
   height: var(--header-h);
   z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
+  background: transparent;
   transition:
     background 0.25s ease,
     backdrop-filter 0.25s ease,
@@ -108,22 +108,24 @@ footer a {
 }
 
 .site-header.is-scrolled {
+  background: rgba(23, 37, 84, 0.92);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(23, 37, 84, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   height: calc(var(--header-h) * 0.9);
 }
 
 .site-header.on-light {
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid rgba(23, 37, 84, 0.08);
 }
 
 .site-nav {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 2rem;
   height: 100%;
 }
 
@@ -212,9 +214,9 @@ footer a {
     top: var(--header-h);
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(23, 37, 84, 0.92);
     backdrop-filter: blur(6px);
-    transform: translateY(calc(-100% - var(--header-h)));
+    transform: translateY(-100%);
     transition: transform 0.25s ease;
     flex-direction: column;
     height: calc(100dvh - var(--header-h));
@@ -226,7 +228,7 @@ footer a {
   }
 
   .mobile-drawer .nav-link {
-    color: var(--primary);
+    color: #fff;
     display: block;
     padding: 0.75rem 1rem;
     min-height: 44px;
@@ -234,7 +236,7 @@ footer a {
 
   .mobile-drawer .nav-link:hover,
   .mobile-drawer .nav-link:focus {
-    color: var(--link);
+    color: #2563eb;
   }
 }
 
@@ -248,7 +250,7 @@ footer a {
 .hero {
   position: relative;
   text-align: center;
-  padding: calc(var(--header-h) + 2rem) 1rem 2rem;
+  padding: 4rem 1rem 2rem;
   overflow: hidden;
 }
 
