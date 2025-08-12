@@ -7,6 +7,7 @@ if (toggle && links) {
   const toggleMenu = () => {
     const open = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open);
+    toggle.classList.toggle('open', open);
   };
 
   toggle.addEventListener('click', toggleMenu);
