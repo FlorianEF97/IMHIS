@@ -34,6 +34,12 @@ a {
   text-decoration: none;
 }
 
+/* Utility */
+.accent-text {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -161,7 +167,9 @@ header {
   width: 100%;
   height: 2px;
   background: var(--primary);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .nav-toggle .hamburger {
@@ -193,7 +201,7 @@ header {
 .hero {
   position: relative;
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 4rem 1rem 2rem;
   overflow: hidden;
 }
 
@@ -205,7 +213,6 @@ header {
   opacity: 0.4;
   z-index: -1;
 }
-
 
 .hero-logo {
   display: block;
@@ -242,7 +249,9 @@ header {
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
+  transition:
+    background 0.3s,
+    transform 0.2s;
 }
 
 .btn:hover {
@@ -443,7 +452,7 @@ header {
   }
 
   .hero {
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem 1rem;
   }
 
   .feature {
@@ -462,7 +471,7 @@ header {
 /* Benefits Block */
 .benefits-block {
   max-width: 960px;
-  margin: 2rem auto;
+  margin: 1rem auto 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -479,10 +488,22 @@ header {
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #172554;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(23, 37, 84, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.05),
+    rgba(23, 37, 84, 0.05)
+  );
   border: 1px solid rgba(23, 37, 84, 0.15);
   border-radius: 14px;
   box-shadow: 0 2px 4px rgba(23, 37, 84, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.benefits-block .benefit-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(23, 37, 84, 0.15);
 }
 
 .benefits-block .benefit-item svg {
