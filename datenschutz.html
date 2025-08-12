@@ -21,24 +21,44 @@
     <link rel="manifest" href="/assets/icons/site.webmanifest" />
   </head>
   <body id="top">
-    <header>
-      <nav class="nav">
-        <a href="/index.html#top" class="logo">
+    <header class="site-header">
+      <nav class="site-nav" role="navigation" aria-label="Hauptnavigation">
+        <a href="/" class="site-logo" aria-label="IMHIS – Startseite">
           <img src="assets/Logo_blau.svg" alt="IMHIS Logo" />
         </a>
         <button
           class="nav-toggle"
           aria-label="Menü öffnen"
           aria-expanded="false"
-          aria-controls="nav-links"
+          aria-controls="primary-nav"
         >
-          <span class="hamburger"></span>
+          <svg
+            class="hamburger"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
         </button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="/index.html#instrument">Analyseinstrument</a></li>
-          <li><a href="/index.html#buch">Buch</a></li>
-          <li><a href="/index.html#kontakt">Analyse geplant?</a></li>
-        </ul>
+        <div class="mobile-drawer" id="primary-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="/#instrument">Analyseinstrument</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/#buch">Buch</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#kontakt">Analyse geplant?</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -546,6 +566,6 @@
       </div>
     </footer>
 
-    <script src="scripts/nav.js" defer></script>
+    <script src="scripts/header.js" defer></script>
   </body>
 </html>

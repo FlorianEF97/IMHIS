@@ -91,12 +91,12 @@ footer a {
 }
 
 .site-header {
-  --header-height: 80px;
+  --header-h: 80px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height);
+  height: var(--header-h);
   z-index: 100;
   background: transparent;
   transition:
@@ -111,7 +111,7 @@ footer a {
   background: rgba(23, 37, 84, 0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  height: calc(var(--header-height) - 6px);
+  height: calc(var(--header-h) * 0.9);
 }
 
 .site-header.on-light {
@@ -211,7 +211,7 @@ footer a {
 
   .mobile-drawer {
     position: fixed;
-    top: var(--header-height);
+    top: var(--header-h);
     left: 0;
     right: 0;
     background: rgba(23, 37, 84, 0.92);
@@ -219,6 +219,8 @@ footer a {
     transform: translateY(-100%);
     transition: transform 0.25s ease;
     flex-direction: column;
+    height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
   }
 
   .site-header.is-open .mobile-drawer {
@@ -241,7 +243,7 @@ footer a {
 #instrument,
 #buch,
 #kontakt {
-  scroll-margin-top: var(--header-height);
+  scroll-margin-top: var(--header-h);
 }
 
 /* Hero */
@@ -459,34 +461,6 @@ footer a {
 @media (max-width: 768px) {
   .claim {
     font-size: 0.7rem;
-  }
-  .nav {
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: var(--box);
-    width: 100%;
-    display: none;
-    padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links li {
-    text-align: center;
-    padding: 0.5rem 0;
-  }
-
-  .nav-toggle {
-    display: block;
   }
 
   .book-section {
