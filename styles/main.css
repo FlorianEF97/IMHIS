@@ -28,6 +28,24 @@ body {
   line-height: 1.6;
 }
 
+/* Global link style */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--accent-light);
+  border-top: 1px solid var(--light-gray);
+}
+
+footer a {
+  color: var(--accent);
+}
+
 /* Header */
 header {
   background: var(--box);
@@ -334,12 +352,6 @@ header {
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
 }
 
 footer.section {
