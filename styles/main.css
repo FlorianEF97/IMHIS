@@ -105,10 +105,49 @@ header {
 
 .nav-toggle {
   display: none;
-  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle .hamburger {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-toggle .hamburger::before {
+  top: -6px;
+}
+
+.nav-toggle .hamburger::after {
+  top: 6px;
+}
+
+.nav-toggle.open .hamburger {
+  background: transparent;
+}
+
+.nav-toggle.open .hamburger::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.open .hamburger::after {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Hero */
@@ -169,6 +208,10 @@ header {
   max-width: 960px;
   margin: 0 auto;
   padding: 4rem 1rem;
+}
+
+.section h2 {
+  margin-bottom: 1.5rem;
 }
 
 #instrument p {
@@ -264,28 +307,31 @@ header {
 .book-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1rem;
+  gap: 1rem;
   margin-top: 1rem;
+  justify-content: center;
 }
 
 .book-links .buy-btn {
   display: inline-block;
   flex: 1 1 150px;
   text-align: center;
-  padding: 0.5rem 1rem;
-  background: var(--accent);
-  color: #fff;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  color: var(--accent);
+  border: 2px solid var(--accent);
   border-radius: 8px;
   text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition:
     background 0.3s,
+    color 0.3s,
     transform 0.2s,
     box-shadow 0.2s;
 }
 
 .book-links .buy-btn:hover {
-  background: var(--link);
+  background: var(--accent);
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
