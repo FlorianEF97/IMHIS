@@ -236,50 +236,24 @@
               <span>Evidenzbasierte Empfehlungen</span>
             </li>
           </ul>
-          <div class="book-order">
-            <div class="order-buttons">
-              <a
-                href="https://link.springer.com/book/9783658491895"
-                target="_blank"
-                rel="noopener"
-                class="btn-primary"
-                >Jetzt vorbestellen</a
-              >
-              <button
-                type="button"
-                class="btn-secondary"
-                id="toggle-sellers"
-              >
-                Weitere Händler anzeigen
-              </button>
-            </div>
-            <ul class="seller-list" id="seller-list">
-              <li>
-                <a href="https://www.amazon.de/" target="_blank" rel="noopener"
-                  >Amazon</a
-                >
-              </li>
-              <li>
-                <a href="https://www.thalia.de/" target="_blank" rel="noopener"
-                  >Thalia</a
-                >
-              </li>
-              <li>
-                <a href="https://www.hugendubel.de/" target="_blank" rel="noopener"
-                  >Hugendubel</a
-                >
-              </li>
-              <li>
-                <a href="https://www.beck-shop.de/" target="_blank" rel="noopener"
-                  >Beck</a
-                >
-              </li>
-              <li>
-                <a href="https://www.lehmanns.de/" target="_blank" rel="noopener"
-                  >Lehmanns</a
-                >
-              </li>
-            </ul>
+          <div class="book-cta">
+            <a
+              href="https://link.springer.com/book/9783658491895"
+              target="_blank"
+              rel="noopener"
+              class="btn-primary"
+              >Jetzt vorbestellen</a
+            >
+            <a
+              href="https://link.springer.com/book/9783658491895#about"
+              target="_blank"
+              rel="noopener"
+              class="btn-secondary"
+              >Mehr zum Buch</a
+            >
+            <span class="trust-badge"
+              ><span class="dot"></span>Wissenschaftlich fundiert • Evidenzbasiert</span
+            >
           </div>
         </div>
         <div class="book-cover">
@@ -309,10 +283,5 @@
     </footer>
 
     <script src="scripts/nav.js" defer></script>
-    <script>
-      document.getElementById('toggle-sellers').addEventListener('click', function () {
-        document.getElementById('seller-list').classList.toggle('open');
-      });
-    </script>
   </body>
 </html>
