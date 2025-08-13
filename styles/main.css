@@ -41,10 +41,26 @@ body {
 }
 
 /* Global link style */
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* Accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    transition: top 0.3s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
 
 /* Utility */
 .accent-text {
@@ -240,8 +256,9 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../assets/analysis-bg.svg") no-repeat center/cover;
-  opacity: 0.4;
+  background: linear-gradient(135deg, rgba(0, 82, 165, 0.15), rgba(255, 255, 255, 0.15)),
+    url("../assets/analysis-bg.svg") no-repeat center/cover;
+  opacity: 0.6;
   z-index: -1;
 }
 
