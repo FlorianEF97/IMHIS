@@ -40,6 +40,7 @@
     />
 
     <!-- Stylesheet -->
+    <link rel="preload" href="styles/main.css" as="style" />
     <link rel="stylesheet" href="styles/main.css" />
 
     <!-- Favicon & Touch Icons -->
@@ -181,7 +182,14 @@
       </p>
       <div class="feature-list">
         <div class="feature">
-          <img src="assets/icons/workload.svg" alt="Icon Arbeitsbelastung" />
+          <img
+            src="assets/icons/workload.svg"
+            alt="Icon Arbeitsbelastung"
+            width="60"
+            height="60"
+            loading="lazy"
+            decoding="async"
+          />
           <h3>Arbeitsbelastung</h3>
           <p>
             Erfasst mentale, körperliche und zeitliche Anforderungen sowie
@@ -192,6 +200,10 @@
           <img
             src="assets/icons/satisfaction.svg"
             alt="Icon Nutzerzufriedenheit"
+            width="60"
+            height="60"
+            loading="lazy"
+            decoding="async"
           />
           <h3>Nutzerzufriedenheit</h3>
           <p>
@@ -200,7 +212,14 @@
           </p>
         </div>
         <div class="feature">
-          <img src="assets/icons/communication.svg" alt="Icon Kommunikation" />
+          <img
+            src="assets/icons/communication.svg"
+            alt="Icon Kommunikation"
+            width="60"
+            height="60"
+            loading="lazy"
+            decoding="async"
+          />
           <h3>Kommunikation & Kollaboration</h3>
           <p>
             Zeigt, wie Systeme den intra- und interdisziplinären Austausch
@@ -211,6 +230,10 @@
           <img
             src="assets/icons/info-quality.svg"
             alt="Icon Informationsqualität"
+            width="60"
+            height="60"
+            loading="lazy"
+            decoding="async"
           />
           <h3>Informationsqualität</h3>
           <p>
@@ -222,6 +245,10 @@
           <img
             src="assets/icons/system-quality.svg"
             alt="Icon Systemqualität"
+            width="60"
+            height="60"
+            loading="lazy"
+            decoding="async"
           />
           <h3>Systemqualität</h3>
           <p>
@@ -230,7 +257,14 @@
           </p>
         </div>
         <div class="feature">
-          <img src="assets/icons/process.svg" alt="Icon Arbeitsprozesse" />
+          <img
+            src="assets/icons/process.svg"
+            alt="Icon Arbeitsprozesse"
+            width="60"
+            height="60"
+            loading="lazy"
+            decoding="async"
+          />
           <h3>Arbeitsprozesse</h3>
           <p>
             Analysiert, wie digitale Lösungen Frequenz, Dauer und Ablauf
@@ -270,17 +304,19 @@
           </ul>
           <div class="book-order">
             <div class="order-buttons">
-              <a
-                href="https://link.springer.com/book/9783658491895"
-                target="_blank"
-                rel="noopener"
-                class="btn-primary"
-                >Jetzt vorbestellen</a
-              >
+                <a
+                  href="https://link.springer.com/book/9783658491895"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary"
+                  >Jetzt vorbestellen</a
+                >
               <button
                 type="button"
                 class="btn-secondary"
                 id="toggle-sellers"
+                aria-expanded="false"
+                aria-controls="seller-list"
               >
                 Weitere Händler anzeigen
               </button>
@@ -289,29 +325,29 @@
               <span class="dot"></span>
               Wissenschaftlich fundiert • Evidenzbasiert
             </div>
-            <ul class="seller-list" id="seller-list">
+            <ul class="seller-list" id="seller-list" hidden>
               <li>
-                <a href="https://www.amazon.de/Digitale-Systeme-echte-Wirkung-Gesundheitsökonomik/dp/3658491892?crid=2O4DADQ9ISLI9&dib=eyJ2IjoiMSJ9.j-VmW4B5Iyoke5SAeRCBY12jfa-au-lwphdi5R239rnzLAV_xmaWWBrnyLieFPeHIj5sJbD-8RDkd7DwMCuRb6SROLnP_syEP3-j-Fe1YZJa_dH2kIS3jMEaN9h6WDjUmPDTGDjcnF4POmoUWqQPgUxqqit_0qZngu0xMgWpa_8NzXyNri_3GBLJPpJgIwfy5xJwJm5FrVITMI2Vx18vYW7fkir3J2I6_cdL42YoQI8.bBobYkh7oLQPje2unTrPvijVTkuAZFf5HpP0QTeUwFc&dib_tag=se&keywords=florian+eisold&qid=1753264216&sprefix=,aps,87&sr=8-1&linkCode=sl1&tag=imhis-21&linkId=1682741cf953af0eb7341db188a59180&language=de_DE&ref_=as_li_ss_tl" target="_blank" rel="noopener"
+                  <a href="https://www.amazon.de/Digitale-Systeme-echte-Wirkung-Gesundheitsökonomik/dp/3658491892?crid=2O4DADQ9ISLI9&dib=eyJ2IjoiMSJ9.j-VmW4B5Iyoke5SAeRCBY12jfa-au-lwphdi5R239rnzLAV_xmaWWBrnyLieFPeHIj5sJbD-8RDkd7DwMCuRb6SROLnP_syEP3-j-Fe1YZJa_dH2kIS3jMEaN9h6WDjUmPDTGDjcnF4POmoUWqQPgUxqqit_0qZngu0xMgWpa_8NzXyNri_3GBLJPpJgIwfy5xJwJm5FrVITMI2Vx18vYW7fkir3J2I6_cdL42YoQI8.bBobYkh7oLQPje2unTrPvijVTkuAZFf5HpP0QTeUwFc&dib_tag=se&keywords=florian+eisold&qid=1753264216&sprefix=,aps,87&sr=8-1&linkCode=sl1&tag=imhis-21&linkId=1682741cf953af0eb7341db188a59180&language=de_DE&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer"
                   >Amazon</a
                 >
               </li>
               <li>
-                <a href="https://www.thalia.de/shop/home/artikeldetails/A1076117813" target="_blank" rel="noopener"
+                <a href="https://www.thalia.de/shop/home/artikeldetails/A1076117813" target="_blank" rel="noopener noreferrer"
                   >Thalia</a
                 >
               </li>
               <li>
-                <a href="https://www.hugendubel.de/de/taschenbuch/florian_eisold-digitale_systeme_echte_wirkung_was_klinikpersonal_wirklich_braucht-51233049-produkt-details.html" target="_blank" rel="noopener"
+                <a href="https://www.hugendubel.de/de/taschenbuch/florian_eisold-digitale_systeme_echte_wirkung_was_klinikpersonal_wirklich_braucht-51233049-produkt-details.html" target="_blank" rel="noopener noreferrer"
                   >Hugendubel</a
                 >
               </li>
               <li>
-                <a href="https://www.beck-shop.de/eisold-digitale-systeme-echte-wirkung-klinikpersonal-wirklich-braucht/product/39813366?srsltid=AfmBOoqApm7btIF9YmpL0OJ4kn70CqQv1inc4akooVxl-dFWskIIcQvh" target="_blank" rel="noopener"
+                <a href="https://www.beck-shop.de/eisold-digitale-systeme-echte-wirkung-klinikpersonal-wirklich-braucht/product/39813366?srsltid=AfmBOoqApm7btIF9YmpL0OJ4kn70CqQv1inc4akooVxl-dFWskIIcQvh" target="_blank" rel="noopener noreferrer"
                   >Beck</a
                 >
               </li>
               <li>
-                <a href="https://www.lehmanns.de/shop/technik/80689094-9783658491895-digitale-systeme-echte-wirkung-was-klinikpersonal-wirklich-braucht" target="_blank" rel="noopener"
+                <a href="https://www.lehmanns.de/shop/technik/80689094-9783658491895-digitale-systeme-echte-wirkung-was-klinikpersonal-wirklich-braucht" target="_blank" rel="noopener noreferrer"
                   >Lehmanns</a
                 >
               </li>
@@ -374,11 +410,7 @@
       </div>
     </footer>
 
-    <script src="scripts/nav.js" defer></script>
-    <script>
-      document.getElementById('toggle-sellers').addEventListener('click', function () {
-        document.getElementById('seller-list').classList.toggle('open');
-      });
-    </script>
-  </body>
-</html>
+      <script src="scripts/nav.js" defer></script>
+      <script src="scripts/sellers.js" defer></script>
+    </body>
+  </html>
