@@ -815,7 +815,7 @@ header {
 }
 
 /* Typografie */
-.section.instrument-pro .eyebrow{
+.section .eyebrow{
   color: #2563eb;
   font-weight: 600;
   letter-spacing: .06em;
