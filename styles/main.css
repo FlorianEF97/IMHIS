@@ -100,7 +100,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem 1rem 0;
+  padding: 0.5rem 1rem;
   position: relative;
   border-bottom: 1px solid var(--light-gray);
 }
@@ -119,8 +119,9 @@ header {
   width: auto;
 }
 
+/* Logo claim */
 .claim {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 1;
   white-space: nowrap;
   color: var(--claim);
@@ -129,8 +130,16 @@ header {
 /* Navigation links */
 .nav-links {
   list-style: none;
-  display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--box);
+  width: 100%;
+  display: none;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  gap: 1rem;
 }
 
 .nav-links a {
@@ -157,12 +166,21 @@ header {
   color: var(--accent);
 }
 
+.nav-links.open {
+  display: flex;
+}
+
+.nav-links li {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
 .nav-links a:hover::after {
   width: 100%;
 }
 
 .nav-toggle {
-  display: none;
+  display: block;
   width: 2rem;
   height: 2rem;
   position: relative;
@@ -214,7 +232,7 @@ header {
 .hero {
   position: relative;
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 2.5rem 1rem 1rem;
   overflow: hidden;
 }
 
@@ -296,7 +314,7 @@ header {
 .content {
   max-width: 960px;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .dimensionen-section {
@@ -328,7 +346,7 @@ header {
 
 .feature {
   text-align: left;
-  padding: 1.5rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid #dbe6f5;
   border-radius: 8px;
@@ -350,7 +368,7 @@ header {
 
 .feature img {
   display: block;
-  height: 60px;
+  height: 50px;
   margin: 0 auto 1rem;
 }
 
@@ -436,6 +454,7 @@ header {
 
 .book-section .order-buttons {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -452,6 +471,18 @@ header {
   text-decoration: none;
   transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
   font-size: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 641px) {
+  .book-section .order-buttons {
+    flex-direction: row;
+  }
+
+  .book-section .order-buttons .btn-primary,
+  .book-section .order-buttons .btn-secondary {
+    width: auto;
+  }
 }
 
 .book-section .order-buttons .btn-primary {
@@ -538,16 +569,6 @@ header {
   text-decoration: underline;
 }
 
-@media (max-width: 640px) {
-  .book-section .order-buttons {
-    flex-direction: column;
-  }
-
-  .book-section .order-buttons .btn-primary,
-  .book-section .order-buttons .btn-secondary {
-    width: 100%;
-  }
-}
 
 
 
@@ -576,7 +597,8 @@ header {
 
 /* CTA email button */
 .cta {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -603,63 +625,53 @@ header {
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
-@media (max-width: 600px) {
+@media (min-width: 601px) {
   .cta {
-    display: flex;
-    width: 100%;
+    display: inline-flex;
+    width: auto;
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Desktop layout */
+@media (min-width: 768px) {
   .claim {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .nav {
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem 1rem 0;
   }
-
   .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: var(--box);
-    width: 100%;
-    display: none;
-    padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-
-  .nav-links.open {
+    flex-direction: row;
+    position: static;
     display: flex;
+    width: auto;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    gap: 1.5rem;
   }
-
   .nav-links li {
-    text-align: center;
-    padding: 0.5rem 0;
+    text-align: left;
+    padding: 0;
   }
-
   .nav-toggle {
-    display: block;
+    display: none;
   }
-
-    .hero {
-      padding: 2.5rem 1rem 1rem;
-    }
-
+  .hero {
+    padding: 4rem 1rem 2rem;
+  }
   .feature {
-    padding: 1rem;
+    padding: 1.5rem;
   }
-
   .feature img {
-    height: 50px;
+    height: 60px;
   }
-
   .content {
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
   }
 }
+
+
 
 /* Benefits Block */
 .benefits-block {
@@ -668,7 +680,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 .benefits-block .benefit-item {
@@ -704,26 +717,27 @@ header {
 }
 
 .benefits-block .benefit-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -1rem;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 60%;
-  background: rgba(23, 37, 84, 0.15);
+  content: none;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 641px) {
   .benefits-block {
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: row;
+    gap: 2rem;
   }
 
   .benefits-block .benefit-item:not(:last-child)::after {
-    display: none;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1rem;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background: rgba(23, 37, 84, 0.15);
   }
 }
+
 /* ===== DIMENSIONS (PeopleIX) – gleiche Breite/Surface wie .book-section, fließender Übergang ===== */
 .section.dimensionen-section.dim-matched{
   max-width: 1200px;                          /* exakt wie .book-section */
@@ -755,12 +769,12 @@ header {
   display:grid; grid-template-columns:repeat(12,1fr);
   gap:clamp(1rem,2vw,1.5rem); margin-top:1.6rem;
 }
-@media (max-width:639px){  .section.dimensionen-section .dim-card{ grid-column:span 12; } }
 @media (min-width:640px){  .section.dimensionen-section .dim-card{ grid-column:span 6; } }
 @media (min-width:1024px){ .section.dimensionen-section .dim-card{ grid-column:span 4; } }
 
 /* Cards – airy, crisp */
 .section.dimensionen-section .dim-card{
+  grid-column:span 12;
   background:#fff; border:1px solid #dbe6f5; border-radius:16px; padding:1.25rem;
   display:flex; flex-direction:column; gap:.5rem; text-align:left;
   transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
