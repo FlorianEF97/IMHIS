@@ -791,3 +791,70 @@ header {
 
 /* Safety: keine CTAs innerhalb dieser Section (soll es nicht geben) */
 .dim-peopleix .btn-primary, .dim-peopleix .btn-secondary{ display:none !important; }
+
+/* ===== Instrument (agency-grade, matched to Book/Dimensionen) ===== */
+/* Shell & Layout */
+.section.instrument-pro .instrument-outer { max-width: 1200px; margin: 0 auto; }
+.section.instrument-pro .instrument-inner {
+  max-width: 720px;                 /* fokussierte Lesespalte wie in der Vorschau */
+  margin: 0 auto;
+  text-align: left;
+  background:
+    radial-gradient(circle at 22% 8%, rgba(37,99,235,0.045), transparent 65%),
+    #fff;                           /* dezente Surface wie Book/Dimensionen */
+  border: 1px solid rgba(23,37,84,0.10);
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(23,37,84,0.05);
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1.25rem, 3vw, 1.75rem);
+}
+
+/* Typografie */
+.section.instrument-pro .eyebrow{
+  color: #2563eb;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin: 0 0 .25rem 0;
+}
+.section.instrument-pro h2{
+  color: #172554;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  margin: .2rem 0 .6rem 0;
+}
+.section.instrument-pro .lead{
+  color: #1e293b;
+  font-size: clamp(1.05rem, 1.15vw, 1.125rem);
+  line-height: 1.7;
+  margin: 0 0 .6rem 0;
+}
+.section.instrument-pro .lead .emph{ color: #172554; font-weight: 700; }
+.section.instrument-pro .body{
+  color: #334155;
+  font-size: clamp(1rem, 1.05vw, 1.06rem);
+  line-height: 1.7;
+  margin: 0;
+}
+.section.instrument-pro .accent-text{ color: #2563eb; font-weight: 600; }
+
+/* Weiche optische Übergänge oben/unten */
+.section.instrument-pro .instrument-bridge{
+  height: 16px;
+  opacity: .6;
+  margin: 10px 0;
+  background: transparent;
+}
+.section.instrument-pro .instrument-bridge--top{
+  background: radial-gradient(70% 140% at 50% 0%, rgba(37,99,235,.06), transparent 70%);
+}
+.section.instrument-pro .instrument-bridge--bottom{
+  background: radial-gradient(70% 140% at 50% 100%, rgba(37,99,235,.07), transparent 70%);
+}
+
+/* Mobile Fine‑Tune */
+@media (max-width: 640px){
+  .section.instrument-pro .instrument-inner { padding: 1.25rem 1rem; }
+}
+
