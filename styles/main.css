@@ -829,10 +829,10 @@ header {
   margin: 0 0 .25rem 0;
 }
 
-/* Ensure eyebrow labels are uniform across sections */
+/* Match Dimensionen and Book eyebrow text size with Instrument section */
 .section.dimensionen-section .eyebrow,
 .section.book-section .eyebrow{
-  font-size: .8rem !important;
+  font-size: 1.125rem;
 }
 .section.instrument-pro h2{
   color: #172554;
