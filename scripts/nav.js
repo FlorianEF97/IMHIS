@@ -29,11 +29,11 @@ if (toggle && links) {
     }
   });
 
-  linkItems.forEach((link) =>
-    link.addEventListener("click", () => {
-      if (links.classList.contains("open")) {
-        toggleMenu();
-      }
-    }),
-  );
+    linkItems.forEach((link) =>
+      link.addEventListener("click", () => {
+        if (links.classList.contains("open")) {
+          toggleMenu();
+        }
+      })
+    );
 }
