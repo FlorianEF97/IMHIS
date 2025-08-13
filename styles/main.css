@@ -134,19 +134,19 @@ header {
   position: absolute;
   top: 100%;
   right: 0;
-  background: var(--accent-light);
+  background: var(--box);
   width: 100%;
   display: none;
-  padding: 0.5rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid var(--light-gray);
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  gap: 1rem;
 }
 
 .nav-links a {
   position: relative;
   text-decoration: none;
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 500;
   padding: 0.25rem 0;
   transition: color 0.3s ease;
 }
@@ -172,12 +172,7 @@ header {
 
 .nav-links li {
   text-align: center;
-  padding: 0.75rem 1rem;
-  border-top: 1px solid var(--light-gray);
-}
-
-.nav-links li:first-child {
-  border-top: none;
+  padding: 0.5rem 0;
 }
 
 .nav-links a:hover::after {
