@@ -115,7 +115,8 @@ header {
 }
 
 .logo img {
-  height: 40px;
+  height: clamp(40px, 8vw, 60px);
+  width: auto;
 }
 
 .claim {

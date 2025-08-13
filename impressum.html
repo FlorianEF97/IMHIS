@@ -16,6 +16,14 @@
       <link rel="preload" href="styles/main.css" as="style" />
       <link rel="stylesheet" href="styles/main.css" />
 
+    <!-- Preload header logo to improve load time -->
+    <link
+      rel="preload"
+      href="assets/Logo_blau.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+
     <!-- Favicon & Touch Icons -->
     <link rel="icon" href="/assets/icons/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
@@ -33,9 +41,8 @@
             <img
               src="assets/Logo_blau.svg"
               alt="IMHIS Logo"
-              width="137"
-              height="40"
               decoding="async"
+              fetchpriority="high"
             />
         </a>
         <button
