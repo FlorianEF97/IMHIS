@@ -886,6 +886,10 @@ header {
 }
 
 /* Legal pages (Impressum & Datenschutz) */
+.legal-content .section {
+  padding: 2rem 1rem;
+}
+
 .legal-content h1 {
   color: var(--primary);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
@@ -910,13 +914,15 @@ header {
 }
 
 .legal-content p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
 }
 
 .legal-content ul,
 .legal-content ol {
-  margin: 0 0 1rem 1.25rem;
+  margin: 0 0 1.25rem 1.25rem;
   padding-left: 1.25rem;
+  line-height: 1.7;
 }
 
 .legal-content a {
