@@ -437,7 +437,9 @@ header {
 .book-section .order-buttons .btn-primary {
   background: #2563eb;
   color: #fff;
-  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  padding: 0.625rem 1.25rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
 }
 
 .book-section .order-buttons .btn-primary:hover {
@@ -455,11 +457,30 @@ header {
   border-color: #2563eb;
 }
 
+.book-section .trust-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #17255499;
+}
+
+.book-section .trust-badge .dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #2563eb;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
 .book-section .seller-list {
   list-style: none;
   margin-top: 1rem;
   padding: 0;
   display: none;
+  width: 100%;
+  text-align: center;
 }
 
 .book-section .seller-list.open {
@@ -487,6 +508,12 @@ header {
   .book-section .order-buttons .btn-primary,
   .book-section .order-buttons .btn-secondary {
     width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  .book-section .trust-badge {
+    justify-content: flex-end;
   }
 }
 
