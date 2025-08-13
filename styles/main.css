@@ -781,17 +781,16 @@ header {
   color:#172554cc; font-size:clamp(1rem,1.2vw,1.125rem); max-width:720px; margin:0;
 }
 
-/* Grid 1/2/3 Spalten */
+/* Responsive grid for the six dimension cards */
 .section.dimensionen-section .dim-grid{
-  display:grid; grid-template-columns:repeat(12,1fr);
-  gap:clamp(1rem,2vw,1.5rem); margin-top:1.6rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:clamp(1rem,2vw,1.5rem);
+  margin-top:1.6rem;
 }
-@media (min-width:640px){  .section.dimensionen-section .dim-card{ grid-column:span 6; } }
-@media (min-width:1024px){ .section.dimensionen-section .dim-card{ grid-column:span 4; } }
 
 /* Cards – airy, crisp */
 .section.dimensionen-section .dim-card{
-  grid-column:span 12;
   background:#fff; border:1px solid #dbe6f5; border-radius:16px; padding:1.25rem;
   display:flex; flex-direction:column; gap:.5rem; text-align:left;
   transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
