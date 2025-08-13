@@ -373,23 +373,36 @@ header {
   flex: 1 1 150px;
   text-align: center;
   padding: 0.75rem 1rem;
-  background: #fff;
-  color: var(--accent);
-  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
   border-radius: 8px;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background 0.3s,
-    color 0.3s,
-    transform 0.2s,
-    box-shadow 0.2s;
+    transform 0.2s;
 }
 
 .book-links .buy-btn:hover {
-  background: var(--accent);
-  color: #fff;
+  background: var(--link);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .book-links {
+    flex-direction: column;
+  }
+
+  .book-links .buy-btn {
+    flex: 1 1 100%;
+  }
+
+  .cta {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 /* CTA email button */
@@ -398,14 +411,17 @@ header {
   padding: 0.75rem 1.5rem;
   background: var(--accent);
   color: #fff;
-  border-radius: 4px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.2s;
 }
 
 .cta:hover {
-  background: var(--primary);
+  background: var(--link);
+  transform: translateY(-2px);
 }
 
 /* Responsive */
