@@ -15,6 +15,18 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -228,6 +240,7 @@ header {
 }
 
 .hero .tagline {
+  margin-top: 0;
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
   font-weight: 600;
