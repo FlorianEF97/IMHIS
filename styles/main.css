@@ -797,7 +797,7 @@ header {
 /* Shell & Layout */
 .section.instrument-pro .instrument-outer {
   max-width: 1200px;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 0.75rem;
   background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.08), transparent 70%), #fff;
   border: 1px solid rgba(23,37,84,0.10);
   border-radius: 20px;
@@ -806,7 +806,7 @@ header {
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 @media (min-width:1024px){
-  .section.instrument-pro .instrument-outer{ padding:4rem 2rem; margin-bottom:1.5rem; }
+  .section.instrument-pro .instrument-outer{ padding:4rem 2rem; margin-bottom:1rem; }
 }
 .section.instrument-pro .instrument-inner {
   max-width: 720px;
@@ -822,6 +822,12 @@ header {
   text-transform: uppercase;
   font-size: .8rem;
   margin: 0 0 .25rem 0;
+}
+
+/* Ensure eyebrow labels are uniform across sections */
+.section.dimensionen-section .eyebrow,
+.section.book-section .eyebrow{
+  font-size: .8rem;
 }
 .section.instrument-pro h2{
   color: #172554;
