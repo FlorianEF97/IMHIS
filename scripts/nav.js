@@ -8,6 +8,7 @@ if (toggle && links) {
     const open = links.classList.toggle("open");
     toggle.setAttribute("aria-expanded", open);
     toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
   };
 
   toggle.addEventListener("click", toggleMenu);
