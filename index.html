@@ -74,36 +74,38 @@
     />
     <link rel="manifest" href="/assets/icons/site.webmanifest" />
   </head>
-  <body id="top">
-    <header>
-      <nav class="nav">
-        <a href="#top" class="logo">
-          <img
-            src="assets/Logo_blau.svg"
-            alt="IMHIS Logo"
-            decoding="async"
-            fetchpriority="high"
-            width="398"
-            height="74"
-          />
-        </a>
-        <button
-          class="nav-toggle"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-          aria-controls="nav-links"
-        >
-          <span class="hamburger"></span>
-        </button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#instrument">Analyseinstrument</a></li>
-          <li><a href="#buch">Buch</a></li>
-          <li><a href="#kontakt">Analyse geplant?</a></li>
-        </ul>
-      </nav>
-    </header>
+    <body id="top">
+      <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+      <header>
+        <nav class="nav">
+          <a href="#top" class="logo">
+            <img
+              src="assets/Logo_blau.svg"
+              alt="IMHIS Logo"
+              decoding="async"
+              fetchpriority="high"
+              width="398"
+              height="74"
+            />
+          </a>
+          <button
+            class="nav-toggle"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span class="hamburger"></span>
+          </button>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#instrument">Analyseinstrument</a></li>
+            <li><a href="#buch">Buch</a></li>
+            <li><a href="#kontakt">Analyse geplant?</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <section class="hero">
+      <main id="main-content">
+        <section class="hero">
       <img
         src="assets/Logo__kein_Claimblau.svg"
         alt="IMHIS Logo"
@@ -370,9 +372,10 @@
           </picture>
         </div>
       </div>
-    </section>
+        </section>
+      </main>
 
-    <footer id="kontakt" class="contact-footer">
+      <footer id="kontakt" class="contact-footer">
       <a href="mailto:florian.eisold@icloud.com" class="cta">
         <svg
           width="20"
