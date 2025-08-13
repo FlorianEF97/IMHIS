@@ -522,14 +522,6 @@ header {
 }
 
 
-@media (max-width: 600px) {
-  .cta {
-    display: block;
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-}
 
 @media (min-width: 1024px) {
   .book-section {
@@ -556,21 +548,38 @@ header {
 
 /* CTA email button */
 .cta {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
-  transition:
-    background 0.3s,
-    transform 0.2s;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--link), #1e40af);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.cta svg {
+  width: 20px;
+  height: 20px;
 }
 
 .cta:hover {
-  background: var(--link);
+  background: linear-gradient(135deg, #1e4fd1, #1e3a8a);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 600px) {
+  .cta {
+    display: flex;
+    width: 100%;
+  }
 }
 
 /* Responsive */
