@@ -741,13 +741,13 @@ header {
 .section.dimensionen-section .dim-wrapper{ max-width: 100%; }
 
 /* Headline/Intro wie Book-Section */
-.section.dimensionen-section .dim-head{ text-align: center; }
+.section.dimensionen-section .dim-head{ text-align: left; }
 .section.dimensionen-section .dim-head h2{
   color:#172554; font-weight:700; letter-spacing:-.01em;
   font-size:clamp(1.6rem,2.2vw,2rem); margin-bottom:.6rem;
 }
 .section.dimensionen-section .dim-intro{
-  color:#172554cc; font-size:clamp(1rem,1.2vw,1.125rem); max-width:720px; margin:0 auto;
+  color:#172554cc; font-size:clamp(1rem,1.2vw,1.125rem); max-width:720px; margin:0;
 }
 
 /* Grid 1/2/3 Spalten */
