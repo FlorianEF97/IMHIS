@@ -12,6 +12,22 @@ if (toggle && links) {
 
   toggle.addEventListener("click", toggleMenu);
 
+  document.addEventListener("click", (e) => {
+    if (
+      links.classList.contains("open") &&
+      !links.contains(e.target) &&
+      !toggle.contains(e.target)
+    ) {
+      toggleMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && links.classList.contains("open")) {
+      toggleMenu();
+    }
+  });
+
   linkItems.forEach((link) =>
     link.addEventListener("click", () => {
       if (links.classList.contains("open")) {
