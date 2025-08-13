@@ -871,3 +871,51 @@ header {
   background: radial-gradient(80% 140% at 50% 100%, rgba(37,99,235,.08), transparent 70%);
 }
 
+/* Legal pages (Impressum & Datenschutz) */
+.legal-content h1 {
+  color: var(--primary);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.legal-content h2 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.legal-content h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-content p {
+  margin-bottom: 1rem;
+}
+
+.legal-content ul,
+.legal-content ol {
+  margin: 0 0 1rem 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.legal-content a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.back-home {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.back-home a {
+  font-weight: 600;
+}
+
