@@ -432,6 +432,7 @@ header {
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  font-size: 1rem;
 }
 
 .book-section .order-buttons .btn-primary {
@@ -458,20 +459,29 @@ header {
 }
 
 .book-section .trust-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.5rem;
+  margin: 0.75rem auto 0;
+  padding: 0.4rem 0.8rem;
   font-size: 0.875rem;
-  color: #17255499;
+  color: rgba(23, 37, 84, 0.85);
+  background: rgba(23, 37, 84, 0.08);
+  border-radius: 999px;
+  width: fit-content;
+  transition: box-shadow 0.3s;
 }
 
 .book-section .trust-badge .dot {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 6px;
+  height: 6px;
   background: #2563eb;
   border-radius: 50%;
   margin-right: 0.5rem;
+}
+
+.book-section .trust-badge:hover {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.06);
 }
 
 .book-section .seller-list {
@@ -511,11 +521,6 @@ header {
   }
 }
 
-@media (min-width: 640px) {
-  .book-section .trust-badge {
-    justify-content: flex-end;
-  }
-}
 
 @media (max-width: 600px) {
   .cta {
