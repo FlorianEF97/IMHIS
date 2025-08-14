@@ -420,6 +420,10 @@ header {
   order: 2;
 }
 
+.book-cover a {
+  display: block;
+}
+
 .book-cover picture,
 .book-cover img {
   width: 100%;
@@ -428,6 +432,13 @@ header {
   border-radius: 16px;
   border: 1px solid rgba(23, 37, 84, 0.1);
   box-shadow: 0 8px 40px rgba(23, 37, 84, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-cover a:hover img,
+.book-cover a:focus img {
+  transform: scale(1.03);
+  box-shadow: 0 12px 48px rgba(23, 37, 84, 0.12);
 }
 
 .book-info h2 {
