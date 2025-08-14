@@ -431,14 +431,16 @@ header {
   aspect-ratio: 3 / 4;
   border-radius: 16px;
   border: 1px solid rgba(23, 37, 84, 0.1);
-  box-shadow: 0 8px 40px rgba(23, 37, 84, 0.06);
+  box-shadow: 8px 0 15px rgba(23, 37, 84, 0.1),
+    0 8px 15px rgba(23, 37, 84, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .book-cover a:hover img,
 .book-cover a:focus img {
   transform: scale(1.03);
-  box-shadow: 0 12px 48px rgba(23, 37, 84, 0.12);
+  box-shadow: 12px 0 24px rgba(23, 37, 84, 0.15),
+    0 12px 24px rgba(23, 37, 84, 0.15);
 }
 
 .book-info h2 {
