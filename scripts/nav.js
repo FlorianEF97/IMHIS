@@ -4,6 +4,7 @@ const links = document.querySelector(".nav-links");
 if (toggle && links) {
   function toggleMenu() {
     const open = links.classList.toggle("open");
+    links.hidden = !open;
     toggle.setAttribute("aria-expanded", open);
     toggle.classList.toggle("open", open);
     toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
