@@ -915,6 +915,9 @@ header {
 }
 
 /* Legal pages (Impressum & Datenschutz) */
+.legal-content {
+  max-width: 1200px;
+}
 .legal-content .section {
   padding: 2rem 1rem;
 }
