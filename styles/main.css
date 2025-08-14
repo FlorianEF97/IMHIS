@@ -49,17 +49,18 @@ body {
   /* Accessibility */
   .skip-link {
     position: absolute;
-    top: -40px;
+    top: 0;
     left: 0;
     background: var(--accent);
     color: #fff;
     padding: 0.5rem 1rem;
     z-index: 100;
-    transition: top 0.3s ease;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
   }
 
   .skip-link:focus {
-    top: 0;
+    transform: translateY(0);
   }
 
 /* Utility */
