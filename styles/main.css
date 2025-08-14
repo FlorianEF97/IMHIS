@@ -424,7 +424,10 @@ header {
   display: block;
 }
 
-.book-cover picture,
+.book-cover picture {
+  display: block;
+}
+
 .book-cover img {
   width: 100%;
   height: auto;
