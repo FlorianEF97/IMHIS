@@ -172,6 +172,12 @@ header {
     cursor: pointer;
   }
 
+  .lang-btn img {
+    width: 1.5rem;
+    height: auto;
+    display: block;
+  }
+
   .nav-links a::after,
   .nav-links button::after {
     content: "";

@@ -12,7 +12,7 @@ function setLanguage(lang) {
   });
 
   if (langButton) {
-    langButton.textContent = english ? "Deutsch" : "English";
+    langButton.setAttribute("aria-label", english ? "Deutsch" : "English");
   }
 
   const navToggle = document.querySelector(".nav-toggle");
