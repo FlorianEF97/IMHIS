@@ -59,7 +59,10 @@
           "@type": "Person",
           "name": "Florian Eisold"
         },
-        "image": "https://imhis.de/9783658491895-3.jpeg",
+        "image": [
+          "https://imhis.de/assets/9783658491895-3.webp",
+          "https://imhis.de/9783658491895-3.jpeg"
+        ],
         "isbn": "9783658491895",
         "url": "https://link.springer.com/book/9783658491895"
       }
@@ -96,9 +99,9 @@
     <!-- Preload book cover image to improve LCP -->
     <link
       rel="preload"
-      href="9783658491895-3.jpeg"
+      href="assets/9783658491895-3.webp"
       as="image"
-      type="image/jpeg"
+      type="image/webp"
       fetchpriority="high"
     />
 
@@ -162,10 +165,26 @@
             </li>
             <li class="lang-switcher">
               <button class="lang-btn" data-lang="de" aria-label="Deutsch">
-                <img src="assets/icons/flag-de.svg" alt="Deutsch" />
+                <img
+                  src="assets/icons/flag-de.svg"
+                  alt="Deutsch"
+                  width="24"
+                  height="24"
+                  decoding="async"
+                  loading="lazy"
+                  fetchpriority="low"
+                />
               </button>
               <button class="lang-btn" data-lang="en" aria-label="English">
-                <img src="assets/icons/flag-gb.svg" alt="English" />
+                <img
+                  src="assets/icons/flag-gb.svg"
+                  alt="English"
+                  width="24"
+                  height="24"
+                  decoding="async"
+                  loading="lazy"
+                  fetchpriority="low"
+                />
               </button>
             </li>
           </ul>
@@ -577,15 +596,18 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              src="9783658491895-3.jpeg"
-              alt="Buchcover: Digitale Systeme – echte Wirkung"
-              data-alt-en="Book cover: Digital Systems – Real Impact"
-              fetchpriority="high"
-              width="827"
-              height="1173"
-              decoding="async"
-            />
+            <picture>
+              <source srcset="assets/9783658491895-3.webp" type="image/webp" />
+              <img
+                src="9783658491895-3.jpeg"
+                alt="Buchcover: Digitale Systeme – echte Wirkung"
+                data-alt-en="Book cover: Digital Systems – Real Impact"
+                fetchpriority="high"
+                width="827"
+                height="1173"
+                decoding="async"
+              />
+            </picture>
           </a>
         </div>
       </div>
