@@ -160,17 +160,17 @@
       transform="scale(1.0170928,0.98319445)" aria-label="S"/>
 
     <!-- Kugel: identischer Takt & simultaner Fade bei 92% -->
-    <circle id="runnerDot" r="1.38" fill="#254c90">
-      <animateMotion dur="3.2s" repeatCount="indefinite" calcMode="linear"
-                     keyTimes="0;0.8;0.92;1" keyPoints="0;1;1;1">
-        <mpath xlink:href="#dataPath" href="#dataPath"/>
-      </animateMotion>
-      <animate attributeName="opacity"
-               values="0;1;1;0;0"
-               keyTimes="0;0.1;0.92;0.9201;1"
-               dur="3.2s"
-               repeatCount="indefinite"/>
-    </circle>
+<circle id="runnerDot" r="1.38" fill="#254c90">
+  <animateMotion dur="3.2s" repeatCount="indefinite" calcMode="linear"
+                 keyTimes="0;0.8;0.92;1" keyPoints="0;1;1;1">
+    <mpath xlink:href="#dataPath" href="#dataPath"/>
+  </animateMotion>
+  <animate attributeName="opacity"
+           values="1;1;1;0;0"
+           keyTimes="0;0.8;0.92;0.9201;1"
+           dur="3.2s"
+           repeatCount="indefinite"/>
+</circle>
   </g>
 </svg>
 
