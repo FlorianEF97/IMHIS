@@ -165,6 +165,7 @@ header {
     text-decoration: none;
     color: var(--primary);
     font-weight: 500;
+    font-size: 1.125rem;
     padding: 0.25rem 0;
     transition: color 0.3s ease;
     background: none;
@@ -202,6 +203,12 @@ header {
 .nav-links li {
   text-align: center;
   padding: 0.5rem 0;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
   .nav-links a:hover::after,
