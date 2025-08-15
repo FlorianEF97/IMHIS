@@ -111,69 +111,85 @@
 
       <main id="main-content">
         <section class="hero">
-  <!-- Ersetzt das bisherige <img class="hero-logo" …> -->
   <svg class="hero-logo"
-       viewBox="0 0 47.738049 13.619491"
-       role="img"
-       aria-label="IMHIS – Damit Digitalisierung wirkt"
-       xmlns="http://www.w3.org/2000/svg"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       style="display:block; width:320px; max-width:100%; height:auto;">
-    <style>
-      :root{
-        --brand:#203361;  /* Wortmarke */
-        --accent:#254c90; /* Akzent/Datenlinie + I-Stäbe + Punkt */
-      }
-      /* Linie zeichnet sich einmal und bleibt sichtbar */
-      #dataPath{
-        stroke-dasharray:1000;
-        stroke-dashoffset:1000;
-        animation: draw 2.2s ease-out forwards;
-      }
-      @keyframes draw { to { stroke-dashoffset:0; } }
-      /* Barrierefreiheit */
-      @media (prefers-reduced-motion: reduce){
-        #dataPath{ animation:none; stroke-dashoffset:0; }
-        #runnerDot{ display:none; }
-      }
-    </style>
+     viewBox="0 0 47.738049 13.619491"
+     role="img"
+     aria-label="IMHIS – Damit Digitalisierung wirkt"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     style="display:block; width:320px; max-width:100%; height:auto;">
+  <style>
+    :root{
+      --brand:#203361;  /* Wortmarke */
+      --accent:#254c90; /* Akzent/Datenlinie + I-Stäbe */
+    }
+    /* Pfad startet „aufgerollt“ */
+    #dataPath{ stroke-dasharray:1000; stroke-dashoffset:1000; }
 
-    <g id="layer1" transform="translate(-50.22171,-84.258838)">
-      <!-- HI (aus deiner Vorlage) -->
-      <path
-        style="fill:var(--brand);stroke-width:0.264"
-        d="m 68.738148,84.44489 v 13.571712 h 1.80576 v -6.215616 h 7.147007 v 6.215616 h 1.80576 V 84.44489 h -1.80576 v 5.835456 H 70.543908 V 84.44489 Z m 13.799809,0 v 13.571712 h 1.80576 V 84.44489 Z"
-        transform="scale(1.0022081,0.99779677)" aria-label="HI"/>
-      <!-- linker I-Stab -->
-      <path style="fill:var(--accent);stroke-width:0.0365315"
-            d="m 50.22171,84.263702 h 1.689894 v 13.53502 H 50.22171 Z"/>
-      <!-- rechter M-Stab (abgerundet) -->
-      <path style="fill:var(--accent);stroke-width:0.0310801"
-            d="m 65.614569,88.000235 a 1.3663932,1.3798021 0 0 1 -1.271757,1.041797 v 8.755537 h 1.689819 v -9.797334 z"/>
-      <!-- Datenlinie im M (Strichstärke wie Vorlage; bis in den i-Punkt verlängert) -->
-      <path id="dataPath"
-            d="m 55.233081,97.001996 -2.21e-4,-0.5003 9.53e-4,-8.17056 0.0011,-1.09167 3.959334,5.1116 5.328088,-6.52834 L 64.72 85.64"
-            style="fill:none;stroke:var(--accent);stroke-width:1.60275;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-            pathLength="1000"/>
-      <!-- i-Punkt (statisch) -->
-      <path style="fill:var(--accent);stroke-width:0.125446"
-            d="m 66.100001,85.639999 a 1.38,1.3798021 0 0 1 -1.38,1.379802 1.38,1.3798021 0 0 1 -1.38,-1.379802 1.38,1.3798021 0 0 1 1.38,-1.379802 1.38,1.3798021 0 0 1 1.38,1.379802 z"/>
-      <!-- S (statisch) -->
-      <path style="fill:var(--brand);stroke-width:0.0827235;stroke-linecap:square;stroke-linejoin:round"
-            d="m 96.313492,95.494159 q 0,0.780918 -0.368019,1.543885 -0.359043,0.762966 -1.014297,1.292554 -0.718086,0.574469 -1.678526,0.897608 -0.951464,0.323138 -2.297875,0.323138 -1.445148,0 -2.603061,-0.269282 -1.148938,-0.269282 -2.342755,-0.79887 v -2.226067 h 0.125665 q 1.014296,0.843751 2.342755,1.301531 1.328459,0.45778 2.495349,0.45778 1.651597,0 2.567157,-0.619349 0.924535,-0.619349 0.924535,-1.651598 0,-0.888631 -0.439827,-1.310507 -0.430852,-0.421875 -1.319483,-0.655253 -0.673206,-0.179522 -1.4631,-0.296211 -0.780919,-0.116688 -1.660574,-0.29621 -1.777263,-0.376995 -2.638966,-1.283579 -0.852727,-0.915559 -0.852727,-2.378659 0,-1.678526 1.41822,-2.746679 1.41822,-1.077129 3.599406,-1.077129 1.409243,0 2.585109,0.269283 1.175866,0.269282 2.082449,0.664229 v 2.100401 h -0.125665 q -0.762966,-0.646277 -2.01064,-1.068152 -1.238699,-0.430852 -2.540229,-0.430852 -1.427196,0 -2.297875,0.592421 -0.861703,0.592421 -0.861703,1.525932 0,0.834775 0.430851,1.310507 0.430852,0.475732 1.516957,0.727062 0.574468,0.125665 1.633645,0.305187 1.059177,0.179521 1.795215,0.368019 1.490028,0.394947 2.244018,1.193818 0.753991,0.79887 0.753991,2.235042 z"
-            transform="scale(1.0170928,0.98319445)" aria-label="S"/>
-      <!-- Fahrender Punkt: 2.6s Fahrt, 0.6s Pause; fährt bis 100% in den i-Punkt -->
-      <circle id="runnerDot" r="1.38" fill="var(--accent)">
-        <animateMotion dur="3.2s" repeatCount="indefinite" calcMode="linear"
-                       keyTimes="0;0.81;1" keyPoints="0;1;1">
-          <mpath xlink:href="#dataPath" href="#dataPath"/>
-        </animateMotion>
-        <animate attributeName="opacity"
-                 values="0;1;1;0" keyTimes="0;0.10;0.995;1"
-                 dur="3.2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-  </svg>
+    /* Barrierefreiheit */
+    @media (prefers-reduced-motion: reduce){
+      #dataPath{ stroke-dashoffset:0; } /* Linie bleibt stehen */
+      #runnerDot{ display:none; }       /* keine bewegte Kugel */
+    }
+  </style>
+
+  <g id="layer1" transform="translate(-50.22171,-84.258838)">
+    <!-- HI -->
+    <path
+      style="fill:var(--brand)"
+      d="m 68.738148,84.44489 v 13.571712 h 1.80576 v -6.215616 h 7.147007 v 6.215616 h 1.80576 V 84.44489 h -1.80576 v 5.835456 H 70.543908 V 84.44489 Z m 13.799809,0 v 13.571712 h 1.80576 V 84.44489 Z"
+      transform="scale(1.0022081,0.99779677)" aria-label="HI"/>
+
+    <!-- linker I-Stab -->
+    <path style="fill:var(--accent)"
+          d="m 50.22171,84.263702 h 1.689894 v 13.53502 H 50.22171 Z"/>
+
+    <!-- rechter M-Stab -->
+    <path style="fill:var(--accent)"
+          d="m 65.614569,88.000235 a 1.3663932,1.3798021 0 0 1 -1.271757,1.041797 v 8.755537 h 1.689819 v -9.797334 z"/>
+
+    <!-- Datenlinie im M: zeichnet sich, kurze Pause, blendet aus, Neustart -->
+    <path id="dataPath"
+          d="m 55.233081,97.001996 -2.21e-4,-0.5003 9.53e-4,-8.17056 0.0011,-1.09167 3.959334,5.1116 5.328088,-6.52834 L 64.72 85.64"
+          fill="none" stroke="#254c90" stroke-width="1.60275"
+          stroke-linecap="square" stroke-linejoin="round"
+          stroke-dasharray="1000" stroke-dashoffset="1000" opacity="1"
+          pathLength="1000">
+      <!-- 0–80% zeichnen, 80–90% halten (Pause), 90–100% unsichtbar -->
+      <animate attributeName="stroke-dashoffset"
+               values="1000;0;0"
+               keyTimes="0;0.8;0.9"
+               dur="3.2s"
+               repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+               values="1;1;0;0"
+               keyTimes="0;0.8;0.81;1"
+               dur="3.2s"
+               repeatCount="indefinite"/>
+    </path>
+
+    <!-- i‑Punkt: ENTFERNT (nicht mehr vorhanden) -->
+
+    <!-- S -->
+    <path style="fill:var(--brand)"
+          d="m 96.313492,95.494159 q 0,0.780918 -0.368019,1.543885 -0.359043,0.762966 -1.014297,1.292554 -0.718086,0.574469 -1.678526,0.897608 -0.951464,0.323138 -2.297875,0.323138 -1.445148,0 -2.603061,-0.269282 -1.148938,-0.269282 -2.342755,-0.79887 v -2.226067 h 0.125665 q 1.014296,0.843751 2.342755,1.301531 1.328459,0.45778 2.495349,0.45778 1.651597,0 2.567157,-0.619349 0.924535,-0.619349 0.924535,-1.651598 0,-0.888631 -0.439827,-1.310507 -0.430852,-0.421875 -1.319483,-0.655253 -0.673206,-0.179522 -1.4631,-0.296211 -0.780919,-0.116688 -1.660574,-0.29621 -1.777263,-0.376995 -2.638966,-1.283579 -0.852727,-0.915559 -0.852727,-2.378659 0,-1.678526 1.41822,-2.746679 1.41822,-1.077129 3.599406,-1.077129 1.409243,0 2.585109,0.269283 1.175866,0.269282 2.082449,0.664229 v 2.100401 h -0.125665 q -0.762966,-0.646277 -2.01064,-1.068152 -1.238699,-0.430852 -2.540229,-0.430852 -1.427196,0 -2.297875,0.592421 -0.861703,0.592421 -0.861703,1.525932 0,0.834775 0.430851,1.310507 0.430852,0.475732 1.516957,0.727062 0.574468,0.125665 1.633645,0.305187 1.059177,0.179521 1.795215,0.368019 1.490028,0.394947 2.244018,1.193818 0.753991,0.79887 0.753991,2.235042 z"
+          transform="scale(1.0170928,0.98319445)" aria-label="S"/>
+
+    <!-- Laufende Kugel: pausiert am Ende, blendet aus, dann Reset -->
+    <circle id="runnerDot" r="1.38" fill="var(--accent)">
+      <animateMotion dur="3.2s" repeatCount="indefinite" calcMode="linear"
+                     keyTimes="0;0.8;0.9;1" keyPoints="0;1;1;1">
+        <mpath xlink:href="#dataPath" href="#dataPath"/>
+      </animateMotion>
+      <animate attributeName="opacity"
+               values="0;1;1;0"
+               keyTimes="0;0.1;0.8;1"
+               dur="3.2s"
+               repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
+
 
   <p class="subtitle">Impact Monitor for Health Information Systems</p>
   <h1 class="tagline">
