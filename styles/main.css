@@ -300,14 +300,14 @@ header {
 .hero .tagline {
   margin-top: 0;
   margin-bottom: 0.75rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 6vw, 1.5rem);
   font-weight: 600;
   color: var(--primary);
 }
 
 .hero .subtagline {
   margin-bottom: 2rem;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 4.5vw, 1.125rem);
   color: var(--mid-gray);
 }
 
@@ -418,6 +418,12 @@ header {
   grid-template-columns: 1fr;
   gap: 2rem;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .book-content {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .book-info {
