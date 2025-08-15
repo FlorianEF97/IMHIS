@@ -62,6 +62,8 @@
       }
     }
 
+    let navAbortController;
+
     function toggleMenu() {
       const open = links.classList.toggle('open');
       links.hidden = !open;
@@ -70,11 +72,16 @@
       updateAriaLabel(open);
 
       if (open) {
-        document.addEventListener('click', closeOnOutsideClick);
-        document.addEventListener('keydown', closeOnEscape);
+        navAbortController = new AbortController();
+        document.addEventListener('click', closeOnOutsideClick, {
+          signal: navAbortController.signal,
+        });
+        document.addEventListener('keydown', closeOnEscape, {
+          signal: navAbortController.signal,
+        });
       } else {
-        document.removeEventListener('click', closeOnOutsideClick);
-        document.removeEventListener('keydown', closeOnEscape);
+        navAbortController?.abort();
+        navAbortController = null;
       }
     }
 
@@ -98,15 +105,15 @@
         links.classList.remove('open');
         toggle.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
-        document.removeEventListener('click', closeOnOutsideClick);
-        document.removeEventListener('keydown', closeOnEscape);
+        navAbortController?.abort();
+        navAbortController = null;
       } else {
         links.hidden = true;
         links.classList.remove('open');
         toggle.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
-        document.removeEventListener('click', closeOnOutsideClick);
-        document.removeEventListener('keydown', closeOnEscape);
+        navAbortController?.abort();
+        navAbortController = null;
       }
     }
 
@@ -152,14 +159,21 @@
       }
     };
 
+    let sellerAbortController;
+
     toggleSellers.addEventListener('click', () => {
       const open = toggleList();
       if (open) {
-        document.addEventListener('click', closeOnOutsideClick);
-        document.addEventListener('keydown', closeOnEscape);
+        sellerAbortController = new AbortController();
+        document.addEventListener('click', closeOnOutsideClick, {
+          signal: sellerAbortController.signal,
+        });
+        document.addEventListener('keydown', closeOnEscape, {
+          signal: sellerAbortController.signal,
+        });
       } else {
-        document.removeEventListener('click', closeOnOutsideClick);
-        document.removeEventListener('keydown', closeOnEscape);
+        sellerAbortController?.abort();
+        sellerAbortController = null;
       }
     });
   }
