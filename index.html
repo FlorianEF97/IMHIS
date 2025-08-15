@@ -85,6 +85,15 @@
       type="image/svg+xml"
     />
 
+    <!-- Preload book cover image to improve LCP -->
+    <link
+      rel="preload"
+      href="9783658491895-3.jpeg"
+      as="image"
+      type="image/jpeg"
+      fetchpriority="high"
+    />
+
     <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.svg" />
@@ -564,7 +573,7 @@
               src="9783658491895-3.jpeg"
               alt="Buchcover: Digitale Systeme – echte Wirkung"
               data-alt-en="Book cover: Digital Systems – Real Impact"
-              loading="lazy"
+              fetchpriority="high"
               width="827"
               height="1173"
               decoding="async"
