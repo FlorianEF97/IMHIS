@@ -34,8 +34,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" href="styles/main.min.css" as="style" />
-    <link rel="stylesheet" href="styles/main.min.css" />
+    <link
+      rel="preload"
+      href="styles/main.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles/main.min.css" /></noscript>
 
     <!-- Preload header logo to improve load time -->
     <link
@@ -56,9 +61,13 @@
     <link rel="manifest" href="/assets/icons/site.webmanifest" />
   </head>
   <body id="top">
+    <a class="skip-link" href="#main-content">
+      <span class="lang lang-de">Zum Inhalt springen</span>
+      <span class="lang lang-en" hidden>Skip to content</span>
+    </a>
     <header>
       <nav class="nav">
-        <a href="/index.html#top" class="logo">
+        <a href="/index.html#top" class="logo" aria-label="IMHIS Startseite">
             <img
               src="assets/Logo_blau.svg"
               alt="IMHIS Logo"
@@ -73,18 +82,37 @@
           aria-label="Menü öffnen"
           aria-expanded="false"
           aria-controls="nav-links"
+          data-label-open-de="Menü öffnen"
+          data-label-close-de="Menü schließen"
+          data-label-open-en="Open menu"
+          data-label-close-en="Close menu"
         >
           <span class="hamburger"></span>
         </button>
         <ul class="nav-links" id="nav-links" hidden>
-          <li><a href="/index.html#instrument">Analyseinstrument</a></li>
-          <li><a href="/index.html#buch">Buch</a></li>
-          <li><a href="/index.html#kontakt">Analyse geplant?</a></li>
+          <li>
+            <a href="/index.html#instrument">
+              <span class="lang lang-de">Analyseinstrument</span>
+              <span class="lang lang-en" hidden>Assessment Tool</span>
+            </a>
+          </li>
+          <li>
+            <a href="/index.html#buch">
+              <span class="lang lang-de">Buch</span>
+              <span class="lang lang-en" hidden>Book</span>
+            </a>
+          </li>
+          <li>
+            <a href="/index.html#kontakt">
+              <span class="lang lang-de">Analyse geplant?</span>
+              <span class="lang lang-en" hidden>Planning an assessment?</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main class="content legal-content">
+    <main id="main-content" class="content legal-content">
       <h1>Impressum</h1>
 
       <section id="diensteanbieter" class="section">
