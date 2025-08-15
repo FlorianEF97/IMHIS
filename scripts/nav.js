@@ -39,6 +39,29 @@ if (toggle && links) {
     }
   }
 
+  const mq = window.matchMedia("(min-width: 768px)");
+
+  function syncNav(e) {
+    if (e.matches) {
+      links.hidden = false;
+      links.classList.remove("open");
+      toggle.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.removeEventListener("click", closeOnOutsideClick);
+      document.removeEventListener("keydown", closeOnEscape);
+    } else {
+      links.hidden = true;
+      links.classList.remove("open");
+      toggle.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.removeEventListener("click", closeOnOutsideClick);
+      document.removeEventListener("keydown", closeOnEscape);
+    }
+  }
+
+  syncNav(mq);
+  mq.addEventListener("change", syncNav);
+
   toggle.addEventListener("click", toggleMenu);
   updateAriaLabel(false);
 
