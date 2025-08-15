@@ -1,4 +1,4 @@
-const langButton = document.getElementById("language-toggle");
+const langButtons = document.querySelectorAll(".lang-btn");
 
 function setLanguage(lang) {
   const english = lang === "en";
@@ -11,9 +11,10 @@ function setLanguage(lang) {
     el.hidden = !english;
   });
 
-  if (langButton) {
-    langButton.setAttribute("aria-label", english ? "Deutsch" : "English");
-  }
+  langButtons.forEach((btn) => {
+    const isActive = btn.dataset.lang === lang;
+    btn.setAttribute("aria-pressed", isActive);
+  });
 
   const navToggle = document.querySelector(".nav-toggle");
   if (navToggle) {
@@ -35,9 +36,10 @@ function setLanguage(lang) {
   });
 }
 
-langButton?.addEventListener("click", () => {
-  const newLang = document.documentElement.lang === "de" ? "en" : "de";
-  setLanguage(newLang);
+langButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    setLanguage(btn.dataset.lang);
+  });
 });
 
 setLanguage("de");
