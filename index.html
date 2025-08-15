@@ -72,7 +72,10 @@
     <link rel="manifest" href="/assets/icons/site.webmanifest" />
   </head>
     <body id="top">
-      <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+      <a class="skip-link" href="#main-content">
+        <span class="lang lang-de">Zum Inhalt springen</span>
+        <span class="lang lang-en" hidden>Skip to content</span>
+      </a>
       <header>
         <nav class="nav">
           <a href="#top" class="logo">
@@ -90,13 +93,38 @@
             aria-label="Menü öffnen"
             aria-expanded="false"
             aria-controls="nav-links"
+            data-label-open-de="Menü öffnen"
+            data-label-close-de="Menü schließen"
+            data-label-open-en="Open menu"
+            data-label-close-en="Close menu"
           >
             <span class="hamburger"></span>
           </button>
           <ul class="nav-links" id="nav-links" hidden>
-            <li><a href="#instrument">Analyseinstrument</a></li>
-            <li><a href="#buch">Buch</a></li>
-            <li><a href="#kontakt">Analyse geplant?</a></li>
+            <li>
+              <a href="#instrument">
+                <span class="lang lang-de">Analyseinstrument</span>
+                <span class="lang lang-en" hidden>Assessment Tool</span>
+              </a>
+            </li>
+            <li>
+              <a href="#buch">
+                <span class="lang lang-de">Buch</span>
+                <span class="lang lang-en" hidden>Book</span>
+              </a>
+            </li>
+            <li>
+              <a href="#kontakt">
+                <span class="lang lang-de">Analyse geplant?</span>
+                <span class="lang lang-en" hidden>Planning an assessment?</span>
+              </a>
+            </li>
+            <li>
+              <button id="language-toggle" class="lang-btn">
+                <span class="lang lang-de">English</span>
+                <span class="lang lang-en" hidden>Deutsch</span>
+              </button>
+            </li>
           </ul>
         </nav>
       </header>
@@ -169,12 +197,18 @@
 
 
 
-  <p class="subtitle">Impact Monitor for Health Information Systems</p>
+  <p class="subtitle">
+    <span class="lang lang-de">Impact Monitor für Gesundheitsinformationssysteme</span>
+    <span class="lang lang-en" hidden>Impact Monitor for Health Information Systems</span>
+  </p>
   <h1 class="tagline">
-    <span class="accent-text">Evidenz für die digitale Zukunft der Medizin</span>
+    <span class="accent-text">
+      <span class="lang lang-de">Evidenz für die digitale Zukunft der Medizin</span>
+      <span class="lang lang-en" hidden>Evidence for the digital future of medicine</span>
+    </span>
   </h1>
 </section>
-          
+
     <section class="benefits-block" aria-label="Vorteile">
       <div class="benefit-item">
         <svg
@@ -192,7 +226,10 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span>Kostenlos</span>
+        <span>
+          <span class="lang lang-de">Kostenlos</span>
+          <span class="lang lang-en" hidden>Free</span>
+        </span>
       </div>
       <div class="benefit-item">
         <svg
@@ -210,7 +247,10 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span>Wissenschaftlich fundiert</span>
+        <span>
+          <span class="lang lang-de">Wissenschaftlich fundiert</span>
+          <span class="lang lang-en" hidden>Scientifically grounded</span>
+        </span>
       </div>
       <div class="benefit-item">
         <svg
@@ -228,13 +268,22 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span>Praxisnah</span>
+        <span>
+          <span class="lang lang-de">Praxisnah</span>
+          <span class="lang lang-en" hidden>Practical</span>
+        </span>
       </div>
     </section>
 
     <div class="benefits-actions">
-      <a href="#instrument" class="btn-primary">Mehr erfahren</a>
-      <a href="#buch" class="btn-secondary">Buch ansehen</a>
+      <a href="#instrument" class="btn-primary">
+        <span class="lang lang-de">Mehr erfahren</span>
+        <span class="lang lang-en" hidden>Learn more</span>
+      </a>
+      <a href="#buch" class="btn-secondary">
+        <span class="lang lang-de">Buch ansehen</span>
+        <span class="lang lang-en" hidden>View book</span>
+      </a>
     </div>
 
     <!-- Instrument – aligned to Book & Dimensionen -->
@@ -244,18 +293,23 @@
     <div class="instrument-bridge instrument-bridge--top" aria-hidden="true"></div>
 
     <div class="instrument-inner">
-      <p class="eyebrow">Analyseinstrument</p>
-      <h2 id="instrument-title">Ein Analyseinstrument für echten digitalen Fortschritt</h2>
+      <p class="eyebrow">
+        <span class="lang lang-de">Analyseinstrument</span>
+        <span class="lang lang-en" hidden>Assessment Tool</span>
+      </p>
+      <h2 id="instrument-title">
+        <span class="lang lang-de">Ein Analyseinstrument für echten digitalen Fortschritt</span>
+        <span class="lang lang-en" hidden>An assessment tool for real digital progress</span>
+      </h2>
 
       <p class="lead">
-        <strong>IMHIS</strong> verbindet wissenschaftliche Präzision mit Praxisnähe: Es macht sichtbar,
-        wie digitale Systeme das Gesundheitswesen wirklich beeinflussen – aus der Perspektive der Menschen,
-        die täglich damit arbeiten: <strong class="emph">dem medizinischen Personal</strong>.
+        <span class="lang lang-de"><strong>IMHIS</strong> verbindet wissenschaftliche Präzision mit Praxisnähe: Es macht sichtbar, wie digitale Systeme das Gesundheitswesen wirklich beeinflussen – aus der Perspektive der Menschen, die täglich damit arbeiten: <strong class="emph">dem medizinischen Personal</strong>.</span>
+        <span class="lang lang-en" hidden><strong>IMHIS</strong> combines scientific precision with practical relevance: it reveals how digital systems truly impact healthcare—from the perspective of the people who work with them every day: <strong class="emph">medical staff</strong>.</span>
       </p>
 
       <p class="body">
-        So entsteht eine fundierte Basis für Entscheidungen, die das Gesundheitswesen von heute in die
-        <span class="accent-text">digitale Zukunft</span> führen.
+        <span class="lang lang-de">So entsteht eine fundierte Basis für Entscheidungen, die das Gesundheitswesen von heute in die <span class="accent-text">digitale Zukunft</span> führen.</span>
+        <span class="lang lang-en" hidden>This creates a solid foundation for decisions that lead today's healthcare into the <span class="accent-text">digital future</span>.</span>
       </p>
     </div>
 
@@ -267,10 +321,17 @@
     <section class="section dimensionen-section dim-matched dim-peopleix" id="dimensionen" aria-labelledby="dim-title">
   <div class="dim-wrapper">
     <div class="dim-head">
-      <p class="eyebrow">Analysedimensionen</p>
-      <h2 id="dim-title">Sechs Dimensionen für digitale Wirkung</h2>
+      <p class="eyebrow">
+        <span class="lang lang-de">Analysedimensionen</span>
+        <span class="lang lang-en" hidden>Analysis dimensions</span>
+      </p>
+      <h2 id="dim-title">
+        <span class="lang lang-de">Sechs Dimensionen für digitale Wirkung</span>
+        <span class="lang lang-en" hidden>Six dimensions for digital impact</span>
+      </h2>
       <p class="dim-intro">
-        IMHIS macht Wirkung sichtbar – klar strukturiert in sechs Dimensionen, die den Klinikalltag wirklich verändern.
+        <span class="lang lang-de">IMHIS macht Wirkung sichtbar – klar strukturiert in sechs Dimensionen, die den Klinikalltag wirklich verändern.</span>
+        <span class="lang lang-en" hidden>IMHIS makes impact visible—clearly structured into six dimensions that truly transform everyday clinical work.</span>
       </p>
     </div>
 
@@ -280,51 +341,87 @@
     <div class="dim-grid">
       <article class="dim-card">
         <div class="dim-icon-ring">
-          <img src="assets/icons/workload.svg" alt="Icon Arbeitsbelastung" width="22" height="22" decoding="async" loading="lazy" />
+          <img src="assets/icons/workload.svg" alt="Icon Arbeitsbelastung" data-alt-en="Icon Workload" width="22" height="22" decoding="async" loading="lazy" />
         </div>
-        <h3>Arbeitsbelastung</h3>
-        <p>Erfasst mentale, körperliche und zeitliche Anforderungen sowie Leistung, Anstrengung und Frustration.</p>
+        <h3>
+          <span class="lang lang-de">Arbeitsbelastung</span>
+          <span class="lang lang-en" hidden>Workload</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">Erfasst mentale, körperliche und zeitliche Anforderungen sowie Leistung, Anstrengung und Frustration.</span>
+          <span class="lang lang-en" hidden>Captures mental, physical and time demands as well as performance, effort and frustration.</span>
+        </p>
       </article>
 
       <article class="dim-card">
         <div class="dim-icon-ring">
-          <img src="assets/icons/satisfaction.svg" alt="Icon Nutzerzufriedenheit" width="22" height="22" decoding="async" loading="lazy" />
+          <img src="assets/icons/satisfaction.svg" alt="Icon Nutzerzufriedenheit" data-alt-en="Icon User satisfaction" width="22" height="22" decoding="async" loading="lazy" />
         </div>
-        <h3>Nutzerzufriedenheit</h3>
-        <p>Bewertet Nutzen, Informationsqualität und Benutzeroberfläche aus Sicht der Anwender.</p>
+        <h3>
+          <span class="lang lang-de">Nutzerzufriedenheit</span>
+          <span class="lang lang-en" hidden>User satisfaction</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">Bewertet Nutzen, Informationsqualität und Benutzeroberfläche aus Sicht der Anwender.</span>
+          <span class="lang lang-en" hidden>Evaluates usefulness, information quality and user interface from the users' perspective.</span>
+        </p>
       </article>
 
       <article class="dim-card">
         <div class="dim-icon-ring">
-          <img src="assets/icons/communication.svg" alt="Icon Kommunikation &amp; Kollaboration" width="22" height="22" decoding="async" loading="lazy" />
+          <img src="assets/icons/communication.svg" alt="Icon Kommunikation &amp; Kollaboration" data-alt-en="Icon Communication &amp; Collaboration" width="22" height="22" decoding="async" loading="lazy" />
         </div>
-        <h3>Kommunikation &amp; Kollaboration</h3>
-        <p>Zeigt, wie Systeme den intra- und interdisziplinären Austausch unterstützen.</p>
+        <h3>
+          <span class="lang lang-de">Kommunikation &amp; Kollaboration</span>
+          <span class="lang lang-en" hidden>Communication &amp; Collaboration</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">Zeigt, wie Systeme den intra- und interdisziplinären Austausch unterstützen.</span>
+          <span class="lang lang-en" hidden>Shows how systems support intra- and interdisciplinary exchange.</span>
+        </p>
       </article>
 
       <article class="dim-card">
         <div class="dim-icon-ring">
-          <img src="assets/icons/info-quality.svg" alt="Icon Informationsqualität" width="22" height="22" decoding="async" loading="lazy" />
+          <img src="assets/icons/info-quality.svg" alt="Icon Informationsqualität" data-alt-en="Icon Information quality" width="22" height="22" decoding="async" loading="lazy" />
         </div>
-        <h3>Informationsqualität</h3>
-        <p>Prüft Genauigkeit, Relevanz und Verständlichkeit der bereitgestellten Informationen.</p>
+        <h3>
+          <span class="lang lang-de">Informationsqualität</span>
+          <span class="lang lang-en" hidden>Information quality</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">Prüft Genauigkeit, Relevanz und Verständlichkeit der bereitgestellten Informationen.</span>
+          <span class="lang lang-en" hidden>Checks accuracy, relevance and comprehensibility of the provided information.</span>
+        </p>
       </article>
 
       <article class="dim-card">
         <div class="dim-icon-ring">
-          <img src="assets/icons/system-quality.svg" alt="Icon Systemqualität" width="22" height="22" decoding="async" loading="lazy" />
+          <img src="assets/icons/system-quality.svg" alt="Icon Systemqualität" data-alt-en="Icon System quality" width="22" height="22" decoding="async" loading="lazy" />
         </div>
-        <h3>Systemqualität</h3>
-        <p>Misst Zuverlässigkeit, Performance und Usability der eingesetzten Systeme.</p>
+        <h3>
+          <span class="lang lang-de">Systemqualität</span>
+          <span class="lang lang-en" hidden>System quality</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">Misst Zuverlässigkeit, Performance und Usability der eingesetzten Systeme.</span>
+          <span class="lang lang-en" hidden>Measures reliability, performance and usability of the deployed systems.</span>
+        </p>
       </article>
 
-      <article class="dim-card">
-        <div class="dim-icon-ring">
-          <img src="assets/icons/process.svg" alt="Icon Arbeitsprozesse" width="22" height="22" decoding="async" loading="lazy" />
-        </div>
-        <h3>Arbeitsprozesse</h3>
-        <p>Analysiert, wie digitale Lösungen Frequenz, Dauer und Ablauf klinischer Prozesse beeinflussen.</p>
-      </article>
+        <article class="dim-card">
+          <div class="dim-icon-ring">
+            <img src="assets/icons/process.svg" alt="Icon Arbeitsprozesse" data-alt-en="Icon Work processes" width="22" height="22" decoding="async" loading="lazy" />
+          </div>
+          <h3>
+            <span class="lang lang-de">Arbeitsprozesse</span>
+            <span class="lang lang-en" hidden>Work processes</span>
+          </h3>
+          <p>
+            <span class="lang lang-de">Analysiert, wie digitale Lösungen Frequenz, Dauer und Ablauf klinischer Prozesse beeinflussen.</span>
+            <span class="lang lang-en" hidden>Analyzes how digital solutions influence frequency, duration and flow of clinical processes.</span>
+          </p>
+        </article>
     </div>
 
     <!-- Übergangsfläche unten (weicher Anschluss zur Book-Section) -->
@@ -336,30 +433,45 @@
     <section class="section book-section" id="buch">
       <div class="book-content">
         <div class="book-info">
-          <p class="eyebrow">Buch</p>
-          <h2>Digitale Systeme – echte Wirkung</h2>
+          <p class="eyebrow">
+            <span class="lang lang-de">Buch</span>
+            <span class="lang lang-en" hidden>Book</span>
+          </p>
+          <h2>
+            <span class="lang lang-de">Digitale Systeme – echte Wirkung</span>
+            <span class="lang lang-en" hidden>Digital Systems – Real Impact</span>
+          </h2>
           <p class="book-subline">
-            Die detaillierte Methodik und alle Messinstrumente finden Sie im Buch
-            (Springer Gabler, Sept. 2025).
+            <span class="lang lang-de">Die detaillierte Methodik und alle Messinstrumente finden Sie im Buch (Springer Gabler, Sept. 2025).</span>
+            <span class="lang lang-en" hidden>The detailed methodology and all measurement instruments can be found in the book (Springer Gabler, Sept. 2025).</span>
           </p>
           <ul class="book-features">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M16.704 5.29a1 1 0 0 0-1.408-1.42L8 11.17 4.704 7.87a1 1 0 1 0-1.408 1.42l4 4a1 1 0 0 0 1.408 0l8-8z"/>
               </svg>
-              <span>Verständliche Analysen für digitale Gesundheitslösungen</span>
+              <span>
+                <span class="lang lang-de">Verständliche Analysen für digitale Gesundheitslösungen</span>
+                <span class="lang lang-en" hidden>Understandable analyses for digital health solutions</span>
+              </span>
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M16.704 5.29a1 1 0 0 0-1.408-1.42L8 11.17 4.704 7.87a1 1 0 1 0-1.408 1.42l4 4a1 1 0 0 0 1.408 0l8-8z"/>
               </svg>
-              <span>Praxisnahe Messinstrumente</span>
+              <span>
+                <span class="lang lang-de">Praxisnahe Messinstrumente</span>
+                <span class="lang lang-en" hidden>Practical measurement instruments</span>
+              </span>
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M16.704 5.29a1 1 0 0 0-1.408-1.42L8 11.17 4.704 7.87a1 1 0 1 0-1.408 1.42l4 4a1 1 0 0 0 1.408 0l8-8z"/>
               </svg>
-              <span>Evidenzbasierte Empfehlungen</span>
+              <span>
+                <span class="lang lang-de">Evidenzbasierte Empfehlungen</span>
+                <span class="lang lang-en" hidden>Evidence-based recommendations</span>
+              </span>
             </li>
           </ul>
           <div class="book-order">
@@ -369,7 +481,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn-primary"
-                  >Jetzt vorbestellen</a
+                  ><span class="lang lang-de">Jetzt vorbestellen</span><span class="lang lang-en" hidden>Pre-order now</span></a
                 >
               <button
                 type="button"
@@ -378,12 +490,14 @@
                 aria-expanded="false"
                 aria-controls="seller-list"
               >
-                Weitere Händler anzeigen
+                <span class="lang lang-de">Weitere Händler anzeigen</span>
+                <span class="lang lang-en" hidden>Show more retailers</span>
               </button>
             </div>
             <div class="trust-badge">
               <span class="dot"></span>
-              Wissenschaftlich fundiert • Evidenzbasiert
+              <span class="lang lang-de">Wissenschaftlich fundiert • Evidenzbasiert</span>
+              <span class="lang lang-en" hidden>Scientifically grounded • Evidence-based</span>
             </div>
             <ul class="seller-list" id="seller-list" hidden>
               <li>
@@ -424,6 +538,7 @@
               <img
                 src="9783658491895-3.jpeg"
                 alt="Buchcover: Digitale Systeme – echte Wirkung"
+                data-alt-en="Book cover: Digital Systems – Real Impact"
                 loading="lazy"
                 width="827"
                 height="1173"
@@ -465,18 +580,26 @@
             stroke-linejoin="round"
           />
         </svg>
-        Analyse geplant?
+        <span class="lang lang-de">Analyse geplant?</span>
+        <span class="lang lang-en" hidden>Planning an assessment?</span>
       </a>
     </footer>
 
     <!-- Rechtliches -->
     <footer class="legal-footer">
       <div class="legal-links">
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/impressum.html">
+          <span class="lang lang-de">Impressum</span>
+          <span class="lang lang-en" hidden>Imprint</span>
+        </a>
+        <a href="/datenschutz.html">
+          <span class="lang lang-de">Datenschutz</span>
+          <span class="lang lang-en" hidden>Privacy Policy</span>
+        </a>
       </div>
     </footer>
 
+      <script src="scripts/lang.js" defer></script>
       <script src="scripts/nav.js" defer></script>
       <script src="scripts/sellers.js" defer></script>
     </body>

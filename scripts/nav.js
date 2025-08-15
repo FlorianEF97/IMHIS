@@ -2,12 +2,21 @@ const toggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".nav-links");
 
 if (toggle && links) {
+  function updateAriaLabel(open) {
+    const langSuffix = document.documentElement.lang === "en" ? "En" : "De";
+    const key = open ? `labelClose${langSuffix}` : `labelOpen${langSuffix}`;
+    const label = toggle.dataset[key];
+    if (label) {
+      toggle.setAttribute("aria-label", label);
+    }
+  }
+
   function toggleMenu() {
     const open = links.classList.toggle("open");
     links.hidden = !open;
     toggle.setAttribute("aria-expanded", open);
     toggle.classList.toggle("open", open);
-    toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    updateAriaLabel(open);
 
     if (open) {
       document.addEventListener("click", closeOnOutsideClick);
@@ -31,6 +40,7 @@ if (toggle && links) {
   }
 
   toggle.addEventListener("click", toggleMenu);
+  updateAriaLabel(false);
 
   links.addEventListener("click", (e) => {
     if (e.target.matches("a") && links.classList.contains("open")) {
