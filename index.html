@@ -149,24 +149,27 @@
           d="m 65.614569,88.000235 a 1.3663932,1.3798021 0 0 1 -1.271757,1.041797 v 8.755537 h 1.689819 v -9.797334 z"/>
 
     <!-- Datenlinie im M: zeichnet sich, kurze Pause, blendet aus, Neustart -->
-    <path id="dataPath"
-          d="m 55.233081,97.001996 -2.21e-4,-0.5003 9.53e-4,-8.17056 0.0011,-1.09167 3.959334,5.1116 5.328088,-6.52834 L 64.72 85.64"
-          fill="none" stroke="#254c90" stroke-width="1.60275"
-          stroke-linecap="square" stroke-linejoin="round"
-          stroke-dasharray="1000" stroke-dashoffset="1000" opacity="1"
-          pathLength="1000">
-      <!-- 0–80% zeichnen, 80–90% halten (Pause), 90–100% unsichtbar -->
-      <animate attributeName="stroke-dashoffset"
-               values="1000;0;0"
-               keyTimes="0;0.8;0.9"
-               dur="3.2s"
-               repeatCount="indefinite"/>
-      <animate attributeName="opacity"
-               values="1;1;0;0"
-               keyTimes="0;0.8;0.81;1"
-               dur="3.2s"
-               repeatCount="indefinite"/>
-    </path>
+   <!-- Datenlinie im M: zeichnet sich, kurze Pause, blendet aus, Neustart -->
+<path id="dataPath"
+      d="m 55.233081,97.001996 -2.21e-4,-0.5003 9.53e-4,-8.17056 0.0011,-1.09167 3.959334,5.1116 5.328088,-6.52834 L 64.72 85.64"
+      fill="none"
+      style="stroke:#254c90 !important; fill:none !important;"
+      stroke="#254c90" stroke-width="1.60275"
+      stroke-linecap="square" stroke-linejoin="round"
+      stroke-dasharray="0 1000" stroke-dashoffset="0" opacity="1">
+  <!-- 0–80%: Linie „wächst“, 80–90%: kurze Pause, 90–100%: unsichtbar -->
+  <animate attributeName="stroke-dasharray"
+           values="0,1000;1000,0;1000,0"
+           keyTimes="0;0.8;0.9"
+           dur="3.2s"
+           repeatCount="indefinite"/>
+  <animate attributeName="opacity"
+           values="1;1;0;0"
+           keyTimes="0;0.8;0.81;1"
+           dur="3.2s"
+           repeatCount="indefinite"/>
+</path>
+
 
     <!-- i‑Punkt: ENTFERNT (nicht mehr vorhanden) -->
 
