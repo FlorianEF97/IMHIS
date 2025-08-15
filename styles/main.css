@@ -41,27 +41,27 @@ body {
 }
 
 /* Global link style */
-  a {
-    color: var(--accent);
-    text-decoration: none;
-  }
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
 
-  /* Accessibility */
-  .skip-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: var(--accent);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    z-index: 100;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-  }
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
 
-  .skip-link:focus {
-    transform: translateY(0);
-  }
+.skip-link:focus {
+  transform: translateY(0);
+}
 
 /* Utility */
 .accent-text {
@@ -257,7 +257,8 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 82, 165, 0.15), rgba(255, 255, 255, 0.15)),
+  background:
+    linear-gradient(135deg, rgba(0, 82, 165, 0.15), rgba(255, 255, 255, 0.15)),
     url("../assets/analysis-bg.svg") no-repeat center/cover;
   opacity: 0.6;
   z-index: -1;
@@ -289,7 +290,6 @@ header {
   font-size: 1.125rem;
   color: var(--mid-gray);
 }
-
 
 /* Sections */
 .section {
@@ -381,7 +381,12 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
-  background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.08), transparent 70%),
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(37, 99, 235, 0.08),
+      transparent 70%
+    ),
     #fff;
   border: 1px solid rgba(23, 37, 84, 0.1);
   border-radius: 20px;
@@ -417,15 +422,19 @@ header {
   aspect-ratio: 3 / 4;
   border-radius: 16px;
   border: 1px solid rgba(23, 37, 84, 0.1);
-  box-shadow: 12px 0 25px rgba(23, 37, 84, 0.15),
+  box-shadow:
+    12px 0 25px rgba(23, 37, 84, 0.15),
     0 12px 25px rgba(23, 37, 84, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .book-cover a:hover img,
 .book-cover a:focus img {
   transform: scale(1.03);
-  box-shadow: 16px 0 32px rgba(23, 37, 84, 0.2),
+  box-shadow:
+    16px 0 32px rgba(23, 37, 84, 0.2),
     0 16px 32px rgba(23, 37, 84, 0.2);
 }
 
@@ -473,6 +482,7 @@ header {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .book-section .order-buttons .btn-primary,
@@ -485,7 +495,11 @@ header {
   font-weight: 600;
   border-radius: 999px;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
   font-size: 1rem;
   width: 100%;
 }
@@ -502,24 +516,24 @@ header {
 }
 
 .book-section .order-buttons .btn-primary {
-  background: #2563eb;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
   color: #fff;
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
 }
 
 .book-section .order-buttons .btn-primary:hover {
-  background: #1e4fd1;
+  background: linear-gradient(135deg, #1e4fd1, #1e40af);
 }
 
 .book-section .order-buttons .btn-secondary {
-  background: #fff;
-  color: #2563eb;
-  border: 1px solid #2563eb;
+  background: #f0f4ff;
+  color: #1e40af;
+  border: 1px solid #1e40af;
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
 }
 
 .book-section .order-buttons .btn-secondary:hover {
-  background: #e6eef7;
+  background: #e0e7ff;
 }
 
 .book-section .trust-badge {
@@ -577,16 +591,17 @@ header {
   font-weight: 600;
   text-decoration: none;
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
-  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .book-section .seller-list a:hover {
   background: #e6eef7;
   text-decoration: underline;
 }
-
-
-
 
 @media (min-width: 1024px) {
   .book-section {
@@ -627,7 +642,10 @@ header {
   border-radius: 999px;
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
   text-decoration: none;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.2s,
+    box-shadow 0.3s;
 }
 
 .cta svg {
@@ -686,8 +704,6 @@ header {
     padding: 4rem 1rem;
   }
 }
-
-
 
 /* Benefits Block */
 .benefits-block {
@@ -769,92 +785,179 @@ header {
 }
 
 /* ===== DIMENSIONS (PeopleIX) – gleiche Breite/Surface wie .book-section, fließender Übergang ===== */
-.section.dimensionen-section.dim-matched{
-  max-width: 1200px;                          /* exakt wie .book-section */
-  margin: 0 auto 1.25rem;                     /* dichter Anschluss nach unten */
-  background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.08), transparent 70%), #fff;
-  border: 1px solid rgba(23, 37, 84, 0.10);
+.section.dimensionen-section.dim-matched {
+  max-width: 1200px; /* exakt wie .book-section */
+  margin: 0 auto 1.25rem; /* dichter Anschluss nach unten */
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(37, 99, 235, 0.08),
+      transparent 70%
+    ),
+    #fff;
+  border: 1px solid rgba(23, 37, 84, 0.1);
   border-radius: 20px;
   box-shadow: 0 8px 40px rgba(23, 37, 84, 0.08);
   padding: 3rem 1.5rem;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
 }
-@media (min-width:1024px){
-  .section.dimensionen-section.dim-matched{ padding: 4rem 2rem; margin-bottom: 1.5rem; }
+@media (min-width: 1024px) {
+  .section.dimensionen-section.dim-matched {
+    padding: 4rem 2rem;
+    margin-bottom: 1.5rem;
+  }
 }
-.section.dimensionen-section .dim-wrapper{ max-width: 100%; }
+.section.dimensionen-section .dim-wrapper {
+  max-width: 100%;
+}
 
 /* Headline/Intro wie Book-Section */
-.section.dimensionen-section .dim-head{ text-align: left; }
-.section.dimensionen-section .dim-head h2{
-  color:#172554; font-weight:700; letter-spacing:-.01em;
-  font-size:clamp(1.6rem,2.2vw,2rem); margin-bottom:.6rem;
+.section.dimensionen-section .dim-head {
+  text-align: left;
 }
-.section.dimensionen-section .dim-intro{
-  color:#172554cc; font-size:clamp(1rem,1.2vw,1.125rem); max-width:720px; margin:0;
+.section.dimensionen-section .dim-head h2 {
+  color: #172554;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  margin-bottom: 0.6rem;
+}
+.section.dimensionen-section .dim-intro {
+  color: #172554cc;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  max-width: 720px;
+  margin: 0;
 }
 
 /* Responsive grid for the six dimension cards */
-.section.dimensionen-section .dim-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:clamp(1rem,2vw,1.5rem);
-  margin-top:1.6rem;
+.section.dimensionen-section .dim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: 1.6rem;
 }
 
 /* Cards – airy, crisp */
-.section.dimensionen-section .dim-card{
-  background:#fff; border:1px solid #dbe6f5; border-radius:16px; padding:1.25rem;
-  display:flex; flex-direction:column; gap:.5rem; text-align:left;
-  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+.section.dimensionen-section .dim-card {
+  background: #fff;
+  border: 1px solid #dbe6f5;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
-.section.dimensionen-section .dim-card:hover{
-  transform:translateY(-2px); box-shadow:0 6px 18px rgba(23,37,84,.08);
-  border-color:rgba(37,99,235,.45);
+.section.dimensionen-section .dim-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(23, 37, 84, 0.08);
+  border-color: rgba(37, 99, 235, 0.45);
 }
 
 /* Icon-Ring */
-.section.dimensionen-section .dim-icon-ring{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:44px; height:44px; border-radius:999px;
-  background:linear-gradient(180deg, rgba(37,99,235,0.08), rgba(37,99,235,0.02));
-  border:1px solid rgba(37,99,235,0.25);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.6);
+.section.dimensionen-section .dim-icon-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(37, 99, 235, 0.08),
+    rgba(37, 99, 235, 0.02)
+  );
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-.section.dimensionen-section .dim-icon-ring img{ width:22px; height:22px; }
+.section.dimensionen-section .dim-icon-ring img {
+  width: 22px;
+  height: 22px;
+}
 
 /* Typo in Cards */
-.section.dimensionen-section .dim-card h3{
-  color:#172554; font-weight:700; font-size:1.05rem; margin-top:.25rem; letter-spacing:-.005em;
+.section.dimensionen-section .dim-card h3 {
+  color: #172554;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-top: 0.25rem;
+  letter-spacing: -0.005em;
 }
-.section.dimensionen-section .dim-card p{ color:#475569; font-size:.98rem; line-height:1.55; margin:0; }
+.section.dimensionen-section .dim-card p {
+  color: #475569;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0;
+}
 
 /* Subtile Übergangsflächen oben/unten (weicher Anschluss zur Book-Section) */
-.section.dimensionen-section .dim-bridge{ height:14px; opacity:.55; pointer-events:none; }
-.section.dimensionen-section .dim-bridge--top{
-  margin:.35rem 0 0; background:radial-gradient(60% 160% at 20% 0%, rgba(37,99,235,.06), transparent 70%);
+.section.dimensionen-section .dim-bridge {
+  height: 14px;
+  opacity: 0.55;
+  pointer-events: none;
 }
-.section.dimensionen-section .dim-bridge--bottom{
-  margin:1.25rem 0 0; background:radial-gradient(80% 140% at 50% 100%, rgba(37,99,235,.08), transparent 70%);
+.section.dimensionen-section .dim-bridge--top {
+  margin: 0.35rem 0 0;
+  background: radial-gradient(
+    60% 160% at 20% 0%,
+    rgba(37, 99, 235, 0.06),
+    transparent 70%
+  );
+}
+.section.dimensionen-section .dim-bridge--bottom {
+  margin: 1.25rem 0 0;
+  background: radial-gradient(
+    80% 140% at 50% 100%,
+    rgba(37, 99, 235, 0.08),
+    transparent 70%
+  );
 }
 
 /* Safety: keine CTAs innerhalb dieser Section (soll es nicht geben) */
-.dim-peopleix .btn-primary, .dim-peopleix .btn-secondary{ display:none !important; }
+.dim-peopleix .btn-primary,
+.dim-peopleix .btn-secondary {
+  display: none !important;
+}
 
 /* ===== Instrument (agency-grade, matched to Book/Dimensionen) ===== */
 /* Shell & Layout */
 .section.instrument-pro .instrument-outer {
   max-width: 1200px;
   margin: 0 auto 1.25rem;
-  background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.08), transparent 70%), #fff;
-  border: 1px solid rgba(23,37,84,0.10);
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(37, 99, 235, 0.08),
+      transparent 70%
+    ),
+    #fff;
+  border: 1px solid rgba(23, 37, 84, 0.1);
   border-radius: 20px;
-  box-shadow: 0 8px 40px rgba(23,37,84,0.08);
+  box-shadow: 0 8px 40px rgba(23, 37, 84, 0.08);
   padding: 3rem 1.5rem;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
 }
-@media (min-width:1024px){
-  .section.instrument-pro .instrument-outer{ padding:4rem 2rem; margin-bottom:1.5rem; }
+@media (min-width: 1024px) {
+  .section.instrument-pro .instrument-outer {
+    padding: 4rem 2rem;
+    margin-bottom: 1.5rem;
+  }
 }
 .section.instrument-pro .instrument-inner {
   max-width: 100%;
@@ -863,55 +966,69 @@ header {
 }
 
 /* Typografie */
-.section .eyebrow{
+.section .eyebrow {
   color: #2563eb;
   font-weight: 600;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-size: .8rem;
-  margin: 0 0 .25rem 0;
+  font-size: 0.8rem;
+  margin: 0 0 0.25rem 0;
 }
 
 /* Match Dimensionen and Book eyebrow text size with Instrument section */
 .section.dimensionen-section .eyebrow,
-.section.book-section .eyebrow{
+.section.book-section .eyebrow {
   font-size: 1.125rem;
 }
-.section.instrument-pro h2{
+.section.instrument-pro h2 {
   color: #172554;
   font-weight: 700;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   font-size: clamp(1.6rem, 2.2vw, 2rem);
-  margin: 0 0 .6rem 0;
+  margin: 0 0 0.6rem 0;
 }
-.section.instrument-pro .lead{
+.section.instrument-pro .lead {
   color: #172554cc;
   font-size: clamp(1rem, 1.2vw, 1.125rem);
   line-height: 1.6;
-  margin: 0 0 .6rem 0;
+  margin: 0 0 0.6rem 0;
 }
-.section.instrument-pro .lead .emph{ color: #172554; font-weight: 700; }
-.section.instrument-pro .body{
+.section.instrument-pro .lead .emph {
+  color: #172554;
+  font-weight: 700;
+}
+.section.instrument-pro .body {
   color: #475569;
-  font-size: .98rem;
+  font-size: 0.98rem;
   line-height: 1.55;
   margin: 0;
 }
-.section.instrument-pro .accent-text{ color: #2563eb; font-weight: 600; }
+.section.instrument-pro .accent-text {
+  color: #2563eb;
+  font-weight: 600;
+}
 
 /* Weiche optische Übergänge oben/unten */
-.section.instrument-pro .instrument-bridge{
+.section.instrument-pro .instrument-bridge {
   height: 14px;
-  opacity: .55;
+  opacity: 0.55;
   pointer-events: none;
 }
-.section.instrument-pro .instrument-bridge--top{
-  margin: .35rem 0 0;
-  background: radial-gradient(60% 160% at 20% 0%, rgba(37,99,235,.06), transparent 70%);
+.section.instrument-pro .instrument-bridge--top {
+  margin: 0.35rem 0 0;
+  background: radial-gradient(
+    60% 160% at 20% 0%,
+    rgba(37, 99, 235, 0.06),
+    transparent 70%
+  );
 }
-.section.instrument-pro .instrument-bridge--bottom{
+.section.instrument-pro .instrument-bridge--bottom {
   margin: 1.25rem 0 0;
-  background: radial-gradient(80% 140% at 50% 100%, rgba(37,99,235,.08), transparent 70%);
+  background: radial-gradient(
+    80% 140% at 50% 100%,
+    rgba(37, 99, 235, 0.08),
+    transparent 70%
+  );
 }
 
 /* Legal pages (Impressum & Datenschutz) */
@@ -972,4 +1089,3 @@ header {
 .back-home a {
   font-weight: 600;
 }
-
