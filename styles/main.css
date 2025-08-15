@@ -484,12 +484,12 @@ header {
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
+  align-items: flex-start;
 }
 
 /* Shared button styles */
 .btn-primary,
 .btn-secondary {
-  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -503,17 +503,11 @@ header {
     border-color 0.3s,
     box-shadow 0.3s;
   font-size: 1rem;
-  width: 100%;
 }
 
 @media (min-width: 641px) {
   .book-section .order-buttons {
     flex-direction: row;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: auto;
   }
 }
 
