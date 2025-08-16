@@ -1025,6 +1025,10 @@ header {
   z-index: 1000;
 }
 
+.nav-links[hidden] {
+  display: none;
+}
+
 .nav-links a,
 .nav-links button {
   display: inline-flex;
@@ -1161,4 +1165,32 @@ header {
     margin-top: 12px;
   }
   .nav-links a { padding: 12px 14px; }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    padding: 1rem 1.5rem 1rem 0;
+  }
+  .nav .logo img {
+    max-height: 60px;
+  }
+  .nav-links {
+    flex-direction: row;
+    position: static;
+    display: flex;
+    width: auto;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    gap: 1.5rem;
+    align-items: center;
+    border-radius: 0;
+  }
+  .nav-links li {
+    text-align: left;
+    padding: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
 }
