@@ -1112,3 +1112,103 @@ header {
 .back-home a {
   font-weight: 600;
 }
+
+<style>
+/* Sticky Glass Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: saturate(140%) blur(10px);
+  background: rgba(255,255,255,.9);
+  border-bottom: 1px solid rgba(15,23,42,.08);
+}
+
+/* Nav Layout */
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Logo bleibt wie bei dir */
+.nav .logo img { display:block; height:auto; }
+
+/* Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #0b1020;
+}
+.nav-links a:hover { background: #f5f7fb; }
+
+/* Aktionen rechts (Desktop) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile Aktionen (innerhalb des Menüs) – standardmäßig verstecken */
+.nav-actions--mobile { display: none; }
+
+/* Burger: deine Klasse existiert bereits; hier nur Position behalten */
+.nav-toggle { justify-self: end; }
+
+/* Buttons im Header (nutzt deine bestehenden Klassen + kleine Verfeinerung) */
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 18px; border-radius:999px; font-weight:700; line-height:1;
+  background: linear-gradient(90deg, #254c90, #203361);
+  color:#fff; text-decoration:none;
+  box-shadow:0 4px 10px rgba(32,51,97,.25);
+  transition: transform .18s, box-shadow .18s;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow:0 6px 14px rgba(32,51,97,.30); }
+
+.btn-secondary {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 16px; border-radius:999px; font-weight:700; line-height:1;
+  background:#fff; color:#203361; text-decoration:none;
+  border:1px solid rgba(15,23,42,.08);
+}
+.btn-secondary:hover { background:#f5f7fb; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .nav {
+    grid-template-columns: auto auto auto; /* Logo | Burger | (leer) */
+  }
+  /* Desktop-Aktionen ausblenden, mobile einblenden */
+  .nav-actions { display: none; }
+  .nav-actions--mobile {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .nav-links {
+    /* deine JS-Logik toggelt hidden; wenn sichtbar: stacken */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .nav-links a { padding: 12px 14px; }
+}
+</style>
