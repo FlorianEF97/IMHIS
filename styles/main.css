@@ -110,6 +110,16 @@ footer a {
   font-size: 0.875rem;
 }
 
+.legal-footer .legal-links a {
+  font-size: 0.75rem;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.legal-footer .legal-links a:hover {
+  color: var(--accent);
+}
+
 .legal-footer .footer-brand {
   display: flex;
   justify-content: center;
