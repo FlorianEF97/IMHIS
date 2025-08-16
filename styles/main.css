@@ -554,6 +554,9 @@ footer a {
   .nav {
     padding: 1rem 1.5rem 1rem 0;
   }
+  .nav .logo img {
+    max-height: 60px;
+  }
   .nav-links {
     flex-direction: row;
     position: static;
@@ -563,6 +566,8 @@ footer a {
     padding: 0;
     box-shadow: none;
     gap: 1.5rem;
+    align-items: center;
+    border-radius: 0;
   }
   .nav-links li {
     text-align: left;
@@ -982,7 +987,8 @@ header {
 }
 
 /* Nav Layout */
-.nav {
+ .nav {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
@@ -991,19 +997,32 @@ header {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 16px;
-}
+ }
 
-/* Logo bleibt wie bei dir */
-.nav .logo img { display:block; height:auto; }
+/* Logo */
+.nav .logo img {
+  display: block;
+  height: auto;
+  max-height: 40px;
+  width: auto;
+}
 
 /* Links */
 .nav-links {
+  position: absolute;
+  top: 100%;
+  right: 24px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
 }
 
 .nav-links a,
@@ -1056,8 +1075,59 @@ header {
 /* Mobile Aktionen (innerhalb des Menüs) – standardmäßig verstecken */
 .nav-actions--mobile { display: none; }
 
-/* Burger: deine Klasse existiert bereits; hier nur Position behalten */
-.nav-toggle { justify-self: end; }
+/* Burger button */
+.nav-toggle {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  position: relative;
+  transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle .hamburger::before {
+  top: -6px;
+}
+
+.nav-toggle .hamburger::after {
+  top: 6px;
+}
+
+.nav-toggle.open .hamburger {
+  background: transparent;
+}
+
+.nav-toggle.open .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.open .hamburger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
 
 /* Buttons im Header (nutzt deine bestehenden Klassen + kleine Verfeinerung) */
 .btn-primary {
@@ -1089,12 +1159,6 @@ header {
     display: grid;
     gap: 10px;
     margin-top: 12px;
-  }
-  .nav-links {
-    /* deine JS-Logik toggelt hidden; wenn sichtbar: stacken */
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
   }
   .nav-links a { padding: 12px 14px; }
 }
