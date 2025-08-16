@@ -522,6 +522,20 @@ footer a {
   .book-info h2 {
     font-size: 2rem;
   }
+
+  .book-section .seller-list {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .book-section .seller-list.open {
+    display: flex;
+    justify-content: center;
+  }
+
+  .book-section .seller-list li + li {
+    margin-top: 0;
+  }
 }
 
 /* CTA email button */
