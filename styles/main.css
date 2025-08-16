@@ -102,6 +102,27 @@ footer a {
   font-size: 0.875rem;
 }
 
+.legal-footer .footer-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.legal-footer .footer-logo {
+  height: 30px;
+}
+
+.legal-footer .social-link {
+  color: var(--mid-gray);
+  transition: color 0.3s;
+}
+
+.legal-footer .social-link:hover {
+  color: var(--accent);
+}
+
 /* Hero */
 .hero {
   position: relative;
