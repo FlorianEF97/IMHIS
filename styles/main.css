@@ -1030,8 +1030,8 @@ header {
   display: none;
 }
 
-.nav-links a,
-.nav-links button {
+.nav-links a:not(.btn-primary):not(.btn-secondary),
+.nav-links button:not(.btn-primary):not(.btn-secondary) {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 0.75rem;
@@ -1045,10 +1045,10 @@ header {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.nav-links a:hover,
-.nav-links a:focus,
-.nav-links button:hover,
-.nav-links button:focus {
+.nav-links a:not(.btn-primary):not(.btn-secondary):hover,
+.nav-links a:not(.btn-primary):not(.btn-secondary):focus,
+.nav-links button:not(.btn-primary):not(.btn-secondary):hover,
+.nav-links button:not(.btn-primary):not(.btn-secondary):focus {
   background: var(--accent-light);
   color: var(--accent);
 }
