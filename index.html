@@ -122,73 +122,95 @@
       </a>
       <header>
         <nav class="nav">
-          <a href="#top" class="logo" aria-label="IMHIS Startseite">
-            <img
-              src="assets/Logo_blau.svg"
-              alt="IMHIS Logo"
-              decoding="async"
-              fetchpriority="high"
-              width="398"
-              height="74"
-            />
-          </a>
-          <button
-            class="nav-toggle"
-            aria-label="Menü öffnen"
-            aria-expanded="false"
-            aria-controls="nav-links"
-            data-label-open-de="Menü öffnen"
-            data-label-close-de="Menü schließen"
-            data-label-open-en="Open menu"
-            data-label-close-en="Close menu"
-          >
-            <span class="hamburger"></span>
-          </button>
-          <ul class="nav-links" id="nav-links" hidden>
-            <li>
-              <a href="#instrument">
-                <span class="lang lang-de">Analyseinstrument</span>
-                <span class="lang lang-en" hidden>Assessment Tool</span>
-              </a>
-            </li>
-            <li>
-              <a href="#buch">
-                <span class="lang lang-de">Buch</span>
-                <span class="lang lang-en" hidden>Book</span>
-              </a>
-            </li>
-            <li>
-              <a href="#kontakt">
-                <span class="lang lang-de">Analyse geplant?</span>
-                <span class="lang lang-en" hidden>Planning an assessment?</span>
-              </a>
-            </li>
-            <li class="lang-switcher">
-              <button class="lang-btn" data-lang="de" aria-label="Deutsch">
-                <img
-                  src="assets/icons/flag-de.svg"
-                  alt="Deutsch"
-                  width="24"
-                  height="24"
-                  decoding="async"
-                  loading="lazy"
-                  fetchpriority="low"
-                />
-              </button>
-              <button class="lang-btn" data-lang="en" aria-label="English">
-                <img
-                  src="assets/icons/flag-gb.svg"
-                  alt="English"
-                  width="24"
-                  height="24"
-                  decoding="async"
-                  loading="lazy"
-                  fetchpriority="low"
-                />
-              </button>
-            </li>
-          </ul>
-        </nav>
+  <!-- Logo UNVERÄNDERT -->
+  <a href="#top" class="logo" aria-label="IMHIS Startseite">
+    <img
+      src="assets/Logo_blau.svg"
+      alt="IMHIS Logo"
+      decoding="async"
+      fetchpriority="high"
+      width="398"
+      height="74"
+    />
+  </a>
+
+  <!-- Hamburger bleibt für dein bestehendes JS -->
+  <button
+    class="nav-toggle"
+    aria-label="Menü öffnen"
+    aria-expanded="false"
+    aria-controls="nav-links"
+    data-label-open-de="Menü öffnen"
+    data-label-close-de="Menü schließen"
+    data-label-open-en="Open menu"
+    data-label-close-en="Close menu"
+  >
+    <span class="hamburger"></span>
+  </button>
+
+  <!-- Nav-Links + neuer Punkt „Analysedimensionen“ -->
+  <ul class="nav-links" id="nav-links" hidden>
+    <li>
+      <a href="#instrument">
+        <span class="lang lang-de">Analyseinstrument</span>
+        <span class="lang lang-en" hidden>Assessment Tool</span>
+      </a>
+    </li>
+    <li>
+      <a href="#dimensionen">
+        <span class="lang lang-de">Analysedimensionen</span>
+        <span class="lang lang-en" hidden>Analysis dimensions</span>
+      </a>
+    </li>
+    <li>
+      <a href="#buch">
+        <span class="lang lang-de">Buch</span>
+        <span class="lang lang-en" hidden>Book</span>
+      </a>
+    </li>
+    <li>
+      <a href="#kontakt">
+        <span class="lang lang-de">Kontakt</span>
+        <span class="lang lang-en" hidden>Contact</span>
+      </a>
+    </li>
+
+    <!-- Sprachen (deine Flaggen bleiben) -->
+    <li class="lang-switcher">
+      <button class="lang-btn" data-lang="de" aria-label="Deutsch">
+        <img src="assets/icons/flag-de.svg" alt="Deutsch" width="24" height="24" decoding="async" loading="lazy" />
+      </button>
+      <button class="lang-btn" data-lang="en" aria-label="English">
+        <img src="assets/icons/flag-gb.svg" alt="English" width="24" height="24" decoding="async" loading="lazy" />
+      </button>
+    </li>
+
+    <!-- Aktionen (nur mobil sichtbar; Desktop separat rechts) -->
+    <li class="nav-actions--mobile">
+      <a href="#buch" class="btn-secondary">
+        <span class="lang lang-de">Buch ansehen</span>
+        <span class="lang lang-en" hidden>View book</span>
+      </a>
+      <a href="#instrument" class="btn-primary">
+        <span class="lang lang-de">Kostenlos anfragen</span>
+        <span class="lang lang-en" hidden>Request (free)</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Aktionen rechts (nur Desktop) -->
+  <div class="nav-actions">
+    <a href="#buch" class="btn-secondary">
+      <span class="lang lang-de">Buch ansehen</span>
+      <span class="lang lang-en" hidden>View book</span>
+    </a>
+    <a href="#instrument" class="btn-primary">
+      <span class="lang lang-de">Kostenlos anfragen</span>
+      <span class="lang lang-en" hidden>Request (free)</span>
+    </a>
+  </div>
+</nav>
+
       </header>
 
       <main id="main-content">
