@@ -97,6 +97,14 @@ footer a {
   gap: 1rem;
 }
 
+.legal-footer .copyright {
+  max-width: 960px;
+  margin: 1rem auto 0;
+  text-align: center;
+  color: var(--mid-gray);
+  font-size: 0.875rem;
+}
+
 .legal-footer a {
   color: var(--mid-gray);
   font-size: 0.875rem;
