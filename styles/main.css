@@ -954,11 +954,13 @@ footer a {
 /* Legal pages (Impressum & Datenschutz) */
 .legal-content {
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 .legal-content .section {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
 .legal-content h1 {
