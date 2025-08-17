@@ -1233,9 +1233,8 @@ header {
 
 /* ===== LinkedIn-Stream (IMHIS) ===== */
 :root {
-  /* Einheitliche Stream-Höhe & Mindestbreite (kompakt, jederzeit änderbar) */
+  /* Einheitliche Stream-Höhe (kompakt, jederzeit änderbar) */
   --li-card-height: 560px;
-  --li-card-min-width: 480px;
 }
 
 /* gleicher Block-Abstand im Flow wie bei Dimensionen↔Buch */
@@ -1262,7 +1261,7 @@ header {
 .li-track{ display:flex; gap:.75rem; padding:.25rem; }
 
 .li-card{
-  flex:0 0 var(--li-card-min-width);
+  flex:0 0 calc((100% - 1.5rem) / 2.5);
   height:var(--li-card-height);
   scroll-snap-align:start;
   background:#fff;
@@ -1281,7 +1280,6 @@ header {
   box-shadow:0 6px 18px rgba(23,37,84,.08);
   border-color:rgba(37,99,235,.45);
 }
-@media (max-width:900px){ .li-card{ flex-basis:min(86vw, 560px) } }
 
 /* Pfeilnavigation (Desktop) */
 .li-nav{
@@ -1325,6 +1323,6 @@ header {
 .li-static-body p{ margin:.25rem 0 0; color:#475569; font-size:.95rem; }
 
 /* Kompakter auf schmalen Viewports */
-@media (max-width:1200px){ :root{ --li-card-height: 540px; --li-card-min-width: 460px; } }
-@media (max-width:1024px){ :root{ --li-card-height: 500px; --li-card-min-width: 420px; } }
-@media (max-width:640px){  :root{ --li-card-height: 460px; --li-card-min-width: 360px; } }
+@media (max-width:1200px){ :root{ --li-card-height: 540px; } }
+@media (max-width:1024px){ :root{ --li-card-height: 500px; } }
+@media (max-width:640px){  :root{ --li-card-height: 460px; } }
