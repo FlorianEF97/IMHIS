@@ -808,6 +808,7 @@
   }
   function readUrls(){
     return Array.from(liUrlList.querySelectorAll('[data-li-url]'))
+      .slice(0, 2)
       .map(el => el.getAttribute('data-li-url')).filter(Boolean);
   }
 

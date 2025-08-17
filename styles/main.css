@@ -1264,7 +1264,7 @@ header {
 .li-track{ display:flex; gap:.75rem; padding:.25rem; }
 
 .li-card{
-  flex:0 0 calc((100% - 1.5rem) / 2.5);
+  flex:0 0 calc((100% - .75rem) / 2);
   height:var(--li-card-height);
   scroll-snap-align:start;
   background:#fff;
