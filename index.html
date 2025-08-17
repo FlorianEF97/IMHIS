@@ -509,6 +509,37 @@
   </div>
 </section>
 
+<!-- 🔗 LinkedIn – horizontaler Stream (zwischen #dimensionen und #buch) -->
+<section class="section book-section li-section" id="linkedin">
+  <p class="eyebrow">LinkedIn</p>
+  <h2>Neues von IMHIS</h2>
+  <p class="book-subline">
+    Links: der aktuellste Beitrag → nach rechts: ältere.
+    Datenschutzfreundlich – Inhalte werden erst nach Klick geladen.
+  </p>
+
+  <!-- ✍️ Nur Links pflegen (neueste zuerst = links) -->
+  <ul id="li-url-list" hidden>
+    <li data-li-url="https://www.linkedin.com/posts/imhis_kis-kas-klinikalltag-activity-7361342110253424640-4_JC"></li>
+    <li data-li-url="https://www.linkedin.com/posts/imhis_klinikalltag-imhis-digitalhealth-activity-7358774831888146433-ip7L"></li>
+    <li data-li-url="https://www.linkedin.com/posts/imhis_imhis-gesundheitswesen-klinikalltag-activity-7356227941107654657-r4So"></li>
+  </ul>
+
+  <!-- Stream -->
+  <div class="li-stream">
+    <button class="li-nav li-nav--prev" type="button" aria-label="Nach links scrollen" aria-controls="li-viewport">‹</button>
+    <div id="li-viewport" class="li-viewport" role="region" aria-label="LinkedIn-Beiträge (neu links, alt rechts)">
+      <div id="li-track" class="li-track" aria-live="polite"></div>
+    </div>
+    <button class="li-nav li-nav--next" type="button" aria-label="Nach rechts scrollen" aria-controls="li-viewport">›</button>
+  </div>
+
+  <!-- Consent -->
+  <div id="li-consent" class="li-consent">
+    <p>Für die Anzeige werden Inhalte von LinkedIn geladen. Dabei können personenbezogene Daten an LinkedIn übermittelt werden.</p>
+    <button id="li-enable" class="btn-primary" type="button">Beiträge laden</button>
+  </div>
+</section>
 
     <section class="section book-section" id="buch">
       <div class="book-content">
@@ -717,5 +748,123 @@
     </footer>
 
       <script src="scripts/main.min.js" defer></script>
+    <script>
+(() => {
+  if (window.__IMHIS_LI_STREAM__) return; // idempotent
+  window.__IMHIS_LI_STREAM__ = true;
+
+  const liConsentBtn = document.getElementById('li-enable');
+  const liConsentBox = document.getElementById('li-consent');
+  const liViewport   = document.getElementById('li-viewport');
+  const liTrack      = document.getElementById('li-track');
+  const liNavPrev    = document.querySelector('.li-nav--prev');
+  const liNavNext    = document.querySelector('.li-nav--next');
+  const liUrlList    = document.getElementById('li-url-list');
+
+  function getCardHeight(){
+    const v = getComputedStyle(document.documentElement).getPropertyValue('--li-card-height').trim();
+    const num = parseInt(v, 10); return Number.isFinite(num) ? num : 560;
+  }
+  function toURN(input){
+    try{
+      const u = (typeof input === 'string') ? new URL(input) : input;
+      const full = u.href;
+      const urnMatch = full.match(/urn:li:(activity|ugcPost):\d+/);
+      if (urnMatch) return urnMatch[0];
+      const act = full.match(/activity-(\d{8,})/);
+      if (act) return `urn:li:activity:${act[1]}`;
+      return null;
+    }catch{ return null; }
+  }
+  function slugTitle(href){
+    try{
+      const p = new URL(href).pathname; // /posts/imhis_kis-kas-klinikalltag-activity-...
+      const m = p.match(/posts\/[^_]+_([^/]+?)-activity-\d+/);
+      let s = m ? m[1] : (p.split('/').pop()||'').replace(/-/g,' ');
+      s = s.replace(/^imhis\s+/i,'').replace(/\s+/g,' ').trim();
+      return s ? s.split('-').join(' ').replace(/\b\w/g, c=>c.toUpperCase()) : 'LinkedIn-Beitrag';
+    }catch{ return 'LinkedIn-Beitrag'; }
+  }
+  function readUrls(){
+    return Array.from(liUrlList.querySelectorAll('[data-li-url]'))
+      .map(el => el.getAttribute('data-li-url')).filter(Boolean);
+  }
+
+  // Fallback-Karte vor Consent
+  function makeStaticCard(href){
+    const card = document.createElement('a');
+    card.href = href; card.target = '_blank'; card.rel = 'noopener noreferrer';
+    card.className = 'li-card li-static';
+    card.innerHTML = `
+      <div class="li-static-wrap">
+        <span class="li-static-badge">LinkedIn</span>
+        <div class="li-static-media"><p class="li-static-title">${slugTitle(href)}</p></div>
+      </div>
+      <div class="li-static-body"><p>Vorschau – zum Beitrag auf LinkedIn</p></div>`;
+    return card;
+  }
+
+  // Embed-Karte nach Consent
+  function makeEmbedCard(href){
+    const card = document.createElement('div');
+    card.className = 'li-card';
+    const ph = document.createElement('div'); ph.className = 'li-placeholder'; ph.textContent = 'Beitrag wird geladen …';
+    card.appendChild(ph);
+
+    const urn = toURN(href);
+    if (!urn){
+      card.innerHTML = `<div class="li-placeholder">Vorschau nicht möglich. <a href="${href}" target="_blank" rel="noopener">Öffnen</a></div>`;
+      return card;
+    }
+
+    const targetHeight = getCardHeight();
+    const mount = () => {
+      const iframe = document.createElement('iframe');
+      iframe.className = 'li-frame';
+      iframe.title = 'LinkedIn Post';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.height = String(targetHeight); // fixiert → gleichbleibende Stream-Höhe
+      iframe.src = `https://www.linkedin.com/embed/feed/update/${encodeURIComponent(urn)}`;
+      card.replaceChild(iframe, ph);
+    };
+
+    // Lazy laden, sobald sichtbar
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(!e.isIntersecting) return; obs.unobserve(card); mount(); });
+    }, { root: liViewport, rootMargin: '120px' });
+    obs.observe(card);
+
+    return card;
+  }
+
+  function renderStatic(){
+    liTrack.innerHTML = '';
+    readUrls().forEach(href => liTrack.appendChild(makeStaticCard(href)));
+  }
+  function renderEmbeds(){
+    liTrack.innerHTML = '';
+    readUrls().forEach(href => liTrack.appendChild(makeEmbedCard(href)));
+  }
+  function scrollByViewport(dir){
+    const delta = Math.max(0, liViewport.clientWidth - 32) * (dir > 0 ? 1 : -1);
+    liViewport.scrollBy({ left: delta, behavior: 'smooth' });
+  }
+
+  // Initial: statische Vorschau (damit nie "leer" wirkt)
+  renderStatic();
+
+  // Consent: immer neu fragen (keine Persistenz)
+  liConsentBtn?.addEventListener('click', () => {
+    liConsentBox?.remove();
+    renderEmbeds();
+  }, { once:true });
+
+  // Pfeile
+  liNavPrev?.addEventListener('click', () => scrollByViewport(-1));
+  liNavNext?.addEventListener('click', () => scrollByViewport(1));
+})();
+</script>
+
     </body>
   </html>
