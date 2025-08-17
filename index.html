@@ -512,7 +512,10 @@
 <!-- 🔗 LinkedIn – horizontaler Stream (zwischen #dimensionen und #buch) -->
 <section class="section book-section li-section" id="linkedin">
   <p class="eyebrow">LinkedIn</p>
-  <h2>Neues von IMHIS</h2>
+  <h2>
+    <span class="lang lang-de">Neues von IMHIS</span>
+    <span class="lang lang-en" hidden>News from IMHIS</span>
+  </h2>
 
   <!-- ✍️ Nur Links pflegen (neueste zuerst = links) -->
   <ul id="li-url-list" hidden>
@@ -532,8 +535,14 @@
 
   <!-- Consent -->
   <div id="li-consent" class="li-consent">
-    <p>Für die Anzeige werden Inhalte von LinkedIn geladen. Dabei können personenbezogene Daten an LinkedIn übermittelt werden.</p>
-    <button id="li-enable" class="btn-primary" type="button">Beiträge laden</button>
+    <p>
+      <span class="lang lang-de">Für die Anzeige werden Inhalte von LinkedIn geladen. Dabei können personenbezogene Daten an LinkedIn übermittelt werden.</span>
+      <span class="lang lang-en" hidden>To display the posts, content is loaded from LinkedIn. Personal data may be transmitted to LinkedIn.</span>
+    </p>
+    <button id="li-enable" class="btn-primary" type="button">
+      <span class="lang lang-de">Beiträge laden</span>
+      <span class="lang lang-en" hidden>Load posts</span>
+    </button>
   </div>
 </section>
 
@@ -756,6 +765,19 @@
   const liNavPrev    = document.querySelector('.li-nav--prev');
   const liNavNext    = document.querySelector('.li-nav--next');
   const liUrlList    = document.getElementById('li-url-list');
+  let consentGiven   = false;
+
+  function t(key){
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const dict = {
+      loading: { de: 'Beitrag wird geladen …', en: 'Post is loading…' },
+      preview: { de: 'Vorschau – zum Beitrag auf LinkedIn', en: 'Preview – view on LinkedIn' },
+      open: { de: 'Öffnen', en: 'Open' },
+      noPreview: { de: 'Vorschau nicht möglich.', en: 'Preview not available.' },
+      defaultTitle: { de: 'LinkedIn-Beitrag', en: 'LinkedIn post' },
+    };
+    return dict[key][lang];
+  }
 
   function getCardHeight(){
     const v = getComputedStyle(document.documentElement).getPropertyValue('--li-card-height').trim();
@@ -778,8 +800,8 @@
       const m = p.match(/posts\/[^_]+_([^/]+?)-activity-\d+/);
       let s = m ? m[1] : (p.split('/').pop()||'').replace(/-/g,' ');
       s = s.replace(/^imhis\s+/i,'').replace(/\s+/g,' ').trim();
-      return s ? s.split('-').join(' ').replace(/\b\w/g, c=>c.toUpperCase()) : 'LinkedIn-Beitrag';
-    }catch{ return 'LinkedIn-Beitrag'; }
+      return s ? s.split('-').join(' ').replace(/\b\w/g, c=>c.toUpperCase()) : t('defaultTitle');
+    }catch{ return t('defaultTitle'); }
   }
   function readUrls(){
     return Array.from(liUrlList.querySelectorAll('[data-li-url]'))
@@ -796,7 +818,7 @@
         <span class="li-static-badge">LinkedIn</span>
         <div class="li-static-media"><p class="li-static-title">${slugTitle(href)}</p></div>
       </div>
-      <div class="li-static-body"><p>Vorschau – zum Beitrag auf LinkedIn</p></div>`;
+      <div class="li-static-body"><p>${t('preview')}</p></div>`;
     return card;
   }
 
@@ -804,12 +826,12 @@
   function makeEmbedCard(href){
     const card = document.createElement('div');
     card.className = 'li-card';
-    const ph = document.createElement('div'); ph.className = 'li-placeholder'; ph.textContent = 'Beitrag wird geladen …';
+    const ph = document.createElement('div'); ph.className = 'li-placeholder'; ph.textContent = t('loading');
     card.appendChild(ph);
 
     const urn = toURN(href);
     if (!urn){
-      card.innerHTML = `<div class="li-placeholder">Vorschau nicht möglich. <a href="${href}" target="_blank" rel="noopener">Öffnen</a></div>`;
+      card.innerHTML = `<div class="li-placeholder">${t('noPreview')} <a href="${href}" target="_blank" rel="noopener">${t('open')}</a></div>`;
       return card;
     }
 
@@ -852,9 +874,15 @@
 
   // Consent: immer neu fragen (keine Persistenz)
   liConsentBtn?.addEventListener('click', () => {
+    consentGiven = true;
     liConsentBox?.remove();
     renderEmbeds();
   }, { once:true });
+
+  const langObserver = new MutationObserver(() => {
+    consentGiven ? renderEmbeds() : renderStatic();
+  });
+  langObserver.observe(document.documentElement, { attributes:true, attributeFilter:['lang'] });
 
   // Pfeile
   liNavPrev?.addEventListener('click', () => scrollByViewport(-1));
