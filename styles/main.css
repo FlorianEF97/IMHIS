@@ -1325,4 +1325,4 @@ header {
 /* Kompakter auf schmalen Viewports */
 @media (max-width:1200px){ :root{ --li-card-height: 540px; } }
 @media (max-width:1024px){ :root{ --li-card-height: 500px; } }
-@media (max-width:640px){  :root{ --li-card-height: 460px; } }
+@media (max-width:640px){  :root{ --li-card-height: 460px; } .li-card{ flex:0 0 calc((100% - .75rem) / 1.5); } }
