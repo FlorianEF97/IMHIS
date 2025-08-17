@@ -19,3 +19,6 @@
   height:var(--li-card-height);
   width:auto !important;
 }
+.li-card{background:#fff;border:1px solid #dbe6f5;border-radius:16px;padding:1.25rem;display:flex;flex-direction:column;gap:.5rem;text-align:left;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;box-shadow:none;}
+.li-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(23,37,84,.08);border-color:rgba(37,99,235,.45);}
+.btn-primary{border:0;cursor:pointer;}
