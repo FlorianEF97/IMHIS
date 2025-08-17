@@ -1288,14 +1288,14 @@ header {
 .li-nav{
   position:absolute; top:50%; transform:translateY(-50%);
   z-index:2;
-  border:1px solid rgba(23,37,84,.15);
-  background:#fff; border-radius:999px;
+  background:linear-gradient(135deg, #2563eb, #1e40af);
+  border:none; border-radius:999px;
   width:32px; height:32px; font-size:18px; line-height:1;
   display:flex; align-items:center; justify-content:center;
-  color:#172554; box-shadow:0 6px 18px rgba(23,37,84,.12);
-  cursor:pointer;
+  color:#fff; box-shadow:0 6px 16px rgba(37,99,235,0.35);
+  cursor:pointer; transition:background .3s;
 }
-.li-nav:hover{ background:#f8fafc; }
+.li-nav:hover{ background:linear-gradient(135deg, #1e4fd1, #1e40af); }
 .li-nav--prev{ left:-6px; }
 .li-nav--next{ right:-6px; }
 @media (max-width:640px){ .li-nav{ display:none; } }
