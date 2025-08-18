@@ -1096,31 +1096,37 @@ header {
 /* Language switcher */
 .lang-switcher {
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.lang-sep {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .lang-btn {
-  padding: 0.25rem 0.5rem;
-  border-radius: 999px;
-  border: 1px solid var(--light-gray);
+  padding: 0.125rem 0.25rem;
+  border: none;
   background: none;
-  color: var(--primary);
+  color: var(--accent);
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .lang-btn:hover,
 .lang-btn:focus {
   background: var(--accent-light);
   color: var(--accent);
+  border-radius: 4px;
 }
 
 .lang-btn[aria-pressed='true'] {
   background: var(--accent);
-  border-color: var(--accent);
   color: #fff;
+  border-radius: 4px;
 }
 
 /* Aktionen rechts (Desktop) */
