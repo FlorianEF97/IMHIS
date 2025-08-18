@@ -524,7 +524,7 @@
     <li data-li-url="https://www.linkedin.com/posts/imhis_klinikalltag-imhis-digitalhealth-activity-7358774831888146433-ip7L"></li>
     <li data-li-url="https://www.linkedin.com/posts/imhis_imhis-gesundheitswesen-klinikalltag-activity-7356227941107654657-r4So"></li>
     <li data-li-url="https://www.linkedin.com/posts/imhis_klinikalltag-digitalisierung-imhis-activity-7353735926637817858-lo3H"></li>
-    <li data-li-url="hhttps://www.linkedin.com/posts/imhis_bundeswehr-gesundheitsversorgung-baesrokratie-activity-7348255311322923008-7YQj"></li>
+    <li data-li-url="https://www.linkedin.com/posts/imhis_bundeswehr-gesundheitsversorgung-baesrokratie-activity-7348255311322923008-7YQj"></li>
   </ul>
 
   <!-- Stream -->
@@ -808,8 +808,8 @@
   }
   function readUrls(){
     return Array.from(liUrlList.querySelectorAll('[data-li-url]'))
-      .slice(0, 2)
-      .map(el => el.getAttribute('data-li-url')).filter(Boolean);
+      .map(el => el.getAttribute('data-li-url'))
+      .filter(Boolean);
   }
 
   // Fallback-Karte vor Consent
