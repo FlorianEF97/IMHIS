@@ -1099,10 +1099,28 @@ header {
   gap: 0.5rem;
 }
 
-.lang-btn img {
-  width: 24px;
-  height: 24px;
-  display: block;
+.lang-btn {
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--light-gray);
+  background: none;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-btn:hover,
+.lang-btn:focus {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.lang-btn[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
 }
 
 /* Aktionen rechts (Desktop) */
