@@ -1101,6 +1101,10 @@ header {
   justify-self: end;
 }
 
+.lang-switcher--desktop {
+  display: none;
+}
+
 .lang-btn {
   padding: 0.25rem 0.75rem;
   border: 1px solid var(--light-gray);
@@ -1251,12 +1255,18 @@ header {
     flex: 1 1 auto;
     order: 1;
   }
-  .lang-switcher {
-    order: 2;
-  }
-  .nav-actions {
-    order: 3;
-  }
+    .lang-switcher {
+      order: 2;
+    }
+    .lang-switcher--mobile {
+      display: none;
+    }
+    .lang-switcher--desktop {
+      display: flex;
+    }
+    .nav-actions {
+      order: 3;
+    }
   .nav-links li {
     text-align: left;
     padding: 0;
