@@ -37,6 +37,20 @@
       const value = english ? img.dataset.altEn : img.dataset.altDe;
       img.setAttribute('alt', value);
     });
+
+    try {
+      localStorage.setItem('lang', lang);
+    } catch {}
+  }
+
+  function getInitialLang() {
+    try {
+      const stored = localStorage.getItem('lang');
+      if (stored === 'de' || stored === 'en') {
+        return stored;
+      }
+    } catch {}
+    return navigator.language?.startsWith('en') ? 'en' : 'de';
   }
 
   langButtons.forEach((btn) => {
@@ -45,7 +59,7 @@
     });
   });
 
-  setLanguage('de');
+  setLanguage(getInitialLang());
 })();
 
 (() => {
