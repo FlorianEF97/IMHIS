@@ -1130,6 +1130,12 @@ header {
   color: #fff;
 }
 
+.nav-links button.lang-btn[aria-pressed='true'] {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 /* Aktionen rechts (Desktop) */
 .nav-actions {
   display: flex;
