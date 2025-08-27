@@ -1,4 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0052a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
-  <polyline points="17 18 23 18 23 12"/>
+  <circle cx="12" cy="5" r="2"/>
+  <path d="M12 1v2"/>
+  <path d="M12 7v2"/>
+  <path d="M10 5H8"/>
+  <path d="M14 5h2"/>
+  <path d="M9.5 2.5L8 1"/>
+  <path d="M14.5 2.5l1.5-1.5"/>
+  <path d="M9.5 7.5L8 9"/>
+  <path d="M14.5 7.5L16 9"/>
+  <path d="M20 23v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+  <circle cx="12" cy="13" r="4"/>
 </svg>
