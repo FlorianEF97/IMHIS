@@ -414,12 +414,15 @@
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
           </div>
-          <div class="counter-number" data-target="29" data-unit="min" style="font-size:2.8rem;font-weight:700;color:var(--accent);display:flex;justify-content:center;align-items:baseline;gap:0.25rem;filter:blur(5px) opacity(0.5);transition:filter 0.8s ease-out, opacity 0.8s ease-out;">
-            <span class="prefix" style="font-size:1.8rem;line-height:1;">-</span>
-            <span class="number">0</span>
-            <span class="unit" style="font-size:1.4rem;">min</span>
-          </div>
-          <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">Minuten weniger Dokumentation pro Schicht</div>
+            <div class="counter-number" data-target="-29" data-unit="min" style="font-size:2.8rem;font-weight:700;color:var(--accent);display:flex;justify-content:center;align-items:baseline;gap:0.25rem;filter:blur(5px) opacity(0.5);transition:filter 0.8s ease-out, opacity 0.8s ease-out;">
+              <span class="prefix" style="font-size:1.8rem;line-height:1;">-</span>
+              <span class="number">0</span>
+              <span class="unit" style="font-size:1.4rem;">min</span>
+            </div>
+            <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">
+              <span class="lang lang-de">Minuten weniger Dokumentation pro Schicht</span>
+              <span class="lang lang-en">minutes less documentation per shift</span>
+            </div>
         </div>
 
         <!-- Card 2: Systemqualität (+49 %) -->
@@ -435,7 +438,10 @@
             <span class="number">0</span>
             <span class="unit" style="font-size:1.4rem;">%</span>
           </div>
-          <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">höhere Systemqualität*</div>
+            <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">
+              <span class="lang lang-de">höhere Systemqualität*</span>
+              <span class="lang lang-en">higher system quality*</span>
+            </div>
         </div>
 
         <!-- Card 3: Informationsqualität (+19 %) -->
@@ -452,7 +458,10 @@
             <span class="number">0</span>
             <span class="unit" style="font-size:1.4rem;">%</span>
           </div>
-          <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">bessere Informationsqualität*</div>
+            <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">
+              <span class="lang lang-de">bessere Informationsqualität*</span>
+              <span class="lang lang-en">better information quality*</span>
+            </div>
         </div>
 
         <!-- Card 4: Kommunikation & Kollaboration (+3,1 %) -->
@@ -467,7 +476,10 @@
             <span class="number">0</span>
             <span class="unit" style="font-size:1.4rem;">%</span>
           </div>
-          <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">bessere Kommunikation & Kollaboration*</div>
+            <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">
+              <span class="lang lang-de">bessere Kommunikation & Kollaboration*</span>
+              <span class="lang lang-en">better communication &amp; collaboration*</span>
+            </div>
         </div>
 
         <!-- Card 5: Nutzerzufriedenheit (+20 %) -->
@@ -485,7 +497,10 @@
             <span class="number">0</span>
             <span class="unit" style="font-size:1.4rem;">%</span>
           </div>
-          <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">höhere Nutzerzufriedenheit*</div>
+            <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">
+              <span class="lang lang-de">höhere Nutzerzufriedenheit*</span>
+              <span class="lang lang-en">higher user satisfaction*</span>
+            </div>
         </div>
 
         <!-- Card 6: Arbeitsbelastung (–8,5 %) -->
@@ -500,14 +515,18 @@
             <span class="number">0</span>
             <span class="unit" style="font-size:1.4rem;">%</span>
           </div>
-          <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">geringere Arbeitsbelastung*</div>
+            <div class="counter-label" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text);">
+              <span class="lang lang-de">geringere Arbeitsbelastung*</span>
+              <span class="lang lang-en">lower workload*</span>
+            </div>
         </div>
       </div>
 
       <!-- Call‑to‑action zum Aufdecken der Effekte -->
-      <a href="#pitch" id="reveal-effects" class="btn-primary">
-        <span>Jetzt alle Effekte sichtbar machen</span>
-      </a>
+        <a href="#pitch" id="reveal-effects" class="btn-primary">
+          <span class="lang lang-de">Jetzt alle Effekte sichtbar machen</span>
+          <span class="lang lang-en">Reveal all effects now</span>
+        </a>
 
       <p class="footnote" style="margin-top:1rem;font-size:0.8rem;color:var(--text);">
         *Beispielhafte Ergebnisse aus der Analyse der digitalen Patientenkurve M. der Firma M. an einem deutschen Universitätsklinikum
@@ -1124,7 +1143,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const targetStr = el.dataset.target;
     const target = parseFloat(targetStr);
     const decimals = targetStr.includes('.') ? targetStr.split('.')[1].length : 0;
-    const sign = target >= 0 ? '+' : '–';
+    const sign = target >= 0 ? '+' : '-';
     if (prefixSpan) {
       prefixSpan.textContent = sign;
     }
