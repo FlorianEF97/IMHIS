@@ -1396,3 +1396,18 @@ header {
 @media (max-width:1200px){ :root{ --li-card-height: 540px; } }
 @media (max-width:1024px){ :root{ --li-card-height: 500px; } }
 @media (max-width:640px){  :root{ --li-card-height: 460px; } .li-card{ flex:0 0 100%; } }
+
+/* Mobile optimization for pitch results section */
+@media (max-width:640px){
+  #pitch .counter-wrapper{
+    grid-template-columns:1fr!important;
+    gap:1.5rem!important;
+    margin:1.5rem 0 2rem!important;
+  }
+  #pitch .counter-card{ padding:1.25rem!important; }
+  #pitch .counter-number{ font-size:2.2rem!important; }
+  #pitch .counter-number .prefix{ font-size:1.2rem!important; }
+  #pitch .counter-number .unit{ font-size:1rem!important; }
+  #pitch h2{ font-size:1.75rem; }
+  #pitch .lead{ font-size:1rem; }
+}
