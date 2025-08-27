@@ -895,9 +895,10 @@ footer a {
   margin: 0 0 0.25rem 0;
 }
 
-/* Match Dimensionen and Book eyebrow text size with Instrument section */
+/* Match Dimensionen, Book and Pitch eyebrow text size with Instrument section */
 .section.dimensionen-section .eyebrow,
-.section.book-section .eyebrow {
+.section.book-section .eyebrow,
+#pitch .eyebrow {
   font-size: 1.125rem;
 }
 .section.instrument-pro h2 {
