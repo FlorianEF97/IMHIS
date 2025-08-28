@@ -722,12 +722,11 @@
 </style>
   <!-- Instrument – Clean Agency Design (drop-in, nur diese Section) -->
 <section aria-labelledby="instrument-title" class="section instrument-pro" id="instrument">
-  <div class="panel">
-    <!-- subtile Glows (passen zur About-Me-Section) -->
-    <div class="orb" aria-hidden="true"></div>
-    <div class="soft" aria-hidden="true"></div>
+  <!-- subtile Glows (passen zur About-Me-Section) -->
+  <div class="orb" aria-hidden="true"></div>
+  <div class="soft" aria-hidden="true"></div>
 
-    <div class="inner">
+  <div class="inner">
       <p class="eyebrow">
         <span class="lang lang-de">Analyseinstrument</span>
         <span class="lang lang-en" hidden>Assessment Tool</span>
@@ -811,20 +810,18 @@
         </div>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- Lokale Styles nur für diese Section -->
 <style>
   .section.instrument-pro{
     --accent:#2563eb; --ink:#0f172a; --brand:#172554;
-    max-width:1200px; margin:3.25rem auto; padding:0 1rem;
-  }
-  .panel{
+    max-width:1200px; margin:3.25rem auto;
     position:relative; border-radius:28px; overflow:hidden;
     border:1px solid rgba(23,37,84,.06);
     background:linear-gradient(180deg,#fff,rgba(248,250,252,.96));
     box-shadow:0 12px 36px rgba(15,23,42,.06);
+    padding:60px 1.5rem;
   }
   .orb{
     position:absolute; right:-15%; top:-25%; width:700px; height:700px;
@@ -839,8 +836,8 @@
 
   .section.instrument-pro .inner{
     position:relative; z-index:1;
-    padding:60px 0; text-align:left;
     max-width:100%; margin:0;
+    text-align:left;
   }
 
   .eyebrow{
@@ -886,7 +883,7 @@
   }
 
   @media (max-width:700px){
-    .section.instrument-pro .inner{ padding:40px 0; }
+    .section.instrument-pro{ padding:40px 1rem; }
   }
 </style>
    <section aria-labelledby="dim-title" class="section dimensionen-section dim-matched dim-peopleix" id="dimensionen">
