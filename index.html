@@ -816,9 +816,9 @@
 
 <!-- Lokale Styles nur für diese Section -->
 <style>
-  .instrument-pro{
+  .section.instrument-pro{
     --accent:#2563eb; --ink:#0f172a; --brand:#172554;
-    max-width:1150px; margin:3.25rem auto; padding:0 22px;
+    max-width:960px; margin:3.25rem auto; padding:0 1rem;
   }
   .panel{
     position:relative; border-radius:28px; overflow:hidden;
@@ -837,10 +837,10 @@
     filter:blur(55px);
   }
 
-  .inner{
+  .section.instrument-pro .inner{
     position:relative; z-index:1;
-    padding:60px 40px; text-align:left;
-    max-width:860px; margin:0 auto;
+    padding:60px 0; text-align:left;
+    max-width:100%; margin:0;
   }
 
   .eyebrow{
@@ -886,7 +886,7 @@
   }
 
   @media (max-width:700px){
-    .inner{ padding:40px 20px; }
+    .section.instrument-pro .inner{ padding:40px 0; }
   }
 </style>
    <section aria-labelledby="dim-title" class="section dimensionen-section dim-matched dim-peopleix" id="dimensionen">
