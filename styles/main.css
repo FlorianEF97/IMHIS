@@ -1424,3 +1424,25 @@ header {
 .black-box:hover {
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
 }
+
+/* Highlighted keywords in pitch section */
+.pitch-highlight--weak,
+.pitch-highlight--strong,
+.pitch-highlight--impact {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.15em;
+}
+
+.pitch-highlight--weak {
+  color: #dc2626;
+}
+
+.pitch-highlight--strong {
+  color: #15803d;
+}
+
+.pitch-highlight--impact {
+  color: var(--accent);
+}
