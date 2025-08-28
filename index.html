@@ -560,6 +560,10 @@
         <p>Was wir brauchen, ist eine Digitalisierung, die <span class="highlight">spürbar entlastet</span> und <span class="highlight">messbar wirkt</span>.</p>
       </blockquote>
       <cite>Dr. med. Florian Eisold, B.Sc., LL.M. – Arzt und Entwickler von IMHIS</cite>
+      <a href="mailto:info@imhis.de" class="btn-primary about-cta">
+        <span class="lang lang-de">Kontakt aufnehmen</span>
+        <span class="lang lang-en" hidden>Get in touch</span>
+      </a>
     </div>
   </div>
 </section>
@@ -594,8 +598,8 @@
     max-width: 100%;
     margin: 0;
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 2rem;
+    grid-template-columns: 160px 1fr;
+    gap: 1.5rem;
     align-items: center;
   }
   .about-img { position: relative; }
@@ -611,7 +615,7 @@
   }
   .about-img img {
     position: relative;
-    width: 130px; height: 130px;
+    width: 160px; height: 160px;
     border-radius: 50%;
     object-fit: cover;
     object-position: top center;
@@ -621,15 +625,15 @@
   .about-content blockquote {
     margin: 0;
     position: relative;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: 600;
     color: var(--primary);
   }
   .about-content blockquote::before {
     content: "“";
     position: absolute;
-    top: -18px; left: -0.2rem;
-    font-size: 3.5rem;
+    top: -24px; left: -0.2rem;
+    font-size: 4.5rem;
     line-height: 1;
     color: var(--link);
   }
@@ -649,6 +653,10 @@
     color: var(--mid-gray);
     font-style: normal;
   }
+  .about-content .about-cta {
+    display: inline-block;
+    margin-top: 1.2rem;
+  }
   @media (max-width: 700px) {
     .about-me-section {
       padding: 2rem 1rem;
@@ -658,7 +666,7 @@
       text-align: center;
     }
     .about-img::before {
-      width: 160px; height: 160px;
+      width: 200px; height: 200px;
       top: -32px; left: 50%;
       transform: translateX(-50%);
     }
