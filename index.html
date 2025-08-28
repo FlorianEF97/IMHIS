@@ -655,7 +655,6 @@
   #dimensionen .flip-card {
     position: relative;
     perspective: 1000px;
-    height: 360px;
   }
   #dimensionen .flip-card-inner {
     position: relative;
@@ -687,7 +686,8 @@
   /* „Mehr erfahren“-Button in Karten */
   #dimensionen .dim-more-btn {
     display: inline-block;
-    margin-top: 1rem;
+    align-self: flex-start;
+    margin-top: auto;
     padding: 0.5rem 1.2rem;
     border: none;
     border-radius: 999px;
@@ -929,9 +929,28 @@
 <!-- Flip‑Card Script -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    let currentCard = null;
     const cards = document.querySelectorAll('#dimensionen .flip-card');
 
+    const setCardHeights = () => {
+      let maxHeight = 0;
+      cards.forEach(card => {
+        const front = card.querySelector('.flip-card-front');
+        const back = card.querySelector('.flip-card-back');
+        front.style.height = 'auto';
+        back.style.height = 'auto';
+        maxHeight = Math.max(maxHeight, front.offsetHeight, back.offsetHeight);
+        front.style.height = '';
+        back.style.height = '';
+      });
+      cards.forEach(card => {
+        card.style.height = `${maxHeight}px`;
+      });
+    };
+
+    setCardHeights();
+    window.addEventListener('resize', setCardHeights);
+
+    let currentCard = null;
     cards.forEach(card => {
       const button = card.querySelector('.dim-more-btn');
       button.addEventListener('click', () => {
