@@ -645,10 +645,17 @@
     <!-- ======= Neu: Flip‑Cards ======= -->
 <!-- Eigene Styles für den Flip‑Effekt (nur für diese Section) -->
 <style>
+  /* Grid layout for equal-sized cards */
+  #dimensionen .dim-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
   /* Flip‑Card Container */
   #dimensionen .flip-card {
     position: relative;
     perspective: 1000px;
+    height: 360px;
   }
   #dimensionen .flip-card-inner {
     position: relative;
@@ -663,11 +670,19 @@
   /* Front‑ und Rückseite */
   #dimensionen .flip-card-front,
   #dimensionen .flip-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
   }
   #dimensionen .flip-card-back {
     transform: rotateY(180deg);
     background: #f7faff; /* leichtes Blau für Rückseite */
+  }
+  #dimensionen .dim-card {
+    height: 100%;
   }
   /* „Mehr erfahren“-Button in Karten */
   #dimensionen .dim-more-btn {
