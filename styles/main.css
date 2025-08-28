@@ -1709,6 +1709,11 @@ header {
         margin: 0 auto;
     }
 
+    .about-img img {
+        display: block;
+        margin: 0 auto;
+    }
+
     .about-img::before {
         width: 200px;
         height: 200px;
