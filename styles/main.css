@@ -197,8 +197,8 @@ footer a {
 }
 
 .section.instrument-pro {
-    max-width: 1200px;
-    padding: 0 1rem;
+    max-width: calc(1200px + 3rem);
+    padding: 0;
 }
 
 .section h2 {
