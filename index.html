@@ -965,7 +965,11 @@
     };
 
     setCardHeights();
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(setCardHeights);
+    }
     window.addEventListener('resize', setCardHeights);
+    window.addEventListener('imhis-language-change', setCardHeights);
 
     let currentCard = null;
     cards.forEach(card => {
