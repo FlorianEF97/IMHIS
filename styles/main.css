@@ -897,19 +897,17 @@ footer a {
 
 /* Typografie */
 .section .eyebrow {
-    color: #2563eb;
+    display: inline-block;
+    padding: .4rem 1rem;
+    border-radius: 999px;
     font-weight: 600;
-    letter-spacing: 0.06em;
+    font-size: .85rem;
+    letter-spacing: .05em;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    margin: 0 0 0.25rem 0;
-}
-
-/* Match Dimensionen, Book and Pitch eyebrow text size with Instrument section */
-.section.dimensionen-section .eyebrow,
-.section.book-section .eyebrow,
-#pitch .eyebrow {
-    font-size: 1.125rem;
+    color: #2563eb;
+    background: rgba(37,99,235,.08);
+    border: 1px solid rgba(37,99,235,.15);
+    margin: 0 0 1.4rem 0;
 }
 
 .section.instrument-pro h2 {
