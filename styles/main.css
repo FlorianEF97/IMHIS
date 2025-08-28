@@ -208,6 +208,9 @@ footer a {
 #instrument p {
     font-size: 1.125rem;
 }
+#instrument p.eyebrow {
+    font-size: .85rem;
+}
 
 .content {
     max-width: 960px;
