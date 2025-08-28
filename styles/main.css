@@ -1412,3 +1412,15 @@ header {
   #pitch h2{ font-size:1.75rem; }
   #pitch .lead{ font-size:1rem; }
 }
+
+/* Highlight effect for "Black Box" in pitch section */
+.black-box {
+  font-weight: 700;
+  color: #000;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.black-box:hover {
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+}
