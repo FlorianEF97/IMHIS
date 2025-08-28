@@ -642,22 +642,97 @@
     <!-- Übergangsfläche oben (subtiler Glow) -->
     <div class="dim-bridge dim-bridge--top" aria-hidden="true"></div>
 
-    <div class="dim-grid">
-         <article class="dim-card">
-          <div class="dim-icon-ring">
-            <img src="assets/icons/workload.svg" alt="Icon Arbeitsprozesse" data-alt-en="Icon Work processes" width="22" height="22" decoding="async" loading="lazy" />
-          </div>
-          <h3>
-            <span class="lang lang-de">Arbeitsprozesse</span>
-            <span class="lang lang-en" hidden>Work processes</span>
-          </h3>
-          <p>
-            <span class="lang lang-de">Analysiert, wie digitale Lösungen Frequenz, Dauer und Ablauf klinischer Prozesse beeinflussen.</span>
-            <span class="lang lang-en" hidden>Analyzes how digital solutions influence frequency, duration and flow of clinical processes.</span>
-          </p>
-        </article>
+    <!-- ======= Neu: Flip‑Cards ======= -->
+<!-- Eigene Styles für den Flip‑Effekt (nur für diese Section) -->
+<style>
+  /* Flip‑Card Container */
+  #dimensionen .flip-card {
+    position: relative;
+    perspective: 1000px;
+  }
+  #dimensionen .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+  }
+  #dimensionen .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  /* Front‑ und Rückseite */
+  #dimensionen .flip-card-front,
+  #dimensionen .flip-card-back {
+    backface-visibility: hidden;
+  }
+  #dimensionen .flip-card-back {
+    transform: rotateY(180deg);
+    background: #f7faff; /* leichtes Blau für Rückseite */
+  }
+  /* „Mehr erfahren“-Button in Karten */
+  #dimensionen .dim-more-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--brand));
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+  }
+  #dimensionen .dim-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(32, 51, 97, 0.3);
+  }
+</style>
 
-        <article class="dim-card">
+<div class="dim-grid">
+  <!-- Arbeitsprozesse -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <!-- Vorderseite -->
+      <article class="flip-card-front dim-card">
+        <div class="dim-icon-ring">
+          <img src="assets/icons/workload.svg" alt="Icon Arbeitsprozesse" data-alt-en="Icon Work processes" width="22" height="22" decoding="async" loading="lazy" />
+        </div>
+        <h3>
+          <span class="lang lang-de">Arbeitsprozesse</span>
+          <span class="lang lang-en" hidden>Work processes</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">Analysiert, wie digitale Lösungen Frequenz, Dauer und Ablauf klinischer Prozesse beeinflussen.</span>
+          <span class="lang lang-en" hidden>Analyzes how digital solutions influence frequency, duration and flow of clinical processes.</span>
+        </p>
+        <button type="button" class="dim-more-btn">
+          <span class="lang lang-de">Mehr erfahren</span>
+          <span class="lang lang-en" hidden>Learn more</span>
+        </button>
+      </article>
+      <!-- Rückseite -->
+      <article class="flip-card-back dim-card">
+        <div class="dim-icon-ring">
+          <img src="assets/icons/workload.svg" alt="Icon Arbeitsprozesse" data-alt-en="Icon Work processes" width="22" height="22" decoding="async" loading="lazy" />
+        </div>
+        <h3>
+          <span class="lang lang-de">Zeit wird sichtbar. Wirkung wird messbar.</span>
+          <span class="lang lang-en" hidden>Time becomes visible. Impact becomes measurable.</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">IMHIS dekonstruiert Arbeitsprozesse in 26 Kategorien – entlang von Tätigkeit, Ort, Ablauf und Dauer. Damit jede Minute zählt.</span>
+          <span class="lang lang-en" hidden>IMHIS deconstructs work processes into 26 categories — by activity, location, sequence and duration. So that every minute counts.</span>
+        </p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Systemqualität -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <article class="flip-card-front dim-card">
         <div class="dim-icon-ring">
           <img src="assets/icons/system-quality.svg" alt="Icon Systemqualität" data-alt-en="Icon System quality" width="22" height="22" decoding="async" loading="lazy" />
         </div>
@@ -669,9 +744,31 @@
           <span class="lang lang-de">Misst Zuverlässigkeit, Performance und Usability der eingesetzten Systeme.</span>
           <span class="lang lang-en" hidden>Measures reliability, performance and usability of the deployed systems.</span>
         </p>
+        <button type="button" class="dim-more-btn">
+          <span class="lang lang-de">Mehr erfahren</span>
+          <span class="lang lang-en" hidden>Learn more</span>
+        </button>
       </article>
+      <article class="flip-card-back dim-card">
+        <div class="dim-icon-ring">
+          <img src="assets/icons/system-quality.svg" alt="Icon Systemqualität" data-alt-en="Icon System quality" width="22" height="22" decoding="async" loading="lazy" />
+        </div>
+        <h3>
+          <span class="lang lang-de">Schlechte Systeme kosten gute Versorgung.</span>
+          <span class="lang lang-en" hidden>Poor systems cost good care.</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">IMHIS übersetzt Technik in Wirkung – mit 21 gezielten Fragen zur Systemperformance im Alltag.</span>
+          <span class="lang lang-en" hidden>IMHIS translates technology into impact—with 21 targeted questions about system performance in everyday life.</span>
+        </p>
+      </article>
+    </div>
+  </div>
 
-            <article class="dim-card">
+  <!-- Informationsqualität -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <article class="flip-card-front dim-card">
         <div class="dim-icon-ring">
           <img src="assets/icons/info-quality.svg" alt="Icon Informationsqualität" data-alt-en="Icon Information quality" width="22" height="22" decoding="async" loading="lazy" />
         </div>
@@ -683,23 +780,67 @@
           <span class="lang lang-de">Prüft Genauigkeit, Relevanz und Verständlichkeit der bereitgestellten Informationen.</span>
           <span class="lang lang-en" hidden>Checks accuracy, relevance and comprehensibility of the provided information.</span>
         </p>
+        <button type="button" class="dim-more-btn">
+          <span class="lang lang-de">Mehr erfahren</span>
+          <span class="lang lang-en" hidden>Learn more</span>
+        </button>
       </article>
+      <article class="flip-card-back dim-card">
+        <div class="dim-icon-ring">
+          <img src="assets/icons/info-quality.svg" alt="Icon Informationsqualität" data-alt-en="Icon Information quality" width="22" height="22" decoding="async" loading="lazy" />
+        </div>
+        <h3>
+          <span class="lang lang-de">Gute Informationen retten Leben. Schlechte gefährden sie.</span>
+          <span class="lang lang-en" hidden>Good information saves lives. Poor information endangers them.</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">IMHIS deckt auf, ob Systeme die richtigen Informationen zur richtigen Zeit liefern – gemessen mit 21 standardisierten Fragen.</span>
+          <span class="lang lang-en" hidden>IMHIS reveals whether systems provide the right information at the right time—measured with 21 standardized questions.</span>
+        </p>
+      </article>
+    </div>
+  </div>
 
-            <article class="dim-card">
+  <!-- Kommunikation & Kollaboration -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <article class="flip-card-front dim-card">
         <div class="dim-icon-ring">
           <img src="assets/icons/communication.svg" alt="Icon Kommunikation &amp; Kollaboration" data-alt-en="Icon Communication &amp; Collaboration" width="22" height="22" decoding="async" loading="lazy" />
         </div>
         <h3>
-          <span class="lang lang-de">Kommunikation &amp; Kollaboration</span>
+          <span class="lang lang-de">Kommunikation &amp; Kollaboration</span>
           <span class="lang lang-en" hidden>Communication &amp; Collaboration</span>
         </h3>
         <p>
           <span class="lang lang-de">Zeigt, wie Systeme den intra- und interdisziplinären Austausch unterstützen.</span>
           <span class="lang lang-en" hidden>Shows how systems support intra- and interdisciplinary information exchange.</span>
         </p>
+        <button type="button" class="dim-more-btn">
+          <span class="lang lang-de">Mehr erfahren</span>
+          <span class="lang lang-en" hidden>Learn more</span>
+        </button>
       </article>
+      <article class="flip-card-back dim-card">
+        <div class="dim-icon-ring">
+          <img src="assets/icons/communication.svg" alt="Icon Kommunikation &amp; Kollaboration" data-alt-en="Icon Communication &amp; Collaboration" width="22" height="22" decoding="async" loading="lazy" />
+        </div>
+        <h3>
+          <span class="lang lang-de">Teamarbeit rettet Leben.</span>
+          <span class="lang lang-en" hidden>Teamwork saves lives.</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">IMHIS misst, wie gut digitale Systeme Zusammenarbeit ermöglichen – mit 12 gezielten Fragen zur Kommunikation und Koordination im Klinikalltag.</span>
+          <span class="lang lang-en" hidden>IMHIS measures how well digital systems enable collaboration—with 12 targeted questions on communication and coordination in daily clinical practice.</span>
+        </p>
+      </article>
+    </div>
+  </div>
 
-            <article class="dim-card">
+  <!-- Nutzerzufriedenheit -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <article class="flip-card-front dim-card">
         <div class="dim-icon-ring">
           <img src="assets/icons/satisfaction.svg" alt="Icon Nutzerzufriedenheit" data-alt-en="Icon User satisfaction" width="22" height="22" decoding="async" loading="lazy" />
         </div>
@@ -711,9 +852,31 @@
           <span class="lang lang-de">Bewertet Nutzen, Informationsqualität und Benutzeroberfläche aus Sicht der Anwender.</span>
           <span class="lang lang-en" hidden>Evaluates usefulness, information quality and user interface from the users' perspective.</span>
         </p>
+        <button type="button" class="dim-more-btn">
+          <span class="lang lang-de">Mehr erfahren</span>
+          <span class="lang lang-en" hidden>Learn more</span>
+        </button>
       </article>
-      
-      <article class="dim-card">
+      <article class="flip-card-back dim-card">
+        <div class="dim-icon-ring">
+          <img src="assets/icons/satisfaction.svg" alt="Icon Nutzerzufriedenheit" data-alt-en="Icon User satisfaction" width="22" height="22" decoding="async" loading="lazy" />
+        </div>
+        <h3>
+          <span class="lang lang-de">Was nicht überzeugt, wird nicht genutzt.</span>
+          <span class="lang lang-en" hidden>What doesn't convince won't be used.</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">IMHIS prüft, ob Systeme überzeugen – oder im Alltag scheitern. 19 validierte Fragen zur Nutzerzufriedenheit.</span>
+          <span class="lang lang-en" hidden>IMHIS checks whether systems convince—or fail in practice. 19 validated questions on user satisfaction.</span>
+        </p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Arbeitsbelastung -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <article class="flip-card-front dim-card">
         <div class="dim-icon-ring">
           <img src="assets/icons/workload-alt.svg" alt="Icon Arbeitsbelastung" data-alt-en="Icon Workload" width="22" height="22" decoding="async" loading="lazy" />
         </div>
@@ -725,8 +888,62 @@
           <span class="lang lang-de">Erfasst mentale, körperliche und zeitliche Anforderungen sowie Leistung, Anstrengung und Frustration.</span>
           <span class="lang lang-en" hidden>Captures mental, physical and time demands as well as performance, effort and frustration.</span>
         </p>
-      </article>     
+        <button type="button" class="dim-more-btn">
+          <span class="lang lang-de">Mehr erfahren</span>
+          <span class="lang lang-en" hidden>Learn more</span>
+        </button>
+      </article>
+      <article class="flip-card-back dim-card">
+        <div class="dim-icon-ring">
+          <img src="assets/icons/workload-alt.svg" alt="Icon Arbeitsbelastung" data-alt-en="Icon Workload" width="22" height="22" decoding="async" loading="lazy" />
+        </div>
+        <h3>
+          <span class="lang lang-de">Energie gehört ans Patientenbett. Nicht in die Software.</span>
+          <span class="lang lang-en" hidden>Energy belongs at the patient's bedside. Not in the software.</span>
+        </h3>
+        <p>
+          <span class="lang lang-de">IMHIS zeigt, ob Systeme entlasten – oder Kraft kosten. 21 standardisierte Fragen machen es messbar.</span>
+          <span class="lang lang-en" hidden>IMHIS shows whether systems relieve—or drain energy. 21 standardized questions make it measurable.</span>
+        </p>
+      </article>
     </div>
+  </div>
+</div>
+<!-- ====== Ende Flip‑Cards ====== -->
+
+<!-- Flip‑Card Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let currentCard = null;
+    const cards = document.querySelectorAll('#dimensionen .flip-card');
+
+    cards.forEach(card => {
+      const button = card.querySelector('.dim-more-btn');
+      button.addEventListener('click', () => {
+        if (currentCard && currentCard !== card) {
+          currentCard.classList.remove('is-flipped');
+        }
+        card.classList.toggle('is-flipped');
+        currentCard = card.classList.contains('is-flipped') ? card : null;
+      });
+    });
+
+    // Karten zurückdrehen, wenn sie aus dem Sichtfeld scrollen
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          entry.target.classList.remove('is-flipped');
+          if (currentCard === entry.target) {
+            currentCard = null;
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
+
 
     <!-- Übergangsfläche unten (weicher Anschluss zur Book-Section) -->
     <div class="dim-bridge dim-bridge--bottom" aria-hidden="true"></div>
