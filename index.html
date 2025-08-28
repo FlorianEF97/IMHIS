@@ -330,17 +330,22 @@
          Klinikalltages
         </span>
         öffnen – Schwächen erkennen, Stärken ausbauen, Wirkung sichern.
-       </span>
-       <span class="lang lang-en" hidden="">
+      </span>
+      <span class="lang lang-en" hidden="">
         With IMHIS you can open the
         <span class="black-box">
          black box
         </span>
         of daily clinical routine—identify weaknesses, expand strengths, ensure impact.
-       </span>
-      </p>
+      </span>
+     </p>
+     <style>
+      .analysis-header{display:flex;align-items:center;gap:1rem;margin-top:2rem;margin-bottom:1rem;flex-wrap:wrap;}
+      @media (max-width:700px){.analysis-header{flex-direction:column;align-items:flex-start;}.analysis-header .btn-primary{margin-top:1rem;}}
+     </style>
+     <div class="analysis-header">
       <!-- Analysebeispiel: digitale Patientenkurve (Badge) -->
-      <div class="analysis-badge" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(37,88,235,0.05);border:0;border-radius:0.5rem;padding:0.5rem 0.9rem;margin-top:2rem;margin-bottom:1rem;font-size:1rem;font-weight:600;color:var(--accent);">
+      <div class="analysis-badge" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(37,88,235,0.05);border:0;border-radius:0.5rem;padding:0.5rem 0.9rem;font-size:1rem;font-weight:600;color:var(--accent);">
        <svg color="var(--accent)" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" width="24">
         <rect height="8" rx="0.6" width="3" x="3" y="13">
         </rect>
@@ -364,8 +369,17 @@
         </strong>
        </span>
       </div>
-      <!-- Grid mit sechs Kennzahlen -->
-      <div class="counter-wrapper" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin:2rem 0 3rem;">
+      <a class="btn-primary" href="#pitch" id="reveal-effects">
+       <span class="lang lang-de">
+        Jetzt alle Effekte mit IMHIS sichtbar machen
+       </span>
+       <span class="lang lang-en">
+        Reveal all effects with IMHIS now
+       </span>
+      </a>
+     </div>
+     <!-- Grid mit sechs Kennzahlen -->
+     <div class="counter-wrapper" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin:2rem 0 3rem;">
        <!-- Card 1: Zeitersparnis (sofort sichtbar) -->
        <div class="counter-card" style="position:relative;background:linear-gradient(to bottom right,rgba(255,255,255,0.9),rgba(245,250,255,0.9));backdrop-filter:blur(12px);padding:1.75rem;border-radius:1rem;box-shadow:0 10px 24px rgba(0,0,0,0.07);text-align:center;">
         <div class="icon-wrapper" style="width:48px;height:48px;margin:0 auto 0.75rem auto;display:flex;align-items:center;justify-content:center;background:rgba(37,88,235,0.12);border-radius:50%;">
@@ -581,19 +595,10 @@
         </div>
        </div>
       </div>
-      <!-- Call‑to‑action zum Aufdecken der Effekte -->
-      <a class="btn-primary" href="#pitch" id="reveal-effects">
-       <span class="lang lang-de">
-        Jetzt alle Effekte mit IMHIS sichtbar machen
-       </span>
-       <span class="lang lang-en">
-        Reveal all effects with IMHIS now
-       </span>
-      </a>
-      <p class="footnote" style="margin-top:1rem;font-size:0.8rem;color:var(--text);">
-       <span class="lang lang-de">
-        * Beispielhafte Ergebnisse aus der Analyse der digitalen Patientenkurve M. der Firma M. an einem deutschen Universitätsklinikum
-       </span>
+     <p class="footnote" style="margin-top:1rem;font-size:0.8rem;color:var(--text);">
+      <span class="lang lang-de">
+       * Beispielhafte Ergebnisse aus der Analyse der digitalen Patientenkurve M. der Firma M. an einem deutschen Universitätsklinikum
+      </span>
        <span class="lang lang-en" hidden="">
         * Sample results from the analysis of the digital patient curve M. by company M. at a German university hospital
        </span>
