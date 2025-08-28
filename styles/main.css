@@ -1625,7 +1625,7 @@ header {
 
 .about-img {
     position: relative;
-    margin-left: 1.25rem;
+    margin-left: 0;
 }
 
 .about-img::before {
