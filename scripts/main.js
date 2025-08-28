@@ -41,6 +41,9 @@
     try {
       localStorage.setItem('lang', lang);
     } catch {}
+
+    // Notify other components (e.g., flip cards) that text content changed
+    window.dispatchEvent(new Event('imhis-language-change'));
   }
 
   function getInitialLang() {
