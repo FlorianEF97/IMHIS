@@ -651,6 +651,23 @@
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(1rem, 2vw, 1.5rem);
   }
+
+  /* Responsive grid layout */
+  @media (max-width: 1024px) {
+    #dimensionen .dim-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    #dimensionen .dim-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #dimensionen .dim-more-btn {
+      width: 100%;
+    }
+  }
   /* Flip‑Card Container */
   #dimensionen .flip-card {
     position: relative;
