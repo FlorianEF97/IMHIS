@@ -147,8 +147,14 @@ footer a {
 .hero {
     position: relative;
     text-align: center;
-    padding: 2.5rem 1.5rem 1rem;
+    padding: 4rem 1.5rem 6rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero::before {
@@ -163,9 +169,21 @@ footer a {
 }
 
 .hero-logo {
-    display: block;
-    max-width: 320px;
-    margin: 0 auto 0.25rem;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto 1rem;
+}
+
+.hero-text {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero .subtitle {
