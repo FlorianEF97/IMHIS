@@ -8,20 +8,21 @@
   const navToggle = document.querySelector('.nav-toggle');
 
   function setLanguage(lang) {
+    if (document.documentElement.lang === lang) return;
     const english = lang === 'en';
     document.documentElement.lang = lang;
 
-    langDeEls.forEach((el) => {
+    for (const el of langDeEls) {
       el.hidden = english;
-    });
-    langEnEls.forEach((el) => {
+    }
+    for (const el of langEnEls) {
       el.hidden = !english;
-    });
+    }
 
-    langButtons.forEach((btn) => {
+    for (const btn of langButtons) {
       const isActive = btn.dataset.lang === lang;
       btn.setAttribute('aria-pressed', isActive);
-    });
+    }
 
     if (navToggle) {
       const suffix = english ? 'En' : 'De';
@@ -33,13 +34,13 @@
       }
     }
 
-    altImgs.forEach((img) => {
+    for (const img of altImgs) {
       if (!img.dataset.altDe) {
         img.dataset.altDe = img.getAttribute('alt') || '';
       }
       const value = english ? img.dataset.altEn : img.dataset.altDe;
       img.setAttribute('alt', value);
-    });
+    }
 
     try {
       localStorage.setItem('lang', lang);
@@ -64,7 +65,7 @@
     if (btn) {
       setLanguage(btn.dataset.lang);
     }
-  });
+  }, { passive: true });
 
   setLanguage(getInitialLang());
 })();
@@ -96,6 +97,7 @@
         navAbortController = new AbortController();
         document.addEventListener('click', closeOnOutsideClick, {
           signal: navAbortController.signal,
+          passive: true,
         });
         document.addEventListener('keydown', closeOnEscape, {
           signal: navAbortController.signal,
@@ -121,21 +123,12 @@
     const mq = window.matchMedia('(min-width: 768px)');
 
     function syncNav(e) {
-      if (e.matches) {
-        links.hidden = false;
-        links.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        navAbortController?.abort();
-        navAbortController = null;
-      } else {
-        links.hidden = true;
-        links.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        navAbortController?.abort();
-        navAbortController = null;
-      }
+      links.hidden = !e.matches;
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      navAbortController?.abort();
+      navAbortController = null;
     }
 
     syncNav(mq);
@@ -188,6 +181,7 @@
         sellerAbortController = new AbortController();
         document.addEventListener('click', closeOnOutsideClick, {
           signal: sellerAbortController.signal,
+          passive: true,
         });
         document.addEventListener('keydown', closeOnEscape, {
           signal: sellerAbortController.signal,
