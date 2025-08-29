@@ -194,3 +194,40 @@
   }
 })();
 
+(() => {
+  function boldIMHIS(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement;
+      if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.tagName === 'STRONG') {
+        continue;
+      }
+      nodes.push(node);
+    }
+    for (const node of nodes) {
+      const text = node.nodeValue;
+      if (text.includes('IMHIS')) {
+        const parts = text.split('IMHIS');
+        const frag = document.createDocumentFragment();
+        for (let i = 0; i < parts.length; i++) {
+          if (parts[i]) frag.appendChild(document.createTextNode(parts[i]));
+          if (i < parts.length - 1) {
+            const strong = document.createElement('strong');
+            strong.textContent = 'IMHIS';
+            frag.appendChild(strong);
+          }
+        }
+        node.parentNode.replaceChild(frag, node);
+      }
+    }
+  }
+
+  function apply() {
+    boldIMHIS(document.body);
+  }
+
+  document.addEventListener('DOMContentLoaded', apply);
+  window.addEventListener('imhis-language-change', apply);
+})();
