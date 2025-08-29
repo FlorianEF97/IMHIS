@@ -60,6 +60,252 @@
     box-shadow: 0 4px 12px rgba(23, 37, 84, 0.1);
   }
   </style>
+   <style>
+      :root {
+        --color-primary: #2563eb; /* kräftiges Blau analog zum IMHIS‑CI */
+        --color-secondary: #0e1e40; /* dunkles Blau für Kontrast */
+        --color-accent: #38bdf8; /* helles Blau für Highlights */
+        --color-bg: #f9fafb; /* sehr helles Grau als Hintergrund */
+        --color-text: #1e293b; /* dunkler Grauton für Lesetext */
+        --radius-large: 1.5rem;
+        --nav-height: 80px;
+      }
+
+      /* Grundaufbau */
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Header und Navigation */
+      header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        backdrop-filter: saturate(180%) blur(12px);
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+      }
+
+      .navbar {
+        max-width: 1280px;
+        margin: 0 auto;
+        height: var(--nav-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+      .logo-image {
+        height: 36px;
+        width: auto;
+        display: block;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--color-primary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .cta-buttons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.65rem 1.25rem;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .btn.primary {
+        background: var(--color-primary);
+        color: #ffffff;
+      }
+
+      .btn.primary:hover {
+        background: #1d4ed8;
+      }
+
+      .btn.secondary {
+        background: transparent;
+        color: var(--color-primary);
+        border: 2px solid var(--color-primary);
+      }
+
+      .btn.secondary:hover {
+        background: var(--color-primary);
+        color: #ffffff;
+      }
+
+      /* Burger Icon */
+      .burger {
+        display: none;
+        width: 32px;
+        height: 32px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+      }
+
+      .burger span {
+        width: 100%;
+        height: 3px;
+        background: var(--color-secondary);
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      /* Mobile Menu Overlay */
+      .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(6px);
+        padding: 2rem;
+        flex-direction: column;
+        gap: 1.5rem;
+        z-index: 999;
+      }
+
+      .mobile-overlay.open {
+        display: flex;
+      }
+
+      .mobile-overlay a {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--color-secondary);
+      }
+
+      .mobile-overlay .overlay-actions {
+        margin-top: auto;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .mobile-overlay .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem 6rem;
+      }
+
+      .hero-text {
+        flex: 1 1 520px;
+        max-width: 600px;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(2rem, 4vw + 1rem, 3.4rem);
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+        color: var(--color-secondary);
+      }
+
+      .hero-text p {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+        color: #475569;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-image {
+        flex: 1 1 380px;
+        max-width: 540px;
+        position: relative;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-large);
+        box-shadow: 0 16px 32px rgba(15, 23, 42, 0.15);
+      }
+
+      /* Responsivität */
+      @media (max-width: 960px) {
+        .nav-links,
+        .cta-buttons {
+          display: none;
+        }
+        .burger {
+          display: flex;
+        }
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero-image {
+          margin-top: 2rem;
+        }
+        .hero-text {
+          max-width: none;
+        }
+      }
+    </style>
  </head>
  <body>
   <div id="top">
@@ -173,9 +419,12 @@
     </div>
    </nav>
   </header>
+  
   <main id="main-content">
    <section class="hero">
-    <svg aria-label="IMHIS – Damit Digitalisierung wirkt" class="hero-logo" role="img" style="display:block; width:320px; max-width:100%; height:auto;" viewbox="0 0 47.738049 13.619491" xmlns="http://www.w3.org/2000/svg">
+        <div class="hero-text">
+          <!-- Animiertes Logo im Hero-Bereich; es bleibt farb-, form- und schriftidentisch zum Original. -->
+          <svg aria-label="IMHIS – Damit Digitalisierung wirkt" class="hero-logo" role="img" style="display:block; width:320px; max-width:100%; height:auto; margin-bottom:1.5rem;" viewBox="0 0 47.738049 13.619491" xmlns="http://www.w3.org/2000/svg">
      <style>
       :root{ --brand:#203361; --accent:#254c90; }
     @media (prefers-reduced-motion: reduce){
@@ -195,9 +444,9 @@
       <!-- Datenlinie: Pfadlänge auf 1 normalisiert -->
       <path d="m 55.233081,97.001996 -2.21e-4,-0.5003 9.53e-4,-8.17056 0.0011,-1.09167 3.959334,5.1116 5.328088,-6.52834 L 64.72 85.64" fill="none" id="dataPath" opacity="1" pathlength="1" stroke="#254c90" stroke-dasharray="1" stroke-dashoffset="1" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.60275">
        <!-- 0–80% zeichnen (1→0), 80–94.4% halten, bei 94.4% sofort ausblenden, 100% Reset -->
-       <animate attributename="stroke-dashoffset" dur="3.2s" keytimes="0;0.8;0.944;1" repeatcount="indefinite" values="1;0;0;1">
+       <animate attributeName="stroke-dashoffset" dur="3.2s" keyTimes="0;0.8;0.944;1" repeatCount="indefinite" values="1;0;0;1">
        </animate>
-       <animate attributename="opacity" dur="3.2s" keytimes="0;0.8;0.944;0.9441;1" repeatcount="indefinite" values="1;1;1;0;0">
+       <animate attributeName="opacity" dur="3.2s" keyTimes="0;0.8;0.944;0.9441;1" repeatCount="indefinite" values="1;1;1;0;0">
        </animate>
       </path>
       <!-- S -->
@@ -205,78 +454,37 @@
       </path>
       <!-- Kugel: identischer Takt & simultaner Fade bei 94.4% -->
       <circle fill="#254c90" id="runnerDot" r="1.38">
-       <animatemotion calcmode="linear" dur="3.2s" keypoints="0;1;1;1" keytimes="0;0.8;0.944;1" repeatcount="indefinite">
+       <animateMotion calcMode="linear" dur="3.2s" keyPoints="0;1;1;1" keyTimes="0;0.8;0.944;1" repeatCount="indefinite">
         <mpath href="#dataPath" xlink:href="#dataPath">
         </mpath>
-       </animatemotion>
-       <animate attributename="opacity" dur="3.2s" keytimes="0;0.8;0.944;0.9441;1" repeatcount="indefinite" values="1;1;1;0;0">
+       </animateMotion>
+       <animate attributeName="opacity" dur="3.2s" keyTimes="0;0.8;0.944;0.9441;1" repeatCount="indefinite" values="1;1;1;0;0">
        </animate>
       </circle>
      </g>
     </svg>
-    <p class="subtitle">
-     <span class="lang lang-de">
-      Impact Monitor for Health Information Systems
-     </span>
-     <span class="lang lang-en" hidden="">
-      Impact Monitor for Health Information Systems
-     </span>
-    </p>
-    <h1 class="tagline">
-     <span class="accent-text">
-      <span class="lang lang-de">
-       Evidenz für die digitale Zukunft der Medizin
-      </span>
-      <span class="lang lang-en" hidden="">
-       Evidence for the digital future of medicine
-      </span>
-     </span>
-    </h1>
-   </section>
-   <section aria-label="Vorteile" class="benefits-block">
-    <div class="benefit-item">
-     <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 13l4 4L19 7" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-      </path>
-     </svg>
-     <span>
-      <span class="lang lang-de">
-       Kostenlos
-      </span>
-      <span class="lang lang-en" hidden="">
-       Free
-      </span>
-     </span>
-    </div>
-    <div class="benefit-item">
-     <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 13l4 4L19 7" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-      </path>
-     </svg>
-     <span>
-      <span class="lang lang-de">
-       Wissenschaftlich fundiert
-      </span>
-      <span class="lang lang-en" hidden="">
-       Scientifically grounded
-      </span>
-     </span>
-    </div>
-    <div class="benefit-item">
-     <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 13l4 4L19 7" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-      </path>
-     </svg>
-     <span>
-      <span class="lang lang-de">
-       Praxisnah
-      </span>
-      <span class="lang lang-en" hidden="">
-       Practical
-      </span>
-     </span>
-    </div>
-   </section>
+          <h1>Die Zukunft der Gesundheitsanalyse</h1>
+          <p>
+            Intelligente Auswertungen und klare Insights unterstützen Kliniken
+            dabei, fundierte Entscheidungen zu treffen. Entdecken Sie ein
+            Analyseinstrument, das Daten in messbare Erfolge verwandelt.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary">Kostenlos testen</button>
+            <button class="btn secondary">Mehr erfahren</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="6addc944-93aa-4e07-a3a3-b9dc5f148de9.png" alt="Futuristische Gesundheitsanalyse" />
+        </div>
+      </section>
+
+   <script>
+      function toggleMenu() {
+        const overlay = document.getElementById('mobileOverlay');
+        overlay.classList.toggle('open');
+      }
+    </script>
    <!-- Produkt Pitch – neue Sektion für den Produkt Pitch: Licht in die Black Box -->
    <section aria-labelledby="pitch-title" class="section instrument-pro" id="pitch">
     <div class="instrument-outer">
