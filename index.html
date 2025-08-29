@@ -319,13 +319,19 @@
         }
         .hero {
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
         }
         .hero-logo {
-          margin-top: 2rem;
+          order: -1;
+          margin-top: 0;
+          margin-bottom: 2rem;
         }
         .hero-text {
           max-width: none;
+          text-align: center;
+        }
+        .hero-actions {
+          justify-content: center;
         }
       }
     </style>
@@ -445,21 +451,29 @@
   
   <main id="main-content">
    <section class="hero">
-        <div class="hero-text">
-          <h1>Die Zukunft der Gesundheitsanalyse</h1>
-          <p>
-            Intelligente Auswertungen und klare Insights unterstützen Kliniken
-            dabei, fundierte Entscheidungen zu treffen. Entdecken Sie ein
-            Analyseinstrument, das Daten in messbare Erfolge verwandelt.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#pitch">Demo ansehen</a>
-            <a class="btn secondary" href="#instrument">Mehr erfahren</a>
-          </div>
-        </div>
-        <div class="hero-logo">
-          <!-- Animiertes Logo im Hero-Bereich; es bleibt farb-, form- und schriftidentisch zum Original. -->
-          <svg aria-label="IMHIS – Damit Digitalisierung wirkt" role="img" viewBox="0 0 47.738049 13.619491" xmlns="http://www.w3.org/2000/svg">
+       <div class="hero-text">
+         <h1>
+           <span class="lang lang-de">Die Zukunft der Gesundheitsanalyse</span>
+           <span class="lang lang-en" hidden>The future of health analysis</span>
+         </h1>
+         <p>
+           <span class="lang lang-de">Intelligente Auswertungen und klare Insights unterstützen Kliniken dabei, fundierte Entscheidungen zu treffen. Entdecken Sie ein Analyseinstrument, das Daten in messbare Erfolge verwandelt.</span>
+           <span class="lang lang-en" hidden>Smart evaluations and clear insights help hospitals make informed decisions. Discover an analysis tool that turns data into measurable success.</span>
+         </p>
+         <div class="hero-actions">
+           <a class="btn primary" href="#pitch">
+             <span class="lang lang-de">Demo ansehen</span>
+             <span class="lang lang-en" hidden>Watch demo</span>
+           </a>
+           <a class="btn secondary" href="#instrument">
+             <span class="lang lang-de">Mehr erfahren</span>
+             <span class="lang lang-en" hidden>Learn more</span>
+           </a>
+         </div>
+       </div>
+       <div class="hero-logo">
+         <!-- Animiertes Logo im Hero-Bereich; es bleibt farb-, form- und schriftidentisch zum Original. -->
+         <svg aria-label="IMHIS – Damit Digitalisierung wirkt" role="img" viewBox="0 0 47.738049 13.619491" xmlns="http://www.w3.org/2000/svg">
      <style>
       :root{ --brand:#203361; --accent:#254c90; }
     @media (prefers-reduced-motion: reduce){
@@ -498,7 +512,10 @@
       </circle>
      </g>
           </svg>
-          <p class="hero-tagline">Impact Monitor for Health Information Systems</p>
+         <p class="hero-tagline">
+           <span class="lang lang-de">Impact Monitor für Gesundheitsinformationssysteme</span>
+           <span class="lang lang-en" hidden>Impact Monitor for Health Information Systems</span>
+         </p>
         </div>
       </section>
 
