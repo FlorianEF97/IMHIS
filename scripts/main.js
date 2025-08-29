@@ -2,15 +2,19 @@
 
 (() => {
   const langButtons = document.querySelectorAll('.lang-btn');
+  const langDeEls = document.querySelectorAll('.lang-de');
+  const langEnEls = document.querySelectorAll('.lang-en');
+  const altImgs = document.querySelectorAll('[data-alt-en]');
+  const navToggle = document.querySelector('.nav-toggle');
 
   function setLanguage(lang) {
     const english = lang === 'en';
     document.documentElement.lang = lang;
 
-    document.querySelectorAll('.lang-de').forEach((el) => {
+    langDeEls.forEach((el) => {
       el.hidden = english;
     });
-    document.querySelectorAll('.lang-en').forEach((el) => {
+    langEnEls.forEach((el) => {
       el.hidden = !english;
     });
 
@@ -19,18 +23,17 @@
       btn.setAttribute('aria-pressed', isActive);
     });
 
-    const navToggle = document.querySelector('.nav-toggle');
     if (navToggle) {
       const suffix = english ? 'En' : 'De';
       const open = navToggle.classList.contains('open');
-      const key = open ? `labelClose${suffix}` : `labelOpen${suffix}`;
+      const key = `label${open ? 'Close' : 'Open'}${suffix}`;
       const label = navToggle.dataset[key];
       if (label) {
         navToggle.setAttribute('aria-label', label);
       }
     }
 
-    document.querySelectorAll('[data-alt-en]').forEach((img) => {
+    altImgs.forEach((img) => {
       if (!img.dataset.altDe) {
         img.dataset.altDe = img.getAttribute('alt') || '';
       }
@@ -56,10 +59,11 @@
     return navigator.language?.startsWith('en') ? 'en' : 'de';
   }
 
-  langButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (btn) {
       setLanguage(btn.dataset.lang);
-    });
+    }
   });
 
   setLanguage(getInitialLang());
