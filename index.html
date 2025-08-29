@@ -291,12 +291,13 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        height: 100%;
       }
 
       .hero-logo svg {
-        width: 560px;
         max-width: 100%;
-        height: auto;
+        height: 100%;
+        width: auto;
         display: block;
       }
 
@@ -342,6 +343,11 @@
           order: -1;
           margin-top: 0;
           margin-bottom: 2rem;
+          height: auto;
+        }
+        .hero-logo svg {
+          height: auto;
+          width: 100%;
         }
         .hero-text {
           max-width: none;
@@ -504,11 +510,11 @@
        <div class="hero-text">
          <h1>
            <span class="lang lang-de">Die <span class="accent">digitale Zukunft</span> der Versorgung beginnt mit der richtigen Analyse</span>
-           <span class="lang lang-en" hidden>The future of health analysis</span>
+           <span class="lang lang-en" hidden>The digital future of healthcare begins with the right analysis</span>
          </h1>
          <p>
            <span class="lang lang-de">IMHIS macht digitale Wirkung messbar: für mehr Zeit am Patienten, weniger Frust im Alltag – und Entscheidungen mit echtem Mehrwert.</span>
-           <span class="lang lang-en" hidden>Smart evaluations and clear insights help hospitals make informed decisions. Discover an analysis tool that turns data into measurable success.</span>
+           <span class="lang lang-en" hidden>IMHIS makes digital impact measurable: more time with patients, less frustration in everyday life &ndash; and decisions with real added value.</span>
          </p>
         <ul class="benefits" aria-label="Vorteile">
   <li class="benefit-chip">
@@ -519,7 +525,8 @@
         <path d="M7 12l3 3 7-7"/>
       </svg>
     </span>
-    Kostenlos
+    <span class="lang lang-de">Kostenlos</span>
+    <span class="lang lang-en" hidden>Free</span>
   </li>
 
   <li class="benefit-chip">
@@ -530,7 +537,8 @@
         <path d="M9 10h6"/>
       </svg>
     </span>
-    Wissenschaftlich fundiert
+    <span class="lang lang-de">Wissenschaftlich fundiert</span>
+    <span class="lang lang-en" hidden>Evidence-based</span>
   </li>
 
   <li class="benefit-chip">
@@ -542,7 +550,8 @@
         <circle cx="12" cy="12" r="2"/>
       </svg>
     </span>
-    Praxisnah
+    <span class="lang lang-de">Praxisnah</span>
+    <span class="lang lang-en" hidden>Practice-oriented</span>
   </li>
 </ul>
 
