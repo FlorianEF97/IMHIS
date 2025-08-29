@@ -154,6 +154,7 @@ footer a {
     align-items: center;
     justify-content: flex-start;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -170,11 +171,18 @@ footer a {
 
 .hero-logo {
     max-width: 540px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     margin: 0 auto 1rem;
+}
+
+.hero-logo svg {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .hero-text {
@@ -205,6 +213,18 @@ footer a {
     margin-bottom: 2rem;
     font-size: clamp(1rem, 4.5vw, 1.125rem);
     color: var(--mid-gray);
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 3rem 1rem 4rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .hero .tagline {
+        font-size: 1.25rem;
+    }
 }
 
 /* Sections */

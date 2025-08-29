@@ -244,6 +244,7 @@
         align-items: center;
         justify-content: flex-start;
         max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
         padding: 4rem 1.5rem 6rem;
         position: relative;
@@ -291,6 +292,7 @@
 
       .hero-logo {
         max-width: 540px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -299,9 +301,8 @@
       }
 
       .hero-logo svg {
-        max-width: 100%;
+        width: 100%;
         height: auto;
-        width: auto;
         display: block;
       }
 
@@ -327,6 +328,18 @@
         font-size: 1.5rem;
         color: #203361;
         text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        .hero {
+          padding: 3rem 1rem 4rem;
+        }
+        .hero-text p {
+          font-size: 1rem;
+        }
+        .hero-tagline {
+          font-size: 1.25rem;
+        }
       }
 
       .no-wrap {
