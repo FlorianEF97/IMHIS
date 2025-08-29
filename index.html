@@ -241,7 +241,7 @@
       .hero {
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: space-between;
         max-width: 1200px;
         margin: 0 auto;
@@ -290,13 +290,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 100%;
+        justify-content: flex-start;
+        height: auto;
       }
 
       .hero-logo svg {
         max-width: 100%;
-        height: 100%;
+        height: auto;
         width: auto;
         display: block;
       }
@@ -377,6 +377,16 @@
   font-weight: 700;
   color: var(--color-secondary);
   box-shadow: 0 1px 2px rgba(15,23,42,.04);
+  transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease, color .2s ease;
+}
+.benefit-chip:hover{
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(23,37,84,.15);
+}
+.benefit-chip:hover .icon{
+  color: #fff;
 }
 .benefit-chip .icon{
   width: 18px;
