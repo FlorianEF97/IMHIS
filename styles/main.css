@@ -253,13 +253,6 @@ footer a {
     margin-bottom: 1.5rem;
 }
 
-#instrument p {
-    font-size: 1.125rem;
-}
-#instrument p.eyebrow {
-    font-size: .85rem;
-}
-
 .content {
     max-width: 960px;
     margin: 0 auto;
@@ -394,13 +387,16 @@ footer a {
 .book-info h2 {
     color: #172554;
     font-weight: 700;
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.6rem, 2.2vw, 2rem);
+    margin-bottom: .6rem;
+    letter-spacing: -0.01em;
 }
 
 .book-subline {
-    color: #172554cc;
+    color: #1e293b;
     font-weight: 400;
+    font-size: clamp(1.3rem, 2.3vw, 1.65rem);
+    line-height: 1.55;
     max-width: 600px;
     margin-bottom: 1.25rem;
 }
@@ -1417,6 +1413,14 @@ header {
 /* gleicher Block-Abstand im Flow wie bei Dimensionen↔Buch */
 .li-section {
     margin: 0 auto 1.25rem;
+}
+
+.li-section h2 {
+    color: #172554;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 2.2vw, 2rem);
+    margin: 0 0 .6rem;
+    letter-spacing: -0.01em;
 }
 
 @media (min-width:1024px) {
