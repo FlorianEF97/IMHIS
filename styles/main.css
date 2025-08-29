@@ -992,6 +992,20 @@ footer a {
     font-weight: 600;
 }
 
+.section.instrument-pro .benefit h3 {
+    color: #172554;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.section.instrument-pro .benefit p {
+    color: #475569;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
 .section.instrument-pro .instrument-badges {
     list-style: none;
     padding: 0;
