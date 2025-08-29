@@ -1051,12 +1051,14 @@ footer a {
     font-weight: 600;
 }
 
-/* Sticky Header */
+/* Sticky Glass Header */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0.5rem 0;
+    backdrop-filter: saturate(140%) blur(10px);
+    background: rgba(255, 255, 255, .9);
+    border-bottom: 1px solid rgba(15, 23, 42, .08);
 }
 
 /* Nav Layout */
@@ -1070,10 +1072,6 @@ header {
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    background: linear-gradient(180deg,#fff,rgba(248,250,252,.9));
-    border: 1px solid rgba(23,37,84,.06);
-    border-radius: 28px;
-    box-shadow: 0 12px 40px rgba(15,23,42,.06);
 }
 
 /* Logo */
