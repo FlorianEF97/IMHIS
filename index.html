@@ -264,7 +264,9 @@
         max-width: 600px;
         text-align: center;
         margin: 0 auto;
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .hero-text h1 {
@@ -293,8 +295,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        margin: 0 auto 2rem;
-        order: -1;
+        margin: 0 auto 1rem;
       }
 
       .hero-logo svg {
@@ -503,6 +504,52 @@
   
   <main id="main-content">
    <section class="hero">
+       <div class="hero-logo">
+         <!-- Animiertes Logo im Hero-Bereich; es bleibt farb-, form- und schriftidentisch zum Original. -->
+         <svg aria-label="IMHIS – Damit Digitalisierung wirkt" role="img" viewBox="0 0 47.738049 13.619491" xmlns="http://www.w3.org/2000/svg">
+     <style>
+      :root{ --brand:#203361; --accent:#254c90; }
+    @media (prefers-reduced-motion: reduce){
+      #dataPath{ stroke-dasharray:none; stroke-dashoffset:0; opacity:1; }
+      #runnerDot{ display:none; }
+    }
+     </style>
+     <g id="layer1" transform="translate(-50.22171,-84.258838)">
+      <!-- HI -->
+      <path aria-label="HI" d="m 68.738148,84.44489 v 13.571712 h 1.80576 v -6.215616 h 7.147007 v 6.215616 h 1.80576 V 84.44489 h -1.80576 v 5.835456 H 70.543908 V 84.44489 Z m 13.799809,0 v 13.571712 h 1.80576 V 84.44489 Z" style="fill:var(--brand)" transform="scale(1.0022081,0.99779677)">
+      </path>
+      <!-- I-Stäbe -->
+      <path d="m 50.22171,84.263702 h 1.689894 v 13.53502 H 50.22171 Z" style="fill:var(--accent)">
+      </path>
+      <path d="m 65.614569,88.000235 a 1.3663932,1.3798021 0 0 1 -1.271757,1.041797 v 8.755537 h 1.689819 v -9.797334 z" style="fill:var(--accent)">
+      </path>
+      <!-- Datenlinie: Pfadlänge auf 1 normalisiert -->
+      <path d="m 55.233081,97.001996 -2.21e-4,-0.5003 9.53e-4,-8.17056 0.0011,-1.09167 3.959334,5.1116 5.328088,-6.52834 L 64.72 85.64" fill="none" id="dataPath" opacity="1" pathlength="1" stroke="#254c90" stroke-dasharray="1" stroke-dashoffset="1" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.60275">
+       <!-- 0–80% zeichnen (1→0), 80–94.4% halten, bei 94.4% sofort ausblenden, 100% Reset -->
+       <animate attributeName="stroke-dashoffset" dur="3.2s" keyTimes="0;0.8;0.944;1" repeatCount="indefinite" values="1;0;0;1">
+       </animate>
+       <animate attributeName="opacity" dur="3.2s" keyTimes="0;0.8;0.944;0.9441;1" repeatCount="indefinite" values="1;1;1;0;0">
+       </animate>
+      </path>
+      <!-- S -->
+      <path aria-label="S" d="m 96.313492,95.494159 q 0,0.780918 -0.368019,1.543885 -0.359043,0.762966 -1.014297,1.292554 -0.718086,0.574469 -1.678526,0.897608 -0.951464,0.323138 -2.297875,0.323138 -1.445148,0 -2.603061,-0.269282 -1.148938,-0.269282 -2.342755,-0.79887 v -2.226067 h 0.125665 q 1.014296,0.843751 2.342755,1.301531 1.328459,0.45778 2.495349,0.45778 1.651597,0 2.567157,-0.619349 0.924535,-0.619349 0.924535,-1.651598 0,-0.888631 -0.439827,-1.310507 -0.430852,-0.421875 -1.319483,-0.655253 -0.673206,-0.179522 -1.4631,-0.296211 -0.780919,-0.116688 -1.660574,-0.29621 -1.777263,-0.376995 -2.638966,-1.283579 -0.852727,-0.915559 -0.852727,-2.378659 0,-1.678526 1.41822,-2.746679 1.41822,-1.077129 3.599406,-1.077129 1.409243,0 2.585109,0.269283 1.175866,0.269282 2.082449,0.664229 v 2.100401 h -0.125665 q -0.762966,-0.646277 -2.01064,-1.068152 -1.238699,-0.430852 -2.540229,-0.430852 -1.427196,0 -2.297875,0.592421 -0.861703,0.592421 -0.861703,1.525932 0,0.834775 0.430851,1.310507 0.430852,0.475732 1.516957,0.727062 0.574468,0.125665 1.633645,0.305187 1.059177,0.179521 1.795215,0.368019 1.490028,0.394947 2.244018,1.193818 0.753991,0.79887 0.753991,2.235042 z" style="fill:var(--brand)" transform="scale(1.0170928,0.98319445)">
+      </path>
+      <!-- Kugel: identischer Takt & simultaner Fade bei 94.4% -->
+      <circle fill="#254c90" id="runnerDot" r="1.38">
+       <animateMotion calcMode="linear" dur="3.2s" keyPoints="0;1;1;1" keyTimes="0;0.8;0.944;1" repeatCount="indefinite">
+        <mpath href="#dataPath" xlink:href="#dataPath">
+        </mpath>
+       </animateMotion>
+       <animate attributeName="opacity" dur="3.2s" keyTimes="0;0.8;0.944;0.9441;1" repeatCount="indefinite" values="1;1;1;0;0">
+       </animate>
+      </circle>
+     </g>
+          </svg>
+         <p class="hero-tagline">
+           <span class="lang lang-de no-wrap">Impact Monitor für Gesundheitsinformationssysteme</span>
+           <span class="lang lang-en no-wrap" hidden>Impact Monitor for Health Information Systems</span>
+         </p>
+        </div>
        <div class="hero-text">
         <h1>
           <span class="lang lang-de">
@@ -565,52 +612,6 @@
            </a>
          </div>
        </div>
-       <div class="hero-logo">
-         <!-- Animiertes Logo im Hero-Bereich; es bleibt farb-, form- und schriftidentisch zum Original. -->
-         <svg aria-label="IMHIS – Damit Digitalisierung wirkt" role="img" viewBox="0 0 47.738049 13.619491" xmlns="http://www.w3.org/2000/svg">
-     <style>
-      :root{ --brand:#203361; --accent:#254c90; }
-    @media (prefers-reduced-motion: reduce){
-      #dataPath{ stroke-dasharray:none; stroke-dashoffset:0; opacity:1; }
-      #runnerDot{ display:none; }
-    }
-     </style>
-     <g id="layer1" transform="translate(-50.22171,-84.258838)">
-      <!-- HI -->
-      <path aria-label="HI" d="m 68.738148,84.44489 v 13.571712 h 1.80576 v -6.215616 h 7.147007 v 6.215616 h 1.80576 V 84.44489 h -1.80576 v 5.835456 H 70.543908 V 84.44489 Z m 13.799809,0 v 13.571712 h 1.80576 V 84.44489 Z" style="fill:var(--brand)" transform="scale(1.0022081,0.99779677)">
-      </path>
-      <!-- I-Stäbe -->
-      <path d="m 50.22171,84.263702 h 1.689894 v 13.53502 H 50.22171 Z" style="fill:var(--accent)">
-      </path>
-      <path d="m 65.614569,88.000235 a 1.3663932,1.3798021 0 0 1 -1.271757,1.041797 v 8.755537 h 1.689819 v -9.797334 z" style="fill:var(--accent)">
-      </path>
-      <!-- Datenlinie: Pfadlänge auf 1 normalisiert -->
-      <path d="m 55.233081,97.001996 -2.21e-4,-0.5003 9.53e-4,-8.17056 0.0011,-1.09167 3.959334,5.1116 5.328088,-6.52834 L 64.72 85.64" fill="none" id="dataPath" opacity="1" pathlength="1" stroke="#254c90" stroke-dasharray="1" stroke-dashoffset="1" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.60275">
-       <!-- 0–80% zeichnen (1→0), 80–94.4% halten, bei 94.4% sofort ausblenden, 100% Reset -->
-       <animate attributeName="stroke-dashoffset" dur="3.2s" keyTimes="0;0.8;0.944;1" repeatCount="indefinite" values="1;0;0;1">
-       </animate>
-       <animate attributeName="opacity" dur="3.2s" keyTimes="0;0.8;0.944;0.9441;1" repeatCount="indefinite" values="1;1;1;0;0">
-       </animate>
-      </path>
-      <!-- S -->
-      <path aria-label="S" d="m 96.313492,95.494159 q 0,0.780918 -0.368019,1.543885 -0.359043,0.762966 -1.014297,1.292554 -0.718086,0.574469 -1.678526,0.897608 -0.951464,0.323138 -2.297875,0.323138 -1.445148,0 -2.603061,-0.269282 -1.148938,-0.269282 -2.342755,-0.79887 v -2.226067 h 0.125665 q 1.014296,0.843751 2.342755,1.301531 1.328459,0.45778 2.495349,0.45778 1.651597,0 2.567157,-0.619349 0.924535,-0.619349 0.924535,-1.651598 0,-0.888631 -0.439827,-1.310507 -0.430852,-0.421875 -1.319483,-0.655253 -0.673206,-0.179522 -1.4631,-0.296211 -0.780919,-0.116688 -1.660574,-0.29621 -1.777263,-0.376995 -2.638966,-1.283579 -0.852727,-0.915559 -0.852727,-2.378659 0,-1.678526 1.41822,-2.746679 1.41822,-1.077129 3.599406,-1.077129 1.409243,0 2.585109,0.269283 1.175866,0.269282 2.082449,0.664229 v 2.100401 h -0.125665 q -0.762966,-0.646277 -2.01064,-1.068152 -1.238699,-0.430852 -2.540229,-0.430852 -1.427196,0 -2.297875,0.592421 -0.861703,0.592421 -0.861703,1.525932 0,0.834775 0.430851,1.310507 0.430852,0.475732 1.516957,0.727062 0.574468,0.125665 1.633645,0.305187 1.059177,0.179521 1.795215,0.368019 1.490028,0.394947 2.244018,1.193818 0.753991,0.79887 0.753991,2.235042 z" style="fill:var(--brand)" transform="scale(1.0170928,0.98319445)">
-      </path>
-      <!-- Kugel: identischer Takt & simultaner Fade bei 94.4% -->
-      <circle fill="#254c90" id="runnerDot" r="1.38">
-       <animateMotion calcMode="linear" dur="3.2s" keyPoints="0;1;1;1" keyTimes="0;0.8;0.944;1" repeatCount="indefinite">
-        <mpath href="#dataPath" xlink:href="#dataPath">
-        </mpath>
-       </animateMotion>
-       <animate attributeName="opacity" dur="3.2s" keyTimes="0;0.8;0.944;0.9441;1" repeatCount="indefinite" values="1;1;1;0;0">
-       </animate>
-      </circle>
-     </g>
-          </svg>
-         <p class="hero-tagline">
-           <span class="lang lang-de no-wrap">Impact Monitor für Gesundheitsinformationssysteme</span>
-           <span class="lang lang-en no-wrap" hidden>Impact Monitor for Health Information Systems</span>
-         </p>
-        </div>
       </section>
 
    <script>
