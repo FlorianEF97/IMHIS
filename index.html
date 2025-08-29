@@ -327,6 +327,10 @@
         width: 100%;
       }
 
+      .no-wrap {
+        white-space: nowrap;
+      }
+
       /* Responsivität */
       @media (max-width: 960px) {
         .nav-links,
@@ -500,7 +504,10 @@
    <section class="hero">
        <div class="hero-text">
         <h1>
-          <span class="lang lang-de">Die <span class="accent">digitale Zukunft</span> der Gesundheitsversorgung<br/>beginnt mit der richtigen Analyse</span>
+          <span class="lang lang-de">
+            <span class="no-wrap">Die <span class="accent">digitale Zukunft</span> der Gesundheitsversorgung</span><br/>
+            <span class="no-wrap">beginnt mit der richtigen Analyse</span>
+          </span>
           <span class="lang lang-en" hidden>The digital future of healthcare<br/>begins with the right analysis</span>
         </h1>
          <p>
@@ -599,8 +606,8 @@
      </g>
           </svg>
          <p class="hero-tagline">
-           <span class="lang lang-de">Impact Monitor für Gesundheitsinformationssysteme</span>
-           <span class="lang lang-en" hidden>Impact Monitor for Health Information Systems</span>
+           <span class="lang lang-de no-wrap">Impact Monitor für Gesundheitsinformationssysteme</span>
+           <span class="lang lang-en no-wrap" hidden>Impact Monitor for Health Information Systems</span>
          </p>
         </div>
       </section>
