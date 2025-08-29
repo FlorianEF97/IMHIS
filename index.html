@@ -240,14 +240,15 @@
       /* Hero Section */
       .hero {
         display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
         max-width: 1200px;
         margin: 0 auto;
         padding: 4rem 1.5rem 6rem;
         position: relative;
         overflow: hidden;
+        text-align: center;
       }
 
       .hero::before {
@@ -260,9 +261,8 @@
       }
 
       .hero-text {
-        flex: 1 1 520px;
         max-width: 600px;
-        text-align: left;
+        text-align: center;
       }
 
       .hero-text h1 {
@@ -282,16 +282,17 @@
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .hero-logo {
-        flex: 1 1 380px;
         max-width: 540px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        height: auto;
+        margin-bottom: 2rem;
+        order: -1;
       }
 
       .hero-logo svg {
@@ -335,27 +336,6 @@
         .burger {
           display: flex;
         }
-        .hero {
-          flex-direction: column;
-          align-items: center;
-        }
-        .hero-logo {
-          order: -1;
-          margin-top: 0;
-          margin-bottom: 2rem;
-          height: auto;
-        }
-        .hero-logo svg {
-          height: auto;
-          width: 100%;
-        }
-        .hero-text {
-          max-width: none;
-          text-align: center;
-        }
-        .hero-actions {
-          justify-content: center;
-        }
       }
     /* Benefits (Chips) im Hero */
 .benefits{
@@ -364,6 +344,7 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: .6rem .75rem;
 }
 .benefit-chip{
