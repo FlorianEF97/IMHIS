@@ -243,7 +243,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        max-width: 1280px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 4rem 1.5rem 6rem;
         position: relative;
@@ -287,13 +287,24 @@
       .hero-logo {
         flex: 1 1 380px;
         max-width: 540px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .hero-logo svg {
-        width: 320px;
+        width: 400px;
         max-width: 100%;
         height: auto;
         display: block;
+      }
+
+      .hero-tagline {
+        margin-top: 1rem;
+        font-size: 1.125rem;
+        color: var(--color-primary);
+        text-align: center;
       }
 
       /* Responsivität */
@@ -441,8 +452,8 @@
             Analyseinstrument, das Daten in messbare Erfolge verwandelt.
           </p>
           <div class="hero-actions">
-            <button class="btn primary">Kostenlos testen</button>
-            <button class="btn secondary">Mehr erfahren</button>
+            <a class="btn primary" href="#pitch">Demo ansehen</a>
+            <a class="btn secondary" href="#instrument">Mehr erfahren</a>
           </div>
         </div>
         <div class="hero-logo">
@@ -485,7 +496,8 @@
        </animate>
       </circle>
      </g>
-    </svg>
+          </svg>
+          <p class="hero-tagline">Impact Monitor for Health Information Systems</p>
         </div>
       </section>
 
