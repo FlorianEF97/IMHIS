@@ -334,7 +334,40 @@
           justify-content: center;
         }
       }
+    /* Benefits (Chips) im Hero */
+.benefits{
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem .75rem;
+}
+.benefit-chip{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: .5rem .9rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
+}
+.benefit-chip .icon{
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  color: var(--color-primary);
+}
+.benefit-chip svg{
+  width: 18px;
+  height: 18px;
+  display: block;
+}
     </style>
+
   </head>
   <body>
   <div id="top">
@@ -460,7 +493,43 @@
            <span class="lang lang-de">Intelligente Auswertungen und klare Insights unterstützen Kliniken dabei, fundierte Entscheidungen zu treffen. Entdecken Sie ein Analyseinstrument, das Daten in messbare Erfolge verwandelt.</span>
            <span class="lang lang-en" hidden>Smart evaluations and clear insights help hospitals make informed decisions. Discover an analysis tool that turns data into measurable success.</span>
          </p>
-         <div class="hero-actions">
+        <ul class="benefits" aria-label="Vorteile">
+  <li class="benefit-chip">
+    <span class="icon" aria-hidden="true">
+      <!-- Check -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10" opacity=".15"/>
+        <path d="M7 12l3 3 7-7"/>
+      </svg>
+    </span>
+    Kostenlos
+  </li>
+
+  <li class="benefit-chip">
+    <span class="icon" aria-hidden="true">
+      <!-- Erlenmeyer/Lab -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M10 2v4l-5 8a5 5 0 0 0 4.5 7h5a5 5 0 0 0 4.5-7l-5-8V2"/>
+        <path d="M9 10h6"/>
+      </svg>
+    </span>
+    Wissenschaftlich fundiert
+  </li>
+
+  <li class="benefit-chip">
+    <span class="icon" aria-hidden="true">
+      <!-- Zielscheibe/Target -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10" opacity=".15"/>
+        <circle cx="12" cy="12" r="6" opacity=".35"/>
+        <circle cx="12" cy="12" r="2"/>
+      </svg>
+    </span>
+    Praxisnah
+  </li>
+</ul>
+
+        <div class="hero-actions">
            <a class="btn primary" href="#pitch">
              <span class="lang lang-de">Demo ansehen</span>
              <span class="lang lang-en" hidden>Watch demo</span>
