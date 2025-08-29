@@ -303,9 +303,7 @@
       <p class="lead">
        <span class="lang lang-de">
         Mit IMHIS die
-        <span class="black-box">
-         Black Box
-        </span>
+       <span class="black-box">Black Box</span>
         des
         <span class="accent-text">
          Klinikalltages
@@ -321,6 +319,16 @@
       </span>
      </p>
      <style>
+        .black-box{
+    display:inline-block;
+    padding:.08rem .42rem;
+    border-radius:.4rem;
+    font-weight:700;
+    color:#fff;
+    background:linear-gradient(180deg,#0b111f,#0a1326);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 6px 14px rgba(2,6,23,.18);
+  }
       .analysis-header{display:flex;align-items:center;gap:1rem;margin-top:2rem;margin-bottom:1rem;flex-wrap:wrap;}
       @media (max-width:700px){.analysis-header{flex-direction:column;align-items:flex-start;}.analysis-header .btn-primary{margin-top:1rem;}}
      </style>
