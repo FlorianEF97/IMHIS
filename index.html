@@ -246,11 +246,23 @@
         max-width: 1280px;
         margin: 0 auto;
         padding: 4rem 1.5rem 6rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('assets/analysis-bg.svg') center/cover no-repeat;
+        opacity: 0.1;
+        z-index: -1;
       }
 
       .hero-text {
         flex: 1 1 520px;
         max-width: 600px;
+        text-align: left;
       }
 
       .hero-text h1 {
@@ -272,17 +284,16 @@
         flex-wrap: wrap;
       }
 
-      .hero-image {
+      .hero-logo {
         flex: 1 1 380px;
         max-width: 540px;
-        position: relative;
       }
 
-      .hero-image img {
-        width: 100%;
+      .hero-logo svg {
+        width: 320px;
+        max-width: 100%;
         height: auto;
-        border-radius: var(--radius-large);
-        box-shadow: 0 16px 32px rgba(15, 23, 42, 0.15);
+        display: block;
       }
 
       /* Responsivität */
@@ -296,9 +307,9 @@
         }
         .hero {
           flex-direction: column;
-          text-align: center;
+          align-items: flex-start;
         }
-        .hero-image {
+        .hero-logo {
           margin-top: 2rem;
         }
         .hero-text {
@@ -306,8 +317,8 @@
         }
       }
     </style>
- </head>
- <body>
+  </head>
+  <body>
   <div id="top">
   </div>
   <a class="skip-link" href="#main-content">
@@ -423,8 +434,20 @@
   <main id="main-content">
    <section class="hero">
         <div class="hero-text">
+          <h1>Die Zukunft der Gesundheitsanalyse</h1>
+          <p>
+            Intelligente Auswertungen und klare Insights unterstützen Kliniken
+            dabei, fundierte Entscheidungen zu treffen. Entdecken Sie ein
+            Analyseinstrument, das Daten in messbare Erfolge verwandelt.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary">Kostenlos testen</button>
+            <button class="btn secondary">Mehr erfahren</button>
+          </div>
+        </div>
+        <div class="hero-logo">
           <!-- Animiertes Logo im Hero-Bereich; es bleibt farb-, form- und schriftidentisch zum Original. -->
-          <svg aria-label="IMHIS – Damit Digitalisierung wirkt" class="hero-logo" role="img" style="display:block; width:320px; max-width:100%; height:auto; margin-bottom:1.5rem;" viewBox="0 0 47.738049 13.619491" xmlns="http://www.w3.org/2000/svg">
+          <svg aria-label="IMHIS – Damit Digitalisierung wirkt" role="img" viewBox="0 0 47.738049 13.619491" xmlns="http://www.w3.org/2000/svg">
      <style>
       :root{ --brand:#203361; --accent:#254c90; }
     @media (prefers-reduced-motion: reduce){
@@ -463,19 +486,6 @@
       </circle>
      </g>
     </svg>
-          <h1>Die Zukunft der Gesundheitsanalyse</h1>
-          <p>
-            Intelligente Auswertungen und klare Insights unterstützen Kliniken
-            dabei, fundierte Entscheidungen zu treffen. Entdecken Sie ein
-            Analyseinstrument, das Daten in messbare Erfolge verwandelt.
-          </p>
-          <div class="hero-actions">
-            <button class="btn primary">Kostenlos testen</button>
-            <button class="btn secondary">Mehr erfahren</button>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="6addc944-93aa-4e07-a3a3-b9dc5f148de9.png" alt="Futuristische Gesundheitsanalyse" />
         </div>
       </section>
 
