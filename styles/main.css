@@ -217,13 +217,23 @@ footer a {
 
 @media (max-width: 600px) {
     .hero {
-        padding: 3rem 1rem 4rem;
+        padding: 2rem 1rem 3rem;
+    }
+    .hero-logo {
+        max-width: 300px;
     }
     .hero-text p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .hero .tagline {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
+    }
+    .benefits {
+        gap: 0.4rem 0.5rem;
+    }
+    .benefit-chip {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.85rem;
     }
 }
 
