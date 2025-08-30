@@ -58,3 +58,26 @@
   color: var(--link);
 }
 
+.lang-switcher--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .lang-switcher--mobile {
+    display: inline-flex;
+    margin-right: 1rem;
+  }
+  .nav-links .lang-switcher {
+    display: none;
+  }
+  .nav-actions--mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .nav-actions--mobile .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
