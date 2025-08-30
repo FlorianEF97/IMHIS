@@ -22,6 +22,12 @@ a {
   text-decoration: none;
 }
 
+/* Defer rendering of offscreen sections to speed up initial paint */
+.section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
 header {
   position: sticky;
   top: 0;
