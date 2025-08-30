@@ -28,24 +28,24 @@
 
 .lang-switcher {
   display: inline-flex;
-  border: 1px solid var(--link);
+  border: 1px solid var(--mid-gray);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .lang-btn {
-  padding: 0.25rem 0.75rem;
+  padding: 0.125rem 0.5rem;
   background: transparent;
   border: none;
-  color: var(--link);
-  font-weight: 600;
-  font-size: 0.875rem;
+  color: var(--mid-gray);
+  font-weight: 500;
+  font-size: 0.75rem;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .lang-btn + .lang-btn {
-  border-left: 1px solid var(--link);
+  border-left: 1px solid var(--mid-gray);
 }
 
 .lang-btn[aria-pressed="true"] {
@@ -55,5 +55,6 @@
 
 .lang-btn:not([aria-pressed="true"]):hover {
   background: var(--accent-light);
+  color: var(--link);
 }
 
