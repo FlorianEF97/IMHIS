@@ -236,3 +236,13 @@ header {
   }
 }
 
+/* Badge indicating free university e-book access */
+.trust-badge.free-access {
+  background: var(--accent-light);
+  color: var(--link);
+}
+
+.trust-badge.free-access .dot {
+  background: var(--link);
+}
+
