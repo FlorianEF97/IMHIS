@@ -103,7 +103,7 @@
       <span class="lang lang-en" hidden>Skip to content</span>
     </a>
     <header>
-      <nav class="nav">
+      <nav class="nav" aria-label="Hauptnavigation">
         <a href="/index.html#top" class="logo" aria-label="IMHIS Startseite">
           <img
             src="assets/Logo_blau.svg"
@@ -114,6 +114,10 @@
             height="74"
           />
         </a>
+        <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Sprachauswahl">
+          <button class="lang-btn" data-lang="de" aria-label="Deutsch" aria-pressed="true">DE</button>
+          <button class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+        </div>
         <button
           class="nav-toggle"
           aria-label="Menü öffnen"
@@ -150,22 +154,22 @@
             <button class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
           </li>
           <li class="nav-actions--mobile">
-            <a href="/index.html#buch" class="btn-secondary">
+            <a href="/index.html#buch" class="btn secondary">
               <span class="lang lang-de">Buch ansehen</span>
               <span class="lang lang-en" hidden>View book</span>
             </a>
-            <a href="mailto:florianeisold@outlook.de" class="btn-primary">
+            <a href="mailto:florianeisold@outlook.de" class="btn primary">
               <span class="lang lang-de">Kostenlos anfragen</span>
               <span class="lang lang-en" hidden>Request (free)</span>
             </a>
           </li>
         </ul>
         <div class="nav-actions">
-          <a href="/index.html#buch" class="btn-secondary">
+          <a href="/index.html#buch" class="btn secondary">
             <span class="lang lang-de">Buch ansehen</span>
             <span class="lang lang-en" hidden>View book</span>
           </a>
-          <a href="mailto:florianeisold@outlook.de" class="btn-primary">
+          <a href="mailto:florianeisold@outlook.de" class="btn primary">
             <span class="lang lang-de">Kostenlos anfragen</span>
             <span class="lang lang-en" hidden>Request (free)</span>
           </a>
