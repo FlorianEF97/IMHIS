@@ -259,8 +259,9 @@ header {
     display: none;
   }
   .nav-actions--mobile .btn.primary {
-    background: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary), #1d4ed8);
     color: #ffffff;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
   }
   .nav-actions--mobile .btn.secondary {
     background: transparent;
