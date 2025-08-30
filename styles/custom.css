@@ -166,30 +166,66 @@ header {
 
 /* Custom styles for navigation and language toggle */
 .nav-toggle {
-  border: 2px solid var(--link);
-  border-radius: 999px;
-  background: transparent;
-  transition: background 0.2s ease;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
 }
 
 .nav-toggle .hamburger,
 .nav-toggle .hamburger::before,
 .nav-toggle .hamburger::after {
-  background: var(--link);
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.nav-toggle:hover,
-.nav-toggle.open {
-  background: var(--link);
+.nav-toggle .hamburger {
+  position: relative;
 }
 
-.nav-toggle:hover .hamburger,
-.nav-toggle.open .hamburger,
-.nav-toggle:hover .hamburger::before,
-.nav-toggle.open .hamburger::before,
-.nav-toggle:hover .hamburger::after,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle .hamburger::before {
+  transform: translateY(-6px);
+}
+
+.nav-toggle .hamburger::after {
+  transform: translateY(6px);
+}
+
+.nav-toggle.open .hamburger {
+  background: transparent;
+}
+
+.nav-toggle.open .hamburger::before {
+  transform: rotate(45deg);
+}
+
 .nav-toggle.open .hamburger::after {
-  background: #fff;
+  transform: rotate(-45deg);
 }
 
 .lang-switcher {
