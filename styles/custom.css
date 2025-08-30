@@ -1,0 +1,59 @@
+/* Custom styles for navigation and language toggle */
+.nav-toggle {
+  border: 2px solid var(--link);
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  background: var(--link);
+}
+
+.nav-toggle:hover,
+.nav-toggle.open {
+  background: var(--link);
+}
+
+.nav-toggle:hover .hamburger,
+.nav-toggle.open .hamburger,
+.nav-toggle:hover .hamburger::before,
+.nav-toggle.open .hamburger::before,
+.nav-toggle:hover .hamburger::after,
+.nav-toggle.open .hamburger::after {
+  background: #fff;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  border: 1px solid var(--link);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-btn {
+  padding: 0.25rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--link);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-btn + .lang-btn {
+  border-left: 1px solid var(--link);
+}
+
+.lang-btn[aria-pressed="true"] {
+  background: var(--link);
+  color: #fff;
+}
+
+.lang-btn:not([aria-pressed="true"]):hover {
+  background: var(--accent-light);
+}
+
