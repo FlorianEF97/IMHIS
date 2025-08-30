@@ -25,7 +25,7 @@ a {
 /* Defer rendering of offscreen sections to speed up initial paint */
 .section {
   content-visibility: auto;
-  contain-intrinsic-size: 1000px;
+  contain-intrinsic-size: auto 1000px;
 }
 
 header {
