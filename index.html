@@ -34,16 +34,20 @@
   <!-- Google Fonts Preconnect -->
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <!-- Preconnect LinkedIn for faster embed loading -->
+  <link rel="preconnect" href="https://www.linkedin.com" crossorigin>
+  <link rel="preconnect" href="https://media.licdn.com" crossorigin>
   <link as="font" crossorigin="" fetchpriority="high" href="https://fonts.gstatic.com/s/inter/v19/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" rel="preload" type="font/woff2"/>
   <link as="style" crossorigin="" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="preload"/>
   <link crossorigin="" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
   <!-- Stylesheet -->
   <link as="style" href="styles/main.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-    <noscript>
-     <link href="styles/main.min.css" rel="stylesheet"/>
-    </noscript>
-    <link href="styles/custom.css" rel="stylesheet"/>
-    <!-- Preload header logo to improve load time -->
+  <noscript>
+    <link href="styles/main.min.css" rel="stylesheet"/>
+  </noscript>
+  <link as="style" href="styles/custom.css" rel="preload" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link href="styles/custom.css" rel="stylesheet"/></noscript>
+  <!-- Preload header logo to improve load time -->
   <link as="image" href="assets/Logo_blau.svg" rel="preload" type="image/svg+xml"/>
   <!-- Preload book cover image to improve LCP -->
   <link as="image" fetchpriority="high" href="assets/9783658491895-3.webp" rel="preload" type="image/webp"/>
