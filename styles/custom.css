@@ -199,10 +199,14 @@ header {
   color: var(--link);
 }
 
-/* Emphasise opening quote lines in About section */
+/* Style quote lines in About section */
+.about-quote {
+  font-weight: 400;
+}
+
 .about-quote .quote-emphasis {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .lang-switcher--mobile {
