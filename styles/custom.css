@@ -50,6 +50,13 @@
 
 .lang-btn[aria-pressed="true"] {
   background: var(--link);
+  border-color: var(--link);
+  color: #fff;
+}
+
+.nav-links button.lang-btn[aria-pressed="true"] {
+  background: var(--link);
+  border-color: var(--link);
   color: #fff;
 }
 
