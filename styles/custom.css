@@ -118,6 +118,7 @@ header {
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -242,13 +243,15 @@ header {
   }
   .nav-actions--mobile {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     gap: 0.75rem;
   }
   .nav-actions--mobile .btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    width: auto;
+    justify-content: center;
+    width: 100%;
     text-align: center;
     white-space: nowrap;
   }
