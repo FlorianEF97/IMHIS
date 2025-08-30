@@ -132,6 +132,11 @@ header {
   color: #ffffff;
 }
 
+/* Prevent line breaks in header CTA buttons */
+.nav-actions .btn {
+  white-space: nowrap;
+}
+
 /* Custom styles for navigation and language toggle */
 .nav-toggle {
   border: 2px solid var(--link);
@@ -230,6 +235,7 @@ header {
     display: inline-block;
     width: auto;
     text-align: center;
+    white-space: nowrap;
   }
   .nav-links .btn::after {
     display: none;
