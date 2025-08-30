@@ -229,7 +229,7 @@ header {
     display: inline-flex;
     margin-right: 1rem;
   }
-  .nav-links .lang-switcher {
+  .nav:has(.lang-switcher--mobile) .nav-links .lang-switcher {
     display: none;
   }
   .nav-actions--mobile {
