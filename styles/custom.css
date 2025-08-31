@@ -136,26 +136,27 @@ header {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, var(--color-primary), #1d4ed8);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
 }
 
 .btn.primary:hover {
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
   transform: translateY(-1px);
 }
 
 .btn.secondary {
-  background: #ffffff;
+  background: rgba(37, 99, 235, 0.1);
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
 }
 
 .btn.secondary:hover {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   color: #ffffff;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
 }
 
 /* Prevent line breaks in header CTA buttons */
