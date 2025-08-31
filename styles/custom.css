@@ -237,8 +237,8 @@ header {
 }
 
 .about-quote .quote-emphasis {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-weight: 600;
 }
 
 @media (max-width: 767px) {
