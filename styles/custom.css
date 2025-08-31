@@ -123,11 +123,12 @@ header {
 }
 
 .btn {
-  padding: 0.65rem 1.25rem;
+  padding: 1rem 1.5rem;
   border-radius: 14px !important;
   font-weight: 600;
   font-size: 1rem;
-  border: none;
+  border: 2px solid transparent;
+  box-sizing: border-box;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
