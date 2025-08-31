@@ -174,7 +174,7 @@ header {
 }
 
 /* Ensure CTA buttons in the book section share equal height */
-.order-buttons {
+.book-section .order-buttons {
   align-items: stretch;
 }
 
