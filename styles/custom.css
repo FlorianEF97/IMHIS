@@ -136,13 +136,14 @@ header {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(135deg, var(--color-primary), #1e40af);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
 }
 
 .btn.primary:hover {
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(135deg, #1e4fd1, #1e40af);
+  box-shadow: 0 6px 14px rgba(32, 51, 97, 0.3);
   transform: translateY(-1px);
 }
 
@@ -167,6 +168,16 @@ header {
 .btn svg {
   width: 20px;
   height: 20px;
+}
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-cta span {
+  line-height: 1;
 }
 
 /* Custom styles for navigation and language toggle */
