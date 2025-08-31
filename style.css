@@ -146,7 +146,7 @@
       }
 
       .btn {
-        padding: 0.65rem 1.25rem;
+        padding: 1rem 1.5rem;
         border-radius: 14px;
         font-weight: 600;
         font-size: 1rem;
@@ -160,7 +160,6 @@
       }
 
       .btn.primary {
-        padding: 1rem 1.5rem;
         background: linear-gradient(135deg, var(--color-primary), #1d4ed8);
         color: #ffffff;
         box-shadow: 0 10px 28px rgba(37, 99, 235, 0.25);
@@ -509,7 +508,7 @@
     box-shadow:0 10px 28px rgba(37,99,235,.25);transition:all .25s ease;
   }
   .about-cta svg{
-    width:20px;height:20px;flex-shrink:0;
+    width:20px;height:20px;flex-shrink:0;display:block;transform:translateY(1px);
   }
   .about-cta:hover{ transform:translateY(-2px); box-shadow:0 14px 32px rgba(37,99,235,.35); }
 
@@ -715,6 +714,19 @@
 .counter-number .unit{font-size:1.4rem;font-weight:700;background:linear-gradient(90deg,var(--accent),#1d4ed8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
 .counter-label{margin-top:0.5rem;font-size:0.95rem;color:var(--text);}
 .footnote{margin-top:1rem;font-size:0.8rem;color:var(--text);}
+
+      .seller-list{
+        list-style:none;
+        padding:0;
+        margin:1rem 0 0;
+        display:flex;
+        flex-direction:column;
+        gap:0.5rem;
+      }
+
+      .seller-list .btn{
+        width:100%;
+      }
 
 @media (max-width: 767px) {
   .nav-actions--mobile {
