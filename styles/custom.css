@@ -178,7 +178,9 @@ header {
   align-items: stretch;
 }
 
-.about-cta {
+
+.about-cta,
+.about-content .about-cta {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,6 +193,7 @@ header {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  display: inline-block;
 }
 
 .about-cta span {
