@@ -123,7 +123,7 @@ header {
 
 .btn {
   padding: 0.65rem 1.25rem;
-  border-radius: 999px;
+  border-radius: 14px;
   font-weight: 600;
   font-size: 1rem;
   border: none;
@@ -137,7 +137,6 @@ header {
 
 .btn.primary {
   padding: 1rem 1.5rem;
-  border-radius: 14px;
   background: linear-gradient(135deg, var(--color-primary), #1d4ed8);
   color: #ffffff;
   box-shadow: 0 10px 28px rgba(37, 99, 235, 0.25);
@@ -278,7 +277,6 @@ header {
   }
   .nav-actions--mobile .btn.primary {
     padding: 1rem 1.5rem;
-    border-radius: 14px;
     background: linear-gradient(135deg, var(--color-primary), #1d4ed8);
     color: #ffffff;
     box-shadow: 0 10px 28px rgba(37, 99, 235, 0.25);
