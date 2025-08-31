@@ -179,10 +179,11 @@ header {
 }
 
 .about-cta {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  margin: 1.2rem auto 0;
   white-space: nowrap;
 }
 
@@ -190,7 +191,6 @@ header {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  display: block;
 }
 
 .about-cta span {
