@@ -114,6 +114,7 @@ header {
   .nav-links .btn {
     display: inline-flex;
     width: 100%;
+    border-radius: 14px !important;
   }
 
   .nav-links .btn::after {
@@ -123,7 +124,7 @@ header {
 
 .btn {
   padding: 0.65rem 1.25rem;
-  border-radius: 14px;
+  border-radius: 14px !important;
   font-weight: 600;
   font-size: 1rem;
   border: none;
