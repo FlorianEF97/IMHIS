@@ -710,7 +710,7 @@
 .counter-number{font-size:clamp(2.8rem,6vw,4rem);font-weight:700;color:var(--accent);display:flex;justify-content:center;align-items:center;gap:0.25rem;filter:blur(5px) opacity(0.5);transition:filter 0.8s ease-out, opacity 0.8s ease-out;}
 .counter-number .number{background:linear-gradient(90deg,var(--accent),#1d4ed8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .counter-number .prefix{font-size:1.8rem;line-height:1;}
-.counter-number .unit{font-size:1.4rem;}
+.counter-number .unit{font-size:1.4rem;font-weight:700;background:linear-gradient(90deg,var(--accent),#1d4ed8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
 .counter-label{margin-top:0.5rem;font-size:0.95rem;color:var(--text);}
 .footnote{margin-top:1rem;font-size:0.8rem;color:var(--text);}
 
