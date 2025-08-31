@@ -370,7 +370,7 @@
         </strong>
        </span>
       </div>
-      <a class="about-cta pitch-cta" href="#pitch" id="reveal-effects">
+       <a class="about-cta pitch-cta black-box-cta" href="#pitch" id="reveal-effects">
        <span class="lang lang-de">
         Jetzt alle Effekte mit IMHIS sichtbar machen
        </span>
@@ -1621,11 +1621,12 @@
   const revealBtn = document.getElementById('reveal-effects');
   if (revealBtn) {
     let revealed = false;
-    revealBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (revealed) return;
-      revealed = true;
-      const allCounters = Array.from(counters);
+      revealBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (revealed) return;
+        revealed = true;
+        revealBtn.classList.add('revealed');
+        const allCounters = Array.from(counters);
       allCounters.forEach((counter, index) => {
         if (index === 0) return; // Erste Karte ist schon animiert
         setTimeout(() => {
