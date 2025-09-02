@@ -795,13 +795,16 @@
   }
 
   .nav-actions--mobile .btn.secondary {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(37, 99, 235, 0.1);
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
-    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
   }
 
   .nav-actions--mobile .btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+    transform: translateY(-1px);
   }
 }
