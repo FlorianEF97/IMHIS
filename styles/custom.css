@@ -213,10 +213,10 @@ header {
     margin: 0;
   }
 
-  /* Benefit section: center heading, intro text and cards */
+  /* Benefit section: left-align heading/intro, center cards */
   .section-benefit > h2,
   .section-benefit > p.lead {
-    text-align: center;
+    text-align: left;
   }
 
   .section-benefit .toggle-container {
