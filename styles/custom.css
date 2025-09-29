@@ -214,36 +214,92 @@ header {
   }
 
   /* Benefit section: align intro centrally, keep cards centred */
-  .section-benefit > h2,
+  .section-benefit > h2 {
+    text-align: left;
+    margin-left: 0;
+  }
+
   .section-benefit > p.lead {
-    text-align: center;
+    text-align: left;
+    max-width: 46rem;
   }
 
   .section-benefit .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: auto;
+    margin: 0 0 1.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .section-benefit .eyebrow::before {
+    content: "";
     display: block;
-    width: fit-content;
-    margin: 0 auto 1.4rem;
+    width: 40px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
   }
 
   .section-benefit .toggle-container {
-    margin: 0 auto 2rem;
+    margin: 0 0 2rem;
   }
 
   .section-benefit .benefit-cards {
-    justify-items: center;
+    justify-items: stretch;
   }
 
   .section-benefit .card {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .section-benefit .card-desc {
-    text-align: center;
+    text-align: left;
   }
 
   .section-benefit .cta-row {
-    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 720px) {
+    .section-benefit > h2,
+    .section-benefit > p.lead {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-benefit .eyebrow {
+      margin: 0 auto 1.4rem;
+      justify-content: center;
+    }
+
+    .section-benefit .toggle-container {
+      margin: 0 auto 2rem;
+    }
+
+    .section-benefit .benefit-cards {
+      justify-items: center;
+    }
+
+    .section-benefit .card {
+      align-items: center;
+      text-align: center;
+    }
+
+    .section-benefit .card-desc {
+      text-align: center;
+    }
+
+    .section-benefit .cta-row {
+      justify-content: center;
+    }
   }
 
   .cta-icon {
