@@ -213,10 +213,16 @@ header {
     margin: 0;
   }
 
-  /* Benefit section: left-align heading/intro, center cards */
+  /* Benefit section: align intro centrally, keep cards centred */
   .section-benefit > h2,
   .section-benefit > p.lead {
-    text-align: left;
+    text-align: center;
+  }
+
+  .section-benefit .eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 1.4rem;
   }
 
   .section-benefit .toggle-container {
