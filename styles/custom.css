@@ -227,23 +227,16 @@ header {
   .section-benefit .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    width: auto;
-    margin: 0 0 1.4rem;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--color-primary);
-  }
-
-  .section-benefit .eyebrow::before {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    margin: 0 0 1.4rem;
   }
 
   .section-benefit .toggle-container {
@@ -270,14 +263,14 @@ header {
   @media (max-width: 720px) {
     .section-benefit > h2,
     .section-benefit > p.lead {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .section-benefit .eyebrow {
-      margin: 0 auto 1.4rem;
-      justify-content: center;
+      justify-content: flex-start;
+      margin: 0 0 1.4rem;
     }
 
     .section-benefit .toggle-container {
