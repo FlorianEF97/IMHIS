@@ -213,6 +213,53 @@ header {
     margin: 0;
   }
 
+  /* Benefit section: center heading, intro text and cards */
+  .section-benefit > h2,
+  .section-benefit > p.lead {
+    text-align: center;
+  }
+
+  .section-benefit .toggle-container {
+    margin: 0 auto 2rem;
+  }
+
+  .section-benefit .benefit-cards {
+    justify-items: center;
+  }
+
+  .section-benefit .card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .section-benefit .card-desc {
+    text-align: center;
+  }
+
+  .section-benefit .cta-row {
+    justify-content: center;
+  }
+
+  .cta-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-cta {
+    gap: 0.6rem;
+  }
+
+  .contact-footer {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .contact-footer .footer-cta {
+    margin: 0 auto;
+  }
+
   /* Custom styles for navigation and language toggle */
   .nav-toggle {
     border: 2px solid var(--link);
