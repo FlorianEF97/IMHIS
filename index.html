@@ -273,15 +273,11 @@
     gap: 2rem;
   }
   .card {
-    background: linear-gradient(
-      135deg,
-      rgba(224, 242, 255, 0.95),
-      rgba(237, 248, 255, 0.95)
-    );
-    backdrop-filter: blur(12px);
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
@@ -289,7 +285,7 @@
   }
   .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 32px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
   }
   .card-icon {
     width: 48px;
@@ -298,9 +294,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(37, 88, 235, 0.12);
+    background: rgba(37, 99, 235, 0.12);
     border-radius: 50%;
     flex-shrink: 0;
+    align-self: center;
   }
   .card-icon svg {
     width: 24px;
@@ -872,46 +869,75 @@
    </section>
 
      <section class="section-benefit">
-  <h2 id="section-title">Evidenz, die verkauft</h2>
-  <p class="lead">Zeit, Geld, Impact – alles in einem Schritt</p>
+  <h2 id="section-title">
+    <span class="lang lang-de">
+      <span data-audience="manufacturer">Evidenz, die verkauft</span>
+      <span data-audience="clinic" hidden>Evidenz, die entscheidet</span>
+    </span>
+    <span class="lang lang-en" hidden>
+      <span data-audience="manufacturer">Evidence that sells</span>
+      <span data-audience="clinic" hidden>Evidence that guides decisions</span>
+    </span>
+  </h2>
+  <p class="lead">
+    <span class="lang lang-de">Zeit, Geld, Impact – alles in einem Schritt</span>
+    <span class="lang lang-en" hidden>Time, money, impact—all in one go</span>
+  </p>
 
   <!-- Audience‑Toggle -->
   <div class="toggle-container" role="tablist">
     <button id="toggle-manufacturer" class="active" role="tab" aria-selected="true">
-      Hersteller
+      <span class="lang lang-de">Hersteller</span>
+      <span class="lang lang-en" hidden>Vendors</span>
     </button>
     <button id="toggle-clinic" role="tab" aria-selected="false">
-      Klinik
+      <span class="lang lang-de">Klinik</span>
+      <span class="lang lang-en" hidden>Hospitals</span>
     </button>
   </div>
 
   <!-- Digitaler Wirkungsrechner -->
   <div class="calculator">
-    <h3>Digitaler Wirkungsrechner</h3>
+    <h3>
+      <span class="lang lang-de">Digitaler Wirkungsrechner</span>
+      <span class="lang lang-en" hidden>Digital Impact Calculator</span>
+    </h3>
     <div class="calculator-inputs">
       <div class="input-group">
-        <label for="input-time">Zeitersparnis pro Schicht (Minuten)</label>
+        <label for="input-time">
+          <span class="lang lang-de">Zeitersparnis pro Schicht (Minuten)</span>
+          <span class="lang lang-en" hidden>Time saved per shift (minutes)</span>
+        </label>
         <div class="range-value-container">
           <input type="range" id="input-time" min="0" max="60" step="5" value="30" />
           <span id="value-time">30</span>
         </div>
       </div>
       <div class="input-group">
-        <label for="input-stations">Anzahl der Stationen</label>
+        <label for="input-stations">
+          <span class="lang lang-de">Anzahl der Stationen</span>
+          <span class="lang lang-en" hidden>Number of wards</span>
+        </label>
         <div class="range-value-container">
           <input type="range" id="input-stations" min="1" max="20" step="1" value="6" />
           <span id="value-stations">6</span>
         </div>
       </div>
       <div class="input-group">
-        <label for="input-wage">Stundenlohn (Euro)</label>
+        <label for="input-wage">
+          <span class="lang lang-de">Stundenlohn (Euro)</span>
+          <span class="lang lang-en" hidden>Hourly wage (EUR)</span>
+        </label>
         <div class="range-value-container">
           <input type="range" id="input-wage" min="10" max="60" step="1" value="20" />
           <span id="value-wage">20</span>
         </div>
       </div>
       <div class="input-group">
-        <label for="input-employees">Anzahl Mitarbeiter</label>
+        <label for="input-employees">
+          <span class="lang lang-de">Anzahl Mitarbeiter</span>
+          <span class="lang lang-en" hidden>Number of employees</span>
+        </label>
         <div class="range-value-container">
           <input type="range" id="input-employees" min="0" max="1000" step="10" value="100" />
           <span id="value-employees">100</span>
@@ -921,23 +947,46 @@
 
     <!-- Perioden‑Umschalter -->
     <div class="period-toggle">
-      <button id="period-month" class="active">Monat</button>
-      <button id="period-year">Jahr</button>
+      <button id="period-month" class="active">
+        <span class="lang lang-de">Monat</span>
+        <span class="lang lang-en" hidden>Month</span>
+      </button>
+      <button id="period-year">
+        <span class="lang lang-de">Jahr</span>
+        <span class="lang lang-en" hidden>Year</span>
+      </button>
     </div>
 
     <!-- Ergebnisse -->
     <div class="calculator-results">
       <div class="result-block">
-        <div class="result-title">Zeitersparnis</div>
-        <div class="result-value"><span id="hours-result">0</span> Stunden</div>
+        <div class="result-title">
+          <span class="lang lang-de">Zeitersparnis</span>
+          <span class="lang lang-en" hidden>Time saved</span>
+        </div>
+        <div class="result-value">
+          <span id="hours-result">0</span>
+          <span class="lang lang-de">Stunden</span>
+          <span class="lang lang-en" hidden>hours</span>
+        </div>
       </div>
       <div class="result-block">
-        <div class="result-title">Ersparnis</div>
+        <div class="result-title">
+          <span class="lang lang-de">Ersparnis</span>
+          <span class="lang lang-en" hidden>Savings</span>
+        </div>
         <div class="result-value">€ <span id="money-result">0</span></div>
       </div>
       <div class="result-block">
-        <div class="result-title">VK (40h/Woche)</div>
-        <div class="result-value"><span id="vk-result">0</span> VK</div>
+        <div class="result-title">
+          <span class="lang lang-de">VK (40h/Woche)</span>
+          <span class="lang lang-en" hidden>FTE (40h/week)</span>
+        </div>
+        <div class="result-value">
+          <span id="vk-result">0</span>
+          <span class="lang lang-de">VK</span>
+          <span class="lang lang-en" hidden>FTE</span>
+        </div>
       </div>
     </div>
 
@@ -958,8 +1007,14 @@
           <path d="M16 13a2 2 0 1 0 0-4" />
         </svg>
       </div>
-      <div class="card-title">Sales‑ROI &amp; Stories</div>
-      <p class="card-desc">Use‑Cases mit Zahlen für Ihre Pitches und Ausschreibungen.</p>
+      <div class="card-title">
+        <span class="lang lang-de">Sales‑ROI &amp; Stories</span>
+        <span class="lang lang-en" hidden>Sales ROI &amp; stories</span>
+      </div>
+      <p class="card-desc">
+        <span class="lang lang-de">Use‑Cases mit Zahlen für Ihre Pitches und Ausschreibungen.</span>
+        <span class="lang lang-en" hidden>Use cases with numbers for your pitches and tenders.</span>
+      </p>
     </div>
     <!-- Card 2 -->
     <div class="card">
@@ -970,8 +1025,14 @@
           <path d="M10 22h4" />
         </svg>
       </div>
-      <div class="card-title">Produkt‑Insights aus dem Alltag</div>
-      <p class="card-desc">Prioritäten aus Nutzersicht – nicht vom Whiteboard.</p>
+      <div class="card-title">
+        <span class="lang lang-de">Produkt‑Insights aus dem Alltag</span>
+        <span class="lang lang-en" hidden>Product insights from daily practice</span>
+      </div>
+      <p class="card-desc">
+        <span class="lang lang-de">Prioritäten aus Nutzersicht – nicht vom Whiteboard.</span>
+        <span class="lang lang-en" hidden>Priorities from the user perspective—not from the whiteboard.</span>
+      </p>
     </div>
     <!-- Card 3 -->
     <div class="card">
@@ -981,8 +1042,14 @@
           <rect x="4" y="6" width="16" height="14" rx="2" />
         </svg>
       </div>
-      <div class="card-title">Ausschreibungen schärfen</div>
-      <p class="card-desc">Wirkungs‑Kriterien, Referenzen und valide Nachweise.</p>
+      <div class="card-title">
+        <span class="lang lang-de">Ausschreibungen schärfen</span>
+        <span class="lang lang-en" hidden>Sharpen tenders</span>
+      </div>
+      <p class="card-desc">
+        <span class="lang lang-de">Wirkungs‑Kriterien, Referenzen und valide Nachweise.</span>
+        <span class="lang lang-en" hidden>Impact criteria, references, and solid evidence.</span>
+      </p>
     </div>
     <!-- Card 4 -->
     <div class="card">
@@ -992,8 +1059,14 @@
           <path d="M9 12l2 2 4-4" />
         </svg>
       </div>
-      <div class="card-title">Trust‑Asset: Gütesiegel</div>
-      <p class="card-desc">„IMHIS Verified Impact“ auf Website und Sales‑Deck.</p>
+      <div class="card-title">
+        <span class="lang lang-de">Trust‑Asset: Gütesiegel</span>
+        <span class="lang lang-en" hidden>Trust asset: quality seal</span>
+      </div>
+      <p class="card-desc">
+        <span class="lang lang-de">„IMHIS Verified Impact“ auf Website und Sales‑Deck.</span>
+        <span class="lang lang-en" hidden>“IMHIS Verified Impact” for your website and sales deck.</span>
+      </p>
     </div>
   </div>
 
@@ -1008,8 +1081,14 @@
           <path d="M3 18h18" />
         </svg>
       </div>
-      <div class="card-title">Evidenz für Entscheidungen</div>
-      <p class="card-desc">Upgrade, Roll‑out, Budget: harte Zahlen statt Bauchgefühl.</p>
+      <div class="card-title">
+        <span class="lang lang-de">Evidenz für Entscheidungen</span>
+        <span class="lang lang-en" hidden>Evidence for decisions</span>
+      </div>
+      <p class="card-desc">
+        <span class="lang lang-de">Upgrade, Roll‑out, Budget: harte Zahlen statt Bauchgefühl.</span>
+        <span class="lang lang-en" hidden>Upgrade, roll-out, budget: hard numbers instead of gut feeling.</span>
+      </p>
     </div>
     <!-- Card 2 -->
     <div class="card">
@@ -1019,8 +1098,14 @@
           <path d="M12 6v6l4 2" />
         </svg>
       </div>
-      <div class="card-title">Prozesshebel sichtbar</div>
-      <p class="card-desc">Wo Zeit verloren geht. Wo Wirkung entsteht – und wie Sie sie nutzen.</p>
+      <div class="card-title">
+        <span class="lang lang-de">Prozesshebel sichtbar</span>
+        <span class="lang lang-en" hidden>Process levers made visible</span>
+      </div>
+      <p class="card-desc">
+        <span class="lang lang-de">Wo Zeit verloren geht. Wo Wirkung entsteht – und wie Sie sie nutzen.</span>
+        <span class="lang lang-en" hidden>Where time is lost. Where impact emerges—and how to harness it.</span>
+      </p>
     </div>
     <!-- Card 3 -->
     <div class="card">
@@ -1029,8 +1114,14 @@
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
       </div>
-      <div class="card-title">Risiken minimieren</div>
-      <p class="card-desc">Medienbrüche, Usability und Infrastruktur klar priorisieren.</p>
+      <div class="card-title">
+        <span class="lang lang-de">Risiken minimieren</span>
+        <span class="lang lang-en" hidden>Minimise risks</span>
+      </div>
+      <p class="card-desc">
+        <span class="lang lang-de">Medienbrüche, Usability und Infrastruktur klar priorisieren.</span>
+        <span class="lang lang-en" hidden>Prioritise media breaks, usability, and infrastructure with clarity.</span>
+      </p>
     </div>
     <!-- Card 4 -->
     <div class="card">
@@ -1041,17 +1132,27 @@
           <path d="M15 12V2" />
         </svg>
       </div>
-      <div class="card-title">Akzeptanz sichern</div>
-      <p class="card-desc">Nutzerzufriedenheit als Frühwarnsystem für den Klinikalltag.</p>
+      <div class="card-title">
+        <span class="lang lang-de">Akzeptanz sichern</span>
+        <span class="lang lang-en" hidden>Secure adoption</span>
+      </div>
+      <p class="card-desc">
+        <span class="lang lang-de">Nutzerzufriedenheit als Frühwarnsystem für den Klinikalltag.</span>
+        <span class="lang lang-en" hidden>User satisfaction as an early warning system for everyday clinical life.</span>
+      </p>
     </div>
   </div>
 
   <!-- CTA -->
   <div class="cta-row">
     <a href="mailto:kontakt@imhisdigital.de?subject=Kontaktanfrage%20Digitale%20Wirkung" class="btn primary">
-      Kontakt aufnehmen
+      <span class="lang lang-de">Kontakt aufnehmen</span>
+      <span class="lang lang-en" hidden>Get in touch</span>
     </a>
-    <a href="#" class="btn secondary">ROI‑Report als PDF</a>
+    <a href="#" class="btn secondary">
+      <span class="lang lang-de">ROI‑Report als PDF</span>
+      <span class="lang lang-en" hidden>Download ROI report (PDF)</span>
+    </a>
   </div>
 </section>
    
@@ -2128,6 +2229,16 @@
   const manufacturerCards = document.getElementById('manufacturer-benefits');
   const clinicCards = document.getElementById('clinic-benefits');
   const sectionTitle = document.getElementById('section-title');
+  const sectionTitleVariants = sectionTitle
+    ? sectionTitle.querySelectorAll('[data-audience]')
+    : [];
+
+  function updateSectionTitle(audience) {
+    if (!sectionTitleVariants.length) return;
+    sectionTitleVariants.forEach((variant) => {
+      variant.hidden = variant.dataset.audience !== audience;
+    });
+  }
 
   function switchAudience(toManufacturer) {
     if (toManufacturer) {
@@ -2137,7 +2248,7 @@
       btnClinic.setAttribute('aria-selected', 'false');
       manufacturerCards.style.display = 'grid';
       clinicCards.style.display = 'none';
-      sectionTitle.textContent = 'Evidenz, die verkauft';
+      updateSectionTitle('manufacturer');
     } else {
       btnManufacturer.classList.remove('active');
       btnManufacturer.setAttribute('aria-selected', 'false');
@@ -2145,9 +2256,10 @@
       btnClinic.setAttribute('aria-selected', 'true');
       manufacturerCards.style.display = 'none';
       clinicCards.style.display = 'grid';
-      sectionTitle.textContent = 'Evidenz, die entscheidet';
+      updateSectionTitle('clinic');
     }
   }
+  updateSectionTitle('manufacturer');
   btnManufacturer.addEventListener('click', () => switchAudience(true));
   btnClinic.addEventListener('click', () => switchAudience(false));
 
