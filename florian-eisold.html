@@ -71,6 +71,7 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
+      box-sizing: border-box;
     }
 
     /* Globale Button‑Klassen für ein konsistentes Erscheinungsbild */
@@ -487,10 +488,10 @@
       z-index: 3;
     }
     #timeline .timeline-item:nth-child(odd)::before {
-      right: -13px;
+      right: -10px;
     }
     #timeline .timeline-item:nth-child(even)::before {
-      left: -13px;
+      left: -10px;
     }
     /* Hover‑Effekt für Timeline‑Punkte */
     #timeline .timeline-item:hover::before {
@@ -587,7 +588,7 @@
       }
       #timeline .timeline-item::before {
         left: 28px;
-        margin-left: 0;
+        margin-left: -10px;
       }
       #timeline .timeline-item::after {
         left: 28px;
