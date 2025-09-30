@@ -668,30 +668,52 @@
   <header class="site-header">
     <div class="header-inner">
       <!-- Logo und Markenname -->
-      <a href="index.html" class="logo">
+      <a href="#top" class="logo" aria-label="IMHIS Startseite">
         <img src="assets/Logo_blau.svg" alt="IMHIS Logo" data-alt-en="IMHIS logo" width="160" height="40" loading="lazy" decoding="async">
       </a>
       <!-- Navigation -->
-      <nav class="nav-links">
-        <a href="#hero">
-          <span class="lang lang-de">Profil</span>
-          <span class="lang lang-en" hidden>Profile</span>
-        </a>
-        <a href="#timeline">
-          <span class="lang lang-de">Karriere</span>
-          <span class="lang lang-en" hidden>Career</span>
-        </a>
-        <a href="#publications">
-          <span class="lang lang-de">Publikationen</span>
-          <span class="lang lang-en" hidden>Publications</span>
-        </a>
-        <a href="index.html#pitch">
-          <span class="lang lang-de">Demo ansehen</span>
-          <span class="lang lang-en" hidden>View demo</span>
-        </a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <button
+          class="nav-toggle"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          data-label-open-de="Menü öffnen"
+          data-label-close-de="Menü schließen"
+          data-label-open-en="Open menu"
+          data-label-close-en="Close menu"
+        >
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links" id="nav-links" hidden>
+          <li>
+            <a href="#hero">
+              <span class="lang lang-de">Profil</span>
+              <span class="lang lang-en" hidden>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#timeline">
+              <span class="lang lang-de">Karriere</span>
+              <span class="lang lang-en" hidden>Career</span>
+            </a>
+          </li>
+          <li>
+            <a href="#publications">
+              <span class="lang lang-de">Publikationen</span>
+              <span class="lang lang-en" hidden>Publications</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html#pitch">
+              <span class="lang lang-de">Demo ansehen</span>
+              <span class="lang lang-en" hidden>View demo</span>
+            </a>
+          </li>
+        </ul>
       </nav>
       <!-- Aktionen rechts -->
-      <div class="actions">
+      <div class="actions nav-actions">
         <div aria-label="Sprachauswahl" class="lang-switcher" role="group">
           <button aria-label="Deutsch" aria-pressed="true" class="lang-btn" data-lang="de">DE</button>
           <button aria-label="English" aria-pressed="false" class="lang-btn" data-lang="en">EN</button>
@@ -1036,6 +1058,7 @@
    </p>
   </footer>
 
+  <script src="scripts/main.min.js" defer></script>
   <!-- Script für Timeline‑Animation -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1075,74 +1098,6 @@
       // Initialer Aufruf und Scroll‑Listener
       updateLine();
       window.addEventListener('scroll', updateLine);
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const langButtons = document.querySelectorAll('.lang-btn');
-      const germanElements = document.querySelectorAll('.lang.lang-de');
-      const englishElements = document.querySelectorAll('.lang.lang-en');
-      const altElements = document.querySelectorAll('[data-alt-en]');
-
-      function switchLanguage(targetLang) {
-        if (document.documentElement.lang === targetLang) {
-          return;
-        }
-        const isEnglish = targetLang === 'en';
-
-        germanElements.forEach(function(el) {
-          el.hidden = isEnglish;
-        });
-        englishElements.forEach(function(el) {
-          el.hidden = !isEnglish;
-        });
-
-        langButtons.forEach(function(button) {
-          const active = button.dataset.lang === targetLang;
-          button.setAttribute('aria-pressed', active);
-          button.classList.toggle('active', active);
-        });
-
-        altElements.forEach(function(el) {
-          if (!el.dataset.altDe) {
-            el.dataset.altDe = el.getAttribute('alt') || '';
-          }
-          const altText = isEnglish ? el.dataset.altEn : el.dataset.altDe;
-          if (altText !== undefined) {
-            el.setAttribute('alt', altText);
-          }
-        });
-
-        document.documentElement.lang = targetLang;
-        try {
-          localStorage.setItem('lang', targetLang);
-        } catch (error) {
-          /* localStorage möglicherweise nicht verfügbar */
-        }
-        window.dispatchEvent(new Event('imhis-language-change'));
-      }
-
-      langButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-          switchLanguage(button.dataset.lang);
-        });
-      });
-
-      let initialLang = 'de';
-      try {
-        const storedLang = localStorage.getItem('lang');
-        if (storedLang === 'de' || storedLang === 'en') {
-          initialLang = storedLang;
-        } else if (navigator.language && navigator.language.toLowerCase().startsWith('en')) {
-          initialLang = 'en';
-        }
-      } catch (error) {
-        /* Zugriff auf localStorage nicht möglich */
-      }
-
-      if (initialLang !== 'de') {
-        switchLanguage(initialLang);
-      }
     });
   </script>
 
