@@ -22,6 +22,7 @@
       --color-border: #e2e8f0;           /* dezente Rahmenfarbe */
       --color-text: #0f172a;             /* primäre Textfarbe (dunkles Blau) */
       --color-text-light: #475569;       /* sekundäre Textfarbe */
+      --color-primary: #2563eb;          /* Primäre Akzentfarbe wie auf der Startseite */
       --color-accent: #2563eb;           /* Akzentfarbe für Links und Buttons */
       --color-accent-dark: #1e40af;      /* dunklere Variante für Hover‑Zustände */
       --color-accent-light: #e2e8f0;     /* helle Variante für Hintergründe */
@@ -330,14 +331,16 @@
     }
 
     .eyebrow {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
       padding: 0.4rem 1rem;
       border-radius: 999px;
       font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--color-accent);
+      color: var(--color-primary);
       background: rgba(37, 99, 235, 0.08);
       border: 1px solid rgba(37, 99, 235, 0.15);
       margin: 0 0 1.4rem;
