@@ -468,6 +468,7 @@
     }
     #timeline .headline-highlight {
       display: inline-flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
@@ -477,7 +478,7 @@
       border: 1px solid rgba(37, 99, 235, 0.22);
       box-shadow: 0 12px 32px rgba(37, 99, 235, 0.18);
       color: var(--color-primary);
-      font-size: clamp(1.4rem, 3.6vw, 2.2rem);
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
       font-weight: 700;
       letter-spacing: -0.01em;
       line-height: 1.25;
@@ -693,7 +694,7 @@
   </a>
   <header class="site-header">
     <div class="header-inner">
-      <a aria-label="IMHIS Startseite" class="logo" href="#top">
+      <a aria-label="IMHIS Startseite" class="logo" href="/index.html">
         <img alt="IMHIS Logo" data-alt-en="IMHIS logo" decoding="async" fetchpriority="high" height="40" src="assets/Logo_blau.svg" width="160"/>
       </a>
       <nav aria-label="Hauptnavigation" class="nav">
@@ -802,8 +803,10 @@
   <section id="timeline">
     <div class="section-frame timeline-frame">
       <h2 class="timeline-title">
-        <span class="headline-highlight lang lang-de">Mein Weg in unserem Gesundheitssystem</span>
-        <span class="headline-highlight lang lang-en" hidden>My path in our healthcare system</span>
+        <span class="headline-highlight">
+          <span class="lang lang-de">Mein Weg in unserem Gesundheitssystem</span>
+          <span class="lang lang-en" hidden>My path in our healthcare system</span>
+        </span>
       </h2>
       <div class="timeline">
         <!-- vertikale Linie, die beim Scrollen wächst -->
@@ -984,11 +987,11 @@
   <!-- Rechtliches -->
   <footer class="legal-footer">
    <div class="footer-brand">
-    <a aria-label="Zum Seitenanfang" class="footer-logo-link" href="#top">
+    <a aria-label="IMHIS Startseite" class="footer-logo-link" href="/index.html">
      <img alt="IMHIS Logo" class="footer-logo" data-alt-en="IMHIS logo" decoding="async" loading="lazy" height="28" src="assets/Logo_blau.svg" width="120"/>
     </a>
     <a aria-label="LinkedIn" class="social-link" href="https://www.linkedin.com/in/imhis/" rel="noopener noreferrer" target="_blank">
-     <svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+     <svg aria-hidden="true" fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.025-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.356V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.601 0 4.268 2.37 4.268 5.455v6.288zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.791 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0z">
       </path>
      </svg>
