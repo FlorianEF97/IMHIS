@@ -74,6 +74,284 @@
       }
     }
     </script>
+
+    <head>
+ …
+ <!-- bestehende CSS‑Links -->
+ <link rel="stylesheet" href="styles/custom.css" />
+
+ <!-- Inter-Schrift wird bereits geladen -->
+
+ <!-- Eigenes Style für Hero, About, Timeline -->
+ <style>
+   /* Farbvariablen für den Hero, About, Timeline und CTA */
+   :root {
+     --color-bg: #f8fafc;
+     --color-section: #ffffff;
+     --color-text: #0f172a;
+     --color-text-light: #475569;
+     --color-accent: #2563eb;
+     --color-accent-dark: #1e40af;
+     --color-accent-light: #e2e8f0;
+     --gradient-start: #2563eb;
+     --gradient-end: #1e40af;
+   }
+
+   /* Buttons: primär, sekundär und LinkedIn */
+   .btn {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     padding: .75rem 1.5rem;
+     border-radius: 999px;
+     font-weight: 600;
+     font-size: 1rem;
+     text-decoration: none;
+     transition: background .3s ease, color .3s ease, box-shadow .3s ease, transform .18s ease;
+     cursor: pointer;
+   }
+   .btn.primary {
+     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+     color: #fff;
+     border: none;
+     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+   }
+   .btn.secondary {
+     background: var(--color-accent-light);
+     color: var(--color-accent-dark);
+     border: 1px solid var(--color-accent-dark);
+     box-shadow: 0 6px 16px rgba(37, 99, 235, .15);
+   }
+   .btn.linkedin-btn {
+     display: inline-flex;
+     align-items: center;
+     gap: .5rem;
+   }
+   .btn.linkedin-btn svg {
+     width: 20px;
+     height: 20px;
+     fill: currentColor;
+   }
+
+   /* Hero-Section */
+   #hero {
+     background: var(--color-bg);
+     padding: 80px 20px 60px;
+   }
+   #hero .hero-card {
+     background: var(--color-section);
+     border-radius: 20px;
+     max-width: 1000px;
+     margin: 0 auto;
+     padding: 40px;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 40px;
+     align-items: center;
+     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03);
+   }
+   #hero .hero-card img {
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     object-fit: cover;
+     border: 4px solid var(--color-accent);
+   }
+   #hero .hero-text {
+     flex: 1 1 350px;
+     min-width: 280px;
+   }
+   #hero .hero-text h1 {
+     margin-top: 0;
+     margin-bottom: .5rem;
+     font-size: 2.2rem;
+     font-weight: 700;
+     color: var(--color-text);
+   }
+   #hero .hero-text .subtitle {
+     font-size: 1.1rem;
+     font-weight: 600;
+     color: var(--color-accent-dark);
+     margin-bottom: .5rem;
+   }
+   #hero .hero-text p {
+     margin: 0 0 1.5rem;
+     font-size: 1rem;
+     line-height: 1.5;
+     color: var(--color-text-light);
+   }
+   #hero .hero-buttons {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1rem;
+   }
+
+   /* Über-mich-Section */
+   #about {
+     background: var(--color-accent-light);
+     padding: 80px 20px;
+   }
+   #about .about-card {
+     background: var(--color-section);
+     border-radius: 20px;
+     padding: 40px;
+     max-width: 1000px;
+     margin: 0 auto;
+     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+     text-align: center;
+   }
+   #about .about-card .tag {
+     display: inline-block;
+     padding: .3rem .8rem;
+     background: var(--color-accent-light);
+     color: var(--color-accent-dark);
+     border-radius: 999px;
+     font-size: .75rem;
+     font-weight: 600;
+     letter-spacing: .05em;
+     text-transform: uppercase;
+     margin-bottom: 1rem;
+   }
+   #about .accent {
+     color: var(--color-accent);
+     font-weight: 600;
+   }
+
+   /* Timeline-Section */
+   #timeline {
+     background: var(--color-accent-light);
+   }
+   #timeline .timeline {
+     position: relative;
+     margin: 0 auto;
+     padding: 20px 0;
+     width: 90%;
+     max-width: 900px;
+   }
+   #timeline .timeline-line {
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 2px;
+     height: 0;
+     background: var(--color-accent);
+     transition: height .6s ease;
+   }
+   #timeline .timeline-item {
+     position: relative;
+     width: 50%;
+     padding: 20px 40px;
+     box-sizing: border-box;
+     opacity: 0;
+     transform: translateY(40px);
+     transition: opacity .6s ease, transform .6s ease;
+   }
+   #timeline .timeline-item.in-view {
+     opacity: 1;
+     transform: translateY(0);
+   }
+   #timeline .timeline-item:nth-child(odd) {
+     left: 0;
+     text-align: right;
+   }
+   #timeline .timeline-item:nth-child(even) {
+     left: 50%;
+     text-align: left;
+   }
+   #timeline .timeline-item::before {
+     content: '';
+     position: absolute;
+     top: 20px;
+     width: 14px;
+     height: 14px;
+     border-radius: 50%;
+     background: var(--color-accent);
+     border: 3px solid #fff;
+     box-shadow: 0 0 0 2px var(--color-accent);
+     z-index: 3;
+   }
+   #timeline .timeline-item:nth-child(odd)::before {
+     right: -12px;
+   }
+   #timeline .timeline-item:nth-child(even)::before {
+     left: -12px;
+   }
+   #timeline .timeline-item::after {
+     content: '';
+     position: absolute;
+     top: 35px;
+     height: 2px;
+     background: var(--color-accent);
+     width: calc(50% - 48px);
+     transform: scaleX(0);
+     transition: transform .6s ease;
+     z-index: 1;
+   }
+   #timeline .timeline-item:nth-child(odd)::after {
+     right: -12px;
+     transform-origin: 100% 50%;
+   }
+   #timeline .timeline-item:nth-child(even)::after {
+     left: -12px;
+     transform-origin: 0% 50%;
+   }
+   #timeline .timeline-item.in-view::after {
+     transform: scaleX(1);
+   }
+   #timeline .timeline-date {
+     font-weight: 600;
+     color: var(--color-accent);
+     background: var(--color-accent-light);
+     padding: .1rem .4rem;
+     border-radius: .25rem;
+     position: relative;
+     z-index: 2;
+     top: 8px; /* Datum tiefer setzen, damit es die Linie mittig überlagert */
+   }
+   #timeline .timeline-content h3 {
+     margin-top: 0;
+     margin-bottom: 8px;
+     font-size: 1.1rem;
+     color: var(--color-text);
+   }
+   #timeline .timeline-content p {
+     margin: 0;
+     font-size: .92rem;
+     color: var(--color-text-light);
+   }
+
+   /* CTA-Section */
+   #cta {
+     background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15), var(--color-accent-light));
+     padding: 80px 20px;
+     text-align: center;
+   }
+   #cta h2 {
+     margin-top: 0;
+     margin-bottom: 20px;
+     font-size: 1.8rem;
+     color: var(--color-text);
+   }
+   #cta p {
+     margin: 0 0 30px;
+     font-size: 1rem;
+     color: var(--color-text-light);
+   }
+
+   /* Medien‑ und Kontaktsektionen */
+   #publications, #contact {
+     padding: 60px 0;
+     background: var(--color-section);
+   }
+   #publications h2, #contact h2 {
+     text-align: center;
+     margin-bottom: 40px;
+     color: var(--color-text);
+     font-size: 1.8rem;
+   }
+ </style>
+
+      
   </head>
   <body>
     <a class="skip-link" href="#main-content">
@@ -171,49 +449,87 @@
       </nav>
     </header>
 
-    <main id="main-content" class="content">
-      <section class="section about-me-section" aria-labelledby="about-title">
-        <div class="about-wrap">
-          <figure class="about-img" aria-hidden="true">
-            <img
-              src="assets/c3535c5e-985e-4aff-979a-1de31ddb601c.jpg"
-              alt="Dr. Florian Eisold"
-              decoding="async"
-              loading="lazy"
-              width="200"
-              height="200"
-            />
-          </figure>
+   <main id="main-content" class="content">
+  <!-- Neuer Hero-Bereich -->
+  <section id="hero">
+    <div class="container hero-card">
+      <img src="assets/c3535c5e-985e-4aff-979a-1de31ddb601c.jpg" alt="Florian Eisold" width="200" height="200" />
+      <div class="hero-text">
+        <h1>Dr. Florian Richard Eisold</h1>
+        <p class="subtitle">Forme digitale Gesundheitswelten – interdisziplinär, visionär, messbar.</p>
+        <p>Als Arzt, Ökonom und Jurist verbinde ich medizinische Praxis, wirtschaftliche Steuerung und juristische Verantwortung. Mein Ziel: digitale Vorhaben zu messbaren Erfolgen führen und dabei Menschen entlasten.</p>
+        <div class="hero-buttons">
+          <a href="#timeline" class="btn secondary">Karriere im Überblick</a>
+          <a href="mailto:florianeisold@outlook.de" class="btn primary">Jetzt kontaktieren</a>
+          <a href="https://www.linkedin.com/in/dr-med-florian-r-eisold-b-sc-ll-m-7a4a08145/" class="btn secondary linkedin-btn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.033-1.848-3.033-1.848 0-2.131 1.445-2.131 2.939v5.663H9.359V9h3.414v1.561h.049c.476-.9 1.635-1.848 3.369-1.848 3.604 0 4.273 2.373 4.273 5.464v6.275zM5.337 7.433a2.067 2.067 0 110-4.134 2.067 2.067 0 010 4.134zM6.934 20.452H3.75V9h3.184v11.452z"></path>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="about-content">
-            <h1 id="about-title">Dr. Florian Eisold, B.Sc., LL.M.</h1>
-            <p>
-              Dr. med. Florian Eisold ist Arzt und der Entwickler von IMHIS – dem Impact Monitor for Health Information Systems.
-              Er setzt sich für eine nutzerzentrierte Digitalisierung im Gesundheitswesen ein und ist Autor des Fachbuches „Digitale Systeme – echte Wirkung: Was Klinikpersonal wirklich braucht“.
-            </p>
-              <div class="about-cta-group">
-                <a
-                  class="btn primary about-cta"
-                  href="https://link.springer.com/book/9783658491895"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span class="lang lang-de">Jetzt lesen</span>
-                  <span class="lang lang-en" hidden>Read now</span>
-                </a>
-                <a
-                  class="btn secondary about-cta"
-                  href="https://www.linkedin.com/in/dr-med-florian-r-eisold-b-sc-ll-m-7a4a08145/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </div>
+  <!-- Über mich -->
+  <section id="about">
+    <div class="about-card">
+      <span class="tag">Über mich</span>
+      <p><span class="accent">Mein Dreiklang aus Medizin, Ökonomie und Recht</span> prägt meine Arbeit: Als Arzt kenne ich die medizinische Praxis, als Ökonom steuere ich Prozesse und Ressourcen, als Jurist sichere ich Entscheidungen ab. Ich denke in Daten, Abläufen und Ergebnissen.</p>
+      <p>Ich habe den <span class="accent">roten Faden Digitalisierung</span> in eigenen Projekten durchgezogen – von der Seminararbeit bis zur Promotion. Hürden kenne ich aus erster Hand. Deswegen arbeite ich an einer <span class="accent">Digitalisierung, die wirkt</span> und Menschen entlastet.</p>
+    </div>
+  </section>
+
+  <!-- Karriere-Graph / Timeline -->
+  <section id="timeline">
+    <div class="container">
+      <h2>Mein Weg im Gesundheitssystem</h2>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <!-- Timeline-Items hier wie in deiner Vorlage -->
+        <!-- Beispiel: -->
+        <div class="timeline-item">
+          <div class="timeline-date">Oktober 2025</div>
+          <div class="timeline-content">
+            <h3>Start PhD Medical Sciences (geplant)</h3>
+            <p>Beginn eines PhD-Studiums im Bereich Medical Sciences …</p>
           </div>
         </div>
-      </section>
-    </main>
+        <!-- ... weitere Timeline-Items ... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-To-Action -->
+  <section id="cta">
+    <div class="container">
+      <h2>Gemeinsam die Zukunft gestalten</h2>
+      <p>Sie suchen eine interdisziplinäre Führungspersönlichkeit, die digitale Transformation im Gesundheitswesen wirkungsvoll gestaltet? Lassen Sie uns ins Gespräch kommen.</p>
+      <a href="mailto:florianeisold@outlook.de" class="btn primary">Projekt anfragen</a>
+    </div>
+  </section>
+
+  <!-- Publikationen -->
+  <section id="publications">
+    <div class="container">
+      <h2>Publikationen & Engagement</h2>
+      <p><strong>Buchveröffentlichung (2025):</strong> <em>Digitale Systeme – echte Wirkung: …</em> Springer Gabler, Wiesbaden.</p>
+      <p><strong>Mitgliedschaften:</strong> …</p>
+      <p><strong>Weitere Erfahrungen:</strong> …</p>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="contact">
+    <div class="container">
+      <h2>Kontakt</h2>
+      <p>Sie möchten mehr erfahren oder gemeinsam Projekte vorantreiben? Ich freue mich auf Ihre Nachricht.</p>
+      <p>E-Mail: <a href="mailto:florianeisold@outlook.de">florianeisold@outlook.de</a></p>
+    </div>
+  </section>
+</main>
+
 
     <footer id="kontakt" class="contact-footer">
       <a href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS" class="btn primary footer-cta">
@@ -234,5 +550,37 @@
     </footer>
 
     <script src="scripts/main.min.js" defer></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('#timeline .timeline-item');
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+  items.forEach(function(item) {
+    observer.observe(item);
+  });
+
+  // vertikale Linie animieren
+  const timeline = document.querySelector('#timeline .timeline');
+  const line = document.querySelector('#timeline .timeline-line');
+  function updateLine() {
+    const rect = timeline.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < vh && rect.bottom > 0) {
+      const rawProgress = (vh - rect.top) / (rect.height + vh);
+      const speedFactor = 8.0;
+      const progress = Math.min(rawProgress * speedFactor, 1);
+      line.style.height = (progress * 100) + '%';
+    }
+  }
+  updateLine();
+  window.addEventListener('scroll', updateLine);
+});
+</script>
+
   </body>
 </html>
