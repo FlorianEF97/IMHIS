@@ -42,6 +42,17 @@
       text-decoration: none;
       transition: color 0.2s ease;
     }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
     /* Farbliche Hover-Anpassung ohne CSS-Funktionen (vorgegebener dunkler Ton) */
     a:hover {
       color: var(--color-accent-dark);
@@ -119,56 +130,133 @@
       width: auto;
       display: block;
     }
-    .site-header .nav-links {
+    .nav {
+      position: relative;
       display: flex;
-      gap: 1.2rem;
       align-items: center;
+    }
+    body.menu-open {
+      overflow: hidden;
+    }
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border);
+      background: var(--color-section);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+    }
+    .nav-toggle:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 3px;
+    }
+    .nav-toggle:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-1px);
+    }
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 999px;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      position: relative;
+    }
+    .hamburger::before {
+      position: absolute;
+      top: -6px;
+      left: 0;
+    }
+    .hamburger::after {
+      position: absolute;
+      top: 6px;
+      left: 0;
+    }
+    .nav.nav-open .hamburger {
+      background: transparent;
+    }
+    .nav.nav-open .hamburger::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .nav.nav-open .hamburger::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+    .nav-panel {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      right: 0;
+      width: min(320px, 92vw);
+      background: var(--color-section);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      padding: 1.25rem;
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      z-index: 1010;
+    }
+    .nav-panel[hidden] {
+      display: none;
+    }
+    .site-header .nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .site-header .nav-links li {
+      margin: 0;
     }
     .site-header .nav-links a {
       color: var(--color-text);
-      font-weight: 500;
-      font-size: 1.1rem;
+      font-weight: 600;
+      font-size: 1rem;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
-      border-radius: 0.5rem;
+      border-radius: 12px;
       transition: background 0.2s ease, color 0.2s ease;
     }
-    .site-header .nav-links a:hover {
+    .site-header .nav-links a:hover,
+    .site-header .nav-links a:focus-visible {
       background: var(--color-accent-light);
     }
-    .site-header .actions {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    .site-header .btn {
-      padding: 1rem 1.5rem;
+    .nav-contact {
+      width: 100%;
       border-radius: 14px;
       font-weight: 600;
       font-size: 1rem;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: all 0.25s ease;
+      border: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      text-decoration: none;
-      box-shadow: none;
-    }
-    .site-header .btn svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-    .site-header .btn.primary {
+      padding: 1rem 1.5rem;
       background: linear-gradient(135deg, var(--color-accent), #1d4ed8);
       color: #ffffff;
       box-shadow: 0 10px 28px rgba(37, 99, 235, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .site-header .btn.primary:hover {
+    .nav-contact:hover,
+    .nav-contact:focus-visible {
       transform: translateY(-2px);
       box-shadow: 0 14px 32px rgba(37, 99, 235, 0.35);
+    }
+    .header-controls {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
     }
     .lang-switcher {
       display: inline-flex;
@@ -259,14 +347,6 @@
       .site-header .header-inner {
         flex-wrap: wrap;
       }
-      .site-header .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .site-header .actions {
-        width: 100%;
-        justify-content: flex-end;
-      }
       #hero .hero-card {
         text-align: center;
         padding: 30px;
@@ -280,6 +360,36 @@
       }
       #hero .hero-buttons {
         justify-content: center;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .nav-toggle {
+        display: none;
+      }
+      .nav-panel {
+        position: static;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .site-header .nav-links {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .site-header .nav-links a {
+        font-size: 1.05rem;
+        padding: 0.5rem 0.75rem;
+      }
+      .nav-contact {
+        width: auto;
+        padding: 0.85rem 1.5rem;
       }
     }
 
@@ -700,61 +810,64 @@
       <a href="#top" class="logo" aria-label="IMHIS Startseite">
         <img src="assets/Logo_blau.svg" alt="IMHIS Logo" data-alt-en="IMHIS logo" width="160" height="40" loading="lazy" decoding="async">
       </a>
-      <!-- Navigation -->
-      <nav class="nav" aria-label="Hauptnavigation">
-        <button
-          class="nav-toggle"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-          aria-controls="nav-links"
-          data-label-open-de="Menü öffnen"
-          data-label-close-de="Menü schließen"
-          data-label-open-en="Open menu"
-          data-label-close-en="Close menu"
-        >
-          <span class="hamburger"></span>
-        </button>
-        <ul class="nav-links" id="nav-links" hidden>
-          <li>
-            <a href="#hero">
-              <span class="lang lang-de">Profil</span>
-              <span class="lang lang-en" hidden>Profile</span>
-            </a>
-          </li>
-          <li>
-            <a href="#timeline">
-              <span class="lang lang-de">Karriere</span>
-              <span class="lang lang-en" hidden>Career</span>
-            </a>
-          </li>
-          <li>
-            <a href="#publications">
-              <span class="lang lang-de">Publikationen</span>
-              <span class="lang lang-en" hidden>Publications</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.html#pitch">
-              <span class="lang lang-de">Demo ansehen</span>
-              <span class="lang lang-en" hidden>View demo</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- Aktionen rechts -->
-      <div class="actions nav-actions">
+      <div class="header-controls">
         <div aria-label="Sprachauswahl" class="lang-switcher" role="group">
           <button aria-label="Deutsch" aria-pressed="true" class="lang-btn" data-lang="de">DE</button>
           <button aria-label="English" aria-pressed="false" class="lang-btn" data-lang="en">EN</button>
         </div>
-        <a class="btn primary" href="mailto:florian.eisold@icloud.com">
-          <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-            <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
-            <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-          </svg>
-          <span class="lang lang-de">Kontakt aufnehmen</span>
-          <span class="lang lang-en" hidden>Get in touch</span>
-        </a>
+        <!-- Navigation -->
+        <nav class="nav" aria-label="Hauptnavigation">
+          <button
+            class="nav-toggle"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+            data-label-open-de="Menü öffnen"
+            data-label-close-de="Menü schließen"
+            data-label-open-en="Open menu"
+            data-label-close-en="Close menu"
+          >
+            <span class="hamburger"></span>
+            <span class="sr-only nav-toggle-label lang lang-de">Menü öffnen</span>
+            <span class="sr-only nav-toggle-label lang lang-en" hidden>Open menu</span>
+          </button>
+          <div class="nav-panel" id="nav-panel" hidden>
+            <ul class="nav-links">
+              <li>
+                <a href="#hero">
+                  <span class="lang lang-de">Profil</span>
+                  <span class="lang lang-en" hidden>Profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="#timeline">
+                  <span class="lang lang-de">Karriere</span>
+                  <span class="lang lang-en" hidden>Career</span>
+                </a>
+              </li>
+              <li>
+                <a href="#publications">
+                  <span class="lang lang-de">Publikationen</span>
+                  <span class="lang lang-en" hidden>Publications</span>
+                </a>
+              </li>
+              <li>
+                <a href="index.html#pitch">
+                  <span class="lang lang-de">Demo ansehen</span>
+                  <span class="lang lang-en" hidden>View demo</span>
+                </a>
+              </li>
+            </ul>
+            <a class="nav-contact" href="mailto:florian.eisold@icloud.com">
+              <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
+                <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+              <span class="lang lang-de">Kontakt aufnehmen</span>
+              <span class="lang lang-en" hidden>Get in touch</span>
+            </a>
+          </div>
+        </nav>
       </div>
     </div>
   </header>
@@ -1092,6 +1205,131 @@
   </footer>
 
   <script src="scripts/main.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const nav = document.querySelector('.site-header .nav');
+      const navToggle = nav ? nav.querySelector('.nav-toggle') : null;
+      const navPanel = nav ? nav.querySelector('.nav-panel') : null;
+      const body = document.body;
+      const desktopQuery = window.matchMedia('(min-width: 992px)');
+      let currentLang = document.documentElement.lang === 'en' ? 'en' : 'de';
+      let labelText = null;
+
+      const updateToggleText = function(isOpen) {
+        if (!navToggle || !labelText) {
+          return;
+        }
+        const srDe = navToggle.querySelector('.nav-toggle-label.lang-de');
+        const srEn = navToggle.querySelector('.nav-toggle-label.lang-en');
+        const langKey = currentLang === 'en' ? 'en' : 'de';
+        const labels = labelText[langKey];
+        navToggle.setAttribute('aria-label', isOpen ? labels.close : labels.open);
+        if (srDe) {
+          srDe.textContent = isOpen ? labelText.de.close : labelText.de.open;
+        }
+        if (srEn) {
+          srEn.textContent = isOpen ? labelText.en.close : labelText.en.open;
+        }
+      };
+
+      if (nav && navToggle && navPanel) {
+        labelText = {
+          de: {
+            open: navToggle.dataset.labelOpenDe || 'Menü öffnen',
+            close: navToggle.dataset.labelCloseDe || 'Menü schließen',
+          },
+          en: {
+            open: navToggle.dataset.labelOpenEn || 'Open menu',
+            close: navToggle.dataset.labelCloseEn || 'Close menu',
+          },
+        };
+
+        const closeNav = function(options) {
+          const opts = options || {};
+          if (desktopQuery.matches) {
+            navPanel.hidden = false;
+          } else {
+            navPanel.hidden = true;
+          }
+          nav.classList.remove('nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          body.classList.remove('menu-open');
+          updateToggleText(false);
+          if (!desktopQuery.matches && !opts.skipFocus) {
+            navToggle.focus();
+          }
+        };
+
+        const openNav = function() {
+          navPanel.hidden = false;
+          nav.classList.add('nav-open');
+          navToggle.setAttribute('aria-expanded', 'true');
+          body.classList.add('menu-open');
+          updateToggleText(true);
+        };
+
+        const syncToViewport = function(media) {
+          if (media.matches) {
+            navPanel.hidden = false;
+            nav.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            body.classList.remove('menu-open');
+          } else {
+            navPanel.hidden = true;
+            nav.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            body.classList.remove('menu-open');
+          }
+          updateToggleText(false);
+        };
+
+        syncToViewport(desktopQuery);
+        desktopQuery.addEventListener('change', syncToViewport);
+
+        navToggle.addEventListener('click', function() {
+          const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+          if (isOpen) {
+            closeNav({ skipFocus: true });
+          } else {
+            openNav();
+          }
+        });
+
+        navPanel.addEventListener('click', function(event) {
+          if (!desktopQuery.matches && event.target.closest('a')) {
+            closeNav({ skipFocus: true });
+          }
+        });
+
+        document.addEventListener('click', function(event) {
+          if (!desktopQuery.matches && navToggle.getAttribute('aria-expanded') === 'true') {
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickOnLang = event.target.closest('.lang-switcher');
+            if (!isClickInsideNav && !isClickOnLang) {
+              closeNav({ skipFocus: true });
+            }
+          }
+        });
+
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+            closeNav();
+          }
+        });
+      }
+
+      const langButtons = document.querySelectorAll('.lang-btn');
+      if (langButtons.length) {
+        langButtons.forEach(function(button) {
+          button.addEventListener('click', function() {
+            currentLang = button.dataset.lang === 'en' ? 'en' : 'de';
+            const isOpen = navToggle && navToggle.getAttribute('aria-expanded') === 'true';
+            updateToggleText(isOpen);
+          });
+        });
+      }
+    });
+  </script>
   <!-- Script für Timeline‑Animation -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
