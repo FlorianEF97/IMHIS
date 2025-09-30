@@ -13,9 +13,13 @@
   --color-text: #1e293b; /* dunkler Grauton für Lesetext */
   --color-text-light: #475569;
   --radius-large: 1.5rem;
-  --nav-height: 60px;
   --nav-height-min: 56px;
   --nav-height-max: 96px;
+  --nav-height: clamp(
+    var(--nav-height-min),
+    calc(6vw + 16px),
+    var(--nav-height-max)
+  );
 }
 
 body {
@@ -28,15 +32,8 @@ body {
 }
 
 html {
-  scroll-padding-top: clamp(
-    var(--nav-height-min),
-    var(--nav-height, 60px),
-    var(--nav-height-max)
-  );
-  scroll-padding-top: calc(
-    clamp(var(--nav-height-min), var(--nav-height, 60px), var(--nav-height-max)) +
-      env(safe-area-inset-top)
-  );
+  scroll-padding-top: var(--nav-height);
+  scroll-padding-top: calc(var(--nav-height) + env(safe-area-inset-top));
 }
 
 a {
@@ -59,11 +56,8 @@ a {
   background: var(--color-section);
   border-bottom: 1px solid var(--color-border);
   box-shadow: none;
-  min-height: clamp(
-    var(--nav-height-min),
-    var(--nav-height, 60px),
-    var(--nav-height-max)
-  );
+  height: var(--nav-height);
+  min-height: var(--nav-height);
   display: flex;
   align-items: center;
 }
@@ -73,11 +67,8 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  min-height: clamp(
-    var(--nav-height-min),
-    var(--nav-height, 60px),
-    var(--nav-height-max)
-  );
+  height: var(--nav-height);
+  min-height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -247,11 +238,8 @@ a {
   .site-header .header-inner {
     width: 100%;
     padding: 0 1rem;
-    min-height: clamp(
-      var(--nav-height-min),
-      var(--nav-height, 60px),
-      var(--nav-height-max)
-    );
+    height: var(--nav-height);
+    min-height: var(--nav-height);
     gap: 0.75rem;
     flex-wrap: nowrap;
   }
