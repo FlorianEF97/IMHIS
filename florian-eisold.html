@@ -15,13 +15,15 @@
       --color-bg: #f8fafc;               /* Grundhintergrund der Seite */
       --color-section: #ffffff;          /* Hintergrund für Karten und Abschnitte */
       --color-border: #e2e8f0;           /* dezente Rahmenfarbe */
-      --color-text: #0f172a;            /* primäre Textfarbe (dunkles Blau) */
-      --color-text-light: #475569;      /* sekundäre Textfarbe */
-      --color-accent: #2563eb;          /* Akzentfarbe für Links und Buttons */
-      --color-accent-dark: #1e40af;     /* dunklere Variante für Hover‑Zustände */
-      --color-accent-light: #e2e8f0;    /* helle Variante für Hintergründe */
-      --gradient-start: #2563eb;        /* Gradient‑Start für primäre Buttons */
-      --gradient-end: #1e40af;          /* Gradient‑Ende für primäre Buttons */
+      --color-text: #0f172a;             /* primäre Textfarbe (dunkles Blau) */
+      --color-text-light: #475569;       /* sekundäre Textfarbe */
+      --color-accent: #2563eb;           /* Akzentfarbe für Links und Buttons */
+      --color-accent-dark: #1e40af;      /* dunklere Variante für Hover‑Zustände */
+      --color-accent-light: #e2e8f0;     /* helle Variante für Hintergründe */
+      --gradient-start: #2563eb;         /* Gradient‑Start für primäre Buttons */
+      --gradient-end: #1e40af;           /* Gradient‑Ende für primäre Buttons */
+      --color-card-border: rgba(15, 23, 42, 0.08); /* Kartenrand im Stil der Startseite */
+      --color-card-shadow: rgba(15, 23, 42, 0.06); /* Schlagschatten analog zur Startseite */
     }
 
     /* Grundlayout und Schriftarten */
@@ -172,19 +174,10 @@
       padding: 80px 20px 60px;
     }
     #hero .hero-card {
-      background: var(--color-section);
-      /* keine sichtbare Rahmenlinie für einen offeneren Look */
-      border: none;
-      border-radius: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px;
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
       align-items: center;
-      /* sanfterer Schatten für einen schwebenden Effekt */
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03);
     }
     #hero .hero-card img {
       width: 200px;
@@ -297,8 +290,9 @@
     #cta h2 {
       margin-top: 0;
       margin-bottom: 20px;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       color: var(--color-text);
+      text-align: center;
     }
     #cta p {
       margin: 0 0 30px;
@@ -308,15 +302,48 @@
 
     /* Abschnittsüberschriften */
     section {
-      padding: 60px 0;
-      background: var(--color-section);
-      margin-bottom: 20px;
+      padding: 60px 20px;
+      background: transparent;
+      margin: 0;
     }
     section h2 {
-      text-align: center;
-      margin-bottom: 40px;
+      text-align: left;
+      margin-bottom: 1.5rem;
       color: var(--color-text);
-      font-size: 1.8rem;
+      font-size: 1.9rem;
+    }
+
+    .section-frame {
+      width: min(92%, 1100px);
+      margin: 0 auto;
+      padding: clamp(2.5rem, 5vw, 3.5rem);
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        rgba(248, 250, 252, 0.92) 100%
+      );
+      border: 1px solid var(--color-card-border);
+      border-radius: 28px;
+      box-shadow: 0 12px 40px var(--color-card-shadow);
+    }
+
+    .section-frame h2 {
+      margin-top: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      margin: 0 0 1.4rem;
     }
 
     /* Über‑mich‑Block */
@@ -327,25 +354,21 @@
       padding: 80px 20px;
     }
     #about .about-card {
-      background: var(--color-section);
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
       text-align: center;
     }
-    #about .about-card .tag {
-      display: inline-block;
-      padding: 0.3rem 0.8rem;
-      background: var(--color-accent-light);
-      color: var(--color-accent-dark);
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
+    #about .about-card .eyebrow {
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #cta .section-frame {
+      text-align: center;
+    }
+    #cta .section-frame .eyebrow {
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
     }
     #about .about-card .quote-icon {
       font-size: 2.5rem;
@@ -595,7 +618,7 @@
 
   <!-- Hero‑Bereich als Pitch‑Karte -->
   <section id="hero">
-    <div class="container hero-card">
+    <div class="section-frame hero-card">
       <!-- Platzhalter‑Bild, ersetze durch echtes Porträt bei Live‑Einsatz -->
       <img
         alt="Dr. Florian Eisold"
@@ -607,6 +630,10 @@
         height="200"
       />
       <div class="hero-text">
+        <p class="eyebrow">
+          <span class="lang lang-de">Profil</span>
+          <span class="lang lang-en" hidden>Profile</span>
+        </p>
         <h1>Dr. Florian Richard Eisold, B.Sc., LL.M.</h1>
         <p class="subtitle">
           <span class="lang lang-de">Ich forme unsere digitalen Gesundheitswelten von morgen – interdisziplinär, visionär, messbar.</span>
@@ -638,11 +665,11 @@
 
   <!-- Über mich -->
   <section id="about">
-    <div class="about-card">
-      <span class="tag">
+    <div class="about-card section-frame">
+      <p class="eyebrow">
         <span class="lang lang-de">Über mich</span>
         <span class="lang lang-en" hidden>About me</span>
-      </span>
+      </p>
       <p class="lang lang-de">
         <span class="quote-icon">“</span>
         <span class="accent">Mein Dreiklang aus Medizin, Ökonomie und Recht</span>
@@ -813,7 +840,11 @@
 
   <!-- Publikationen und Engagement -->
   <section id="publications">
-    <div class="container">
+    <div class="section-frame">
+      <p class="eyebrow">
+        <span class="lang lang-de">Publikationen &amp; Engagement</span>
+        <span class="lang lang-en" hidden>Publications &amp; Engagement</span>
+      </p>
       <h2>
         <span class="lang lang-de">Publikationen &amp; Engagement</span>
         <span class="lang lang-en" hidden>Publications &amp; Engagement</span>
@@ -833,7 +864,11 @@
 
   <!-- Call‑To‑Action Abschnitt -->
   <section id="cta">
-    <div class="container">
+    <div class="section-frame">
+      <p class="eyebrow">
+        <span class="lang lang-de">Kontakt</span>
+        <span class="lang lang-en" hidden>Contact</span>
+      </p>
       <h2>
         <span class="lang lang-de">Gemeinsam die Zukunft gestalten</span>
         <span class="lang lang-en" hidden>Shaping the future together</span>
