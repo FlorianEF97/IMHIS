@@ -12,9 +12,13 @@
         --color-bg: #f9fafb; /* sehr helles Grau als Hintergrund */
         --color-text: #1e293b; /* dunkler Grauton für Lesetext */
         --radius-large: 1.5rem;
-        --nav-height: 60px;
         --nav-height-min: 56px;
         --nav-height-max: 96px;
+        --nav-height: clamp(
+          var(--nav-height-min),
+          calc(6vw + 16px),
+          var(--nav-height-max)
+        );
       }
 
       /* Grundaufbau */
@@ -45,6 +49,8 @@
         backdrop-filter: saturate(180%) blur(12px);
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+        height: var(--nav-height);
+        min-height: var(--nav-height);
       }
 
       .navbar {
@@ -100,7 +106,7 @@
       @media (max-width: 767px) {
         .nav-links {
           position: absolute;
-          top: var(--nav-height, 60px);
+          top: var(--nav-height);
           left: 1rem;
           right: 1rem;
           flex-direction: column;
