@@ -375,8 +375,7 @@
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
+      display: inline-block;
       padding: 0.4rem 1rem;
       border-radius: 999px;
       font-size: 0.85rem;
@@ -397,21 +396,74 @@
       padding: 80px 20px;
     }
     #about .about-card {
-      text-align: center;
+      text-align: left;
     }
     #about .about-card .eyebrow {
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    #about .about-card-inner {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 1.75rem;
+      align-items: start;
+    }
+    #about .about-card-inner .about-img {
+      position: relative;
+      margin: 0;
+      transform: translateY(10px);
+    }
+    #about .about-card-inner .about-img::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 40% 40%,
+        rgba(37, 99, 235, 0.1),
+        rgba(37, 99, 235, 0.02)
+      );
+      filter: blur(24px);
+      z-index: 0;
+    }
+    #about .about-card-inner .about-img img {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+      z-index: 1;
+    }
+    #about .about-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    @media (max-width: 720px) {
+      #about .about-card-inner {
+        grid-template-columns: 1fr;
+      }
+      #about .about-card-inner .about-img {
+        justify-self: center;
+        transform: translateY(6px);
+      }
+      #about .about-card-text {
+        text-align: left;
+      }
     }
 
     #cta .section-frame {
       text-align: center;
     }
     #cta .section-frame .eyebrow {
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 0;
+      margin-right: 0;
     }
     #about .about-card .quote-icon {
       font-size: 2.5rem;
@@ -702,38 +754,52 @@
   <!-- Über mich -->
   <section id="about">
     <div class="about-card section-frame">
-      <p class="eyebrow">
-        <span class="lang lang-de">Über mich</span>
-        <span class="lang lang-en" hidden>About me</span>
-      </p>
-      <p class="lang lang-de">
-        <span class="quote-icon">“</span>
-        <span class="accent">Mein Dreiklang aus Medizin, Ökonomie und Recht</span>
-        prägt meine Arbeit: Als Arzt kenne ich die medizinische Praxis, als
-        Ökonom steuere ich Prozesse und Ressourcen, als Jurist sichere ich
-        Entscheidungen ab. Ich denke in Daten, Abläufen und Ergebnissen.
-      </p>
-      <p class="lang lang-en" hidden>
-        <span class="quote-icon">“</span>
-        <span class="accent">My triad of medicine, economics, and law</span>
-        shapes my work: as a physician I know clinical practice, as an
-        economist I steer processes and resources, and as a lawyer I safeguard
-        decisions. I think in data, workflows, and outcomes.
-      </p>
-      <p class="lang lang-de">
-        Ich habe den <span class="accent">roten Faden Digitalisierung</span>
-        in eigenen Projekten durchgezogen – von der Seminararbeit bis zur
-        Promotion. Hürden im medizinischen Alltag kenne ich aus erster Hand. Deswegen arbeite ich an
-        einer <span class="accent">Digitalisierung, die wirkt</span> und
-        Menschen entlastet.
-      </p>
-      <p class="lang lang-en" hidden>
-        I have pursued the <span class="accent">common thread of digitalisation</span>
-        in my own projects—from seminar papers to my doctorate. I know the
-        hurdles of everyday clinical practice first-hand. That is why I work on
-        <span class="accent">digitalisation that makes an impact</span> and
-        eases the burden on people.
-      </p>
+      <div class="about-card-inner">
+        <figure class="about-img" aria-hidden="true">
+          <img
+            alt="Dr. Florian Eisold"
+            decoding="async"
+            loading="lazy"
+            src="assets/c3535c5e-985e-4aff-979a-1de31ddb601c.jpg"
+            width="200"
+            height="200"
+          />
+        </figure>
+        <div class="about-card-text">
+          <p class="eyebrow">
+            <span class="lang lang-de">Über mich</span>
+            <span class="lang lang-en" hidden>About me</span>
+          </p>
+          <p class="lang lang-de">
+            <span class="quote-icon">“</span>
+            <span class="accent">Mein Dreiklang aus Medizin, Ökonomie und Recht</span>
+            prägt meine Arbeit: Als Arzt kenne ich die medizinische Praxis, als
+            Ökonom steuere ich Prozesse und Ressourcen, als Jurist sichere ich
+            Entscheidungen ab. Ich denke in Daten, Abläufen und Ergebnissen.
+          </p>
+          <p class="lang lang-en" hidden>
+            <span class="quote-icon">“</span>
+            <span class="accent">My triad of medicine, economics, and law</span>
+            shapes my work: as a physician I know clinical practice, as an
+            economist I steer processes and resources, and as a lawyer I safeguard
+            decisions. I think in data, workflows, and outcomes.
+          </p>
+          <p class="lang lang-de">
+            Ich habe den <span class="accent">roten Faden Digitalisierung</span>
+            in eigenen Projekten durchgezogen – von der Seminararbeit bis zur
+            Promotion. Hürden im medizinischen Alltag kenne ich aus erster Hand. Deswegen arbeite ich an
+            einer <span class="accent">Digitalisierung, die wirkt</span> und
+            Menschen entlastet.
+          </p>
+          <p class="lang lang-en" hidden>
+            I have pursued the <span class="accent">common thread of digitalisation</span>
+            in my own projects—from seminar papers to my doctorate. I know the
+            hurdles of everyday clinical practice first-hand. That is why I work on
+            <span class="accent">digitalisation that makes an impact</span> and
+            eases the burden on people.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
