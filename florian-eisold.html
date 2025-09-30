@@ -636,7 +636,7 @@
     #timeline .timeline-item::before {
       content: '';
       position: absolute;
-      top: 28px;
+      top: var(--marker-offset, 28px);
       /* Größerer Punkt mit doppelter Kontur für mehr Präsenz */
       width: 20px;
       height: 20px;
@@ -669,13 +669,13 @@
          nicht optisch durchschneidet. Eine größere Abstand schafft mehr Klarheit. */
       /* Die horizontale Linie beginnt auf Höhe des Kreispunkts (Mitte bei 28px),
          sodass die Verbindung optisch exakt in der Mitte ansetzt. */
-      top: 28px;
+      top: var(--marker-offset, 28px);
       height: 2px;
       background: var(--color-accent);
       /* Die Länge der Linie wird pro Ausrichtung gesetzt; durch den größeren Abstand
          von 50px auf jeder Seite entsteht mehr Luft zwischen Datum und Linie. */
       width: calc(100% - 48px);
-      transform: scaleX(0);
+      transform: translateY(-50%) scaleX(0);
       transition: transform 0.6s ease;
       /* Linie liegt hinter Punkt und Datum */
       z-index: 1;
@@ -689,7 +689,7 @@
       transform-origin: 0% 50%;
     }
     #timeline .timeline-item.in-view::after {
-      transform: scaleX(1);
+      transform: translateY(-50%) scaleX(1);
     }
 
     /* Hover‑ähnlicher Effekt beim Scrollen: wenn Element im Viewport, wird der Punkt vergrößert und hervorgehoben */
@@ -760,7 +760,7 @@
       }
       #timeline .timeline-item::before {
         left: 28px;
-        top: 24px;
+        top: var(--marker-offset, 24px);
         width: 14px;
         height: 14px;
         border-width: 2px;
@@ -770,7 +770,7 @@
       #timeline .timeline-item::after {
         left: 28px;
         right: auto;
-        top: 24px;
+        top: var(--marker-offset, 24px);
         width: 32px;
         transform-origin: 0% 50%;
       }
@@ -1131,6 +1131,23 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const items = document.querySelectorAll('#timeline .timeline-item');
+      const langButtons = document.querySelectorAll('.lang-btn');
+
+      function updateMarkerOffsets() {
+        items.forEach(function(item) {
+          const dateElement = item.querySelector('.timeline-date');
+          if (!dateElement) {
+            item.style.removeProperty('--marker-offset');
+            return;
+          }
+
+          const itemRect = item.getBoundingClientRect();
+          const dateRect = dateElement.getBoundingClientRect();
+          const offset = dateRect.top - itemRect.top + dateRect.height / 2;
+          item.style.setProperty('--marker-offset', offset + 'px');
+        });
+      }
+
       const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
@@ -1147,6 +1164,9 @@
       const line = document.querySelector('#timeline .timeline-line');
 
       function updateLine() {
+        if (!timeline || !line) {
+          return;
+        }
         const timelineRect = timeline.getBoundingClientRect();
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
         // Wenn die Timeline sichtbar ist, berechne den Fortschritt
@@ -1164,8 +1184,19 @@
       }
 
       // Initialer Aufruf und Scroll‑Listener
+      updateMarkerOffsets();
       updateLine();
       window.addEventListener('scroll', updateLine);
+      window.addEventListener('resize', function() {
+        updateMarkerOffsets();
+        updateLine();
+      });
+      window.addEventListener('load', updateMarkerOffsets);
+      langButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          requestAnimationFrame(updateMarkerOffsets);
+        });
+      });
     });
   </script>
 
