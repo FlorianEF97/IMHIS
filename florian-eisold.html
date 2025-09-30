@@ -673,18 +673,6 @@
       </a>
       <!-- Navigation -->
       <nav class="nav" aria-label="Hauptnavigation">
-        <button
-          class="nav-toggle"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-          aria-controls="nav-links"
-          data-label-open-de="Menü öffnen"
-          data-label-close-de="Menü schließen"
-          data-label-open-en="Open menu"
-          data-label-close-en="Close menu"
-        >
-          <span class="hamburger"></span>
-        </button>
         <ul class="nav-links" id="nav-links" hidden>
           <li>
             <a href="#hero">
@@ -710,18 +698,32 @@
               <span class="lang lang-en" hidden>View demo</span>
             </a>
           </li>
+          <li class="nav-cta">
+            <a href="mailto:florian.eisold@icloud.com" class="btn secondary">
+              <span class="lang lang-de">Kontakt aufnehmen</span>
+              <span class="lang lang-en" hidden>Get in touch</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- Aktionen rechts -->
-      <div class="actions nav-actions">
+      <div class="header-controls">
         <div aria-label="Sprachauswahl" class="lang-switcher" role="group">
           <button aria-label="Deutsch" aria-pressed="true" class="lang-btn" data-lang="de">DE</button>
           <button aria-label="English" aria-pressed="false" class="lang-btn" data-lang="en">EN</button>
         </div>
-        <a href="mailto:florian.eisold@icloud.com" class="btn secondary">
-          <span class="lang lang-de">Kontakt aufnehmen</span>
-          <span class="lang lang-en" hidden>Get in touch</span>
-        </a>
+        <button
+          class="nav-toggle"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          data-label-open-de="Menü öffnen"
+          data-label-close-de="Menü schließen"
+          data-label-open-en="Open menu"
+          data-label-close-en="Close menu"
+        >
+          <span class="hamburger"></span>
+        </button>
       </div>
     </div>
   </header>

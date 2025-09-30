@@ -390,10 +390,6 @@
      <img alt="IMHIS Logo" data-alt-en="IMHIS logo" decoding="async" fetchpriority="high" height="40" src="assets/Logo_blau.svg" width="160"/>
     </a>
     <nav aria-label="Hauptnavigation" class="nav">
-     <button aria-controls="nav-links" aria-expanded="false" aria-label="Menü öffnen" class="nav-toggle" data-label-close-de="Menü schließen" data-label-close-en="Close menu" data-label-open-de="Menü öffnen" data-label-open-en="Open menu">
-      <span class="hamburger">
-      </span>
-     </button>
      <ul class="nav-links" hidden="" id="nav-links">
       <li>
        <a href="#pitch">
@@ -445,25 +441,31 @@
         </span>
        </a>
       </li>
+      <li class="nav-cta">
+       <a class="btn primary" href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS">
+        <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+         <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
+         <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <span class="lang lang-de">
+         Kontakt aufnehmen
+        </span>
+        <span class="lang lang-en" hidden="">
+         Get in touch
+        </span>
+       </a>
+      </li>
      </ul>
     </nav>
-    <div class="actions nav-actions">
+    <div class="header-controls">
      <div aria-label="Sprachauswahl" class="lang-switcher" role="group">
       <button aria-label="Deutsch" aria-pressed="true" class="lang-btn" data-lang="de">DE</button>
       <button aria-label="English" aria-pressed="false" class="lang-btn" data-lang="en">EN</button>
      </div>
-     <a class="btn primary" href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS">
-      <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-       <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
-       <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-      </svg>
-      <span class="lang lang-de">
-       Kontakt aufnehmen
-       </span>
-       <span class="lang lang-en" hidden="">
-       Get in touch
-       </span>
-     </a>
+     <button aria-controls="nav-links" aria-expanded="false" aria-label="Menü öffnen" class="nav-toggle" data-label-close-de="Menü schließen" data-label-close-en="Close menu" data-label-open-de="Menü öffnen" data-label-open-en="Open menu">
+      <span class="hamburger">
+      </span>
+     </button>
     </div>
    </div>
   </header>

@@ -97,18 +97,6 @@
           />
         </a>
         <nav class="nav" aria-label="Hauptnavigation">
-          <button
-            class="nav-toggle"
-            aria-label="Menü öffnen"
-            aria-expanded="false"
-            aria-controls="nav-links"
-            data-label-open-de="Menü öffnen"
-            data-label-close-de="Menü schließen"
-            data-label-open-en="Open menu"
-            data-label-close-en="Close menu"
-          >
-            <span class="hamburger"></span>
-          </button>
           <ul class="nav-links" id="nav-links" hidden>
             <li>
               <a href="/index.html#pitch">
@@ -134,28 +122,44 @@
                 <span class="lang lang-en" hidden>News</span>
               </a>
             </li>
+            <li class="nav-cta">
+              <a href="/index.html#buch" class="btn secondary">
+                <svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.966 8.966 0 006 3.75a9.01 9.01 0 00-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292 9.01 9.01 0 013 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                </svg>
+                <span class="lang lang-de">Buch ansehen</span>
+                <span class="lang lang-en" hidden>View the book</span>
+              </a>
+            </li>
+            <li class="nav-cta">
+              <a href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS" class="btn primary">
+                <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
+                  <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <span class="lang lang-de">Kostenlos anfragen</span>
+                <span class="lang lang-en" hidden>Request free access</span>
+              </a>
+            </li>
           </ul>
         </nav>
-        <div class="actions nav-actions">
+        <div class="header-controls">
           <div class="lang-switcher" role="group" aria-label="Sprachauswahl">
             <button class="lang-btn" data-lang="de" aria-label="Deutsch" aria-pressed="true">DE</button>
             <button class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
           </div>
-          <a href="/index.html#buch" class="btn secondary">
-            <svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.966 8.966 0 006 3.75a9.01 9.01 0 00-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292 9.01 9.01 0 013 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
-            </svg>
-            <span class="lang lang-de">Buch ansehen</span>
-            <span class="lang lang-en" hidden>View the book</span>
-          </a>
-          <a href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS" class="btn primary">
-            <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-              <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
-              <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-            </svg>
-            <span class="lang lang-de">Kostenlos anfragen</span>
-            <span class="lang lang-en" hidden>Request free access</span>
-          </a>
+          <button
+            class="nav-toggle"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+            aria-controls="nav-links"
+            data-label-open-de="Menü öffnen"
+            data-label-close-de="Menü schließen"
+            data-label-open-en="Open menu"
+            data-label-close-en="Close menu"
+          >
+            <span class="hamburger"></span>
+          </button>
         </div>
       </div>
     </header>
