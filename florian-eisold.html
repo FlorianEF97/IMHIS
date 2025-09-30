@@ -133,19 +133,21 @@
     #hero .hero-text h1 {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      font-size: 2.2rem;
+      font-size: clamp(1.9rem, 3.8vw, 2.2rem);
       font-weight: 700;
       color: var(--color-text);
+      line-height: 1.2;
+      overflow-wrap: anywhere;
     }
     #hero .hero-text .subtitle {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 2.8vw, 1.1rem);
       font-weight: 600;
       color: var(--color-accent-dark);
       margin-bottom: 0.5rem;
     }
     #hero .hero-text p {
       margin: 0 0 1.5rem;
-      font-size: 1rem;
+      font-size: clamp(0.95rem, 2.6vw, 1rem);
       line-height: 1.5;
       color: var(--color-text-light);
     }
@@ -180,6 +182,30 @@
       }
       #hero .hero-buttons {
         justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #hero {
+        padding: 60px 16px 44px;
+      }
+      #hero .hero-card {
+        padding: 24px;
+        gap: 24px;
+      }
+      #hero .hero-text {
+        min-width: 0;
+      }
+      section {
+        padding: 48px 16px;
+      }
+      section h2 {
+        font-size: clamp(1.5rem, 6vw, 1.8rem);
+        text-align: left;
+      }
+      .section-frame {
+        width: min(96%, 1100px);
+        padding: clamp(2rem, 6vw, 2.6rem);
       }
     }
 
@@ -475,7 +501,7 @@
     #timeline .timeline-item::before {
       content: '';
       position: absolute;
-      top: 20px;
+      top: 28px;
       /* Größerer Punkt mit doppelter Kontur für mehr Präsenz */
       width: 20px;
       height: 20px;
@@ -486,16 +512,17 @@
       transition: transform 0.3s ease, background 0.3s ease;
       /* dot überlagert Verbindungslinie */
       z-index: 3;
+      transform: translate(-50%, -50%) scale(1);
     }
     #timeline .timeline-item:nth-child(odd)::before {
-      right: -10px;
+      left: 100%;
     }
     #timeline .timeline-item:nth-child(even)::before {
-      left: -10px;
+      left: 0;
     }
     /* Hover‑Effekt für Timeline‑Punkte */
     #timeline .timeline-item:hover::before {
-      transform: scale(1.4);
+      transform: translate(-50%, -50%) scale(1.4);
       background: var(--color-accent-dark);
     }
 
@@ -512,18 +539,18 @@
       background: var(--color-accent);
       /* Die Länge der Linie wird pro Ausrichtung gesetzt; durch den größeren Abstand
          von 50px auf jeder Seite entsteht mehr Luft zwischen Datum und Linie. */
-      width: calc(50% - 48px);
+      width: calc(100% - 48px);
       transform: scaleX(0);
       transition: transform 0.6s ease;
       /* Linie liegt hinter Punkt und Datum */
       z-index: 1;
     }
     #timeline .timeline-item:nth-child(odd)::after {
-      right: -13px;
+      right: 0;
       transform-origin: 100% 50%;
     }
     #timeline .timeline-item:nth-child(even)::after {
-      left: -13px;
+      left: 0;
       transform-origin: 0% 50%;
     }
     #timeline .timeline-item.in-view::after {
@@ -532,7 +559,7 @@
 
     /* Hover‑ähnlicher Effekt beim Scrollen: wenn Element im Viewport, wird der Punkt vergrößert und hervorgehoben */
     #timeline .timeline-item.in-view::before {
-      transform: scale(1.6);
+      transform: translate(-50%, -50%) scale(1.6);
       background: var(--color-accent-dark);
     }
     #timeline .timeline-item.in-view .timeline-date,
@@ -588,13 +615,25 @@
       }
       #timeline .timeline-item::before {
         left: 28px;
-        margin-left: -10px;
+        top: 24px;
+        width: 14px;
+        height: 14px;
+        border-width: 2px;
+        box-shadow: 0 0 0 2px var(--color-accent);
+        transform: translate(-50%, -50%) scale(1);
       }
       #timeline .timeline-item::after {
         left: 28px;
         right: auto;
-        width: 24px;
+        top: 24px;
+        width: 32px;
         transform-origin: 0% 50%;
+      }
+      #timeline .timeline-item:hover::before {
+        transform: translate(-50%, -50%) scale(1.4);
+      }
+      #timeline .timeline-item.in-view::before {
+        transform: translate(-50%, -50%) scale(1.5);
       }
     }
 
@@ -685,7 +724,7 @@
           <span class="lang lang-de">Profil</span>
           <span class="lang lang-en" hidden>Profile</span>
         </p>
-        <h1>Dr. Florian Richard Eisold, B.Sc., LL.M.</h1>
+        <h1>Dr. Florian Richard Eisold, B.Sc., LL.M.</h1>
         <p class="subtitle">
           <span class="lang lang-de">Ich forme unsere digitalen Gesundheitswelten von morgen – interdisziplinär, visionär, messbar.</span>
           <span class="lang lang-en" hidden>I shape tomorrow's digital healthcare environments – interdisciplinary, visionary, measurable.</span>
