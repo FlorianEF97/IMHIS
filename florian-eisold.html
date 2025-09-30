@@ -141,6 +141,35 @@
       align-items: center;
       gap: 0.8rem;
     }
+    .site-header .btn {
+      padding: 1rem 1.5rem;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      box-shadow: none;
+    }
+    .site-header .btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    .site-header .btn.primary {
+      background: linear-gradient(135deg, var(--color-accent), #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.25);
+    }
+    .site-header .btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.35);
+    }
     .lang-switcher {
       display: inline-flex;
       align-items: center;
@@ -696,7 +725,11 @@
           <button aria-label="Deutsch" aria-pressed="true" class="lang-btn" data-lang="de">DE</button>
           <button aria-label="English" aria-pressed="false" class="lang-btn" data-lang="en">EN</button>
         </div>
-        <a href="mailto:florian.eisold@icloud.com" class="btn secondary">
+        <a class="btn primary" href="mailto:florian.eisold@icloud.com">
+          <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+            <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
+            <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
           <span class="lang lang-de">Kontakt aufnehmen</span>
           <span class="lang lang-en" hidden>Get in touch</span>
         </a>
