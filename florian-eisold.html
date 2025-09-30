@@ -11,7 +11,7 @@
   <style>
     /* Farbvariablen zur einfachen Anpassung an bestehendes Design */
     :root {
-    
+
       --color-bg: #f8fafc;               /* Grundhintergrund der Seite */
       --color-section: #ffffff;          /* Hintergrund für Karten und Abschnitte */
       --color-border: #e2e8f0;           /* dezente Rahmenfarbe */
@@ -98,21 +98,24 @@
       z-index: 1000;
     }
     .site-header .header-inner {
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.75rem 1rem;
+      gap: 1.5rem;
     }
     .site-header .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--color-accent-dark);
-      text-decoration: none;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.25rem;
+      gap: 0.5rem;
+    }
+    .site-header .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
     }
     .site-header .nav-links {
       display: flex;
@@ -135,24 +138,31 @@
       align-items: center;
       gap: 0.8rem;
     }
-    /* Language switcher stub – optional for multilingual sites */
-    .site-header .language-switch {
+    .lang-switcher {
       display: inline-flex;
+      align-items: center;
       border: 1px solid var(--color-border);
       border-radius: 999px;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.8rem;
-      color: var(--color-text);
+      padding: 0.25rem;
       background: var(--color-section);
+      gap: 0.25rem;
     }
-    .site-header .language-switch span {
-      cursor: pointer;
-      padding: 0 0.4rem;
-      transition: color 0.2s ease;
-    }
-    .site-header .language-switch .active {
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--color-text);
       font-weight: 600;
-      color: var(--color-accent-dark);
+      font-size: 0.85rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .lang-btn[aria-pressed="true"],
+    .lang-btn.active {
+      background: var(--color-accent);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
     }
 
     /* Hero‑Sektion mit Karte */
@@ -223,6 +233,17 @@
       fill: currentColor;
     }
     @media (max-width: 768px) {
+      .site-header .header-inner {
+        flex-wrap: wrap;
+      }
+      .site-header .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .site-header .actions {
+        width: 100%;
+        justify-content: flex-end;
+      }
       #hero .hero-card {
         text-align: center;
         padding: 30px;
@@ -531,78 +552,123 @@
   </style>
 </head>
 <body>
-    <!-- Seiten‑Header -->
-    <header class="site-header">
-      <div class="header-inner">
-        <!-- Logo und Markenname -->
-        <a href="index.html" class="logo">IMHIS</a>
-        <!-- Navigation -->
-        <nav class="nav-links">
-          <a href="#hero">Profil</a>
-          <a href="#timeline">Karriere</a>
-          <a href="#publications">Publikationen</a>
-          <a href="#contact">Kontakt</a>
-        </nav>
-        <!-- Aktionen rechts -->
-        <div class="actions">
-          <div class="language-switch">
-            <span class="active">DE</span>
-            <span>EN</span>
-          </div>
-          <a href="mailto:florian.eisold@icloud.com" class="btn secondary">Kontakt aufnehmen</a>
+  <!-- Seiten‑Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo und Markenname -->
+      <a href="index.html" class="logo">
+        <img src="assets/Logo_blau.svg" alt="IMHIS Logo" data-alt-en="IMHIS logo" width="160" height="40" loading="lazy" decoding="async">
+      </a>
+      <!-- Navigation -->
+      <nav class="nav-links">
+        <a href="#hero">
+          <span class="lang lang-de">Profil</span>
+          <span class="lang lang-en" hidden>Profile</span>
+        </a>
+        <a href="#timeline">
+          <span class="lang lang-de">Karriere</span>
+          <span class="lang lang-en" hidden>Career</span>
+        </a>
+        <a href="#publications">
+          <span class="lang lang-de">Publikationen</span>
+          <span class="lang lang-en" hidden>Publications</span>
+        </a>
+        <a href="#cta">
+          <span class="lang lang-de">Kontakt</span>
+          <span class="lang lang-en" hidden>Contact</span>
+        </a>
+      </nav>
+      <!-- Aktionen rechts -->
+      <div class="actions">
+        <div aria-label="Sprachauswahl" class="lang-switcher" role="group">
+          <button aria-label="Deutsch" aria-pressed="true" class="lang-btn" data-lang="de">DE</button>
+          <button aria-label="English" aria-pressed="false" class="lang-btn" data-lang="en">EN</button>
         </div>
+        <a href="mailto:florian.eisold@icloud.com" class="btn secondary">
+          <span class="lang lang-de">Kontakt aufnehmen</span>
+          <span class="lang lang-en" hidden>Get in touch</span>
+        </a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Hero‑Bereich als Pitch‑Karte -->
-    <section id="hero">
-      <div class="container hero-card">
-        <!-- Platzhalter‑Bild, ersetze durch echtes Porträt bei Live‑Einsatz -->
-         <img
+  <!-- Hero‑Bereich als Pitch‑Karte -->
+  <section id="hero">
+    <div class="container hero-card">
+      <!-- Platzhalter‑Bild, ersetze durch echtes Porträt bei Live‑Einsatz -->
+      <img
         alt="Dr. Florian Eisold"
+        data-alt-en="Dr. Florian Eisold"
         decoding="async"
         loading="lazy"
         src="assets/c3535c5e-985e-4aff-979a-1de31ddb601c.jpg"
         width="200"
         height="200"
       />
-        <div class="hero-text">
-          <h1>Dr. Florian Richard Eisold, B.Sc., LL.M.</h1>
-          <p class="subtitle">Ich forme unsere digitale Gesundheitswelten von morgen – interdisziplinär, visionär, messbar.</p>
-          <p>Als Arzt, Ökonom und Jurist verbinde ich medizinische Praxis, wirtschaftliche Steuerung und juristische Verantwortung. Mein Ziel: digitale Vorhaben zu messbaren Erfolgen führen und dabei die Menschen in der Versorgung entlasten.</p>
-          <div class="hero-buttons">
-            <a href="#timeline" class="btn secondary">Karriere im Überblick</a>
-            <a href="mailto:florian.eisold@icloud.com" class="btn primary">Jetzt kontaktieren</a>
-            <!-- LinkedIn‑Button mit Icon -->
-            <a href="https://www.linkedin.com/in/dr-med-florian-r-eisold-b-sc-ll-m-7a4a08145/" class="btn secondary linkedin-btn" target="_blank" rel="noopener noreferrer">
-              <!-- LinkedIn Icon (SVG) -->
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.033-1.848-3.033-1.848 0-2.131 1.445-2.131 2.939v5.663H9.359V9h3.414v1.561h.049c.476-.9 1.635-1.848 3.369-1.848 3.604 0 4.273 2.373 4.273 5.464v6.275zM5.337 7.433a2.067 2.067 0 110-4.134 2.067 2.067 0 010 4.134zM6.934 20.452H3.75V9h3.184v11.452z"></path>
-              </svg>
-              LinkedIn
-            </a>
-          </div>
+      <div class="hero-text">
+        <h1>Dr. Florian Richard Eisold, B.Sc., LL.M.</h1>
+        <p class="subtitle">
+          <span class="lang lang-de">Ich forme unsere digitalen Gesundheitswelten von morgen – interdisziplinär, visionär, messbar.</span>
+          <span class="lang lang-en" hidden>I shape tomorrow's digital healthcare environments – interdisciplinary, visionary, measurable.</span>
+        </p>
+        <p class="lang lang-de">Als Arzt, Ökonom und Jurist verbinde ich medizinische Praxis, wirtschaftliche Steuerung und juristische Verantwortung. Mein Ziel: digitale Vorhaben zu messbaren Erfolgen führen und dabei die Menschen in der Versorgung entlasten.</p>
+        <p class="lang lang-en" hidden>As a physician, economist, and lawyer, I combine clinical practice, economic management, and legal accountability. My goal is to turn digital initiatives into measurable success while relieving the people who deliver care.</p>
+        <div class="hero-buttons">
+          <a href="#timeline" class="btn secondary">
+            <span class="lang lang-de">Karriere im Überblick</span>
+            <span class="lang lang-en" hidden>Career at a glance</span>
+          </a>
+          <a href="mailto:florian.eisold@icloud.com" class="btn primary">
+            <span class="lang lang-de">Jetzt kontaktieren</span>
+            <span class="lang lang-en" hidden>Contact now</span>
+          </a>
+          <!-- LinkedIn‑Button mit Icon -->
+          <a href="https://www.linkedin.com/in/dr-med-florian-r-eisold-b-sc-ll-m-7a4a08145/" class="btn secondary linkedin-btn" target="_blank" rel="noopener noreferrer">
+            <!-- LinkedIn Icon (SVG) -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.033-1.848-3.033-1.848 0-2.131 1.445-2.131 2.939v5.663H9.359V9h3.414v1.561h.049c.476-.9 1.635-1.848 3.369-1.848 3.604 0 4.273 2.373 4.273 5.464v6.275zM5.337 7.433a2.067 2.067 0 110-4.134 2.067 2.067 0 010 4.134zM6.934 20.452H3.75V9h3.184v11.452z"></path>
+            </svg>
+            LinkedIn
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <!-- Über mich -->
   <section id="about">
     <div class="about-card">
-      <span class="tag">Über mich</span>
-      <p>
+      <span class="tag">
+        <span class="lang lang-de">Über mich</span>
+        <span class="lang lang-en" hidden>About me</span>
+      </span>
+      <p class="lang lang-de">
         <span class="quote-icon">“</span>
         <span class="accent">Mein Dreiklang aus Medizin, Ökonomie und Recht</span>
         prägt meine Arbeit: Als Arzt kenne ich die medizinische Praxis, als
         Ökonom steuere ich Prozesse und Ressourcen, als Jurist sichere ich
         Entscheidungen ab. Ich denke in Daten, Abläufen und Ergebnissen.
       </p>
-      <p>
+      <p class="lang lang-en" hidden>
+        <span class="quote-icon">“</span>
+        <span class="accent">My triad of medicine, economics, and law</span>
+        shapes my work: as a physician I know clinical practice, as an
+        economist I steer processes and resources, and as a lawyer I safeguard
+        decisions. I think in data, workflows, and outcomes.
+      </p>
+      <p class="lang lang-de">
         Ich habe den <span class="accent">roten Faden Digitalisierung</span>
         in eigenen Projekten durchgezogen – von der Seminararbeit bis zur
         Promotion. Hürden im medizinischen Alltag kenne ich aus erster Hand. Deswegen arbeite ich an
         einer <span class="accent">Digitalisierung, die wirkt</span> und
         Menschen entlastet.
+      </p>
+      <p class="lang lang-en" hidden>
+        I have pursued the <span class="accent">common thread of digitalisation</span>
+        in my own projects—from seminar papers to my doctorate. I know the
+        hurdles of everyday clinical practice first-hand. That is why I work on
+        <span class="accent">digitalisation that makes an impact</span> and
+        eases the burden on people.
       </p>
     </div>
   </section>
@@ -610,81 +676,134 @@
   <!-- Karriere‑Graph / Timeline -->
   <section id="timeline">
     <div class="container">
-      <h2>Mein Weg in unserem Gesundheitssystem</h2>
+      <h2>
+        <span class="lang lang-de">Mein Weg in unserem Gesundheitssystem</span>
+        <span class="lang lang-en" hidden>My path in our healthcare system</span>
+      </h2>
       <div class="timeline">
         <!-- vertikale Linie, die beim Scrollen wächst -->
         <div class="timeline-line"></div>
         <!-- Zukunft: geplanter PhD -->
         <div class="timeline-item">
-          <div class="timeline-date">Oktober 2025 - heute</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">Oktober&nbsp;2025 – heute</span>
+            <span class="lang lang-en" hidden>October&nbsp;2025 – today</span>
+          </div>
           <div class="timeline-content">
             <h3>Ph.D. Medical Sciences</h3>
-            <p>Beginn eines PhD‑Studiums im Bereich Medical Sciences, um eine evidenzbasierte Digitalisierung weiterzuentwickeln.</p>
+            <p class="lang lang-de">Beginn eines PhD‑Studiums im Bereich Medical Sciences, um eine evidenzbasierte Digitalisierung weiterzuentwickeln.</p>
+            <p class="lang lang-en" hidden>Start of a PhD programme in Medical Sciences to further develop evidence-based digitalisation.</p>
           </div>
         </div>
         <!-- Gegenwart -->
         <div class="timeline-item">
-          <div class="timeline-date">April 2025 – heute</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">April&nbsp;2025 – heute</span>
+            <span class="lang lang-en" hidden>April&nbsp;2025 – today</span>
+          </div>
           <div class="timeline-content">
-            <h3>Medizincontroller, Bundeswehrzentralkrankenhaus Koblenz</h3>
-            <p>Verantwortung für Analysen, Budgetverhandlungen und die rechtlichen Rahmenbedingungen im Klinikbetrieb.</p>
+            <h3>
+              <span class="lang lang-de">Medizincontroller, Bundeswehrzentralkrankenhaus Koblenz</span>
+              <span class="lang lang-en" hidden>Medical Controller, Bundeswehr Central Hospital Koblenz</span>
+            </h3>
+            <p class="lang lang-de">Verantwortung für Analysen, Budgetverhandlungen und die rechtlichen Rahmenbedingungen im Klinikbetrieb.</p>
+            <p class="lang lang-en" hidden>Responsible for analytics, budget negotiations, and the legal framework of hospital operations.</p>
           </div>
         </div>
         <!-- LL.M. Abschluss -->
         <div class="timeline-item">
-          <div class="timeline-date">Feb 2023 – April 2025</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">Feb&nbsp;2023 – Apr&nbsp;2025</span>
+            <span class="lang lang-en" hidden>Feb&nbsp;2023 – Apr&nbsp;2025</span>
+          </div>
           <div class="timeline-content">
             <h3>Master of Laws (LL.M.) in Medizinrecht</h3>
-            <p>Berufsbegleitendes Studium an der Universität Münster, Abschlussarbeit zur Organisation eines nichtärztlichen Notdienstes unter haftungsrechtlichen Aspekten.</p>
+            <p class="lang lang-de">Berufsbegleitendes Studium an der Universität Münster, Abschlussarbeit zur Organisation eines nichtärztlichen Notdienstes unter haftungsrechtlichen Aspekten.</p>
+            <p class="lang lang-en" hidden>Part-time studies at the University of Münster; master's thesis on organising a non-physician on-call service from a liability perspective.</p>
           </div>
         </div>
         <!-- Assistenzarzt Erfahrungen -->
         <div class="timeline-item">
-          <div class="timeline-date">Nov 2022 – Apr 2025</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">Nov&nbsp;2022 – Apr&nbsp;2025</span>
+            <span class="lang lang-en" hidden>Nov&nbsp;2022 – Apr&nbsp;2025</span>
+          </div>
           <div class="timeline-content">
-            <h3>Assistenzarzt, Bundeswehrzentralkrankenhaus Koblenz</h3>
-            <p>Einsätze als Stationsarzt in der Onkologie und Gastroenterologie, Konsiliarius in der Inneren Medizin und Arzt der zentralen Notaufnahme.</p>
+            <h3>
+              <span class="lang lang-de">Assistenzarzt, Bundeswehrzentralkrankenhaus Koblenz</span>
+              <span class="lang lang-en" hidden>Resident Physician, Bundeswehr Central Hospital Koblenz</span>
+            </h3>
+            <p class="lang lang-de">Einsätze als Stationsarzt in der Onkologie und Gastroenterologie, Konsiliarius in der Inneren Medizin und Arzt der zentralen Notaufnahme.</p>
+            <p class="lang lang-en" hidden>Assignments as ward physician in oncology and gastroenterology, consultant in internal medicine, and physician in the emergency department.</p>
           </div>
         </div>
-                <!-- Promotion (Dr. med.) -->
+        <!-- Promotion (Dr. med.) -->
         <div class="timeline-item">
-          <div class="timeline-date">Aug 2020 – Mai 2025</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">Aug&nbsp;2020 – Mai&nbsp;2025</span>
+            <span class="lang lang-en" hidden>Aug&nbsp;2020 – May&nbsp;2025</span>
+          </div>
           <div class="timeline-content">
-            <h3>Promotion zum Dr. med.</h3>
-            <p>Dissertation über die Konzeption und Anwendung des Analyseinstrumentes IMHIS zur Bewertung von Krankenhausinformationssystemen.</p>
+            <h3>
+              <span class="lang lang-de">Promotion zum Dr.&nbsp;med.</span>
+              <span class="lang lang-en" hidden>Doctorate (Dr.&nbsp;med.)</span>
+            </h3>
+            <p class="lang lang-de">Dissertation über die Konzeption und Anwendung des Analyseinstrumentes IMHIS zur Bewertung von Krankenhausinformationssystemen.</p>
+            <p class="lang lang-en" hidden>Dissertation on designing and applying the IMHIS assessment tool for hospital information systems.</p>
           </div>
         </div>
-        
         <!-- Bachelor BWL Abschluss -->
         <div class="timeline-item">
-          <div class="timeline-date">Nov 2018 – Apr 2022</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">Nov&nbsp;2018 – Apr&nbsp;2022</span>
+            <span class="lang lang-en" hidden>Nov&nbsp;2018 – Apr&nbsp;2022</span>
+          </div>
           <div class="timeline-content">
             <h3>Bachelor of Science (B.Sc.) in Betriebswirtschaftslehre</h3>
-            <p>Abschluss an der Ludwig‑Maximilians‑Universität München mit Schwerpunkt Digital Business & Strategic Organization.</p>
+            <p class="lang lang-de">Abschluss an der Ludwig‑Maximilians‑Universität München mit Schwerpunkt Digital Business &amp; Strategic Organization.</p>
+            <p class="lang lang-en" hidden>Graduated from Ludwig Maximilian University of Munich with a focus on Digital Business &amp; Strategic Organization.</p>
           </div>
         </div>
         <!-- Studium Medizin Abschluss -->
         <div class="timeline-item">
-          <div class="timeline-date">Nov 2016 – Nov 2022</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">Nov&nbsp;2016 – Nov&nbsp;2022</span>
+            <span class="lang lang-en" hidden>Nov&nbsp;2016 – Nov&nbsp;2022</span>
+          </div>
           <div class="timeline-content">
-            <h3>Staatsexamen in Humanmedizin</h3>
-            <p>Abschluss des Medizinstudiums an der Ludwig‑Maximilians‑Universität München.</p>
+            <h3>
+              <span class="lang lang-de">Staatsexamen in Humanmedizin</span>
+              <span class="lang lang-en" hidden>State Examination in Human Medicine</span>
+            </h3>
+            <p class="lang lang-de">Abschluss des Medizinstudiums an der Ludwig‑Maximilians‑Universität München.</p>
+            <p class="lang lang-en" hidden>Completed medical studies at Ludwig Maximilian University of Munich.</p>
           </div>
         </div>
         <!-- Beginn Sanitätsoffizier -->
         <div class="timeline-item">
-          <div class="timeline-date">Jul 2016</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">Jul&nbsp;2016</span>
+            <span class="lang lang-en" hidden>Jul&nbsp;2016</span>
+          </div>
           <div class="timeline-content">
             <h3>Sanitätsoffizier, Bundeswehr</h3>
-            <p>Eintritt in die Bundeswehr als Sanitätsoffizier – Dienst in der medizinischen Versorgung und Führung.</p>
+            <p class="lang lang-de">Eintritt in die Bundeswehr als Sanitätsoffizier – Dienst in der medizinischen Versorgung und Führung.</p>
+            <p class="lang lang-en" hidden>Joined the German Armed Forces as a medical officer—service in healthcare delivery and leadership.</p>
           </div>
         </div>
         <!-- Abitur -->
         <div class="timeline-item">
-          <div class="timeline-date">Jun 2016</div>
+          <div class="timeline-date">
+            <span class="lang lang-de">Jun&nbsp;2016</span>
+            <span class="lang lang-en" hidden>Jun&nbsp;2016</span>
+          </div>
           <div class="timeline-content">
-            <h3>Allgemeine Hochschulreife</h3>
-            <p>Abschluss des Dossenberger‑Gymnasiums Günzburg.</p>
+            <h3>
+              <span class="lang lang-de">Allgemeine Hochschulreife</span>
+              <span class="lang lang-en" hidden>General university entrance qualification (Abitur)</span>
+            </h3>
+            <p class="lang lang-de">Abschluss des Dossenberger‑Gymnasiums Günzburg.</p>
+            <p class="lang lang-en" hidden>Graduated from Dossenberger-Gymnasium Günzburg.</p>
           </div>
         </div>
       </div>
@@ -694,21 +813,36 @@
   <!-- Publikationen und Engagement -->
   <section id="publications">
     <div class="container">
-      <h2>Publikationen & Engagement</h2>
-      <p><strong>Buchveröffentlichung (2025):</strong> <em>Digitale Systeme – Echte Wirkung: Was Klinikpersonal wirklich braucht: IMHIS – ein Analyseinstrument zur nutzerzentrierten Bewertung von Gesundheitsinformationssystemen.</em> Springer Gabler, Wiesbaden.</p>
-      <p><strong>Masterarbeit Medizinrecht (2025):</strong> <em>Möglichkeiten und Grenzen der Organisation eines nichtärztlich aufsuchenden Dienstes in der notdienstlichen Akutversorgung unter haftungsrechtlichen Aspekten.</em></p>
-       <p><strong>Bachelorarbeit BWL (2022):</strong> <em>Digitale Gesundheitsapplikationen und ihre Effekte auf die Versorgung von Patienten mit Hüft- oder Kniegelenkersatz. Eine systematische Literaturübersicht</em></p>
-      <p><strong>Mitgliedschaften:</strong> Sanitätsoffizier seit 2016 bei der Bundeswehr, sowie Engagement im TU Investment Club München (2017‑2022) mit Fokus auf Social Media und Analystentätigkeit.</p>
-      <p><strong>Weitere Erfahrungen:</strong> Praktika und Famulaturen in Orthopädie & Unfallchirurgie, Innerer Medizin, Viszeralchirurgie, Neurochirurgie, Arbeitsmedizin und Allgemeinmedizin an führenden universitären Einrichtungen im In- und Ausland.</p>
+      <h2>
+        <span class="lang lang-de">Publikationen &amp; Engagement</span>
+        <span class="lang lang-en" hidden>Publications &amp; Engagement</span>
+      </h2>
+      <p class="lang lang-de"><strong>Buchveröffentlichung (2025):</strong> <em>Digitale Systeme – Echte Wirkung: Was Klinikpersonal wirklich braucht: IMHIS – ein Analyseinstrument zur nutzerzentrierten Bewertung von Gesundheitsinformationssystemen.</em> Springer&nbsp;Gabler, Wiesbaden.</p>
+      <p class="lang lang-en" hidden><strong>Book publication (2025):</strong> <em>Digitale Systeme – Echte Wirkung: Was Klinikpersonal wirklich braucht: IMHIS – ein Analyseinstrument zur nutzerzentrierten Bewertung von Gesundheitsinformationssystemen.</em> Springer&nbsp;Gabler, Wiesbaden.</p>
+      <p class="lang lang-de"><strong>Masterarbeit Medizinrecht (2025):</strong> <em>Möglichkeiten und Grenzen der Organisation eines nichtärztlich aufsuchenden Dienstes in der notdienstlichen Akutversorgung unter haftungsrechtlichen Aspekten.</em></p>
+      <p class="lang lang-en" hidden><strong>Master's thesis in medical law (2025):</strong> <em>Möglichkeiten und Grenzen der Organisation eines nichtärztlich aufsuchenden Dienstes in der notdienstlichen Akutversorgung unter haftungsrechtlichen Aspekten.</em></p>
+      <p class="lang lang-de"><strong>Bachelorarbeit BWL (2022):</strong> <em>Digitale Gesundheitsapplikationen und ihre Effekte auf die Versorgung von Patienten mit Hüft- oder Kniegelenkersatz. Eine systematische Literaturübersicht.</em></p>
+      <p class="lang lang-en" hidden><strong>Bachelor's thesis in business administration (2022):</strong> <em>Digitale Gesundheitsapplikationen und ihre Effekte auf die Versorgung von Patienten mit Hüft- oder Kniegelenkersatz. Eine systematische Literaturübersicht.</em></p>
+      <p class="lang lang-de"><strong>Mitgliedschaften:</strong> Sanitätsoffizier seit 2016 bei der Bundeswehr, sowie Engagement im TU Investment Club München (2017‑2022) mit Fokus auf Social Media und Analystentätigkeit.</p>
+      <p class="lang lang-en" hidden><strong>Memberships:</strong> Medical officer with the German Armed Forces since 2016, and commitment to the TU Investment Club Munich (2017–2022) focusing on social media and analyst duties.</p>
+      <p class="lang lang-de"><strong>Weitere Erfahrungen:</strong> Praktika und Famulaturen in Orthopädie &amp; Unfallchirurgie, Innerer Medizin, Viszeralchirurgie, Neurochirurgie, Arbeitsmedizin und Allgemeinmedizin an führenden universitären Einrichtungen im In- und Ausland.</p>
+      <p class="lang lang-en" hidden><strong>Additional experience:</strong> Internships and clinical electives in orthopaedics &amp; trauma surgery, internal medicine, visceral surgery, neurosurgery, occupational medicine, and general practice at leading university institutions in Germany and abroad.</p>
     </div>
   </section>
-  
+
   <!-- Call‑To‑Action Abschnitt -->
   <section id="cta">
     <div class="container">
-      <h2>Gemeinsam die Zukunft gestalten</h2>
-      <p>Sie suchen eine interdisziplinäre Führungspersönlichkeit, die digitale Transformation im Gesundheitswesen wirkungsvoll gestaltet? Lassen Sie uns ins Gespräch kommen.</p>
-      <a href="mailto:florian.eisold@icloud.com" class="btn primary">Projekt anfragen</a>
+      <h2>
+        <span class="lang lang-de">Gemeinsam die Zukunft gestalten</span>
+        <span class="lang lang-en" hidden>Shaping the future together</span>
+      </h2>
+      <p class="lang lang-de">Sie suchen eine interdisziplinäre Führungspersönlichkeit, die digitale Transformation im Gesundheitswesen wirkungsvoll gestaltet? Lassen Sie uns ins Gespräch kommen.</p>
+      <p class="lang lang-en" hidden>Are you looking for an interdisciplinary leader who drives digital transformation in healthcare with tangible impact? Let's start the conversation.</p>
+      <a href="mailto:florian.eisold@icloud.com" class="btn primary">
+        <span class="lang lang-de">Projekt anfragen</span>
+        <span class="lang lang-en" hidden>Start a project</span>
+      </a>
     </div>
   </section>
 
@@ -716,12 +850,23 @@
   <footer class="site-footer">
     <div class="container">
       <div class="legal-links">
-        <a href="#">Impressum</a>
+        <a href="#">
+          <span class="lang lang-de">Impressum</span>
+          <span class="lang lang-en" hidden>Imprint</span>
+        </a>
         <span>|</span>
-        <a href="#">Datenschutz</a>
+        <a href="#">
+          <span class="lang lang-de">Datenschutz</span>
+          <span class="lang lang-en" hidden>Privacy</span>
+        </a>
       </div>
-      <p>© 2025 Dr. Florian Eisold. Inhalte urheberrechtlich geschützt.</p>
-      <p>Für Kooperationen oder Nutzungsanfragen: <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a></p>
+      <p class="lang lang-de">© 2025 Dr. Florian Eisold. Inhalte urheberrechtlich geschützt.</p>
+      <p class="lang lang-en" hidden>© 2025 Dr. Florian Eisold. All content is protected by copyright.</p>
+      <p>
+        <span class="lang lang-de">Für Kooperationen oder Nutzungsanfragen:</span>
+        <span class="lang lang-en" hidden>For partnerships or usage requests:</span>
+        <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a>
+      </p>
     </div>
   </footer>
 
@@ -764,6 +909,74 @@
       // Initialer Aufruf und Scroll‑Listener
       updateLine();
       window.addEventListener('scroll', updateLine);
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const langButtons = document.querySelectorAll('.lang-btn');
+      const germanElements = document.querySelectorAll('.lang.lang-de');
+      const englishElements = document.querySelectorAll('.lang.lang-en');
+      const altElements = document.querySelectorAll('[data-alt-en]');
+
+      function switchLanguage(targetLang) {
+        if (document.documentElement.lang === targetLang) {
+          return;
+        }
+        const isEnglish = targetLang === 'en';
+
+        germanElements.forEach(function(el) {
+          el.hidden = isEnglish;
+        });
+        englishElements.forEach(function(el) {
+          el.hidden = !isEnglish;
+        });
+
+        langButtons.forEach(function(button) {
+          const active = button.dataset.lang === targetLang;
+          button.setAttribute('aria-pressed', active);
+          button.classList.toggle('active', active);
+        });
+
+        altElements.forEach(function(el) {
+          if (!el.dataset.altDe) {
+            el.dataset.altDe = el.getAttribute('alt') || '';
+          }
+          const altText = isEnglish ? el.dataset.altEn : el.dataset.altDe;
+          if (altText !== undefined) {
+            el.setAttribute('alt', altText);
+          }
+        });
+
+        document.documentElement.lang = targetLang;
+        try {
+          localStorage.setItem('lang', targetLang);
+        } catch (error) {
+          /* localStorage möglicherweise nicht verfügbar */
+        }
+        window.dispatchEvent(new Event('imhis-language-change'));
+      }
+
+      langButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          switchLanguage(button.dataset.lang);
+        });
+      });
+
+      let initialLang = 'de';
+      try {
+        const storedLang = localStorage.getItem('lang');
+        if (storedLang === 'de' || storedLang === 'en') {
+          initialLang = storedLang;
+        } else if (navigator.language && navigator.language.toLowerCase().startsWith('en')) {
+          initialLang = 'en';
+        }
+      } catch (error) {
+        /* Zugriff auf localStorage nicht möglich */
+      }
+
+      if (initialLang !== 'de') {
+        switchLanguage(initialLang);
+      }
     });
   </script>
 
