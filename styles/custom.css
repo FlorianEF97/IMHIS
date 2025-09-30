@@ -278,12 +278,12 @@ a {
   }
 
   .site-header .actions {
-    order: 2;
+    order: 3;
     flex: 0 0 auto;
     width: auto;
     gap: 0.5rem;
     align-items: center;
-    margin-left: auto;
+    margin-left: 0;
     display: inline-flex;
     justify-content: flex-end;
   }
@@ -298,10 +298,12 @@ a {
   }
 
   .site-header .nav {
-    order: 3;
+    order: 2;
     flex: 0 0 auto;
     justify-content: flex-end;
     width: auto;
+    margin-left: auto;
+    min-width: 44px;
   }
 
   .nav-toggle {
