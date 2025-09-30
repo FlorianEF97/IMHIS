@@ -63,10 +63,10 @@ a {
 }
 
 .site-header .header-inner {
-  width: 92%;
+  width: min(100%, 1200px);
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 clamp(1rem, 4vw, 20px);
   height: var(--nav-height);
   min-height: var(--nav-height);
   display: flex;
@@ -74,6 +74,7 @@ a {
   justify-content: space-between;
   gap: 1.25rem;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .site-header .logo {
