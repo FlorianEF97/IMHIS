@@ -13,9 +13,9 @@
   --color-text: #1e293b; /* dunkler Grauton für Lesetext */
   --color-text-light: #475569;
   --radius-large: 1.5rem;
-  --nav-height: 80px;
-  --nav-height-min: 64px;
-  --nav-height-max: 144px;
+  --nav-height: 60px;
+  --nav-height-min: 56px;
+  --nav-height-max: 96px;
 }
 
 body {
@@ -30,11 +30,11 @@ body {
 html {
   scroll-padding-top: clamp(
     var(--nav-height-min),
-    var(--nav-height, 80px),
+    var(--nav-height, 60px),
     var(--nav-height-max)
   );
   scroll-padding-top: calc(
-    clamp(var(--nav-height-min), var(--nav-height, 80px), var(--nav-height-max)) +
+    clamp(var(--nav-height-min), var(--nav-height, 60px), var(--nav-height-max)) +
       env(safe-area-inset-top)
   );
 }
@@ -61,7 +61,7 @@ a {
   box-shadow: none;
   min-height: clamp(
     var(--nav-height-min),
-    var(--nav-height, 80px),
+    var(--nav-height, 60px),
     var(--nav-height-max)
   );
   display: flex;
@@ -75,7 +75,7 @@ a {
   padding: 0 20px;
   min-height: clamp(
     var(--nav-height-min),
-    var(--nav-height, 80px),
+    var(--nav-height, 60px),
     var(--nav-height-max)
   );
   display: flex;
@@ -248,7 +248,7 @@ a {
     padding: 0 1rem;
     min-height: clamp(
       var(--nav-height-min),
-      var(--nav-height, 80px),
+      var(--nav-height, 60px),
       var(--nav-height-max)
     );
     gap: 0.9rem;
