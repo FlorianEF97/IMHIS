@@ -22,6 +22,7 @@
       --color-border: #e2e8f0;           /* dezente Rahmenfarbe */
       --color-text: #0f172a;             /* primäre Textfarbe (dunkles Blau) */
       --color-text-light: #475569;       /* sekundäre Textfarbe */
+      --color-primary: #2563eb;          /* Primäre Akzentfarbe wie auf der Startseite */
       --color-accent: #2563eb;           /* Akzentfarbe für Links und Buttons */
       --color-accent-dark: #1e40af;      /* dunklere Variante für Hover‑Zustände */
       --color-accent-light: #e2e8f0;     /* helle Variante für Hintergründe */
@@ -145,7 +146,7 @@
       color: var(--color-accent-dark);
       margin-bottom: 0.5rem;
     }
-    #hero .hero-text p {
+    #hero .hero-text p:not(.eyebrow) {
       margin: 0 0 1.5rem;
       font-size: clamp(0.95rem, 2.6vw, 1rem);
       line-height: 1.5;
@@ -292,7 +293,7 @@
       color: var(--color-text);
       text-align: center;
     }
-    #cta p {
+    #cta p:not(.eyebrow) {
       margin: 0 0 30px;
       font-size: 1rem;
       color: var(--color-text-light);
@@ -337,7 +338,7 @@
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--color-accent);
+      color: var(--color-primary);
       background: rgba(37, 99, 235, 0.08);
       border: 1px solid rgba(37, 99, 235, 0.15);
       margin: 0 0 1.4rem;
@@ -426,7 +427,7 @@
       vertical-align: top;
       margin-right: 0.6rem;
     }
-    #about .about-card p {
+    #about .about-card p:not(.eyebrow) {
       margin-bottom: 1.2rem;
       color: var(--color-text-light);
       font-size: 1rem;
@@ -436,10 +437,10 @@
     /* Größerer Schriftgrad für den ersten Absatz im About‑Block, um die Einleitung
        hervorzuheben. Die hervorgehobenen Akzente im ersten Absatz werden zusätzlich
        leicht vergrößert. */
-    #about .about-card p:first-of-type {
+    #about .about-card .eyebrow + p {
       font-size: 1.1rem;
     }
-    #about .about-card p:first-of-type .accent {
+    #about .about-card .eyebrow + p .accent {
       font-size: 1.15rem;
     }
 
