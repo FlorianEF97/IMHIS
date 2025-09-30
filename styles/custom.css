@@ -121,6 +121,15 @@ a {
   gap: 0.8rem;
   flex-wrap: wrap;
   justify-content: flex-end;
+  flex-direction: row;
+}
+
+.site-header .actions .lang-switcher {
+  order: 0;
+}
+
+.site-header .actions .btn {
+  order: 1;
 }
 
 .site-header .actions .btn {
