@@ -569,21 +569,31 @@
     }
     /* Responsive Anpassungen */
     @media (max-width: 768px) {
+      #timeline .timeline-line {
+        left: 28px;
+        transform: none;
+      }
       #timeline .timeline::before {
-        left: 20px;
+        left: 28px;
       }
       #timeline .timeline-item {
         width: 100%;
-        padding-left: 40px;
-        padding-right: 20px;
+        padding-left: 72px;
+        padding-right: 24px;
         text-align: left !important;
       }
       #timeline .timeline-item:nth-child(odd), #timeline .timeline-item:nth-child(even) {
         left: 0;
       }
       #timeline .timeline-item::before {
-        left: 20px;
+        left: 28px;
         margin-left: 0;
+      }
+      #timeline .timeline-item::after {
+        left: 28px;
+        right: auto;
+        width: 24px;
+        transform-origin: 0% 50%;
       }
     }
 
