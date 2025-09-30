@@ -13,7 +13,7 @@
   --color-text: #1e293b; /* dunkler Grauton für Lesetext */
   --color-text-light: #475569;
   --radius-large: 1.5rem;
-  --nav-height: 64px;
+  --nav-height: 80px;
 }
 
 body {
@@ -50,13 +50,17 @@ a {
   background: var(--color-section);
   border-bottom: 1px solid var(--color-border);
   box-shadow: none;
+  min-height: var(--nav-height);
+  display: flex;
+  align-items: center;
 }
 
 .site-header .header-inner {
   width: 92%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.45rem 20px;
+  padding: 0 20px;
+  min-height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -224,7 +228,8 @@ a {
 
 @media (max-width: 767px) {
   .site-header .header-inner {
-    padding: 0.55rem 1rem;
+    padding: 0 1rem;
+    min-height: var(--nav-height);
     gap: 0.9rem;
   }
 
