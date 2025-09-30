@@ -20,6 +20,7 @@
     calc(6vw + 16px),
     var(--nav-height-max)
   );
+  --header-padding: clamp(1rem, 4vw, 20px);
 }
 
 body {
@@ -70,7 +71,7 @@ a {
   width: min(100%, 1200px);
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 4vw, 20px);
+  padding: 0 var(--header-padding);
   height: var(--nav-height);
   min-height: var(--nav-height);
   display: flex;
@@ -205,30 +206,26 @@ a {
   transform: translateY(6px);
 }
 
-.nav-toggle:hover,
-.nav-toggle:focus-visible,
 .nav-toggle.open {
   background: linear-gradient(135deg, var(--color-primary), #1e40af);
   border-color: transparent;
   box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
-  outline: none;
 }
 
-.nav-toggle:hover .hamburger,
-.nav-toggle:focus-visible .hamburger,
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .nav-toggle.open .hamburger {
   background: transparent;
 }
 
-.nav-toggle:hover .hamburger::before,
-.nav-toggle:focus-visible .hamburger::before,
 .nav-toggle.open .hamburger::before {
   transform: translateY(0) rotate(45deg);
   background: #ffffff;
 }
 
-.nav-toggle:hover .hamburger::after,
-.nav-toggle:focus-visible .hamburger::after,
 .nav-toggle.open .hamburger::after {
   transform: translateY(0) rotate(-45deg);
   background: #ffffff;
@@ -239,14 +236,41 @@ a {
   opacity: 1;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .nav-toggle:hover,
+  .nav-toggle:focus-visible {
+    background: linear-gradient(135deg, var(--color-primary), #1e40af);
+    border-color: transparent;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+  }
+
+  .nav-toggle:hover .hamburger,
+  .nav-toggle:focus-visible .hamburger {
+    background: transparent;
+  }
+
+  .nav-toggle:hover .hamburger::before,
+  .nav-toggle:focus-visible .hamburger::before {
+    transform: translateY(0) rotate(45deg);
+    background: #ffffff;
+  }
+
+  .nav-toggle:hover .hamburger::after,
+  .nav-toggle:focus-visible .hamburger::after {
+    transform: translateY(0) rotate(-45deg);
+    background: #ffffff;
+  }
+}
+
 @media (max-width: 767px) {
   .site-header .header-inner {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 var(--header-padding);
     height: var(--nav-height);
     min-height: var(--nav-height);
     gap: 0.75rem;
     flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 
   .site-header .logo {
@@ -254,11 +278,14 @@ a {
   }
 
   .site-header .actions {
-    order: 1;
+    order: 2;
     flex: 0 0 auto;
     width: auto;
     gap: 0.5rem;
     align-items: center;
+    margin-left: auto;
+    display: inline-flex;
+    justify-content: flex-end;
   }
 
   .site-header .actions .lang-switcher {
@@ -271,8 +298,8 @@ a {
   }
 
   .site-header .nav {
-    order: 2;
-    flex: 1 1 auto;
+    order: 3;
+    flex: 0 0 auto;
     justify-content: flex-end;
     width: auto;
   }
@@ -284,8 +311,9 @@ a {
   .site-header .nav-links {
     position: absolute;
     top: calc(100% + 0.75rem);
-    left: 1rem;
-    right: 1rem;
+    left: auto;
+    right: calc(-1 * var(--header-padding));
+    width: min(20rem, calc(100vw - var(--header-padding)));
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
@@ -295,6 +323,7 @@ a {
     border-radius: var(--radius-large);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
     transform: translateY(-12px);
+    transform-origin: top right;
     opacity: 0;
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -309,12 +338,14 @@ a {
 
   .site-header .nav-links li {
     width: 100%;
+    text-align: right;
   }
 
   .site-header .nav-links a {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
     font-size: 1.05rem;
+    text-align: right;
   }
 
 }
@@ -531,29 +562,41 @@ a {
   .nav-toggle {
     border: 2px solid var(--link);
     border-radius: 999px;
-  background: transparent;
-  transition: background 0.2s ease;
-}
+    background: transparent;
+    transition: background 0.2s ease;
+  }
 
-.nav-toggle .hamburger,
-.nav-toggle .hamburger::before,
-.nav-toggle .hamburger::after {
-  background: var(--link);
-}
+  .nav-toggle .hamburger,
+  .nav-toggle .hamburger::before,
+  .nav-toggle .hamburger::after {
+    background: var(--link);
+  }
 
-.nav-toggle:hover,
-.nav-toggle.open {
-  background: var(--link);
-}
+  .nav-toggle.open {
+    background: var(--link);
+  }
 
-.nav-toggle:hover .hamburger,
-.nav-toggle.open .hamburger,
-.nav-toggle:hover .hamburger::before,
-.nav-toggle.open .hamburger::before,
-.nav-toggle:hover .hamburger::after,
-.nav-toggle.open .hamburger::after {
-  background: #fff;
-}
+  .nav-toggle.open .hamburger,
+  .nav-toggle.open .hamburger::before,
+  .nav-toggle.open .hamburger::after {
+    background: #fff;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible {
+      background: var(--link);
+    }
+
+    .nav-toggle:hover .hamburger,
+    .nav-toggle:focus-visible .hamburger,
+    .nav-toggle:hover .hamburger::before,
+    .nav-toggle:focus-visible .hamburger::before,
+    .nav-toggle:hover .hamburger::after,
+    .nav-toggle:focus-visible .hamburger::after {
+      background: #fff;
+    }
+  }
 
 .lang-switcher {
   display: inline-flex;
