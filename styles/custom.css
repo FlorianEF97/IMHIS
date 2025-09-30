@@ -104,6 +104,9 @@ a {
   border-radius: 0.5rem;
   transition: background 0.2s ease, color 0.2s ease;
 }
+.site-header .nav-links a::after {
+  display: none;
+}
 
 .site-header .nav-links a:hover,
 .site-header .nav-links a:focus-visible {
@@ -122,6 +125,13 @@ a {
 
 .site-header .actions .btn {
   border-radius: 999px !important;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+.site-header .actions .btn svg {
+  width: 18px;
+  height: 18px;
 }
 
 .nav-toggle {
