@@ -1,522 +1,740 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Informationen über Dr. Florian Eisold, Arzt und Entwickler von IMHIS." />
-    <meta name="keywords" content="Florian Eisold, IMHIS, Arzt, Entwickler" />
-    <meta name="author" content="Florian Eisold" />
-    <meta name="theme-color" content="#0f172a" />
-    <meta name="robots" content="index,follow" />
-    <title>Dr. Florian Eisold – IMHIS</title>
-    <link rel="canonical" href="https://imhis.de/florian-eisold.html" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florian Eisold – Profil</title>
+  <!-- Einbindung der Inter‑Schrift über Google Fonts für konsistente Typografie -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!--
+    Diese Seite dient als persönliches Aushängeschild für Dr. Florian Richard Eisold.
+    Sie stellt seine interdisziplinäre Laufbahn übersichtlich dar und verbindet
+    medizinische, wirtschaftliche und juristische Expertise mit einer klaren,
+    modernen Gestaltung. Sämtliche Styles sind inline integriert, sodass die
+    Datei ohne weitere Ressourcen direkt als Vorschau geöffnet werden kann.
+  -->
+  <style>
+    /* Farbvariablen zur einfachen Anpassung an bestehendes Design */
+    :root {
+      /*
+        Farbvariablen angelehnt an das bestehende IMHIS‑Design.  
+        Diese Palette orientiert sich an den Farben der Index‑Seite: ein heller Hintergrund,
+        dunkle primäre Schriftfarbe und klare Blautöne als Akzentfarben.  
+        Passe diese Werte bei Bedarf an, um sie mit deinem Corporate Design zu synchronisieren.
+      */
+      --color-bg: #f8fafc;               /* Grundhintergrund der Seite */
+      --color-section: #ffffff;          /* Hintergrund für Karten und Abschnitte */
+      --color-border: #e2e8f0;           /* dezente Rahmenfarbe */
+      --color-text: #0f172a;            /* primäre Textfarbe (dunkles Blau) */
+      --color-text-light: #475569;      /* sekundäre Textfarbe */
+      --color-accent: #2563eb;          /* Akzentfarbe für Links und Buttons */
+      --color-accent-dark: #1e40af;     /* dunklere Variante für Hover‑Zustände */
+      --color-accent-light: #e2e8f0;    /* helle Variante für Hintergründe */
+      --gradient-start: #2563eb;        /* Gradient‑Start für primäre Buttons */
+      --gradient-end: #1e40af;          /* Gradient‑Ende für primäre Buttons */
+    }
 
-    <meta property="og:title" content="Dr. Florian Eisold – IMHIS" />
-    <meta property="og:description" content="Informationen über Dr. Florian Eisold, Arzt und Entwickler von IMHIS." />
-    <meta property="og:url" content="https://imhis.de/florian-eisold.html" />
-    <meta property="og:type" content="profile" />
-    <meta property="og:image" content="https://imhis.de/assets/c3535c5e-985e-4aff-979a-1de31ddb601c.jpg" />
-    <meta property="og:image:alt" content="Dr. Florian Eisold" />
-    <meta property="og:site_name" content="IMHIS" />
-    <meta property="og:locale" content="de_DE" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Dr. Florian Eisold – IMHIS" />
-    <meta name="twitter:description" content="Informationen über Dr. Florian Eisold, Arzt und Entwickler von IMHIS." />
-    <meta name="twitter:image" content="https://imhis.de/assets/c3535c5e-985e-4aff-979a-1de31ddb601c.jpg" />
-    <meta name="twitter:image:alt" content="Dr. Florian Eisold" />
+    /* Grundlayout und Schriftarten */
+    body {
+      margin: 0;
+      /* Verwendung der Inter‑Schrift, falls verfügbar, für eine konsistente Typografie
+         wie auf der Index‑Seite. Fallbacks sind systemnahe Fonts. */
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    /* Farbliche Hover-Anpassung ohne CSS-Funktionen (vorgegebener dunkler Ton) */
+    a:hover {
+      color: var(--color-accent-dark);
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+      font-weight: 700;
+    }
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="font"
-      href="https://fonts.gstatic.com/s/inter/v19/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
-      type="font/woff2"
-      crossorigin
-      fetchpriority="high"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="preload"
-      href="styles/main.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-  <noscript><link rel="stylesheet" href="styles/main.min.css" /></noscript>
-  <link rel="stylesheet" href="styles/custom.css" />
+    /* Globale Button‑Klassen für ein konsistentes Erscheinungsbild */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.18s ease;
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: #fff;
+      border: none;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    }
+    .btn.primary:hover {
+      background: linear-gradient(135deg, #1e4fd1, #1e40af);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+    .btn.secondary {
+      background: var(--color-accent-light);
+      color: var(--color-accent-dark);
+      border: 1px solid var(--color-accent-dark);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+    }
+    .btn.secondary:hover {
+      background: #d5e5fb;
+    }
 
-  <link rel="preload" href="assets/Logo_blau.svg" as="image" type="image/svg+xml" />
+    /* Site‑Header im Stil der IMHIS‑Index‑Seite */
+    .site-header {
+      background: var(--color-section);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .site-header .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+    }
+    .site-header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .site-header .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .site-header .nav-links a {
+      color: var(--color-text);
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .site-header .nav-links a:hover {
+      background: var(--color-accent-light);
+    }
+    .site-header .actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    /* Language switcher stub – optional for multilingual sites */
+    .site-header .language-switch {
+      display: inline-flex;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+      color: var(--color-text);
+      background: var(--color-section);
+    }
+    .site-header .language-switch span {
+      cursor: pointer;
+      padding: 0 0.4rem;
+      transition: color 0.2s ease;
+    }
+    .site-header .language-switch .active {
+      font-weight: 600;
+      color: var(--color-accent-dark);
+    }
 
-    <link rel="icon" href="/assets/icons/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
-    <link rel="manifest" href="/assets/icons/site.webmanifest" />
+    /* Hero‑Sektion mit Karte */
+    #hero {
+      background: var(--color-bg);
+      padding: 80px 20px 60px;
+    }
+    #hero .hero-card {
+      background: var(--color-section);
+      /* keine sichtbare Rahmenlinie für einen offeneren Look */
+      border: none;
+      border-radius: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      /* sanfterer Schatten für einen schwebenden Effekt */
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03);
+    }
+    #hero .hero-card img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--color-accent);
+    }
+    #hero .hero-text {
+      flex: 1 1 350px;
+      min-width: 280px;
+    }
+    #hero .hero-text h1 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    #hero .hero-text .subtitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-accent-dark);
+      margin-bottom: 0.5rem;
+    }
+    #hero .hero-text p {
+      margin: 0 0 1.5rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--color-text-light);
+    }
+    #hero .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Dr. Florian Eisold",
-      "jobTitle": "Arzt und Entwickler von IMHIS",
-      "url": "https://imhis.de/florian-eisold.html",
-      "image": "https://imhis.de/assets/c3535c5e-985e-4aff-979a-1de31ddb601c.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/dr-med-florian-r-eisold-b-sc-ll-m-7a4a08145/"
-      ],
-      "affiliation": {
-        "@type": "Organization",
-        "name": "IMHIS – Impact Monitor for Health Information Systems",
-        "url": "https://imhis.de/"
+    /* LinkedIn‑Button‑Spezialität: Icon und Text nebeneinander */
+    .btn.linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn.linkedin-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    @media (max-width: 768px) {
+      #hero .hero-card {
+        text-align: center;
+        padding: 30px;
+      }
+      #hero .hero-card img {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #hero .hero-text {
+        flex: 1 1 100%;
+      }
+      #hero .hero-buttons {
+        justify-content: center;
       }
     }
-    </script>
 
-    <head>
- …
- <!-- bestehende CSS‑Links -->
- <link rel="stylesheet" href="styles/custom.css" />
+    /* Call‑To‑Action Abschnitt */
+    #cta {
+      background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15), var(--color-accent-light));
+      padding: 80px 20px;
+      text-align: center;
+    }
 
- <!-- Inter-Schrift wird bereits geladen -->
+    /* Footer im Stil der IMHIS‑Seite */
+    .site-footer {
+      background: var(--color-section);
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      padding: 40px 0;
+      color: var(--color-text-light);
+      font-size: 0.9rem;
+    }
+    .site-footer .legal-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .site-footer .legal-links a {
+      color: var(--color-accent-dark);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .site-footer .legal-links a:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+    #cta h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: var(--color-text);
+    }
+    #cta p {
+      margin: 0 0 30px;
+      font-size: 1rem;
+      color: var(--color-text-light);
+    }
 
- <!-- Eigenes Style für Hero, About, Timeline -->
- <style>
-   /* Farbvariablen für den Hero, About, Timeline und CTA */
-   :root {
-     --color-bg: #f8fafc;
-     --color-section: #ffffff;
-     --color-text: #0f172a;
-     --color-text-light: #475569;
-     --color-accent: #2563eb;
-     --color-accent-dark: #1e40af;
-     --color-accent-light: #e2e8f0;
-     --gradient-start: #2563eb;
-     --gradient-end: #1e40af;
-   }
+    /* Abschnittsüberschriften */
+    section {
+      padding: 60px 0;
+      background: var(--color-section);
+      margin-bottom: 20px;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--color-text);
+      font-size: 1.8rem;
+    }
 
-   /* Buttons: primär, sekundär und LinkedIn */
-   .btn {
-     display: inline-flex;
-     align-items: center;
-     justify-content: center;
-     padding: .75rem 1.5rem;
-     border-radius: 999px;
-     font-weight: 600;
-     font-size: 1rem;
-     text-decoration: none;
-     transition: background .3s ease, color .3s ease, box-shadow .3s ease, transform .18s ease;
-     cursor: pointer;
-   }
-   .btn.primary {
-     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-     color: #fff;
-     border: none;
-     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
-   }
-   .btn.secondary {
-     background: var(--color-accent-light);
-     color: var(--color-accent-dark);
-     border: 1px solid var(--color-accent-dark);
-     box-shadow: 0 6px 16px rgba(37, 99, 235, .15);
-   }
-   .btn.linkedin-btn {
-     display: inline-flex;
-     align-items: center;
-     gap: .5rem;
-   }
-   .btn.linkedin-btn svg {
-     width: 20px;
-     height: 20px;
-     fill: currentColor;
-   }
+    /* Über‑mich‑Block */
+    /* Über‑mich‑Block im Stil des Index‑„Über“-Blocks: getöntes Hintergrundband,
+       weiße Karte, Tag und hervorgehobene Akzente */
+    #about {
+      background: var(--color-accent-light);
+      padding: 80px 20px;
+    }
+    #about .about-card {
+      background: var(--color-section);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    #about .about-card .tag {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: var(--color-accent-light);
+      color: var(--color-accent-dark);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    #about .about-card .quote-icon {
+      font-size: 2.5rem;
+      color: var(--color-accent);
+      vertical-align: top;
+      margin-right: 0.6rem;
+    }
+    #about .about-card p {
+      margin-bottom: 1.2rem;
+      color: var(--color-text-light);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
-   /* Hero-Section */
-   #hero {
-     background: var(--color-bg);
-     padding: 80px 20px 60px;
-   }
-   #hero .hero-card {
-     background: var(--color-section);
-     border-radius: 20px;
-     max-width: 1000px;
-     margin: 0 auto;
-     padding: 40px;
-     display: flex;
-     flex-wrap: wrap;
-     gap: 40px;
-     align-items: center;
-     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03);
-   }
-   #hero .hero-card img {
-     width: 200px;
-     height: 200px;
-     border-radius: 50%;
-     object-fit: cover;
-     border: 4px solid var(--color-accent);
-   }
-   #hero .hero-text {
-     flex: 1 1 350px;
-     min-width: 280px;
-   }
-   #hero .hero-text h1 {
-     margin-top: 0;
-     margin-bottom: .5rem;
-     font-size: 2.2rem;
-     font-weight: 700;
-     color: var(--color-text);
-   }
-   #hero .hero-text .subtitle {
-     font-size: 1.1rem;
-     font-weight: 600;
-     color: var(--color-accent-dark);
-     margin-bottom: .5rem;
-   }
-   #hero .hero-text p {
-     margin: 0 0 1.5rem;
-     font-size: 1rem;
-     line-height: 1.5;
-     color: var(--color-text-light);
-   }
-   #hero .hero-buttons {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 1rem;
-   }
+    /* Größerer Schriftgrad für den ersten Absatz im About‑Block, um die Einleitung
+       hervorzuheben. Die hervorgehobenen Akzente im ersten Absatz werden zusätzlich
+       leicht vergrößert. */
+    #about .about-card p:first-of-type {
+      font-size: 1.1rem;
+    }
+    #about .about-card p:first-of-type .accent {
+      font-size: 1.15rem;
+    }
 
-   /* Über-mich-Section */
-   #about {
-     background: var(--color-accent-light);
-     padding: 80px 20px;
-   }
-   #about .about-card {
-     background: var(--color-section);
-     border-radius: 20px;
-     padding: 40px;
-     max-width: 1000px;
-     margin: 0 auto;
-     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
-     text-align: center;
-   }
-   #about .about-card .tag {
-     display: inline-block;
-     padding: .3rem .8rem;
-     background: var(--color-accent-light);
-     color: var(--color-accent-dark);
-     border-radius: 999px;
-     font-size: .75rem;
-     font-weight: 600;
-     letter-spacing: .05em;
-     text-transform: uppercase;
-     margin-bottom: 1rem;
-   }
-   #about .accent {
-     color: var(--color-accent);
-     font-weight: 600;
-   }
+    /* Akzentklasse für hervorgehobene Wörter im About‑Text */
+    .accent {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
 
-   /* Timeline-Section */
-   #timeline {
-     background: var(--color-accent-light);
-   }
-   #timeline .timeline {
-     position: relative;
-     margin: 0 auto;
-     padding: 20px 0;
-     width: 90%;
-     max-width: 900px;
-   }
-   #timeline .timeline-line {
-     position: absolute;
-     left: 50%;
-     transform: translateX(-50%);
-     width: 2px;
-     height: 0;
-     background: var(--color-accent);
-     transition: height .6s ease;
-   }
-   #timeline .timeline-item {
-     position: relative;
-     width: 50%;
-     padding: 20px 40px;
-     box-sizing: border-box;
-     opacity: 0;
-     transform: translateY(40px);
-     transition: opacity .6s ease, transform .6s ease;
-   }
-   #timeline .timeline-item.in-view {
-     opacity: 1;
-     transform: translateY(0);
-   }
-   #timeline .timeline-item:nth-child(odd) {
-     left: 0;
-     text-align: right;
-   }
-   #timeline .timeline-item:nth-child(even) {
-     left: 50%;
-     text-align: left;
-   }
-   #timeline .timeline-item::before {
-     content: '';
-     position: absolute;
-     top: 20px;
-     width: 14px;
-     height: 14px;
-     border-radius: 50%;
-     background: var(--color-accent);
-     border: 3px solid #fff;
-     box-shadow: 0 0 0 2px var(--color-accent);
-     z-index: 3;
-   }
-   #timeline .timeline-item:nth-child(odd)::before {
-     right: -12px;
-   }
-   #timeline .timeline-item:nth-child(even)::before {
-     left: -12px;
-   }
-   #timeline .timeline-item::after {
-     content: '';
-     position: absolute;
-     top: 35px;
-     height: 2px;
-     background: var(--color-accent);
-     width: calc(50% - 48px);
-     transform: scaleX(0);
-     transition: transform .6s ease;
-     z-index: 1;
-   }
-   #timeline .timeline-item:nth-child(odd)::after {
-     right: -12px;
-     transform-origin: 100% 50%;
-   }
-   #timeline .timeline-item:nth-child(even)::after {
-     left: -12px;
-     transform-origin: 0% 50%;
-   }
-   #timeline .timeline-item.in-view::after {
-     transform: scaleX(1);
-   }
-   #timeline .timeline-date {
-     font-weight: 600;
-     color: var(--color-accent);
-     background: var(--color-accent-light);
-     padding: .1rem .4rem;
-     border-radius: .25rem;
-     position: relative;
-     z-index: 2;
-     top: 8px; /* Datum tiefer setzen, damit es die Linie mittig überlagert */
-   }
-   #timeline .timeline-content h3 {
-     margin-top: 0;
-     margin-bottom: 8px;
-     font-size: 1.1rem;
-     color: var(--color-text);
-   }
-   #timeline .timeline-content p {
-     margin: 0;
-     font-size: .92rem;
-     color: var(--color-text-light);
-   }
+    /* Timeline‑Darstellung */
+    #timeline {
+      background: var(--color-accent-light);
+    }
+    #timeline .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 0;
+      width: 90%;
+      max-width: 900px;
+    }
 
-   /* CTA-Section */
-   #cta {
-     background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15), var(--color-accent-light));
-     padding: 80px 20px;
-     text-align: center;
-   }
-   #cta h2 {
-     margin-top: 0;
-     margin-bottom: 20px;
-     font-size: 1.8rem;
-     color: var(--color-text);
-   }
-   #cta p {
-     margin: 0 0 30px;
-     font-size: 1rem;
-     color: var(--color-text-light);
-   }
+    /* vertikale Linie in der Timeline. Höhe wird per JavaScript gesetzt, um einen animierten Aufbau zu ermöglichen */
+    #timeline .timeline-line {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 0;
+      background: var(--color-accent);
+      transition: height 0.6s ease;
+      top: 0;
+    }
+    #timeline .timeline::before {
+      /* Die Pseudo-Linie wird durch eine echte DOM-Linie ersetzt */
+      display: none;
+    }
+    #timeline .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    /* Animation beim Scrollen */
+    #timeline .timeline-item.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #timeline .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    #timeline .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    #timeline .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      /* Größerer Punkt mit doppelter Kontur für mehr Präsenz */
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px var(--color-accent);
+      transition: transform 0.3s ease, background 0.3s ease;
+      /* dot überlagert Verbindungslinie */
+      z-index: 3;
+    }
+    #timeline .timeline-item:nth-child(odd)::before {
+      right: -13px;
+    }
+    #timeline .timeline-item:nth-child(even)::before {
+      left: -13px;
+    }
+    /* Hover‑Effekt für Timeline‑Punkte */
+    #timeline .timeline-item:hover::before {
+      transform: scale(1.4);
+      background: var(--color-accent-dark);
+    }
 
-   /* Medien‑ und Kontaktsektionen */
-   #publications, #contact {
-     padding: 60px 0;
-     background: var(--color-section);
-   }
-   #publications h2, #contact h2 {
-     text-align: center;
-     margin-bottom: 40px;
-     color: var(--color-text);
-     font-size: 1.8rem;
-   }
- </style>
+    /* Verbindungslinien zwischen Punkten und der Zentralachse */
+    #timeline .timeline-item::after {
+      content: '';
+      position: absolute;
+      /* Die horizontale Linie wird etwas weiter unten angesetzt, damit sie die Datumsangabe
+         nicht optisch durchschneidet. Eine größere Abstand schafft mehr Klarheit. */
+      /* Die horizontale Linie beginnt auf Höhe des Kreispunkts (Mitte bei 28px),
+         sodass die Verbindung optisch exakt in der Mitte ansetzt. */
+      top: 28px;
+      height: 2px;
+      background: var(--color-accent);
+      /* Die Länge der Linie wird pro Ausrichtung gesetzt; durch den größeren Abstand
+         von 50px auf jeder Seite entsteht mehr Luft zwischen Datum und Linie. */
+      width: calc(50% - 48px);
+      transform: scaleX(0);
+      transition: transform 0.6s ease;
+      /* Linie liegt hinter Punkt und Datum */
+      z-index: 1;
+    }
+    #timeline .timeline-item:nth-child(odd)::after {
+      right: -13px;
+      transform-origin: 100% 50%;
+    }
+    #timeline .timeline-item:nth-child(even)::after {
+      left: -13px;
+      transform-origin: 0% 50%;
+    }
+    #timeline .timeline-item.in-view::after {
+      transform: scaleX(1);
+    }
 
-      
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">
-      <span class="lang lang-de">Zum Inhalt springen</span>
-      <span class="lang lang-en" hidden>Skip to content</span>
-    </a>
-    <header>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="/index.html#top" class="logo" aria-label="IMHIS Startseite">
-          <img
-            src="assets/Logo_blau.svg"
-            alt="IMHIS Logo"
-            decoding="async"
-            fetchpriority="high"
-            width="398"
-            height="74"
-          />
-        </a>
-        <div class="lang-switcher" role="group" aria-label="Sprachauswahl">
-          <button class="lang-btn" data-lang="de" aria-label="Deutsch" aria-pressed="true">DE</button>
-          <button class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
-        </div>
-        <button
-          class="nav-toggle"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-          aria-controls="nav-links"
-          data-label-open-de="Menü öffnen"
-          data-label-close-de="Menü schließen"
-          data-label-open-en="Open menu"
-          data-label-close-en="Close menu"
-        >
-          <span class="hamburger"></span>
-        </button>
-        <ul class="nav-links" id="nav-links" hidden>
-          <li>
-            <a href="/index.html#pitch">
-              <span class="lang lang-de">Demo ansehen</span>
-              <span class="lang lang-en" hidden>Watch demo</span>
-            </a>
-          </li>
-          <li>
-            <a href="/index.html#benefit">
-              <span class="lang lang-de">Nutzen</span>
-              <span class="lang lang-en" hidden>Benefit</span>
-            </a>
-          </li>
-          <li>
-            <a href="/index.html#instrument">
-              <span class="lang lang-de">Analyseinstrument</span>
-              <span class="lang lang-en" hidden>Analysis Tool</span>
-            </a>
-          </li>
-          <li>
-            <a href="/index.html#linkedin">
-              <span class="lang lang-de">News</span>
-              <span class="lang lang-en" hidden>News</span>
-            </a>
-          </li>
-          <li class="nav-actions--mobile">
-            <a href="/index.html#buch" class="btn secondary">
-              <svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.966 8.966 0 006 3.75a9.01 9.01 0 00-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292 9.01 9.01 0 013 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
-              </svg>
-              <span class="lang lang-de">Buch ansehen</span>
-              <span class="lang lang-en" hidden>View the book</span>
-            </a>
-            <a href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS" class="btn primary">
-              <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
-                <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-              </svg>
-              <span class="lang lang-de">Kostenlos anfragen</span>
-              <span class="lang lang-en" hidden>Request free access</span>
-            </a>
-          </li>
-        </ul>
-        <div class="nav-actions">
-          <a href="/index.html#buch" class="btn secondary">
-            <svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.966 8.966 0 006 3.75a9.01 9.01 0 00-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292 9.01 9.01 0 013 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
-            </svg>
-            <span class="lang lang-de">Buch ansehen</span>
-            <span class="lang lang-en" hidden>View the book</span>
-          </a>
-          <a href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS" class="btn primary">
-            <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-              <rect height="14" rx="2" ry="2" stroke="currentColor" stroke-linejoin="round" stroke-width="2" width="18" x="3" y="5"></rect>
-              <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-            </svg>
-            <span class="lang lang-de">Kostenlos anfragen</span>
-            <span class="lang lang-en" hidden>Request free access</span>
-          </a>
-        </div>
-      </nav>
-    </header>
+    /* Hover‑ähnlicher Effekt beim Scrollen: wenn Element im Viewport, wird der Punkt vergrößert und hervorgehoben */
+    #timeline .timeline-item.in-view::before {
+      transform: scale(1.6);
+      background: var(--color-accent-dark);
+    }
+    #timeline .timeline-item.in-view .timeline-date,
+    #timeline .timeline-item.in-view h3 {
+      color: var(--color-accent-dark);
+    }
+    #timeline .timeline-date {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--color-accent);
+      /* Datum verdeckt die horizontale Linie */
+      position: relative;
+      z-index: 2;
+      /* Hinterlegung und formschöne Kapsel für das Datum, sodass die Verbindungslinie
+         optisch von einem hellen Feld überlagert wird und der Text nicht durchtrennt wird. */
+      background: var(--color-accent-light);
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      display: inline-block;
+      margin-bottom: 4px;
+      /* Leichte vertikale Verschiebung, um das Datum exakt an der Linie auszurichten */
+      position: relative;
+      top: -5px;
+    }
+    #timeline .timeline-content h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      color: var(--color-text);
+    }
+    #timeline .timeline-content p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--color-text-light);
+    }
+    /* Responsive Anpassungen */
+    @media (max-width: 768px) {
+      #timeline .timeline::before {
+        left: 20px;
+      }
+      #timeline .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 20px;
+        text-align: left !important;
+      }
+      #timeline .timeline-item:nth-child(odd), #timeline .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      #timeline .timeline-item::before {
+        left: 20px;
+        margin-left: 0;
+      }
+    }
 
-   <main id="main-content" class="content">
-  <!-- Neuer Hero-Bereich -->
-  <section id="hero">
-    <div class="container hero-card">
-      <img src="assets/c3535c5e-985e-4aff-979a-1de31ddb601c.jpg" alt="Florian Eisold" width="200" height="200" />
-      <div class="hero-text">
-        <h1>Dr. Florian Richard Eisold</h1>
-        <p class="subtitle">Forme digitale Gesundheitswelten – interdisziplinär, visionär, messbar.</p>
-        <p>Als Arzt, Ökonom und Jurist verbinde ich medizinische Praxis, wirtschaftliche Steuerung und juristische Verantwortung. Mein Ziel: digitale Vorhaben zu messbaren Erfolgen führen und dabei Menschen entlasten.</p>
-        <div class="hero-buttons">
-          <a href="#timeline" class="btn secondary">Karriere im Überblick</a>
-          <a href="mailto:florianeisold@outlook.de" class="btn primary">Jetzt kontaktieren</a>
-          <a href="https://www.linkedin.com/in/dr-med-florian-r-eisold-b-sc-ll-m-7a4a08145/" class="btn secondary linkedin-btn" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.033-1.848-3.033-1.848 0-2.131 1.445-2.131 2.939v5.663H9.359V9h3.414v1.561h.049c.476-.9 1.635-1.848 3.369-1.848 3.604 0 4.273 2.373 4.273 5.464v6.275zM5.337 7.433a2.067 2.067 0 110-4.134 2.067 2.067 0 010 4.134zM6.934 20.452H3.75V9h3.184v11.452z"></path>
-            </svg>
-            LinkedIn
-          </a>
+    /* Footer */
+    footer {
+      background: var(--color-section);
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      padding: 30px 0;
+      color: var(--color-text-light);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+    <!-- Seiten‑Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Logo und Markenname -->
+        <a href="index.html" class="logo">IMHIS</a>
+        <!-- Navigation -->
+        <nav class="nav-links">
+          <a href="#hero">Profil</a>
+          <a href="#timeline">Karriere</a>
+          <a href="#publications">Publikationen</a>
+          <a href="#contact">Kontakt</a>
+        </nav>
+        <!-- Aktionen rechts -->
+        <div class="actions">
+          <div class="language-switch">
+            <span class="active">DE</span>
+            <span>EN</span>
+          </div>
+          <a href="mailto:florian.eisold@icloud.com" class="btn secondary">Jetzt sprechen</a>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
+
+    <!-- Hero‑Bereich als Pitch‑Karte -->
+    <section id="hero">
+      <div class="container hero-card">
+        <!-- Platzhalter‑Bild, ersetze durch echtes Porträt bei Live‑Einsatz -->
+        <img src="https://via.placeholder.com/200?text=Portr%C3%A4t" alt="Florian Eisold Porträt">
+        <div class="hero-text">
+          <h1>Dr. Florian Richard Eisold</h1>
+          <p class="subtitle">Forme digitale Gesundheitswelten – interdisziplinär, visionär, messbar.</p>
+          <p>Als Arzt, Ökonom und Jurist verbinde ich medizinische Praxis, wirtschaftliche Steuerung und juristische Verantwortung. Mein Ziel: digitale Vorhaben zu messbaren Erfolgen führen und dabei Menschen entlasten.</p>
+          <div class="hero-buttons">
+            <a href="#timeline" class="btn secondary">Karriere im Überblick</a>
+            <a href="mailto:florian.eisold@icloud.com" class="btn primary">Jetzt kontaktieren</a>
+            <!-- LinkedIn‑Button mit Icon -->
+            <a href="https://www.linkedin.com/in/dr-med-florian-r-eisold-b-sc-ll-m-7a4a08145/" class="btn secondary linkedin-btn" target="_blank" rel="noopener noreferrer">
+              <!-- LinkedIn Icon (SVG) -->
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.033-1.848-3.033-1.848 0-2.131 1.445-2.131 2.939v5.663H9.359V9h3.414v1.561h.049c.476-.9 1.635-1.848 3.369-1.848 3.604 0 4.273 2.373 4.273 5.464v6.275zM5.337 7.433a2.067 2.067 0 110-4.134 2.067 2.067 0 010 4.134zM6.934 20.452H3.75V9h3.184v11.452z"></path>
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
   <!-- Über mich -->
   <section id="about">
     <div class="about-card">
       <span class="tag">Über mich</span>
-      <p><span class="accent">Mein Dreiklang aus Medizin, Ökonomie und Recht</span> prägt meine Arbeit: Als Arzt kenne ich die medizinische Praxis, als Ökonom steuere ich Prozesse und Ressourcen, als Jurist sichere ich Entscheidungen ab. Ich denke in Daten, Abläufen und Ergebnissen.</p>
-      <p>Ich habe den <span class="accent">roten Faden Digitalisierung</span> in eigenen Projekten durchgezogen – von der Seminararbeit bis zur Promotion. Hürden kenne ich aus erster Hand. Deswegen arbeite ich an einer <span class="accent">Digitalisierung, die wirkt</span> und Menschen entlastet.</p>
+      <p>
+        <span class="quote-icon">“</span>
+        <span class="accent">Mein Dreiklang aus Medizin, Ökonomie und Recht</span>
+        prägt meine Arbeit: Als Arzt kenne ich die medizinische Praxis, als
+        Ökonom steuere ich Prozesse und Ressourcen, als Jurist sichere ich
+        Entscheidungen ab. Ich denke in Daten, Abläufen und Ergebnissen.
+      </p>
+      <p>
+        Ich habe den <span class="accent">roten Faden Digitalisierung</span>
+        in eigenen Projekten durchgezogen – von der Seminararbeit bis zur
+        Promotion. Hürden kenne ich aus erster Hand. Deswegen arbeite ich an
+        einer <span class="accent">Digitalisierung, die wirkt</span> und
+        Menschen entlastet.
+      </p>
     </div>
   </section>
 
-  <!-- Karriere-Graph / Timeline -->
+  <!-- Karriere‑Graph / Timeline -->
   <section id="timeline">
     <div class="container">
       <h2>Mein Weg im Gesundheitssystem</h2>
       <div class="timeline">
+        <!-- vertikale Linie, die beim Scrollen wächst -->
         <div class="timeline-line"></div>
-        <!-- Timeline-Items hier wie in deiner Vorlage -->
-        <!-- Beispiel: -->
+        <!-- Zukunft: geplanter PhD -->
         <div class="timeline-item">
           <div class="timeline-date">Oktober 2025</div>
           <div class="timeline-content">
             <h3>Start PhD Medical Sciences (geplant)</h3>
-            <p>Beginn eines PhD-Studiums im Bereich Medical Sciences …</p>
+            <p>Beginn eines PhD‑Studiums im Bereich Medical Sciences, um datengetriebene Versorgungskonzepte weiterzuentwickeln.</p>
           </div>
         </div>
-        <!-- ... weitere Timeline-Items ... -->
+        <!-- Gegenwart -->
+        <div class="timeline-item">
+          <div class="timeline-date">April 2025 – heute</div>
+          <div class="timeline-content">
+            <h3>Medizincontroller, Bundeswehrzentralkrankenhaus Koblenz</h3>
+            <p>Verantwortung für Analysen, Budgetverhandlungen und die rechtssichere Implementierung digitaler Prozesse im Klinikbetrieb.</p>
+          </div>
+        </div>
+        <!-- LL.M. Abschluss -->
+        <div class="timeline-item">
+          <div class="timeline-date">April 2025</div>
+          <div class="timeline-content">
+            <h3>Master of Laws (LL.M.) in Medizinrecht</h3>
+            <p>Berufsbegleitendes Studium an der Universität Münster, Abschlussarbeit zur Organisation eines nichtärztlichen Notdienstes unter haftungsrechtlichen Aspekten.</p>
+          </div>
+        </div>
+        <!-- Promotion (Dr. med.) -->
+        <div class="timeline-item">
+          <div class="timeline-date">Mai 2025</div>
+          <div class="timeline-content">
+            <h3>Promotion zum Dr. med.</h3>
+            <p>Dissertation über die Konzeption und Anwendung des Analyseinstrumentes IMHIS zur Bewertung von Krankenhaus‑Informationssystemen.</p>
+          </div>
+        </div>
+        <!-- Assistenzarzt Erfahrungen -->
+        <div class="timeline-item">
+          <div class="timeline-date">Nov 2022 – Apr 2025</div>
+          <div class="timeline-content">
+            <h3>Assistenzarzt, Bundeswehrzentralkrankenhaus Koblenz</h3>
+            <p>Einsätze als Stationsarzt in der Onkologie und Gastroenterologie, Konsiliarius in der Inneren Medizin und Arzt der zentralen Notaufnahme.</p>
+          </div>
+        </div>
+        <!-- LL.M. Beginn -->
+        <div class="timeline-item">
+          <div class="timeline-date">Feb 2023</div>
+          <div class="timeline-content">
+            <h3>Beginn LL.M. Medizinrecht</h3>
+            <p>Start des berufsbegleitenden Masterstudiums an der Universität Münster.</p>
+          </div>
+        </div>
+        <!-- Doktorand Beginn -->
+        <div class="timeline-item">
+          <div class="timeline-date">Aug 2020</div>
+          <div class="timeline-content">
+            <h3>Doktorand an der LMU München</h3>
+            <p>Forschung im Bereich Gesundheitsinformationssysteme und digitale Prozessoptimierung.</p>
+          </div>
+        </div>
+        <!-- Bachelor BWL Abschluss -->
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 2022</div>
+          <div class="timeline-content">
+            <h3>Bachelor of Science in Betriebswirtschaftslehre</h3>
+            <p>Abschluss an der Ludwig‑Maximilians‑Universität München mit Schwerpunkt Digital Business & Strategic Organization.</p>
+          </div>
+        </div>
+        <!-- Studium Medizin Abschluss -->
+        <div class="timeline-item">
+          <div class="timeline-date">Nov 2022</div>
+          <div class="timeline-content">
+            <h3>Staatsexamen in Humanmedizin</h3>
+            <p>Abschluss des Medizinstudiums an der Ludwig‑Maximilians‑Universität München.</p>
+          </div>
+        </div>
+        <!-- Beginn Studium Medizin -->
+        <div class="timeline-item">
+          <div class="timeline-date">Okt 2016</div>
+          <div class="timeline-content">
+            <h3>Beginn Studium Humanmedizin</h3>
+            <p>Start des Medizinstudiums an der Ludwig‑Maximilians‑Universität München.</p>
+          </div>
+        </div>
+        <!-- Beginn Sanitätsoffizier -->
+        <div class="timeline-item">
+          <div class="timeline-date">Jul 2016</div>
+          <div class="timeline-content">
+            <h3>Sanitätsoffizier, Bundeswehr</h3>
+            <p>Eintritt in die Bundeswehr als Sanitätsoffizier – Dienst in der medizinischen Versorgung und Führung.</p>
+          </div>
+        </div>
+        <!-- Abitur -->
+        <div class="timeline-item">
+          <div class="timeline-date">Jun 2016</div>
+          <div class="timeline-content">
+            <h3>Allgemeine Hochschulreife</h3>
+            <p>Abschluss des Dossenberger‑Gymnasiums Günzburg.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Call-To-Action -->
+  <!-- Call‑To‑Action Abschnitt -->
   <section id="cta">
     <div class="container">
       <h2>Gemeinsam die Zukunft gestalten</h2>
       <p>Sie suchen eine interdisziplinäre Führungspersönlichkeit, die digitale Transformation im Gesundheitswesen wirkungsvoll gestaltet? Lassen Sie uns ins Gespräch kommen.</p>
-      <a href="mailto:florianeisold@outlook.de" class="btn primary">Projekt anfragen</a>
+      <a href="mailto:florian.eisold@icloud.com" class="btn primary">Projekt anfragen</a>
     </div>
   </section>
 
-  <!-- Publikationen -->
+  <!-- Publikationen und Engagement -->
   <section id="publications">
     <div class="container">
       <h2>Publikationen & Engagement</h2>
-      <p><strong>Buchveröffentlichung (2025):</strong> <em>Digitale Systeme – echte Wirkung: …</em> Springer Gabler, Wiesbaden.</p>
-      <p><strong>Mitgliedschaften:</strong> …</p>
-      <p><strong>Weitere Erfahrungen:</strong> …</p>
+      <p><strong>Buchveröffentlichung (2025):</strong> <em>Digitale Systeme – Echte Wirkung: Was Klinikpersonal wirklich braucht: IMHIS – ein Analyseinstrument zur nutzerzentrierten Bewertung von Gesundheitsinformationssystemen.</em> Springer Gabler, Wiesbaden.</p>
+      <p><strong>Mitgliedschaften:</strong> Sanitätsoffizier seit 2016 bei der Bundeswehr, sowie Engagement im TU Investment Club München (2017‑2022) mit Fokus auf Social Media und Analystentätigkeit.</p>
+      <p><strong>Weitere Erfahrungen:</strong> Praktika und Famulaturen in Orthopädie, Chirurgie, Innerer Medizin, Unfallchirurgie, Neurochirurgie und Allgemeinmedizin an führenden Einrichtungen im In- und Ausland.</p>
     </div>
   </section>
 
@@ -525,62 +743,64 @@
     <div class="container">
       <h2>Kontakt</h2>
       <p>Sie möchten mehr erfahren oder gemeinsam Projekte vorantreiben? Ich freue mich auf Ihre Nachricht.</p>
-      <p>E-Mail: <a href="mailto:florianeisold@outlook.de">florianeisold@outlook.de</a></p>
+      <p>E-Mail: <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a></p>
     </div>
   </section>
-</main>
 
-
-    <footer id="kontakt" class="contact-footer">
-      <a href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS" class="btn primary footer-cta">
-        <span class="cta-icon" aria-hidden="true">✉️</span>
-        <span class="lang lang-de">Analyse geplant?</span>
-        <span class="lang lang-en" hidden>Planning an analysis?</span>
-      </a>
-    </footer>
-    <footer class="legal-footer">
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
       <div class="legal-links">
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="#">Impressum</a>
+        <span>|</span>
+        <a href="#">Datenschutz</a>
       </div>
-      <p class="copyright">
-        © 2025 Dr. Florian Eisold. Inhalte urheberrechtlich geschützt. Für Kooperationen oder Nutzungsanfragen:
-        <a href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS">florianeisold@outlook.de</a>
-      </p>
-    </footer>
+      <p>© 2025 Dr. Florian Eisold. Inhalte urheberrechtlich geschützt.</p>
+      <p>Für Kooperationen oder Nutzungsanfragen: <a href="mailto:florian.eisold@icloud.com">florian.eisold@icloud.com</a></p>
+    </div>
+  </footer>
 
-    <script src="scripts/main.min.js" defer></script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const items = document.querySelectorAll('#timeline .timeline-item');
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
+  <!-- Script für Timeline‑Animation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const items = document.querySelectorAll('#timeline .timeline-item');
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.1 });
+      items.forEach(function(item) {
+        observer.observe(item);
+      });
+
+      // Animiert das Wachstum der vertikalen Linie beim Scrollen
+      const timeline = document.querySelector('#timeline .timeline');
+      const line = document.querySelector('#timeline .timeline-line');
+
+      function updateLine() {
+        const timelineRect = timeline.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        // Wenn die Timeline sichtbar ist, berechne den Fortschritt
+        if (timelineRect.top < viewportHeight && timelineRect.bottom > 0) {
+          const rawProgress = (viewportHeight - timelineRect.top) / (timelineRect.height + viewportHeight);
+          // schnelleres Wachstum der Linie durch Multiplikation mit Faktor
+          // Erhöht den Geschwindigkeitsfaktor, damit die vertikale Linie deutlich
+          // schneller wächst und beim Scrollen zügig sichtbar wird. Ein höherer
+          // Wert steigert die Wachstumsrate spürbar.
+          const speedFactor = 8.0;
+          const progress = Math.min(rawProgress * speedFactor, 1);
+          // Setze die Höhe der Linie relativ zur Gesamthöhe (in Prozent)
+          line.style.height = (progress * 100) + '%';
+        }
       }
+
+      // Initialer Aufruf und Scroll‑Listener
+      updateLine();
+      window.addEventListener('scroll', updateLine);
     });
-  }, { threshold: 0.1 });
-  items.forEach(function(item) {
-    observer.observe(item);
-  });
+  </script>
 
-  // vertikale Linie animieren
-  const timeline = document.querySelector('#timeline .timeline');
-  const line = document.querySelector('#timeline .timeline-line');
-  function updateLine() {
-    const rect = timeline.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top < vh && rect.bottom > 0) {
-      const rawProgress = (vh - rect.top) / (rect.height + vh);
-      const speedFactor = 8.0;
-      const progress = Math.min(rawProgress * speedFactor, 1);
-      line.style.height = (progress * 100) + '%';
-    }
-  }
-  updateLine();
-  window.addEventListener('scroll', updateLine);
-});
-</script>
-
-  </body>
+</body>
 </html>
