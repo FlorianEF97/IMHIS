@@ -28,7 +28,7 @@
       --color-accent-light: #e2e8f0;     /* helle Variante für Hintergründe */
       --gradient-start: #2563eb;         /* Gradient‑Start für primäre Buttons */
       --gradient-end: #1e40af;           /* Gradient‑Ende für primäre Buttons */
-      --color-card-border: rgba(15, 23, 42, 0.08); /* Kartenrand im Stil der Startseite */
+      --color-card-border: rgba(23, 37, 84, 0.06); /* Kartenrand im Stil der Startseite */
       --color-card-shadow: rgba(15, 23, 42, 0.06); /* Schlagschatten analog zur Startseite */
     }
 
@@ -68,10 +68,10 @@
       font-weight: 700;
     }
     .container {
-      width: 92%;
+      width: min(100%, 1200px);
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 clamp(1.5rem, 4vw, 2.5rem);
       box-sizing: border-box;
     }
 
@@ -313,17 +313,23 @@
     }
 
     .section-frame {
-      width: min(92%, 1100px);
+      width: min(100%, 1200px);
+      max-width: 1200px;
       margin: 0 auto;
       padding: clamp(2.5rem, 5vw, 3.5rem);
       background: linear-gradient(
         180deg,
         #ffffff 0%,
-        rgba(248, 250, 252, 0.92) 100%
+        rgba(248, 250, 252, 0.9) 100%
       );
       border: 1px solid var(--color-card-border);
       border-radius: 28px;
       box-shadow: 0 12px 40px var(--color-card-shadow);
+      box-sizing: border-box;
+    }
+
+    #timeline .timeline-frame {
+      padding: clamp(3rem, 6vw, 4rem);
     }
 
     .section-frame h2 {
@@ -456,12 +462,48 @@
     #timeline {
       background: var(--color-accent-light);
     }
+    #timeline .timeline-title {
+      text-align: center;
+      margin-bottom: clamp(2rem, 6vw, 3.5rem);
+    }
+    #timeline .headline-highlight {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: clamp(0.75rem, 2.5vw, 1.2rem) clamp(1.5rem, 4vw, 2.5rem);
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(37, 99, 235, 0.08));
+      border: 1px solid rgba(37, 99, 235, 0.22);
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.18);
+      color: var(--color-primary);
+      font-size: clamp(1.4rem, 3.6vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      text-align: center;
+    }
+    #timeline .headline-highlight::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 3px;
+      margin: clamp(0.4rem, 1.5vw, 0.7rem) auto 0;
+      background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.65), transparent);
+      border-radius: 999px;
+    }
     #timeline .timeline {
       position: relative;
       margin: 0 auto;
       padding: 20px 0;
       width: 90%;
       max-width: 900px;
+    }
+    @media (max-width: 600px) {
+      #timeline .headline-highlight {
+        width: 100%;
+        box-shadow: 0 10px 26px rgba(37, 99, 235, 0.18);
+      }
     }
 
     /* vertikale Linie in der Timeline. Höhe wird per JavaScript gesetzt, um einen animierten Aufbau zu ermöglichen */
@@ -758,10 +800,10 @@
 
   <!-- Karriere‑Graph / Timeline -->
   <section id="timeline">
-    <div class="container">
-      <h2>
-        <span class="lang lang-de">Mein Weg in unserem Gesundheitssystem</span>
-        <span class="lang lang-en" hidden>My path in our healthcare system</span>
+    <div class="section-frame timeline-frame">
+      <h2 class="timeline-title">
+        <span class="headline-highlight lang lang-de">Mein Weg in unserem Gesundheitssystem</span>
+        <span class="headline-highlight lang lang-en" hidden>My path in our healthcare system</span>
       </h2>
       <div class="timeline">
         <!-- vertikale Linie, die beim Scrollen wächst -->
