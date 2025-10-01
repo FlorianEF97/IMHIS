@@ -768,17 +768,18 @@
         transform: translate(-50%, -50%) scale(1);
       }
       #timeline .timeline-item::after {
-        left: 28px;
-        right: auto;
-        top: var(--marker-offset, 24px);
-        width: 32px;
-        transform-origin: 0% 50%;
+        content: none;
       }
       #timeline .timeline-item:hover::before {
         transform: translate(-50%, -50%) scale(1.4);
       }
       #timeline .timeline-item.in-view::before {
         transform: translate(-50%, -50%) scale(1.5);
+      }
+      #timeline .timeline-date {
+        display: block;
+        margin-left: 0;
+        padding-left: 0;
       }
     }
 
