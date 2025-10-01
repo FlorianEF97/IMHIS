@@ -654,3 +654,7 @@ a {
   background: var(--link);
 }
 
+#publications .section-frame p {
+  margin-bottom: 1.5rem;
+}
+
