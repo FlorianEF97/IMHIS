@@ -340,14 +340,14 @@ a {
 
   .site-header .nav-links li {
     width: 100%;
-    text-align: right;
+    text-align: center;
   }
 
   .site-header .nav-links a {
     width: 100%;
-    justify-content: flex-end;
+    justify-content: center;
     font-size: 1.05rem;
-    text-align: right;
+    text-align: center;
   }
 
 }
