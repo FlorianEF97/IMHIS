@@ -243,6 +243,11 @@ a {
   transform: translateY(8px);
 }
 
+.nav-toggle:hover,
+.nav-toggle.open {
+  background: none;
+}
+
 .nav-toggle.open .hamburger {
   opacity: 0;
   transform: scaleX(0.35);
