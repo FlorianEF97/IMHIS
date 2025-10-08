@@ -817,6 +817,9 @@
 
           const wireController = (controller) => {
             const handleToggleClick = (event) => {
+              if (event.detail > 1) {
+                return;
+              }
               event.preventDefault();
               event.imhisNavHandled = true;
               controller.toggle({ reason: "page-nav-toggle" });
