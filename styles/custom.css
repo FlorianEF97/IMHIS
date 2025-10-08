@@ -186,10 +186,15 @@ a {
   border: none;
   background: none;
   cursor: pointer;
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease;
   --burger-line-start: var(--color-secondary);
   --burger-line-end: var(--color-primary);
   --burger-line-active: var(--color-accent);
+}
+
+.nav-toggle:hover {
+  transform: scale(1.05);
 }
 
 .nav-toggle:focus-visible {
@@ -203,11 +208,7 @@ a {
   width: 28px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--burger-line-start),
-    var(--burger-line-end)
-  );
+  background: var(--color-primary);
   transform-origin: center;
   transition:
     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -223,11 +224,7 @@ a {
   width: 28px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--burger-line-start),
-    var(--burger-line-end)
-  );
+  background: var(--color-primary);
   transform-origin: center;
   transition:
     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -255,31 +252,19 @@ a {
 
 .nav-toggle.open .hamburger::before {
   transform: rotate(45deg);
-  background: linear-gradient(
-    135deg,
-    var(--burger-line-end),
-    var(--burger-line-active)
-  );
+  background: var(--color-primary);
 }
 
 .nav-toggle.open .hamburger::after {
   transform: rotate(-45deg);
-  background: linear-gradient(
-    135deg,
-    var(--burger-line-end),
-    var(--burger-line-active)
-  );
+  background: var(--color-primary);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .nav-toggle:hover .hamburger,
   .nav-toggle:hover .hamburger::before,
   .nav-toggle:hover .hamburger::after {
-    background: linear-gradient(
-      135deg,
-      var(--burger-line-end),
-      var(--burger-line-active)
-    );
+    background: var(--color-primary);
   }
 }
 
