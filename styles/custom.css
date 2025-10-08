@@ -208,7 +208,7 @@ a {
   width: 28px;
   height: 2px;
   border-radius: 999px;
-  background: var(--color-primary);
+  background: var(--burger-line-start);
   transform-origin: center;
   transition:
     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -224,7 +224,7 @@ a {
   width: 28px;
   height: 2px;
   border-radius: 999px;
-  background: var(--color-primary);
+  background: var(--burger-line-start);
   transform-origin: center;
   transition:
     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -246,25 +246,25 @@ a {
 }
 
 .nav-toggle.open .hamburger {
-  opacity: 1;
+  background: transparent;
   transform: none;
 }
 
 .nav-toggle.open .hamburger::before {
-  transform: translateY(-8px);
-  background: var(--color-primary);
+  transform: rotate(45deg);
+  background: var(--burger-line-active);
 }
 
 .nav-toggle.open .hamburger::after {
-  transform: translateY(8px);
-  background: var(--color-primary);
+  transform: rotate(-45deg);
+  background: var(--burger-line-active);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .nav-toggle:hover .hamburger,
   .nav-toggle:hover .hamburger::before,
   .nav-toggle:hover .hamburger::after {
-    background: var(--color-primary);
+    background: var(--burger-line-end);
   }
 }
 
