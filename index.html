@@ -49,8 +49,6 @@
   <noscript><link href="styles/custom.css" rel="stylesheet"/></noscript>
   <!-- Preload header logo to improve load time -->
   <link as="image" href="assets/Logo_blau.svg" rel="preload" type="image/svg+xml"/>
-  <!-- Preload book cover image to improve LCP -->
-  <link as="image" fetchpriority="high" href="assets/9783658491895-3.webp" rel="preload" type="image/webp"/>
   <!-- Favicon & Touch Icons -->
   <link href="/assets/icons/favicon.ico" rel="icon" sizes="any"/>
   <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -587,18 +585,6 @@
         return;
       }
 
-      const overlay = document.getElementById('mobileOverlay');
-
-      const syncOverlay = (isOpen) => {
-        if (!overlay) {
-          return;
-        }
-        overlay.classList.toggle('open', isOpen);
-        if ('hidden' in overlay) {
-          overlay.hidden = !isOpen;
-        }
-      };
-
       const wireController = (controller) => {
         const handleToggleClick = (event) => {
           event.preventDefault();
@@ -617,18 +603,7 @@
 
         navToggle.addEventListener('click', handleToggleClick);
         navLinks.addEventListener('click', handleLinkClick);
-
-        syncOverlay(controller.isOpen());
       };
-
-      const handleNavChange = (event) => {
-        if (!event.detail) {
-          return;
-        }
-        syncOverlay(Boolean(event.detail.open));
-      };
-
-      window.addEventListener('imhis-navigation-change', handleNavChange);
 
       if (window.IMHISNavigation) {
         wireController(window.IMHISNavigation);
@@ -1987,10 +1962,11 @@
      </div>
      <div class="book-cover">
       <a href="https://link.springer.com/book/9783658491895" rel="noopener noreferrer" target="_blank">
-       <picture>
-        <source srcset="assets/9783658491895-3.webp" type="image/webp"/>
-        <img alt="Buchcover: Digitale Systeme – echte Wirkung" data-alt-en="Book cover: Digital Systems – Real Impact" decoding="async" fetchpriority="high" height="1173" src="9783658491895-3.jpeg" width="827"/>
-       </picture>
+        <picture>
+         <source srcset="assets/9783658491895-3.webp" type="image/webp"/>
+         <source srcset="9783658491895-3.jpeg" type="image/jpeg"/>
+         <img alt="Buchcover: Digitale Systeme – echte Wirkung" data-alt-en="Book cover: Digital Systems – Real Impact" decoding="async" fetchpriority="low" height="1173" loading="lazy" src="9783658491895-3.jpeg" width="827"/>
+        </picture>
       </a>
      </div>
     </div>
