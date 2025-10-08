@@ -246,17 +246,17 @@ a {
 }
 
 .nav-toggle.open .hamburger {
-  opacity: 0;
-  transform: scaleX(0.35);
+  opacity: 1;
+  transform: none;
 }
 
 .nav-toggle.open .hamburger::before {
-  transform: rotate(45deg);
+  transform: translateY(-8px);
   background: var(--color-primary);
 }
 
 .nav-toggle.open .hamburger::after {
-  transform: rotate(-45deg);
+  transform: translateY(8px);
   background: var(--color-primary);
 }
 
