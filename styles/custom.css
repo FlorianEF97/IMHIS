@@ -166,10 +166,12 @@ a {
 }
 
 .site-header .actions .btn {
+  display: inline-flex;
+  align-items: center;
   border-radius: 999px !important;
-  padding: 0.5rem 1.25rem;
+  padding: 0.343rem 1.15rem;
   font-size: 0.95rem;
-  line-height: 1.1;
+  line-height: 1;
 }
 .site-header .actions .btn svg {
   width: 18px;
@@ -419,9 +421,10 @@ a {
   background: #d5e5fb;
 }
 
-/* Prevent line breaks in header CTA buttons */
+/* Prevent line breaks in header CTA buttons and align height with language toggle */
 .nav-actions .btn {
   white-space: nowrap;
+  padding-block: 0.425rem;
 }
 
 .btn svg {
