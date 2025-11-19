@@ -554,7 +554,8 @@ header {
   margin-bottom: 1rem;
   flex-wrap: wrap;
 }
-.analysis-header .pitch-cta {
+.analysis-header .pitch-cta,
+.analysis-header .pitch-download {
   margin: 0;
   max-width: 22rem;
   white-space: normal;
