@@ -565,6 +565,19 @@ header {
   align-items: center;
   justify-content: center;
 }
+.pitch-cta-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.pitch-cta-group .btn {
+  flex: 1 1 12rem;
+}
+.pitch-download {
+  text-align: center;
+}
 .analysis-header > * {
   align-self: stretch;
 }
@@ -575,6 +588,9 @@ header {
   }
   .analysis-header .pitch-cta {
     margin-top: 1rem;
+    width: 100%;
+  }
+  .pitch-cta-group {
     width: 100%;
   }
 }
