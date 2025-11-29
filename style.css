@@ -8,7 +8,7 @@
   box-shadow: 0 4px 12px rgba(23, 37, 84, 0.1);
 }
 :root {
-  --color-primary: #2563eb; /* kräftiges Blau analog zum IMHIS‑CI */
+  --color-primary: #2563eb; /* kräftiges Blau analog zum IMHIS®‑CI */
   --color-secondary: #0e1e40; /* dunkles Blau für Kontrast */
   --color-accent: #38bdf8; /* helles Blau für Highlights */
   --color-bg: #f9fafb; /* sehr helles Grau als Hintergrund */
