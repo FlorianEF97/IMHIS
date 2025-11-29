@@ -1,2 +1,2 @@
-# IMHIS
-IMHIS
+# IMHIS®
+IMHIS®
