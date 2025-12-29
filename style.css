@@ -83,6 +83,14 @@ header {
   margin: 0;
   padding: 0;
 }
+.nav .pitch-download--nav {
+  display: inline-flex;
+  align-items: center;
+}
+.nav .pitch-download--nav .pitch-download-trigger {
+  width: 100%;
+  justify-content: center;
+}
 
 .nav-links a {
   font-size: 1.125rem;
@@ -236,6 +244,20 @@ header {
 .btn.primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 32px rgba(37, 99, 235, 0.35);
+}
+.btn.ghost {
+  background: transparent;
+  color: #0b1220;
+  border-color: transparent;
+  box-shadow: none;
+  padding: 0.85rem 1rem;
+}
+.btn.ghost:hover,
+.btn.ghost:focus-visible {
+  background: rgba(37, 99, 235, 0.08);
+  color: #0b1220;
+  transform: translateY(-1px);
+  outline: none;
 }
 
 .btn.secondary {
@@ -589,7 +611,88 @@ header {
   flex: 1 1 12rem;
 }
 .pitch-download {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1 1 16rem;
+  position: relative;
+}
+.pitch-download-label {
+  font-weight: 650;
+  color: #0b1220;
+  font-size: 0.95rem;
+}
+.pitch-download-surface {
+  position: relative;
+}
+.pitch-download .btn {
+  flex: 1 1 12rem;
+  white-space: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.pitch-download-caret {
+  opacity: 0.7;
+}
+.pitch-download-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.5rem);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  min-width: 14rem;
+  padding: 0.35rem;
+  gap: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: all 0.2s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+.pitch-download.is-hover .pitch-download-menu,
+.pitch-download.is-open .pitch-download-menu,
+.pitch-download:focus-within .pitch-download-menu,
+.pitch-download:hover .pitch-download-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.pitch-download-option {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  color: #0b1220;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+.pitch-download-option:hover,
+.pitch-download-option:focus-visible,
+.pitch-download-option.active {
+  background: rgba(37, 99, 235, 0.08);
+  color: #0b1220;
+}
+.pitch-download--nav {
+  position: relative;
+}
+.pitch-download--nav .pitch-download-trigger {
+  padding: 0.6rem 0.75rem;
+  gap: 0.35rem;
+  font-weight: 650;
+}
+.pitch-download--nav .pitch-download-menu {
+  min-width: 11.5rem;
+  right: 0;
+  left: auto;
+  top: calc(100% + 0.4rem);
 }
 .analysis-header > * {
   align-self: stretch;

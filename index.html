@@ -523,14 +523,61 @@
               </a>
             </li>
             <li>
-              <a
-                href="assets/01_IMHIS_Präsentation_Allgemein_PDF.pdf"
-                rel="noopener"
-                target="_blank"
-              >
-                <span class="lang lang-de"> Pitch Deck </span>
-                <span class="lang lang-en" hidden=""> Pitch Deck </span>
-              </a>
+              <div class="pitch-download pitch-download--nav">
+                <button
+                  aria-controls="pitch-nav-menu"
+                  aria-expanded="false"
+                  class="btn ghost pitch-download-trigger"
+                  id="pitch-nav-trigger"
+                  type="button"
+                >
+                  <span class="lang lang-de"> Pitch Deck </span>
+                  <span class="lang lang-en" hidden=""> Pitch Deck </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pitch-download-caret"
+                    fill="none"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 9l6 6 6-6"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.6"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="pitch-download-menu"
+                  id="pitch-nav-menu"
+                  role="menu"
+                >
+                  <a
+                    class="pitch-download-option"
+                    data-lang="de"
+                    href="assets/01_IMHIS_Präsentation_PDF_DE.pdf"
+                    rel="noopener"
+                    role="menuitem"
+                    target="_blank"
+                  >
+                    Deutsch (DE)
+                  </a>
+                  <a
+                    class="pitch-download-option"
+                    data-lang="en"
+                    href="assets/01_IMHIS_Presentation_PDF_EN.pdf"
+                    rel="noopener"
+                    role="menuitem"
+                    target="_blank"
+                  >
+                    English (EN)
+                  </a>
+                </div>
+              </div>
             </li>
             <li>
               <a href="#linkedin">
@@ -956,18 +1003,69 @@
                     Reveal the full impact with IMHIS®
                   </span>
                 </a>
-                <a
-                  class="btn primary pitch-download"
-                  href="assets/01_IMHIS_Präsentation_Allgemein_PDF.pdf"
-                  download
-                >
-                  <span class="lang lang-de">
-                    Jetzt Pitch Deck herunterladen
-                  </span>
-                  <span class="lang lang-en" hidden>
-                    Download the pitch deck now
-                  </span>
-                </a>
+                <div class="pitch-download">
+                  <p class="pitch-download-label">
+                    <span class="lang lang-de">Pitch-Version auswählen</span>
+                    <span class="lang lang-en" hidden>Choose pitch version</span>
+                  </p>
+                  <div class="pitch-download-surface">
+                    <button
+                      aria-controls="pitch-download-menu"
+                      aria-expanded="false"
+                      class="btn primary pitch-download-trigger"
+                      id="pitch-download-trigger"
+                      type="button"
+                    >
+                      <span class="lang lang-de">
+                        Jetzt Pitch Deck herunterladen
+                      </span>
+                      <span class="lang lang-en" hidden>
+                        Download the pitch deck now
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        class="pitch-download-caret"
+                        fill="none"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.6"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="pitch-download-menu"
+                      id="pitch-download-menu"
+                      role="menu"
+                    >
+                      <a
+                        class="pitch-download-option"
+                        data-lang="de"
+                        href="assets/01_IMHIS_Präsentation_PDF_DE.pdf"
+                        download
+                        role="menuitem"
+                      >
+                        Deutsch (DE)
+                      </a>
+                      <a
+                        class="pitch-download-option"
+                        data-lang="en"
+                        href="assets/01_IMHIS_Presentation_PDF_EN.pdf"
+                        download
+                        role="menuitem"
+                      >
+                        English (EN)
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- Grid mit sechs Kennzahlen -->
@@ -2966,6 +3064,88 @@
         liNavPrev?.addEventListener("click", () => scrollByViewport(-1));
         liNavNext?.addEventListener("click", () => scrollByViewport(1));
       })();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const downloadMap = {
+          de: "assets/01_IMHIS_Präsentation_PDF_DE.pdf",
+          en: "assets/01_IMHIS_Presentation_PDF_EN.pdf",
+        };
+
+        const setActiveOption = (container, lang) => {
+          const options = container.querySelectorAll(".pitch-download-option");
+          options.forEach((option) => {
+            const isActive = option.dataset.lang === lang;
+            option.classList.toggle("active", isActive);
+            if (isActive) {
+              option.setAttribute("aria-current", "true");
+            } else {
+              option.removeAttribute("aria-current");
+            }
+          });
+        };
+
+        const syncWithDocument = () => {
+          const lang = document.documentElement.lang === "en" ? "en" : "de";
+          downloadAreas.forEach((container) => setActiveOption(container, lang));
+        };
+
+        const downloadAreas = Array.from(
+          document.querySelectorAll(".pitch-download"),
+        );
+
+        downloadAreas.forEach((container) => {
+          const trigger = container.querySelector(".pitch-download-trigger");
+          const menu = container.querySelector(".pitch-download-menu");
+
+          if (trigger && menu) {
+            trigger.addEventListener("click", (event) => {
+              event.stopPropagation();
+              const isOpen = container.classList.toggle("is-open");
+              trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+
+            container.addEventListener("mouseenter", () => {
+              container.classList.add("is-hover");
+            });
+
+            container.addEventListener("mouseleave", () => {
+              container.classList.remove("is-hover");
+              container.classList.remove("is-open");
+              trigger.setAttribute("aria-expanded", "false");
+            });
+
+            menu.querySelectorAll(".pitch-download-option").forEach((option) => {
+              const lang = option.dataset.lang;
+              if (downloadMap[lang]) {
+                option.href = downloadMap[lang];
+              }
+              option.addEventListener("click", () => {
+                container.classList.remove("is-open");
+                trigger.setAttribute("aria-expanded", "false");
+              });
+            });
+          }
+        });
+
+        document.addEventListener("click", (event) => {
+          downloadAreas.forEach((container) => {
+            if (!container.contains(event.target)) {
+              const trigger = container.querySelector(".pitch-download-trigger");
+              container.classList.remove("is-open");
+              trigger?.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
+
+        syncWithDocument();
+
+        const langObserver = new MutationObserver(syncWithDocument);
+        langObserver.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["lang"],
+        });
+      });
     </script>
     <!-- Script: animiert die Zahlen in der Pitch‑Section beim Scrollen und auf Klick -->
     <script>
