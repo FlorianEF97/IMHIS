@@ -589,7 +589,36 @@ header {
   flex: 1 1 12rem;
 }
 .pitch-download {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 16rem;
+}
+.pitch-download-label {
+  font-weight: 650;
+  color: #0b1220;
+  font-size: 0.95rem;
+}
+.pitch-download-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.pitch-language-select {
+  flex: 1 1 11rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  background: #fff;
+  font-weight: 600;
+  color: #0b1220;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 6px 14px rgba(2, 6, 23, 0.08);
+}
+.pitch-download .btn {
+  flex: 1 1 12rem;
+  white-space: normal;
 }
 .analysis-header > * {
   align-self: stretch;
