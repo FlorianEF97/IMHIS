@@ -703,8 +703,10 @@ header {
   box-shadow: none;
   color: inherit;
   gap: 0.35rem;
-  font-weight: 600;
-  font-size: 1.125rem;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
   line-height: 1.2;
 }
 .pitch-download--nav .pitch-download-menu {
