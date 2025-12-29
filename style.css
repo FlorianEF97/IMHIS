@@ -730,6 +730,10 @@ header {
   .pitch-cta-group {
     width: 100%;
   }
+  .pitch-download,
+  .pitch-download .btn {
+    width: 100%;
+  }
 }
 .about-me-section {
   --accent: #2563eb;
