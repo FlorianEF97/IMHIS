@@ -956,18 +956,36 @@
                     Reveal the full impact with IMHIS®
                   </span>
                 </a>
-                <a
-                  class="btn primary pitch-download"
-                  href="assets/01_IMHIS_Präsentation_Allgemein_PDF.pdf"
-                  download
-                >
-                  <span class="lang lang-de">
-                    Jetzt Pitch Deck herunterladen
-                  </span>
-                  <span class="lang lang-en" hidden>
-                    Download the pitch deck now
-                  </span>
-                </a>
+                <div class="pitch-download">
+                  <label class="pitch-download-label" for="pitch-language-select">
+                    <span class="lang lang-de">Pitch-Version auswählen</span>
+                    <span class="lang lang-en" hidden>Choose pitch version</span>
+                  </label>
+                  <div class="pitch-download-controls">
+                    <select
+                      aria-label="Pitch-Version"
+                      class="pitch-language-select"
+                      id="pitch-language-select"
+                      name="pitch-language"
+                    >
+                      <option value="de">Deutsch (DE)</option>
+                      <option value="en">English (EN)</option>
+                    </select>
+                    <a
+                      class="btn primary pitch-download-btn"
+                      href="assets/01_IMHIS_Präsentation_PDF_DE.pdf"
+                      id="pitch-download-btn"
+                      download
+                    >
+                      <span class="lang lang-de">
+                        Jetzt Pitch Deck herunterladen
+                      </span>
+                      <span class="lang lang-en" hidden>
+                        Download the pitch deck now
+                      </span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- Grid mit sechs Kennzahlen -->
@@ -2966,6 +2984,41 @@
         liNavPrev?.addEventListener("click", () => scrollByViewport(-1));
         liNavNext?.addEventListener("click", () => scrollByViewport(1));
       })();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const langSelect = document.getElementById("pitch-language-select");
+        const downloadBtn = document.getElementById("pitch-download-btn");
+        if (!langSelect || !downloadBtn) return;
+
+        const downloadMap = {
+          de: "assets/01_IMHIS_Präsentation_PDF_DE.pdf",
+          en: "assets/01_IMHIS_Presentation_PDF_EN.pdf",
+        };
+
+        const updateSelection = (lang) => {
+          const nextLang = downloadMap[lang] ? lang : "de";
+          langSelect.value = nextLang;
+          downloadBtn.href = downloadMap[nextLang];
+        };
+
+        langSelect.addEventListener("change", () => {
+          updateSelection(langSelect.value);
+        });
+
+        const syncWithDocument = () => {
+          const docLang = document.documentElement.lang === "en" ? "en" : "de";
+          updateSelection(docLang);
+        };
+
+        syncWithDocument();
+
+        const langObserver = new MutationObserver(() => syncWithDocument());
+        langObserver.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["lang"],
+        });
+      });
     </script>
     <!-- Script: animiert die Zahlen in der Pitch‑Section beim Scrollen und auf Klick -->
     <script>
