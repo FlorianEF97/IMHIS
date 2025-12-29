@@ -137,7 +137,7 @@ a {
     color 0.2s ease;
 }
 
-.site-header .nav-links button {
+.site-header .nav-links button:not(.btn-primary):not(.btn-secondary) {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: normal;
