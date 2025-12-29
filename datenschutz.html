@@ -105,101 +105,148 @@
     </a>
     <header class="site-header">
       <div class="header-inner">
-        <a href="/index.html" class="logo" aria-label="IMHIS® Startseite">
+        <a aria-label="IMHIS® Startseite" class="logo" href="/index.html">
           <img
-            src="assets/Logo_blau.svg"
             alt="IMHIS® Logo"
             data-alt-en="IMHIS® logo"
             decoding="async"
             fetchpriority="high"
-            width="160"
             height="40"
+            src="assets/Logo_blau.svg"
+            width="160"
           />
         </a>
-        <nav class="nav" aria-label="Hauptnavigation">
+        <nav aria-label="Hauptnavigation" class="nav">
           <button
-            class="nav-toggle"
-            aria-label="Menü öffnen"
-            aria-expanded="false"
             aria-controls="nav-links"
-            data-label-open-de="Menü öffnen"
+            aria-expanded="false"
+            aria-label="Menü öffnen"
+            class="nav-toggle"
             data-label-close-de="Menü schließen"
-            data-label-open-en="Open menu"
             data-label-close-en="Close menu"
+            data-label-open-de="Menü öffnen"
+            data-label-open-en="Open menu"
           >
-            <span class="hamburger"></span>
+            <span class="hamburger"> </span>
           </button>
-          <ul class="nav-links" id="nav-links" hidden>
+          <ul class="nav-links" hidden="" id="nav-links">
             <li>
               <a href="/#pitch">
-                <span class="lang lang-de">Demo</span>
-                <span class="lang lang-en" hidden>Watch demo</span>
+                <span class="lang lang-de"> Demo </span>
+                <span class="lang lang-en" hidden=""> Watch demo </span>
               </a>
             </li>
             <li>
               <a href="/#benefit">
-                <span class="lang lang-de">Nutzen</span>
-                <span class="lang lang-en" hidden>Benefit</span>
+                <span class="lang lang-de"> Nutzen </span>
+                <span class="lang lang-en" hidden=""> Benefit </span>
               </a>
             </li>
             <li>
               <a href="/#instrument">
-                <span class="lang lang-de">Analyseinstrument</span>
-                <span class="lang lang-en" hidden>Analysis Tool</span>
+                <span class="lang lang-de"> Analyseinstrument </span>
+                <span class="lang lang-en" hidden=""> Analysis Tool </span>
               </a>
             </li>
             <li>
-              <a
-                href="assets/01_IMHIS_Präsentation_Allgemein_PDF.pdf"
-                rel="noopener"
-                target="_blank"
-              >
-                <span class="lang lang-de">Pitch Deck</span>
-                <span class="lang lang-en" hidden>Pitch Deck</span>
-              </a>
+              <div class="pitch-download pitch-download--nav">
+                <button
+                  aria-controls="pitch-nav-menu"
+                  aria-expanded="false"
+                  class="pitch-download-trigger"
+                  id="pitch-nav-trigger"
+                  type="button"
+                >
+                  <span class="lang lang-de"> Pitch Deck </span>
+                  <span class="lang lang-en" hidden=""> Pitch Deck </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pitch-download-caret"
+                    fill="none"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 9l6 6 6-6"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.6"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="pitch-download-menu"
+                  id="pitch-nav-menu"
+                  role="menu"
+                >
+                  <a
+                    class="pitch-download-option"
+                    data-lang="de"
+                    href="assets/01_IMHIS_Präsentation_PDF_DE.pdf"
+                    rel="noopener"
+                    role="menuitem"
+                    target="_blank"
+                  >
+                    Deutsch (DE)
+                  </a>
+                  <a
+                    class="pitch-download-option"
+                    data-lang="en"
+                    href="assets/01_IMHIS_Presentation_PDF_EN.pdf"
+                    rel="noopener"
+                    role="menuitem"
+                    target="_blank"
+                  >
+                    English (EN)
+                  </a>
+                </div>
+              </div>
             </li>
             <li>
               <a href="/#linkedin">
-                <span class="lang lang-de">News</span>
-                <span class="lang lang-en" hidden>News</span>
+                <span class="lang lang-de"> News </span>
+                <span class="lang lang-en" hidden=""> News </span>
               </a>
             </li>
             <li>
               <a href="/#buch">
-                <span class="lang lang-de">Buch</span>
-                <span class="lang lang-en" hidden>Book</span>
+                <span class="lang lang-de"> Buch </span>
+                <span class="lang lang-en" hidden=""> Book </span>
               </a>
             </li>
             <li>
               <a href="/florian-eisold.html">
-                <span class="lang lang-de">Dr. Florian Eisold</span>
-                <span class="lang lang-en" hidden>Dr. Florian Eisold</span>
+                <span class="lang lang-de"> Dr. Florian Eisold </span>
+                <span class="lang lang-en" hidden=""> Dr. Florian Eisold </span>
               </a>
             </li>
           </ul>
         </nav>
         <div class="actions nav-actions">
-          <div class="lang-switcher" role="group" aria-label="Sprachauswahl">
+          <div aria-label="Sprachauswahl" class="lang-switcher" role="group">
             <button
-              class="lang-btn"
-              data-lang="de"
               aria-label="Deutsch"
               aria-pressed="true"
+              class="lang-btn"
+              data-lang="de"
             >
               DE
             </button>
             <button
-              class="lang-btn"
-              data-lang="en"
               aria-label="English"
               aria-pressed="false"
+              class="lang-btn"
+              data-lang="en"
             >
               EN
             </button>
           </div>
           <a
-            href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS%C2%AE"
             class="btn primary"
+            href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS%C2%AE"
           >
             <svg
               aria-hidden="true"
@@ -228,8 +275,8 @@
                 stroke-width="2"
               ></path>
             </svg>
-            <span class="lang lang-de">Kontakt aufnehmen</span>
-            <span class="lang lang-en" hidden>Get in touch</span>
+            <span class="lang lang-de"> Kontakt aufnehmen </span>
+            <span class="lang lang-en" hidden=""> Get in touch </span>
           </a>
         </div>
       </div>
