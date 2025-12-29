@@ -619,6 +619,7 @@ header {
 }
 .pitch-download-surface {
   position: relative;
+  height: 100%;
 }
 .pitch-download .btn {
   flex: 1 1 12rem;
@@ -627,6 +628,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  height: 100%;
 }
 .pitch-download-caret {
   opacity: 0.7;
