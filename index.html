@@ -1004,10 +1004,6 @@
                   </span>
                 </a>
                 <div class="pitch-download">
-                  <p class="pitch-download-label">
-                    <span class="lang lang-de">Pitch-Version auswählen</span>
-                    <span class="lang lang-en" hidden>Choose pitch version</span>
-                  </p>
                   <div class="pitch-download-surface">
                     <button
                       aria-controls="pitch-download-menu"
@@ -3111,8 +3107,9 @@
 
             container.addEventListener("mouseleave", () => {
               container.classList.remove("is-hover");
-              container.classList.remove("is-open");
-              trigger.setAttribute("aria-expanded", "false");
+              if (!container.classList.contains("is-open")) {
+                trigger.setAttribute("aria-expanded", "false");
+              }
             });
 
             menu.querySelectorAll(".pitch-download-option").forEach((option) => {
