@@ -388,74 +388,6 @@
       }
 
       /* Footer im Stil der Startseite */
-      .contact-footer {
-        text-align: center;
-        padding: 3rem 1rem;
-        background: transparent;
-      }
-      .contact-footer .footer-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.6rem;
-        margin: 0 auto;
-      }
-      .legal-footer {
-        background: var(--color-section);
-        border-top: 1px solid var(--color-border);
-        padding: 2.5rem 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-        text-align: center;
-        color: var(--color-text-light);
-        font-size: 0.9rem;
-      }
-      .legal-footer .footer-brand {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-      .legal-footer .footer-logo-link {
-        display: inline-flex;
-      }
-      .legal-footer .footer-logo {
-        width: 120px;
-        height: auto;
-        display: block;
-      }
-      .legal-footer .social-link {
-        color: var(--color-text-light);
-        display: inline-flex;
-      }
-      .legal-footer .legal-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-        font-size: 0.9rem;
-      }
-      .legal-footer .legal-links a {
-        color: var(--color-accent-dark);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-      .legal-footer .legal-links a:hover {
-        color: var(--color-accent);
-        text-decoration: underline;
-      }
-      .legal-footer a {
-        color: var(--color-accent-dark);
-      }
-      .legal-footer a:hover {
-        color: var(--color-accent);
-      }
-      .cta-icon {
-        font-size: 1.1rem;
-        display: inline-flex;
-        align-items: center;
-      }
       #cta h2 {
         margin-top: 0;
         margin-bottom: 20px;
@@ -1583,9 +1515,44 @@
           </a>
         </div>
       </section>
-
-      <!-- Footer -->
     </main>
+    <footer class="contact-footer" id="kontakt">
+      <a
+        class="btn primary footer-cta"
+        href="mailto:florianeisold@outlook.de?subject=Kontaktaufnahme%20IMHIS%C2%AE"
+      >
+        <span aria-hidden="true" class="cta-icon">
+          <svg
+            fill="none"
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              height="14"
+              rx="2"
+              ry="2"
+              stroke="currentColor"
+              stroke-linejoin="round"
+              stroke-width="2"
+              width="18"
+              x="3"
+              y="5"
+            ></rect>
+            <path
+              d="M3 8l9 6 9-6"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </span>
+        <span class="lang lang-de"> Analyse geplant? </span>
+        <span class="lang lang-en" hidden=""> Ready to plan an analysis? </span>
+      </a>
+    </footer>
     <!-- Rechtliches -->
     <footer class="legal-footer">
       <div class="footer-brand">
