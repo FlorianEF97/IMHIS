@@ -137,6 +137,30 @@ a {
     color 0.2s ease;
 }
 
+.site-header .pitch-download--nav .pitch-download-trigger {
+  padding: 0.25rem 0.45rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  line-height: 1.4;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-header .pitch-download--nav .pitch-download-trigger:hover,
+.site-header .pitch-download--nav .pitch-download-trigger:focus-visible {
+  background: var(--color-accent-light);
+  color: var(--color-secondary);
+  outline: none;
+  transform: translateY(-1px);
+}
+
 .site-header .nav-links a::after {
   display: none;
 }
