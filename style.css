@@ -492,6 +492,21 @@ header {
   margin: 0 0 0.75rem;
 }
 
+.eyebrow,
+.section .eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  margin: 0 0 0.75rem;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  display: block;
+}
+
 .demo-video__title {
   font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem);
   color: var(--color-secondary);
@@ -578,6 +593,11 @@ header {
   }
 
   .demo-video__eyebrow {
+    letter-spacing: 0.15em;
+  }
+
+  .eyebrow,
+  .section .eyebrow {
     letter-spacing: 0.15em;
   }
 }

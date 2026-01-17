@@ -521,19 +521,23 @@
       }
 
       .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        padding: 0.4rem 1rem;
-        border-radius: 999px;
         font-size: 0.85rem;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+        font-weight: 700;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--color-primary);
-        background: rgba(37, 99, 235, 0.08);
-        border: 1px solid rgba(37, 99, 235, 0.15);
-        margin: 0 0 1.4rem;
+        margin: 0 0 0.75rem;
+        padding: 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+        display: block;
+      }
+
+      @media (max-width: 600px) {
+        .eyebrow {
+          letter-spacing: 0.15em;
+        }
       }
 
       /* Über‑mich‑Block */
