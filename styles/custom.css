@@ -274,11 +274,19 @@ a {
   width: 44px;
   height: 44px;
   padding: 0;
-  border: none;
-  background: none;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 10px 20px rgba(15, 23, 42, 0.08),
+    inset 0 0 0 1px rgba(37, 99, 235, 0.06);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition:
-    transform 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
   --burger-line-start: var(--color-secondary);
   --burger-line-end: var(--color-primary);
   --burger-line-active: var(--color-accent);
@@ -286,6 +294,9 @@ a {
 
 .nav-toggle:hover {
   transform: scale(1.05);
+  box-shadow:
+    0 14px 26px rgba(15, 23, 42, 0.14),
+    inset 0 0 0 1px rgba(37, 99, 235, 0.1);
 }
 
 .nav-toggle:focus-visible {
@@ -296,7 +307,7 @@ a {
 .nav-toggle .hamburger {
   position: relative;
   display: block;
-  width: 28px;
+  width: 22px;
   height: 2px;
   border-radius: 999px;
   background: var(--burger-line-start);
@@ -312,7 +323,7 @@ a {
   content: "";
   position: absolute;
   left: 0;
-  width: 28px;
+  width: 22px;
   height: 2px;
   border-radius: 999px;
   background: var(--burger-line-start);
@@ -324,16 +335,17 @@ a {
 }
 
 .nav-toggle .hamburger::before {
-  transform: translateY(-8px);
+  transform: translateY(-7px);
 }
 
 .nav-toggle .hamburger::after {
-  transform: translateY(8px);
+  transform: translateY(7px);
 }
 
 .nav-toggle:hover,
 .nav-toggle.open {
-  background: none;
+  background: rgba(248, 250, 255, 0.98);
+  border-color: rgba(37, 99, 235, 0.2);
 }
 
 .nav-toggle.open .hamburger {
@@ -412,34 +424,31 @@ a {
     top: calc(100% + 0.75rem);
     left: auto;
     right: calc(-1 * var(--header-padding));
-    width: min(20rem, calc(100vw - var(--header-padding)));
+    width: min(22rem, calc(100vw - (var(--header-padding) * 2)));
     flex-direction: column;
     align-items: stretch;
-    gap: 0.85rem;
-    padding: 1.35rem 1.25rem;
-    background: linear-gradient(
-      160deg,
-      rgba(255, 255, 255, 0.98),
-      rgba(240, 246, 255, 0.94)
-    );
-    border: 1px solid rgba(14, 30, 64, 0.08);
-    border-radius: var(--radius-large);
+    gap: 0.75rem;
+    padding: 1.25rem 1.15rem;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
     box-shadow:
-      0 16px 40px rgba(15, 23, 42, 0.14),
-      0 0 0 1px rgba(37, 99, 235, 0.06);
-    backdrop-filter: blur(14px);
-    transform: translateY(-12px);
+      0 20px 45px rgba(15, 23, 42, 0.16),
+      0 0 0 1px rgba(37, 99, 235, 0.04);
+    transform: translate3d(0, -12px, 0);
     transform-origin: top right;
     opacity: 0;
     pointer-events: none;
+    will-change: transform, opacity;
+    contain: layout paint;
     transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
+      transform 0.28s ease,
+      opacity 0.22s ease;
     z-index: 1100;
   }
 
   .site-header .nav-links.open {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     opacity: 1;
     pointer-events: auto;
   }
@@ -451,17 +460,17 @@ a {
 
     .site-header .nav-links a:not(.btn) {
       width: 100%;
-      justify-content: center;
+      justify-content: flex-start;
       font-size: 1.05rem;
       text-align: left;
       gap: 0.75rem;
       padding: 0.85rem 0.95rem;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid rgba(37, 99, 235, 0.08);
+      border-radius: 12px;
+      background: rgba(248, 250, 255, 0.95);
+      border: 1px solid rgba(37, 99, 235, 0.12);
       box-shadow:
-        0 10px 22px rgba(15, 23, 42, 0.08),
-        inset 0 0 0 1px rgba(14, 30, 64, 0.06);
+        0 8px 18px rgba(15, 23, 42, 0.08),
+        inset 0 0 0 1px rgba(14, 30, 64, 0.04);
     }
 
     .site-header .nav-links a:not(.btn)::before {
@@ -485,12 +494,12 @@ a {
       gap: 0.75rem;
       justify-content: flex-start;
       padding: 0.85rem 0.95rem;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid rgba(37, 99, 235, 0.08);
+      border-radius: 12px;
+      background: rgba(248, 250, 255, 0.95);
+      border: 1px solid rgba(37, 99, 235, 0.12);
       box-shadow:
-        0 10px 22px rgba(15, 23, 42, 0.08),
-        inset 0 0 0 1px rgba(14, 30, 64, 0.06);
+        0 8px 18px rgba(15, 23, 42, 0.08),
+        inset 0 0 0 1px rgba(14, 30, 64, 0.04);
       font-size: 1.05rem;
       font-weight: 600;
       text-align: left;
@@ -516,14 +525,24 @@ a {
       margin-top: 0.6rem;
       background: rgba(255, 255, 255, 0.98);
       box-shadow:
-        0 10px 22px rgba(15, 23, 42, 0.08),
-        0 0 0 1px rgba(14, 30, 64, 0.06);
+        0 8px 18px rgba(15, 23, 42, 0.08),
+        0 0 0 1px rgba(14, 30, 64, 0.05);
     }
 
     .site-header .nav-links .pitch-download--nav .pitch-download-option {
       text-align: left;
     }
   }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle,
+  .nav-toggle .hamburger,
+  .nav-toggle .hamburger::before,
+  .nav-toggle .hamburger::after,
+  .site-header .nav-links {
+    transition-duration: 0.01ms !important;
+  }
+}
 
 @media (min-width: 768px) {
   .site-header .header-inner {
