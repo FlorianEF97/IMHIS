@@ -460,7 +460,7 @@ header {
 }
 
 .demo-video {
-  padding: 1.5rem 1.5rem 4rem;
+  padding: 1.25rem 1.5rem;
 }
 
 .demo-video__inner {
@@ -584,7 +584,7 @@ header {
 
 @media (max-width: 600px) {
   .demo-video {
-    padding: 1rem 1rem 3rem;
+    padding: 1.25rem 1rem;
   }
 
   .demo-video__inner {
