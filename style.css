@@ -955,6 +955,11 @@ header {
   .analysis-header .pitch-cta {
     margin-top: 1rem;
     width: 100%;
+    max-width: none;
+  }
+  .analysis-header .pitch-download {
+    width: 100%;
+    max-width: none;
   }
   .pitch-cta-group {
     width: 100%;
