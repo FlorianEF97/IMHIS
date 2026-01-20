@@ -555,6 +555,7 @@ header {
 
 .demo-video__inner {
   width: min(100%, 1200px);
+  box-sizing: border-box;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
