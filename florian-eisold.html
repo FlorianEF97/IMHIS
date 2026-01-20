@@ -508,6 +508,24 @@
         border: 0;
       }
 
+      .speaker-video__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        text-decoration: none;
+        transition: color 0.2s ease, text-decoration-color 0.2s ease;
+      }
+
+      .speaker-video__link:hover,
+      .speaker-video__link:focus-visible {
+        color: var(--color-text);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
       @media (max-width: 900px) {
         .speaker-video__inner {
           grid-template-columns: 1fr;
@@ -1210,7 +1228,7 @@
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube-nocookie.com/embed/_lD7X8lyjkg?si=eB1HEaztPyKAfFSF"
+                src="https://www.youtube-nocookie.com/embed/MNHdo7lyJjI?si=Oj5r77JLpZW_-0mk"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1218,6 +1236,15 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <a
+              class="speaker-video__link"
+              href="https://www.youtube.com/watch?v=_lD7X8lyjkg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="lang lang-de">Vollversion auf YouTube ansehen</span>
+              <span class="lang lang-en" hidden>Watch the full version on YouTube</span>
+            </a>
           </div>
         </div>
       </section>
