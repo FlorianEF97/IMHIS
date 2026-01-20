@@ -549,11 +549,12 @@ header {
 }
 
 .demo-video {
-  padding: 1.25rem 1.5rem;
+  width: 100%;
+  padding: 4rem 0;
 }
 
 .demo-video__inner {
-  max-width: 1200px;
+  width: min(100%, 1200px);
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
@@ -672,11 +673,11 @@ header {
 
 @media (max-width: 600px) {
   .demo-video {
-    padding: 1.25rem 1rem;
+    padding: 2.5rem 0;
   }
 
   .demo-video__inner {
-    padding: 1.75rem;
+    padding: 1.25rem;
     gap: 2rem;
   }
 
