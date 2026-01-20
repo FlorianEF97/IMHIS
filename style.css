@@ -635,6 +635,24 @@ header {
   border: 0;
 }
 
+.demo-video__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.demo-video__link:hover,
+.demo-video__link:focus-visible {
+  color: #334155;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 600px) {
   .hero {
     padding: 2rem 1rem 2.5rem;
