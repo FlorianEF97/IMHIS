@@ -968,6 +968,10 @@ header {
   .pitch-download .btn {
     width: 100%;
   }
+  .pitch-download-surface,
+  .pitch-download-trigger {
+    width: 100%;
+  }
 }
 .about-me-section {
   --accent: #2563eb;
