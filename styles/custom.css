@@ -384,6 +384,7 @@ a {
 
   .site-header .logo {
     flex: 0 0 auto;
+    margin-right: auto;
   }
 
   .site-header .actions {
@@ -392,7 +393,6 @@ a {
     width: auto;
     gap: 0.5rem;
     align-items: center;
-    margin-left: auto;
     display: inline-flex;
     justify-content: flex-end;
   }
