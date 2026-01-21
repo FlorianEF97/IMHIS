@@ -2918,6 +2918,14 @@
       </p>
     </footer>
     <script defer="" src="scripts/main.min.js"></script>
+    <button class="back-to-top" aria-label="Back to top" aria-hidden="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path
+          d="M12 5l-7 7 1.41 1.41L11 8.83V19h2V8.83l4.59 4.58L19 12z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </button>
     <script>
       (() => {
         if (window.__IMHIS_LI_STREAM__) return; // idempotent
@@ -3378,6 +3386,27 @@
 
       // Initiale Berechnung
       updateResults();
+    </script>
+    <script>
+      const backToTopButton = document.querySelector(".back-to-top");
+
+      if (backToTopButton) {
+        const toggleBackToTop = () => {
+          const shouldShow = window.scrollY > window.innerHeight;
+          backToTopButton.classList.toggle("is-visible", shouldShow);
+          backToTopButton.setAttribute(
+            "aria-hidden",
+            shouldShow ? "false" : "true",
+          );
+        };
+
+        toggleBackToTop();
+        window.addEventListener("scroll", toggleBackToTop, { passive: true });
+
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
     </script>
   </body>
 </html>
