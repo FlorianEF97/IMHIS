@@ -395,6 +395,7 @@ a {
     align-items: center;
     display: inline-flex;
     justify-content: flex-end;
+    margin-left: auto;
   }
 
   .site-header .actions .lang-switcher {
