@@ -2596,25 +2596,6 @@
             ›
           </button>
         </div>
-        <!-- Consent -->
-        <div class="li-consent" id="li-consent">
-          <p>
-            <span class="lang lang-de">
-              Für die Anzeige werden Inhalte von LinkedIn geladen. Dabei können
-              personenbezogene Daten an LinkedIn übermittelt werden. Besuchen
-              Sie https://imhis.de/datenschutz.html für mehr Informationen.
-            </span>
-            <span class="lang lang-en" hidden="">
-              To display the posts, content is loaded from LinkedIn. Personal
-              data may be transmitted to LinkedIn. Visit
-              https://imhis.de/datenschutz.html for more information.
-            </span>
-          </p>
-          <button class="btn primary" id="li-enable" type="button">
-            <span class="lang lang-de"> Zustimmen und Beiträge laden </span>
-            <span class="lang lang-en" hidden=""> Agree and load posts </span>
-          </button>
-        </div>
       </section>
       <section class="section book-section" id="buch">
         <div class="book-content">
@@ -2942,14 +2923,11 @@
         if (window.__IMHIS_LI_STREAM__) return; // idempotent
         window.__IMHIS_LI_STREAM__ = true;
 
-        const liConsentBtn = document.getElementById("li-enable");
-        const liConsentBox = document.getElementById("li-consent");
         const liViewport = document.getElementById("li-viewport");
         const liTrack = document.getElementById("li-track");
         const liNavPrev = document.querySelector(".li-nav--prev");
         const liNavNext = document.querySelector(".li-nav--next");
         const liUrlList = document.getElementById("li-url-list");
-        let consentGiven = false;
 
         function t(key) {
           const lang = document.documentElement.lang === "en" ? "en" : "de";
@@ -3091,22 +3069,11 @@
           liViewport.scrollBy({ left: delta, behavior: "smooth" });
         }
 
-        // Initial: statische Vorschau (damit nie "leer" wirkt)
-        renderStatic();
-
-        // Consent: immer neu fragen (keine Persistenz)
-        liConsentBtn?.addEventListener(
-          "click",
-          () => {
-            consentGiven = true;
-            liConsentBox?.remove();
-            renderEmbeds();
-          },
-          { once: true },
-        );
+        // Initial: Embeds direkt laden
+        renderEmbeds();
 
         const langObserver = new MutationObserver(() => {
-          consentGiven ? renderEmbeds() : renderStatic();
+          renderEmbeds();
         });
         langObserver.observe(document.documentElement, {
           attributes: true,
