@@ -349,49 +349,25 @@
       }
       .profile-stats .stat-tile {
         position: relative;
-        isolation: isolate;
-        overflow: hidden;
-        padding: 1.4rem 1.3rem;
+        padding: 1.35rem 1.25rem;
         border-radius: 22px;
-        background: linear-gradient(
-          150deg,
-          rgba(255, 255, 255, 0.98),
-          rgba(219, 234, 254, 0.84) 62%,
-          rgba(191, 219, 254, 0.92)
-        );
-        border: 1px solid rgba(59, 130, 246, 0.24);
-        box-shadow:
-          0 16px 30px rgba(15, 23, 42, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        text-align: left;
-        min-height: 150px;
+        background: #ffffff;
+        border: 1px solid rgba(23, 37, 84, 0.14);
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        text-align: center;
+        min-height: 176px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
         gap: 0.8rem;
         transition:
           transform 0.25s ease,
           box-shadow 0.25s ease;
       }
-      .profile-stats .stat-tile::before {
-        content: "";
-        position: absolute;
-        inset: -35% auto auto 48%;
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(147, 197, 253, 0.38) 0%,
-          rgba(191, 219, 254, 0) 72%
-        );
-        z-index: -1;
-      }
       .profile-stats .stat-tile:hover {
-        transform: translateY(-4px);
-        box-shadow:
-          0 22px 36px rgba(37, 99, 235, 0.18),
-          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        transform: translateY(-3px);
+        box-shadow: 0 14px 30px rgba(37, 99, 235, 0.14);
       }
       .profile-stats .stat-value {
         font-size: clamp(2rem, 4.2vw, 2.6rem);
@@ -404,13 +380,8 @@
         font-size: 0.92rem;
         line-height: 1.45;
         color: #334155;
-        max-width: 22ch;
-      }
-      .profile-stats .stat-tile:nth-child(2n) {
-        transform: translateY(-8px);
-      }
-      .profile-stats .stat-tile:nth-child(2n):hover {
-        transform: translateY(-12px);
+        max-width: 30ch;
+        margin: 0;
       }
 
       #benefits {
@@ -434,26 +405,16 @@
         text-align: left;
         gap: 0.95rem;
         min-height: 280px;
-        background: linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.97),
-          rgba(239, 246, 255, 0.95)
-        );
-        border: 1px solid rgba(23, 37, 84, 0.12);
+        background: #ffffff;
+        border: 1px solid rgba(23, 37, 84, 0.1);
         border-radius: 24px;
         padding: 1.4rem 1.2rem;
-        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
           sans-serif;
         transition:
           transform 0.2s ease,
           box-shadow 0.2s ease;
-      }
-      #benefits .benefit-card h3 .lang {
-        display: inline;
-      }
-      #benefits .benefit-card p .lang {
-        display: inline;
       }
       #benefits .benefit-card:hover {
         transform: translateY(-3px);
@@ -479,12 +440,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(
-          140deg,
-          rgba(37, 99, 235, 0.14),
-          rgba(30, 64, 175, 0.08)
-        );
-        border: 1px solid rgba(30, 64, 175, 0.16);
+        background: rgba(37, 99, 235, 0.1);
+        border: 1px solid rgba(30, 64, 175, 0.2);
+      }
+      .lang[hidden] {
+        display: none !important;
       }
       #benefits .benefit-symbol svg {
         width: 24px;
@@ -526,11 +486,8 @@
         #benefits .benefits-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-        .profile-stats .stat-tile:nth-child(2n) {
-          transform: translateY(0);
-        }
-        .profile-stats .stat-tile:nth-child(2n):hover {
-          transform: translateY(-4px);
+        .profile-stats .stat-tile:hover {
+          transform: translateY(-2px);
         }
       }
 
