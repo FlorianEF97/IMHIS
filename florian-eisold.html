@@ -337,6 +337,58 @@
         gap: 1rem;
       }
 
+      .profile-stats {
+        padding: 0 20px 20px;
+      }
+      .profile-stats .stats-grid {
+        width: min(100%, 1200px);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+      }
+      .profile-stats .stat-tile {
+        padding: 1.15rem 1.2rem;
+        border-radius: 18px;
+        background: #ffffff;
+        border: 1px solid rgba(37, 99, 235, 0.16);
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        text-align: center;
+        font-weight: 700;
+        color: var(--color-accent-dark);
+      }
+
+      #benefits {
+        padding: 20px 20px 44px;
+      }
+      #benefits .benefits-intro {
+        margin: 0 0 1.2rem;
+        color: var(--color-text-light);
+        max-width: 900px;
+      }
+      #benefits .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 1rem;
+      }
+      #benefits .benefit-card {
+        background: #ffffff;
+        border: 1px solid rgba(37, 99, 235, 0.14);
+        border-radius: 18px;
+        padding: 1.1rem;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+      }
+      #benefits .benefit-card h3 {
+        margin: 0 0 0.35rem;
+        font-size: 1rem;
+        color: var(--color-text);
+      }
+      #benefits .benefit-card p {
+        margin: 0;
+        font-size: 0.94rem;
+        color: var(--color-text-light);
+      }
+
       /* LinkedIn‑Button‑Spezialität: Icon und Text nebeneinander */
       .btn.linkedin-btn {
         display: inline-flex;
@@ -363,6 +415,10 @@
         #hero .hero-buttons {
           justify-content: center;
         }
+        .profile-stats .stats-grid,
+        #benefits .benefits-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
       }
 
       @media (max-width: 600px) {
@@ -386,6 +442,15 @@
         .section-frame {
           width: min(96%, 1100px);
           padding: clamp(1.75rem, 6vw, 2.2rem);
+        }
+        .profile-stats,
+        #benefits {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .profile-stats .stats-grid,
+        #benefits .benefits-grid {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -1173,25 +1238,26 @@
             <h1>Dr. Florian Richard Eisold, B.Sc., LL.M.</h1>
             <p class="subtitle">
               <span class="lang lang-de"
-                >Ich forme unsere digitalen Gesundheitswelten von morgen –
-                interdisziplinär, visionär, messbar.</span
+                >Digitaler Wandel braucht Brückenbauer.</span
               >
               <span class="lang lang-en" hidden
-                >I shape tomorrow's digital healthcare landscape &ndash;
-                interdisciplinary, visionary, measurable.</span
+                >Digital transformation needs bridge builders.</span
               >
             </p>
             <p class="lang lang-de">
-              Als Arzt, Ökonom und Jurist verbinde ich medizinische Praxis,
-              wirtschaftliche Steuerung und juristische Verantwortung. Mein
-              Ziel: digitale Vorhaben zu messbaren Erfolgen führen und dabei die
-              Menschen in der Versorgung entlasten.
+              Meine interdisziplinäre Ausbildung als Arzt, Ökonom und
+              Medizinrechtler ist die Grundlage meiner Arbeit an der
+              Schnittstelle von medizinischer Versorgung,
+              Gesundheitssystemsteuerung und rechtlicher Governance. Genau diese
+              Perspektive macht den Unterschied, wenn visionäre Ideen im Alltag
+              professionell und authentisch wirksam werden sollen.
             </p>
             <p class="lang lang-en" hidden>
-              As a physician, economist, and legal scholar, I unite clinical practice,
-              financial stewardship, and legal accountability. My goal is to
-              turn digital initiatives into measurable successes while easing
-              the workload of the people delivering care.
+              My interdisciplinary background as a physician, economist, and
+              legal expert in medicine is the foundation of my work at the
+              intersection of care delivery, system management, and governance.
+              This is what turns visionary ideas into authentic, professional,
+              and measurable results.
             </p>
             <div class="hero-buttons">
               <a href="#timeline" class="btn secondary">
@@ -1218,6 +1284,68 @@
                 LinkedIn
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-stats" aria-label="Kennzahlen">
+        <div class="stats-grid">
+          <div class="stat-tile">5 Fokusbereiche</div>
+          <div class="stat-tile">1 Vision</div>
+          <div class="stat-tile">100 % Evidenz</div>
+          <div class="stat-tile">∞ Potenzial</div>
+        </div>
+      </section>
+
+      <section id="benefits" aria-labelledby="benefits-title">
+        <div class="section-frame">
+          <p class="eyebrow">Mehrwert</p>
+          <h2 id="benefits-title">Ihr Nutzen im Fokus</h2>
+          <p class="benefits-intro lang lang-de">
+            Ich baue täglich Brücken zwischen Perspektiven, die im
+            Gesundheitswesen oft getrennt nebeneinanderstehen &ndash; für klare
+            Entscheidungen mit messbarer Wirkung.
+          </p>
+          <p class="benefits-intro lang lang-en" hidden>
+            I build bridges between perspectives that are often disconnected in
+            healthcare &ndash; translating complexity into measurable impact.
+          </p>
+          <div class="benefits-grid">
+            <article class="benefit-card">
+              <h3>Patientenversorgung</h3>
+              <p>
+                Weniger Bürokratie, mehr Zeit für Patienten durch strukturierte,
+                digital unterstützte Prozessverbesserungen.
+              </p>
+            </article>
+            <article class="benefit-card">
+              <h3>Gesundheitsökonomie</h3>
+              <p>
+                Klinische Realität wird in belastbare Entscheidungsgrundlagen
+                für Führung und Management übersetzt.
+              </p>
+            </article>
+            <article class="benefit-card">
+              <h3>Recht &amp; Governance</h3>
+              <p>
+                Rechtliche Rahmenbedingungen werden praxisnah integriert, damit
+                Innovation sicher und compliant umgesetzt wird.
+              </p>
+            </article>
+            <article class="benefit-card">
+              <h3>Digitalisierung</h3>
+              <p>
+                Mit IMHIS® werden digitale Effekte aus Anwendersicht messbar und
+                in konkrete Handlungsprioritäten überführt.
+              </p>
+            </article>
+            <article class="benefit-card">
+              <h3>Forschung &amp; Lehre</h3>
+              <p>
+                Evidenzbasierte, digital-first Denkweisen werden konsequent in
+                Praxis, Wissenschaft und Ausbildung weitergetragen.
+              </p>
+            </article>
           </div>
         </div>
       </section>
