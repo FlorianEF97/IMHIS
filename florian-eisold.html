@@ -371,22 +371,86 @@
         grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 1rem;
       }
+      #benefits .benefit-flip-card {
+        position: relative;
+        perspective: 1000px;
+        min-height: 320px;
+      }
+      #benefits .benefit-flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.75s ease;
+      }
+      #benefits .benefit-flip-card.is-flipped .benefit-flip-card-inner {
+        transform: rotateY(180deg);
+      }
       #benefits .benefit-card {
-        background: #ffffff;
-        border: 1px solid rgba(37, 99, 235, 0.14);
-        border-radius: 18px;
-        padding: 1.1rem;
-        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.75rem;
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.98),
+          rgba(237, 246, 255, 0.92)
+        );
+        border: 1px solid rgba(37, 99, 235, 0.1);
+        border-radius: 24px;
+        padding: 1.5rem 1.2rem;
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+        backface-visibility: hidden;
+      }
+      #benefits .benefit-card--back {
+        transform: rotateY(180deg);
+        background: linear-gradient(160deg, #f8fbff, #e7f0ff);
       }
       #benefits .benefit-card h3 {
-        margin: 0 0 0.35rem;
-        font-size: 1rem;
+        margin: 0;
+        font-size: 1.12rem;
         color: var(--color-text);
       }
       #benefits .benefit-card p {
         margin: 0;
-        font-size: 0.94rem;
+        font-size: 0.97rem;
+        line-height: 1.5;
         color: var(--color-text-light);
+      }
+      #benefits .benefit-card--front {
+        justify-content: center;
+        cursor: pointer;
+      }
+      #benefits .benefit-card--front h3 {
+        font-size: 1.35rem;
+        font-weight: 700;
+      }
+      #benefits .benefit-emoji {
+        font-size: 2rem;
+        line-height: 1;
+      }
+      #benefits .benefit-back-btn {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        font-weight: 600;
+        font-size: 0.92rem;
+        color: #ffffff;
+        background: linear-gradient(135deg, var(--color-accent), #1d4ed8);
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      #benefits .benefit-back-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(37, 99, 235, 0.3);
       }
 
       /* LinkedIn‑Button‑Spezialität: Icon und Text nebeneinander */
@@ -1311,41 +1375,71 @@
             healthcare &ndash; translating complexity into measurable impact.
           </p>
           <div class="benefits-grid">
-            <article class="benefit-card">
-              <h3>Patientenversorgung</h3>
-              <p>
-                Weniger Bürokratie, mehr Zeit für Patienten durch strukturierte,
-                digital unterstützte Prozessverbesserungen.
-              </p>
-            </article>
-            <article class="benefit-card">
-              <h3>Gesundheitsökonomie</h3>
-              <p>
-                Klinische Realität wird in belastbare Entscheidungsgrundlagen
-                für Führung und Management übersetzt.
-              </p>
-            </article>
-            <article class="benefit-card">
-              <h3>Recht &amp; Governance</h3>
-              <p>
-                Rechtliche Rahmenbedingungen werden praxisnah integriert, damit
-                Innovation sicher und compliant umgesetzt wird.
-              </p>
-            </article>
-            <article class="benefit-card">
-              <h3>Digitalisierung</h3>
-              <p>
-                Mit IMHIS® werden digitale Effekte aus Anwendersicht messbar und
-                in konkrete Handlungsprioritäten überführt.
-              </p>
-            </article>
-            <article class="benefit-card">
-              <h3>Forschung &amp; Lehre</h3>
-              <p>
-                Evidenzbasierte, digital-first Denkweisen werden konsequent in
-                Praxis, Wissenschaft und Ausbildung weitergetragen.
-              </p>
-            </article>
+            <div class="benefit-flip-card">
+              <div class="benefit-flip-card-inner">
+                <article class="benefit-card benefit-card--front" role="button" tabindex="0" aria-label="Patientenversorgung anzeigen">
+                  <span class="benefit-emoji" aria-hidden="true">🩺</span>
+                  <h3>Patientenversorgung</h3>
+                </article>
+                <article class="benefit-card benefit-card--back">
+                  <h3>Mehr Zeit am Patientenbett</h3>
+                  <p>Prozesse werden entlang der realen Versorgungspfade ausgerichtet, damit klinische Teams administrative Last reduzieren und Qualität direkt am Patienten sichern.</p>
+                  <button class="benefit-back-btn" type="button"><span class="lang lang-de">Zurück</span><span class="lang lang-en" hidden>Back</span></button>
+                </article>
+              </div>
+            </div>
+            <div class="benefit-flip-card">
+              <div class="benefit-flip-card-inner">
+                <article class="benefit-card benefit-card--front" role="button" tabindex="0" aria-label="Gesundheitsökonomie anzeigen">
+                  <span class="benefit-emoji" aria-hidden="true">📊</span>
+                  <h3>Gesundheitsökonomie</h3>
+                </article>
+                <article class="benefit-card benefit-card--back">
+                  <h3>Wirtschaftlichkeit mit Versorgungsbezug</h3>
+                  <p>KPIs werden mit klinischer Wirkung verknüpft, sodass Investitionen nachvollziehbar priorisiert und Ressourcen dort eingesetzt werden, wo sie messbar Nutzen stiften.</p>
+                  <button class="benefit-back-btn" type="button"><span class="lang lang-de">Zurück</span><span class="lang lang-en" hidden>Back</span></button>
+                </article>
+              </div>
+            </div>
+            <div class="benefit-flip-card">
+              <div class="benefit-flip-card-inner">
+                <article class="benefit-card benefit-card--front" role="button" tabindex="0" aria-label="Recht und Governance anzeigen">
+                  <span class="benefit-emoji" aria-hidden="true">⚖️</span>
+                  <h3>Recht &amp; Governance</h3>
+                </article>
+                <article class="benefit-card benefit-card--back">
+                  <h3>Rechtssicherheit als Enabler</h3>
+                  <p>Governance wird früh in Projekte integriert, damit digitale Innovationen nicht gebremst, sondern regelkonform, belastbar und skalierbar eingeführt werden.</p>
+                  <button class="benefit-back-btn" type="button"><span class="lang lang-de">Zurück</span><span class="lang lang-en" hidden>Back</span></button>
+                </article>
+              </div>
+            </div>
+            <div class="benefit-flip-card">
+              <div class="benefit-flip-card-inner">
+                <article class="benefit-card benefit-card--front" role="button" tabindex="0" aria-label="Digitalisierung anzeigen">
+                  <span class="benefit-emoji" aria-hidden="true">💻</span>
+                  <h3>Digitalisierung</h3>
+                </article>
+                <article class="benefit-card benefit-card--back">
+                  <h3>Digitale Wirkung statt Feature-Listen</h3>
+                  <p>Die Analyse fokussiert reale Arbeitsabläufe und identifiziert priorisierte Maßnahmen, mit denen Digitalisierung im Alltag tatsächlich Entlastung und Qualität bringt.</p>
+                  <button class="benefit-back-btn" type="button"><span class="lang lang-de">Zurück</span><span class="lang lang-en" hidden>Back</span></button>
+                </article>
+              </div>
+            </div>
+            <div class="benefit-flip-card">
+              <div class="benefit-flip-card-inner">
+                <article class="benefit-card benefit-card--front" role="button" tabindex="0" aria-label="Forschung und Lehre anzeigen">
+                  <span class="benefit-emoji" aria-hidden="true">🎓</span>
+                  <h3>Forschung &amp; Lehre</h3>
+                </article>
+                <article class="benefit-card benefit-card--back">
+                  <h3>Transfer in Praxis und Ausbildung</h3>
+                  <p>Erkenntnisse werden strukturiert aufbereitet, damit Teams, Studierende und Entscheidungsträger digitale Kompetenzen nachhaltig aufbauen und anwenden können.</p>
+                  <button class="benefit-back-btn" type="button"><span class="lang lang-de">Zurück</span><span class="lang lang-en" hidden>Back</span></button>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1943,6 +2037,41 @@
           button.addEventListener("click", function () {
             requestAnimationFrame(updateMarkerOffsets);
           });
+        });
+
+        const benefitCards = document.querySelectorAll(
+          "#benefits .benefit-flip-card",
+        );
+        let activeBenefitCard = null;
+
+        benefitCards.forEach(function (card) {
+          const front = card.querySelector(".benefit-card--front");
+          const backButton = card.querySelector(".benefit-back-btn");
+
+          function flipOpen() {
+            if (activeBenefitCard && activeBenefitCard !== card) {
+              activeBenefitCard.classList.remove("is-flipped");
+            }
+            card.classList.add("is-flipped");
+            activeBenefitCard = card;
+          }
+
+          if (front) {
+            front.addEventListener("click", flipOpen);
+            front.addEventListener("keydown", function (event) {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                flipOpen();
+              }
+            });
+          }
+
+          if (backButton) {
+            backButton.addEventListener("click", function () {
+              card.classList.remove("is-flipped");
+              activeBenefitCard = null;
+            });
+          }
         });
       });
     </script>
