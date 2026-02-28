@@ -13,7 +13,7 @@
     />
     <meta
       name="keywords"
-      content="Dr. Florian Eisold, Medizincontroller, IMHIS®, digitales Gesundheitswesen, Krankenhausinformatik, Medizinrecht, Gesundheitsökonomie"
+      content="Dr. Florian Eisold, Medizincontroller, IMHIS®, digitales Gesundheitswesen, Krankenhausinformatik, Medizinrecht, Ökonomie"
     />
     <meta
       name="robots"
@@ -96,7 +96,7 @@
         "knowsAbout": [
           "Krankenhausinformationssysteme",
           "Medizinrecht",
-          "Gesundheitsökonomie",
+          "Ökonomie",
           "Digitale Transformation im Gesundheitswesen"
         ]
       }
@@ -338,7 +338,7 @@
       }
 
       .profile-stats {
-        padding: 0 20px 20px;
+        padding: 8px 20px 28px;
       }
       .profile-stats .stats-grid {
         width: min(100%, 1200px);
@@ -348,14 +348,79 @@
         gap: 1rem;
       }
       .profile-stats .stat-tile {
-        padding: 1.15rem 1.2rem;
-        border-radius: 18px;
-        background: #ffffff;
-        border: 1px solid rgba(37, 99, 235, 0.16);
-        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-        text-align: center;
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: 1.4rem 1.3rem;
+        border-radius: 22px;
+        background: linear-gradient(150deg, #0f172a, #1e3a8a 62%, #2563eb);
+        border: 1px solid rgba(147, 197, 253, 0.28);
+        box-shadow:
+          0 18px 36px rgba(15, 23, 42, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        text-align: left;
+        min-height: 164px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .profile-stats .stat-tile::before {
+        content: "";
+        position: absolute;
+        inset: -35% auto auto 48%;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(191, 219, 254, 0.42) 0%,
+          rgba(191, 219, 254, 0) 72%
+        );
+        z-index: -1;
+      }
+      .profile-stats .stat-tile:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 24px 44px rgba(15, 23, 42, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.33);
+      }
+      .profile-stats .stat-value {
+        font-size: clamp(2rem, 4.2vw, 2.6rem);
+        line-height: 1;
         font-weight: 700;
-        color: var(--color-accent-dark);
+        letter-spacing: -0.03em;
+        color: #eff6ff;
+      }
+      .profile-stats .stat-label {
+        font-size: 0.92rem;
+        line-height: 1.45;
+        color: rgba(239, 246, 255, 0.92);
+        max-width: 22ch;
+      }
+      .profile-stats .stat-track {
+        width: 100%;
+        height: 7px;
+        border-radius: 999px;
+        background: rgba(191, 219, 254, 0.28);
+        overflow: hidden;
+      }
+      .profile-stats .stat-track::after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: var(--fill-width, 70%);
+        border-radius: inherit;
+        background: linear-gradient(90deg, #dbeafe, #ffffff);
+      }
+      .profile-stats .stat-tile:nth-child(2n) {
+        transform: translateY(-8px);
+      }
+      .profile-stats .stat-tile:nth-child(2n):hover {
+        transform: translateY(-12px);
       }
 
       #benefits {
@@ -393,6 +458,12 @@
         transition:
           transform 0.2s ease,
           box-shadow 0.2s ease;
+      }
+      #benefits .benefit-card h3 .lang {
+        display: inline;
+      }
+      #benefits .benefit-card p .lang {
+        display: inline;
       }
       #benefits .benefit-card:hover {
         transform: translateY(-3px);
@@ -465,6 +536,12 @@
         #benefits .benefits-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+        .profile-stats .stat-tile:nth-child(2n) {
+          transform: translateY(0);
+        }
+        .profile-stats .stat-tile:nth-child(2n):hover {
+          transform: translateY(-4px);
+        }
       }
 
       @media (max-width: 600px) {
@@ -497,6 +574,10 @@
         .profile-stats .stats-grid,
         #benefits .benefits-grid {
           grid-template-columns: 1fr;
+        }
+        .profile-stats .stat-tile {
+          min-height: 148px;
+          padding: 1.25rem 1.1rem;
         }
       }
 
@@ -1334,12 +1415,40 @@
         </div>
       </section>
 
-      <section class="profile-stats" aria-label="Kennzahlen">
+      <section class="profile-stats" aria-label="Key metrics">
         <div class="stats-grid">
-          <div class="stat-tile">5 Fokusbereiche</div>
-          <div class="stat-tile">1 Vision</div>
-          <div class="stat-tile">100 % Evidenz</div>
-          <div class="stat-tile">∞ Potenzial</div>
+          <article class="stat-tile" data-countup data-target="5" data-suffix="+" data-fill-width="84%">
+            <span class="stat-value">0+</span>
+            <p class="stat-label">
+              <span class="lang lang-de">Strategische Fokusfelder, die Medizin, Ökonomie und Governance verbinden.</span>
+              <span class="lang lang-en" hidden>Strategic focus domains connecting medicine, economics, and governance.</span>
+            </p>
+            <span class="stat-track" aria-hidden="true"></span>
+          </article>
+          <article class="stat-tile" data-countup data-target="1" data-prefix="∞ " data-fill-width="68%">
+            <span class="stat-value">0</span>
+            <p class="stat-label">
+              <span class="lang lang-de">Vision mit langfristiger Roadmap &ndash; vom Klinikalltag bis zur Systemarchitektur.</span>
+              <span class="lang lang-en" hidden>One long-term vision &ndash; from clinical workflows to resilient system architecture.</span>
+            </p>
+            <span class="stat-track" aria-hidden="true"></span>
+          </article>
+          <article class="stat-tile" data-countup data-target="100" data-suffix=" %" data-fill-width="96%">
+            <span class="stat-value">0 %</span>
+            <p class="stat-label">
+              <span class="lang lang-de">Evidenzorientierung für belastbare Entscheidungen in Transformation und Versorgung.</span>
+              <span class="lang lang-en" hidden>Evidence-first decision making for transformation, quality, and care delivery.</span>
+            </p>
+            <span class="stat-track" aria-hidden="true"></span>
+          </article>
+          <article class="stat-tile" data-countup data-target="360" data-suffix="°" data-fill-width="88%">
+            <span class="stat-value">0°</span>
+            <p class="stat-label">
+              <span class="lang lang-de">Ganzheitliche Perspektive auf Patientenversorgung, Wirtschaftlichkeit und Recht.</span>
+              <span class="lang lang-en" hidden>360-degree view across patient care, operational economics, and legal integrity.</span>
+            </p>
+            <span class="stat-track" aria-hidden="true"></span>
+          </article>
         </div>
       </section>
 
@@ -1368,8 +1477,14 @@
                   <path d="M4 10.5 9 7l4 3 7-5" />
                 </svg>
               </span>
-              <h3>Patientenversorgung</h3>
-              <p>Versorgungsprozesse werden vereinfacht, damit Teams mehr Zeit für Patient:innen und Qualität gewinnen.</p>
+              <h3>
+                <span class="lang lang-de">Patientenversorgung</span>
+                <span class="lang lang-en" hidden>Patient care</span>
+              </h3>
+              <p>
+                <span class="lang lang-de">Versorgung geht über einzelne Cards hinaus: Prozesse greifen nahtlos ineinander, damit Teams mehr Zeit für Patient:innen und Qualität gewinnen.</span>
+                <span class="lang lang-en" hidden>Care goes beyond any single card: connected workflows give teams more time for patients and measurable quality.</span>
+              </p>
             </article>
             <article class="benefit-card">
               <span class="benefit-symbol" aria-hidden="true">
@@ -1380,8 +1495,14 @@
                   <path d="M18 21v-6" />
                 </svg>
               </span>
-              <h3>Gesundheitsökonomie</h3>
-              <p>Kennzahlen werden mit Wirkung verbunden, um Investitionen transparent zu priorisieren.</p>
+              <h3>
+                <span class="lang lang-de">Ökonomie</span>
+                <span class="lang lang-en" hidden>Economics</span>
+              </h3>
+              <p>
+                <span class="lang lang-de">Kennzahlen werden mit Wirkung verbunden, um Investitionen transparent zu priorisieren.</span>
+                <span class="lang lang-en" hidden>Performance metrics are tied to impact, enabling transparent prioritization of investments.</span>
+              </p>
             </article>
             <article class="benefit-card">
               <span class="benefit-symbol" aria-hidden="true">
@@ -1392,8 +1513,14 @@
                   <path d="m17 7-3 5a3 3 0 0 0 6 0l-3-5Z" />
                 </svg>
               </span>
-              <h3>Recht &amp; Governance</h3>
-              <p>Frühe Governance sichert digitale Projekte rechtlich ab und macht sie belastbar skalierbar.</p>
+              <h3>
+                <span class="lang lang-de">Recht &amp; Governance</span>
+                <span class="lang lang-en" hidden>Law &amp; governance</span>
+              </h3>
+              <p>
+                <span class="lang lang-de">Frühe Governance sichert digitale Projekte rechtlich ab und macht sie belastbar skalierbar.</span>
+                <span class="lang lang-en" hidden>Early governance secures digital projects legally and enables resilient scaling.</span>
+              </p>
             </article>
             <article class="benefit-card">
               <span class="benefit-symbol" aria-hidden="true">
@@ -1403,8 +1530,14 @@
                   <path d="M12 17v3" />
                 </svg>
               </span>
-              <h3>Digitalisierung</h3>
-              <p>Digitalisierung folgt den realen Abläufen und schafft Entlastung statt zusätzlicher Komplexität.</p>
+              <h3>
+                <span class="lang lang-de">Digitalisierung</span>
+                <span class="lang lang-en" hidden>Digitalization</span>
+              </h3>
+              <p>
+                <span class="lang lang-de">Digitalisierung folgt den realen Abläufen und schafft Entlastung statt zusätzlicher Komplexität.</span>
+                <span class="lang lang-en" hidden>Digitalization follows real workflows and creates relief instead of additional complexity.</span>
+              </p>
             </article>
             <article class="benefit-card">
               <span class="benefit-symbol" aria-hidden="true">
@@ -1413,8 +1546,14 @@
                   <path d="M6 12.5V16c0 2.2 2.7 4 6 4s6-1.8 6-4v-3.5" />
                 </svg>
               </span>
-              <h3>Forschung &amp; Lehre</h3>
-              <p>Wissen wird praxisnah aufbereitet, damit Teams Kompetenzen schneller umsetzen können.</p>
+              <h3>
+                <span class="lang lang-de">Forschung &amp; Lehre</span>
+                <span class="lang lang-en" hidden>Research &amp; education</span>
+              </h3>
+              <p>
+                <span class="lang lang-de">Wissen wird praxisnah aufbereitet, damit Teams Kompetenzen schneller umsetzen können.</span>
+                <span class="lang lang-en" hidden>Knowledge is translated into practice so teams can build capabilities faster.</span>
+              </p>
             </article>
           </div>
         </div>
@@ -2014,6 +2153,61 @@
             requestAnimationFrame(updateMarkerOffsets);
           });
         });
+
+        const statTiles = document.querySelectorAll(".profile-stats [data-countup]");
+
+        function animateValue(element, start, end, duration, prefix, suffix) {
+          const range = end - start;
+          const startTime = performance.now();
+
+          function tick(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.round(start + range * eased);
+            element.textContent = prefix + value + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            }
+          }
+          requestAnimationFrame(tick);
+        }
+
+        if (statTiles.length > 0) {
+          statTiles.forEach(function (tile) {
+            const fillWidth = tile.getAttribute("data-fill-width");
+            if (fillWidth) {
+              tile.style.setProperty("--fill-width", fillWidth);
+            }
+          });
+
+          const statObserver = new IntersectionObserver(
+            function (entries, observerInstance) {
+              entries.forEach(function (entry) {
+                if (!entry.isIntersecting || entry.target.dataset.animated === "true") {
+                  return;
+                }
+                const tile = entry.target;
+                const target = parseInt(tile.getAttribute("data-target") || "0", 10);
+                const prefix = tile.getAttribute("data-prefix") || "";
+                const suffix = tile.getAttribute("data-suffix") || "";
+                const valueElement = tile.querySelector(".stat-value");
+
+                if (valueElement) {
+                  animateValue(valueElement, 0, target, 1200, prefix, suffix);
+                }
+                tile.dataset.animated = "true";
+                observerInstance.unobserve(tile);
+              });
+            },
+            { threshold: 0.35 },
+          );
+
+          statTiles.forEach(function (tile) {
+            statObserver.observe(tile);
+          });
+        }
 
       });
     </script>
