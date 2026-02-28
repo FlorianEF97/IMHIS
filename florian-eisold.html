@@ -402,9 +402,9 @@
       #benefits .benefit-card {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-start;
-        text-align: left;
+        text-align: center;
         gap: 0.95rem;
         min-height: 280px;
         background: #ffffff;
@@ -1366,7 +1366,7 @@
               <span class="lang lang-en" hidden>Strategic focus domains connecting medicine, economics, and governance.</span>
             </p>
           </article>
-          <article class="stat-tile" data-countup data-target="1" data-prefix="∞ ">
+          <article class="stat-tile" data-countup data-target="1">
             <span class="stat-value">0</span>
             <p class="stat-label">
               <span class="lang lang-de">Vision mit langfristiger Roadmap &ndash; vom Klinikalltag bis zur Systemarchitektur.</span>
@@ -1392,8 +1392,14 @@
 
       <section id="benefits" aria-labelledby="benefits-title">
         <div class="section-frame">
-          <p class="eyebrow">Mehrwert</p>
-          <h2 id="benefits-title">Digitaler Wandel braucht Brückenbauer.</h2>
+          <p class="eyebrow">
+            <span class="lang lang-de">Mehrwert</span>
+            <span class="lang lang-en" hidden>Benefits</span>
+          </p>
+          <h2 id="benefits-title">
+            <span class="lang lang-de">Digitaler Wandel braucht Brückenbauer.</span>
+            <span class="lang lang-en" hidden>Digital transformation needs bridge builders.</span>
+          </h2>
           <p class="benefits-intro lang lang-de">
             Ich baue täglich Brücken zwischen Perspektiven, die im
             Gesundheitswesen oft getrennt nebeneinanderstehen &ndash; für klare
@@ -1503,12 +1509,14 @@
           <div class="speaker-video__text">
             <p class="speaker-video__eyebrow">Speaker Reel</p>
             <h2 id="speaker-video-title" class="speaker-video__title">
-              Kongressauftritte, die komplexe Themen greifbar machen.
+              <span class="lang lang-de">Kongressauftritte, die komplexe Themen greifbar machen.</span>
+              <span class="lang lang-en" hidden>Conference appearances that make complex topics tangible.</span>
             </h2>
             <p class="speaker-video__lead">
-              Ein kompakter Einblick in Vorträge, Panels und Keynotes &ndash;
+              <span class="lang lang-de">Ein kompakter Einblick in Vorträge, Panels und Keynotes &ndash;
               mit Fokus auf digitale Gesundheit, klinische Praxis und
-              strategische Transformation.
+              strategische Transformation.</span>
+              <span class="lang lang-en" hidden>A compact look at talks, panels, and keynotes &ndash; focused on digital health, clinical practice, and strategic transformation.</span>
             </p>
           </div>
           <div class="speaker-video__frame">
@@ -1630,7 +1638,10 @@
                 >
               </div>
               <div class="timeline-content">
-                <h3>Master of Laws (LL.M.) in Medizinrecht</h3>
+                <h3>
+                  <span class="lang lang-de">Master of Laws (LL.M.) in Medizinrecht</span>
+                  <span class="lang lang-en" hidden>Master of Laws (LL.M.) in Medical Law</span>
+                </h3>
                 <p class="lang lang-de">
                   Berufsbegleitendes Studium an der Universität Münster,
                   Abschlussarbeit zur Organisation eines nichtärztlichen
@@ -2127,7 +2138,7 @@
                 const valueElement = tile.querySelector(".stat-value");
 
                 if (valueElement) {
-                  animateValue(valueElement, 0, target, 1200, prefix, suffix);
+                  animateValue(valueElement, 0, target, 2400, prefix, suffix);
                 }
                 tile.dataset.animated = "true";
                 observerInstance.unobserve(tile);
