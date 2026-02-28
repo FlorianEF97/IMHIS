@@ -718,13 +718,16 @@ a {
 
 /* Benefit section: align intro centrally, keep cards centred */
 .section-benefit > h2 {
-  text-align: left;
-  margin-left: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-benefit > p.lead {
-  text-align: left;
+  text-align: center;
   max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-benefit .eyebrow {
@@ -741,32 +744,48 @@ a {
 }
 
 .section-benefit .toggle-container {
-  margin: 0 0 2rem;
+  margin: 0 auto 2rem;
 }
 
 .section-benefit .benefit-cards {
-  justify-items: stretch;
+  justify-items: center;
 }
 
 .section-benefit .card {
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+  max-width: 320px;
+}
+
+.section-benefit .card-title {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0f172a;
 }
 
 .section-benefit .card-desc {
-  text-align: left;
+  text-align: center;
+  font-size: clamp(0.95rem, 1.5vw, 1rem);
+  line-height: 1.55;
+  color: #334155;
 }
 
 .section-benefit .cta-row {
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+.section-benefit [hidden] {
+  display: none !important;
 }
 
 @media (max-width: 720px) {
   .section-benefit > h2,
   .section-benefit > p.lead {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .section-benefit .eyebrow {
