@@ -290,6 +290,8 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
   flex-direction: row;
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .site-header .actions .lang-switcher {
@@ -305,9 +307,11 @@ a {
   display: inline-flex;
   align-items: center;
   border-radius: 999px !important;
-  padding: 0.343rem 1.15rem;
-  font-size: 0.95rem;
+  padding: 0.343rem clamp(0.8rem, 1.6vw, 1.15rem);
+  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
   line-height: 1;
+  max-width: 100%;
+  min-width: 0;
 }
 .site-header .actions .btn svg {
   width: 18px;
