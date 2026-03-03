@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d59071ba-4b68-4d30-ac7a-ba260cf5c4f0" data-blockingmode="auto" type="text/javascript"></script>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d59071ba-4b68-4d30-ac7a-ba260cf5c4f0" data-blockingmode="auto" type="text/javascript" async></script>
     <meta name="description" content="Impressum der Website IMHIS®" />
     <title>Impressum – IMHIS®</title>
     <!-- Nicht in Suchmaschinen indexieren -->
@@ -32,6 +32,7 @@
     <!-- Schriftart -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://consent.cookiebot.com" crossorigin />
     <link
       rel="preload"
       as="font"
@@ -57,7 +58,19 @@
       onload="this.media='all'"
     />
     <noscript><link rel="stylesheet" href="styles/main.min.css" /></noscript>
-    <link rel="stylesheet" href="styles/custom.css" />
+    <link
+      rel="preload"
+      href="styles/custom.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="styles/custom.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles/custom.css" /></noscript>
 
     <!-- Preload header logo to improve load time -->
     <link
