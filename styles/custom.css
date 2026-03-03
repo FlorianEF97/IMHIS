@@ -307,11 +307,12 @@ a {
   display: inline-flex;
   align-items: center;
   border-radius: 999px !important;
-  padding: 0.5rem clamp(0.9rem, 1.8vw, 1.3rem);
+  padding: 0.5rem clamp(1.1rem, 2.1vw, 1.6rem);
   font-size: clamp(0.82rem, 1.2vw, 0.95rem);
   line-height: 1.2;
   max-width: 100%;
-  min-width: 0;
+  min-width: max-content;
+  flex-shrink: 0;
 }
 .site-header .actions .btn svg {
   width: 18px;
