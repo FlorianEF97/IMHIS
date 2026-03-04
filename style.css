@@ -1168,7 +1168,7 @@ header {
   --accent: #2563eb;
   --ink: #0f172a;
   --brand: #172554;
-  max-width: 1200px;
+  max-width: var(--layout-max-width, 1360px);
   margin: 3.25rem auto;
   position: relative;
   border-radius: 28px;
