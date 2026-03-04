@@ -212,7 +212,7 @@
       }
 
       .section-benefit {
-        max-width: 1200px;
+        max-width: var(--layout-max-width, 1360px);
         margin: 0 auto;
         padding: 4rem 1.5rem;
         background: linear-gradient(
@@ -223,6 +223,18 @@
         border: 1px solid var(--color-card-border);
         border-radius: 28px;
         box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+      }
+
+      /* Breitenangleichung: alle oberen Sections wie Analysedimensionen */
+      .hero,
+      .demo-video__inner,
+      #pitch .instrument-outer,
+      .about-me-section {
+        max-width: var(--layout-max-width, 1360px);
+      }
+
+      .demo-video__inner {
+        width: min(100%, var(--layout-max-width, 1360px));
       }
 
       .section-benefit h2 {
