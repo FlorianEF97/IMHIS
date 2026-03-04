@@ -869,7 +869,15 @@ a {
 
 .contact-footer {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: clamp(2.8rem, 5.5vw, 4rem) 1rem;
+  background:
+    radial-gradient(
+      circle at 22% 12%,
+      rgba(37, 99, 235, 0.2) 0%,
+      rgba(37, 99, 235, 0) 58%
+    ),
+    linear-gradient(180deg, rgba(247, 251, 255, 0.96) 0%, #eef5ff 100%);
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
 }
 
 .contact-footer .footer-cta {
