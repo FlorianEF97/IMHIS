@@ -61,7 +61,7 @@ jobs:
       - name: Verify consent gating
         shell: bash
         run: |
-          if grep -n 'src="https://www.youtube-nocookie.com/embed/' index.html florian-eisold.html; then
+          if grep -En '^[[:space:]]*src="https://www\.youtube-nocookie\.com/embed/' index.html florian-eisold.html; then
             echo 'Direct YouTube iframe src remains' >&2
             exit 1
           fi
